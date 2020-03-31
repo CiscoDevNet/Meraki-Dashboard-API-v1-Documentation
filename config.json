@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "title": "Overview",
+      "items": [
+        {
+          "title": "Introduction",
+          "content": "intro.md"
+        }
+      ]
+    },
+    {
+      "title": "Guides",
+      "items": [
+        {
+          "title": "Getting Started",
+          "content": "getting-started.md"
+        }
+      ]
+    },
+    {
+      "title": "Resources",
+      "items": [
+        {
+          "title": "Blog",
+          "content": "https://blogs.cisco.com/developer",
+          "type": "url"
+        },
+        {
+          "title": "Sandbox",
+          "content": "https://developer.cisco.com/site/sandbox/",
+          "type": "url"
+        },
+        {
+          "title": "Support",
+          "content": "https://developer.cisco.com/site/devnet/support/",
+          "type": "url"
+        }
+      ]
+    }
+  ]
+}
