@@ -84,16 +84,8 @@
                             "title": "Python repo",
                             "type": "raw-html",
                             "content": "https://raw.githubusercontent.com/meraki/dashboard-api-python/master/README.md"
-                        },
-                        {
-                            "title": "Node",
-                            "content": "docs/NodeSDK.md"
-                        },
-                        {
-                            "title": "Node",
-                            "type": "raw-html",
-                            "content": "https://raw.githubusercontent.com/meraki/meraki-node-sdk/master/README.md"
                         }
+                        
                     ]
                 }
             ]
