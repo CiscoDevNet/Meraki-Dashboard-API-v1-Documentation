@@ -76,7 +76,7 @@ Successful HTTP Status: 201
 	}
 ```
 
-## Supported Resources
+# Supported Resources
 The following list includes the API resources available for Action Batches.
 
 
@@ -150,23 +150,23 @@ The following list includes the API resources available for Action Batches.
 # API Endpoints
 This group of Dashboard API endpoints is available to submit, monitor and manage your Action Batches. Refer to the respective endpoint links for more details.
 
-[Create an action batch]()
+[Create an action batch](##!create-organization-action-batch)
 
 `POST /organizations/{organizationId}/actionBatches`
 
-[Return the list of action batches in the organization]()
+[Return the list of action batches in the organization](##!get-organization-action-batches)
 
 `GET /organizations/{organizationId}/actionBatches`
 
-[Return an action batch]()
+[Return an action batch](##!get-organization-action-batch)
 
 `GET /organizations/{organizationId}/actionBatches/{id}`
 
-[Delete an action batch]()
+[Delete an action batch](##!delete-organization-action-batch)
 
 `DELETE /organizations/{organizationId}/actionBatches/{id}`
 
-[Update an action batch]()
+[Update an action batch](##!update-organization-action-batch)
 
 `PUT /organizations/{organizationId}/actionBatches/{id}`
 
@@ -214,7 +214,7 @@ switch_a = "AAAA-BBBB-CCCC"
 switch_b = "DDDD-EEEE-FFFF"
 tags = "APIness"
 
-url = f"https://api.meraki.com/api/v0/organizations/{org_id}/actionBatches"
+url = f"https://api.meraki.com/api/v1/organizations/{org_id}/actionBatches"
 
 payload = {
     "confirmed": True,
