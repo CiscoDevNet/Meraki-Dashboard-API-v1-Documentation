@@ -1,42 +1,112 @@
 {
-  "items": [
-    {
-      "title": "Overview",
-      "items": [
+    "items": [
         {
-          "title": "Introduction",
-          "content": "intro.md"
-        }
-      ]
-    },
-    {
-      "title": "Guides",
-      "items": [
-        {
-          "title": "Getting Started",
-          "content": "getting-started.md"
-        }
-      ]
-    },
-    {
-      "title": "Resources",
-      "items": [
-        {
-          "title": "Blog",
-          "content": "https://blogs.cisco.com/developer",
-          "type": "url"
+            "title": "Introduction",
+            "content": "docs/Introduction.md"
         },
         {
-          "title": "Sandbox",
-          "content": "https://developer.cisco.com/site/sandbox/",
-          "type": "url"
+            "title": "Getting Started",
+            "content": "docs/GettingStarted.md"
         },
         {
-          "title": "Support",
-          "content": "https://developer.cisco.com/site/devnet/support/",
-          "type": "url"
+            "title": "API Endpoints",
+            "type": "oas",
+            "content": "config/apiv1_draft_cat.json",
+            "config": {
+                "overview": "docs/overview.md",
+                "apiKeyGenerator": {
+                    "$remoteModule": "config/api_key.js"
+                },
+                "groupBy": {
+                    "$remoteModule": "config/group_domain_cat_api.js"
+                },
+                "exampleAsDefault": true
+            }
+        },
+        {
+            "title": "Reference",
+            "items": [
+                {
+                    "title": "Authorization",
+                    "content": "docs/Authorization.md"
+                },
+                {
+                    "title": "Schema",
+                    "content": "docs/PathSchema.md"
+                },
+                {
+                    "title": "Errors",
+                    "content": "docs/Errors.md"
+                },
+                {
+                    "title": "Pagination",
+                    "content": "docs/Pagination.md"
+                },
+                {
+                    "title": "Rate Limit",
+                    "content": "docs/RateLimit.md"
+                },
+                {
+                    "title": "Versioning",
+                    "content": "docs/Versioning.md"
+                }
+            ]
+        },
+        {
+            "title": "Guides",
+            "items": [
+                {
+                    "title": "Action Batches",
+                    "content": "docs/ActionBatches.md"
+                }
+            ]
+        },
+        {
+            "title": "Resources",
+            "items": [
+                {
+                    "title": "Postman",
+                    "content": "https://postman.meraki.com",
+                    "type": "url"
+                },
+                {
+                    "title": "SDKs",
+                    "items": [
+                        {
+                            "title": "Overview",
+                            "content": "docs/SDKoverview.md"
+                        },
+                        {
+                            "title": "Python",
+                            "content": "docs/pythonLibrary.md"
+                        },
+                        {
+                            "title": "Python repo",
+                            "type": "raw-html",
+                            "content": "https://raw.githubusercontent.com/meraki/dashboard-api-python/master/README.md"
+                        },
+                        {
+                            "title": "Node",
+                            "content": "docs/NodeSDK.md"
+                        },
+                        {
+                            "title": "Node",
+                            "type": "raw-html",
+                            "content": "https://raw.githubusercontent.com/meraki/meraki-node-sdk/master/README.md"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Webhooks",
+            "content": "https://meraki.io/webhooks",
+            "type": "url"
+        },
+        {
+            "title": "Changelog",
+            "type": "config",
+            "content": "docs/changelog/changelog-config.json"
         }
-      ]
-    }
-  ]
+    ]
 }

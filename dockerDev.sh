@@ -1,0 +1,1 @@
+docker run -it -v /Users/cory.guynn/dev/github-projects/pubhub/meraki-api-sandbox:/tmp/pubhub -p 9999:8080 containers.cisco.com/pubhub/site_engine_local:master doc
