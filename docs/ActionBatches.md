@@ -148,7 +148,7 @@ The following list includes the API resources available for Action Batches.
 
 
 # API Endpoints
-This group of Dashboard API endpoints is available to submit, monitor and manage your Action Batches. Refer to the respective endpoint links for more details.
+This group of Dashboard API endpoints are available to submit, monitor and manage your Action Batches. Refer to the respective endpoint links for more details.
 
 [Create an action batch](##!create-organization-action-batch)
 
@@ -254,7 +254,7 @@ payload = {
 }
 
 headers = {
-    "X-Cisco-Meraki-API-Key": API_KEY,
+    "Authorization": f"Bearer {API_KEY}",
     "Content-Type": "application/json",
 }
 
