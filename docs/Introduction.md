@@ -2,7 +2,7 @@
 
 A RESTful API to programmatically manage and monitor Meraki networks at scale.
 
-<img src="../images/meraki_api_cloud_green.png" width="200px">
+<img src="../images/cloud-code.png" width="200px">
 
 
 ### What can the Dashboard API be used for?
