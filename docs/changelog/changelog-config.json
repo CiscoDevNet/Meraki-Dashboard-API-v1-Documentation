@@ -1,70 +1,47 @@
 {
+    "title": "Changelog",
     "items": [
         {
-            "title": "API Changelog",
-            "items": [
+            "title": "GA",
+            "items":[
                 {
-                    "title": "2020",
-                    "content": "documents/2020.md"
+                    "title": "v0.9.0",
+                    "content": "v0.9.0.md"
                 },
                 {
-                    "title": "2019",
-                    "content": "documents/2019.md"
+                    "content": "v0.8.0.md"
                 },
                 {
-                    "title": "2018",
-                    "content": "documents/2018.md"
+                    "content": "v0.7.0.md"
                 },
                 {
-                    "title": "Archive",
-                    "content": "documents/update-archive.md"
+                    "content": "v0.6.0.md"
+                },
+                {
+                    "content": "v0.5.0.md"
+                },
+                {
+                    "content": "v0.4.0.md"
+                },
+                {
+                    "content": "v0.3.0.md"
+                },
+                {
+                    "content": "v0.2.0.md"
                 }
-            ]
+            ],
+            "config":{
+                "showSubNavigation":false
+            }
         },
         {
-            "title": "OpenAPI Release Notes",
-            "items": [
+            "title": "Beta",
+            "items":[
                 {
-                    "title": "0.10.0 @latest",
-                    "content": "changelog/0.10.0-changelog.md"
-                },
-                {
-                    "title": "0.9.0",
-                    "content": "changelog/0.9.0-changelog.md"
-                },
-                {
-                    "title": "0.8.0",
-                    "content": "changelog/0.8.0-changelog.md"
-                },
-                {
-                    "title": "0.7.0",
-                    "content": "changelog/0.7.0-changelog.md"
-                },
-                {
-                    "title": "0.6.0",
-                    "content": "changelog/0.6.0-changelog.md"
-                },
-                {
-                    "title": "0.5.0",
-                    "content": "changelog/0.5.0-changelog.md"
-                },
-                {
-                    "title": "0.4.0",
-                    "content": "changelog/0.4.0-changelog.md"
-                },
-                {
-                    "title": "0.3.0",
-                    "content": "changelog/0.3.0-changelog.md"
-                },
-                {
-                    "title": "0.2.0",
-                    "content": "changelog/0.2.0-changelog.md"
+                    "content": "v1.0.0-beta.0.md"
                 }
             ]
         }
-    ],
-    "config": {
-        "codeLayout": "one-column",
-        "showCodeSwitch": false
-    }
+      
+    ]
 }
