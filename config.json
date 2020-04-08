@@ -18,9 +18,7 @@
                 "apiKeyGenerator": {
                     "$remoteModule": "config/api_key.js"
                 },
-                "groupBy": {
-                    "$remoteModule": "config/group_domain_cat_api.js"
-                },
+                
                 "exampleAsDefault": true
             }
         },
