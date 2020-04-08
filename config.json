@@ -13,6 +13,7 @@
             "type": "oas",
             "content": "config/apiv1_draft_cat.json",
             "config": {
+                "expand": 3,
                 "overview": "docs/overview.md",
                 "apiKeyGenerator": {
                     "$remoteModule": "config/api_key.js"
@@ -79,13 +80,7 @@
                         {
                             "title": "Python",
                             "content": "docs/pythonLibrary.md"
-                        },
-                        {
-                            "title": "Python repo",
-                            "type": "raw-html",
-                            "content": "https://raw.githubusercontent.com/meraki/dashboard-api-python/master/README.md"
                         }
-                        
                     ]
                 }
             ]
