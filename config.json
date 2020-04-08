@@ -11,7 +11,7 @@
         {
             "title": "Endpoints",
             "type": "oas",
-            "content": "config/oasTaggedUp.json",
+            "content": "https://raw.githubusercontent.com/meraki/openapi/b56a4d91df7b6ef4ae7f6f8559ac15c0939bd97e/openapi/spec2.json",
             "config": {       
                 "overview": "docs/overview.md",
                 "apiKeyGenerator": {
