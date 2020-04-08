@@ -11,7 +11,7 @@
         {
             "title": "Endpoints",
             "type": "oas",
-            "content": "config/apiv1_draft_cat.json",
+            "content": "config/oasTaggedUp.json",
             "config": {
                 "expand": 3,
                 "overview": "docs/overview.md",

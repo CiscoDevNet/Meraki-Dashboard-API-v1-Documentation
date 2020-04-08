@@ -30,16 +30,16 @@ module.exports = groupBy;
 // ********************
 
 
-let productTest = {
-    tags: [ 'switch', 'monitor', 'devices', 'ports', 'statuses']
-}
-let scopeTest = {
-    tags: [ 'networks', 'configure', 'floorPlans']
-}
+// let productTest = {
+//     tags: [ 'switch', 'monitor', 'devices', 'ports', 'statuses']
+// }
+// let scopeTest = {
+//     tags: [ 'networks', 'configure', 'floorPlans']
+// }
 
 
-console.log("productTest", productTest, groupBy(productTest));
-// PRODUCTS/switch/MONITOR/devices/ports
+// console.log("productTest", productTest, groupBy(productTest));
+// // PRODUCTS/switch/MONITOR/devices/ports
 
-console.log("scopeTest", scopeTest, groupBy(scopeTest));
-// GENERAL/networks/CONFIGURE/floorPlans
+// console.log("scopeTest", scopeTest, groupBy(scopeTest));
+// // GENERAL/networks/CONFIGURE/floorPlans
