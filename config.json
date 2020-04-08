@@ -11,7 +11,18 @@
         {
             "title": "Endpoints",
             "type": "oas",
-            "content": "config/oasTaggedUp.json"
+            "content": "config/oasTaggedUp.json",
+            "config": {       
+                "overview": "docs/overview.md",
+                "apiKeyGenerator": {
+                    "$remoteModule": "config/api_key.js"
+                },
+                "groupBy": {
+                    "$remoteModule": "config/group_domain_cat_api.js"
+                },
+                "exampleAsDefault": true,
+                "expand": 3
+            }
         },
         {
             "title": "Reference",
