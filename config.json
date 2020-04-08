@@ -89,6 +89,11 @@
             "title": "Webhooks",
             "content": "https://meraki.io/webhooks",
             "type": "url"
+        },
+        {
+            "title": "Changelog",
+            "type": "config",
+            "content": "docs/changelog/changelog-config.json"
         }
     ]
 }
