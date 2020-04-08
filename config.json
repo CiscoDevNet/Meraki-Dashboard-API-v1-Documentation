@@ -11,7 +11,7 @@
         {
             "title": "Endpoints",
             "type": "oas",
-            "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec2.json",
+            "content": "config/apiv1_draft_cat.json",
             "config": {
                 "expand": 3,
                 "overview": "docs/overview.md",
