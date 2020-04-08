@@ -11,8 +11,7 @@
         {
             "title": "Endpoints",
             "type": "oas",
-            "content": "config/oasTaggedUp.json",
-           
+            "content": "config/oasTaggedUp.json"
         },
         {
             "title": "Reference",
