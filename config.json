@@ -8,22 +8,7 @@
             "title": "Getting Started",
             "content": "docs/GettingStarted.md"
         },
-        {
-            "title": "Endpoints",
-            "type": "oas",
-            "content": "config/apiv1_draft_cat.json",
-            "config": {
-                "expand": 3,
-                "overview": "docs/overview.md",
-                "apiKeyGenerator": {
-                    "$remoteModule": "config/api_key.js"
-                },
-                "groupBy": {
-                    "$remoteModule": "config/group_domain_cat_api.js"
-                },
-                "exampleAsDefault": true
-            }
-        },
+        
         {
             "title": "Reference",
             "items": [
