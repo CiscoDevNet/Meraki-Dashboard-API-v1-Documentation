@@ -9,7 +9,7 @@
             "content": "docs/GettingStarted.md"
         },
         {
-            "title": "API Endpoints",
+            "title": "Endpoints",
             "type": "oas",
             "content": "config/apiv1_draft_cat.json",
             "config": {
