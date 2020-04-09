@@ -13,7 +13,9 @@
             "type": "oas",
             "content": "config/apiv1_draft_cat.json",
             "config": {       
-                "overview": "docs/overview.md",
+                "overview": {
+                    "markdownPath":"docs/overview.md"
+                },
                 "apiKeyGenerator": {
                     "$remoteModule": "config/api_key.js"
                 },
