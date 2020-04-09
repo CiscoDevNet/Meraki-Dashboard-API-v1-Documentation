@@ -1,6 +1,6 @@
 # Path Schema
 
-The Meraki API resources are organized by scope and then by the product or scope service groups.
+The Meraki API resources are organized by scope and then by the product and its related service groups.
 
 `baseURI/scope/:id/product/serviceGroup/:id/service/:id`
 
@@ -12,13 +12,11 @@ Every API endpoint will begin with the following URL to the Meraki cloud.
 
 ## Scopes
 
-The Meraki platform is structured in a hierarchy.
+The API mirrors the structure of the Meraki Dashboard.
 
  **Organizations** consist of **Networks**, which then contain **Devices**. 
 
-- Organizations
-	- Networks
-		- Devices
+![](../images/Meraki_OrgNetDevice_structure_300x370.png)
 
 ## Service Groups
 
