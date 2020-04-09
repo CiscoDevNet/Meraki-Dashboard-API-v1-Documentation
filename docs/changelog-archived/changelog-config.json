@@ -5,6 +5,9 @@
             "title": "GA",
             "items":[
                 {
+                    "content": "v0.10.0.md"
+                },
+                {
                     "content": "v0.9.0.md"
                 },
                 {
