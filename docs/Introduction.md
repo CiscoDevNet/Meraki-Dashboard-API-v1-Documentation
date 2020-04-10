@@ -10,7 +10,7 @@ The Dashboard API has evolved significantly, providing hundreds of endpoints to 
 
 We want to do so much more. But in order for us to include many of these new featues or improvements, we need to break a few things. 
 
-The focus of this version is on **Simplicity** and **Scale**, by providing an enjoyable developer experience. 
+The focus of this **major** version is on **Simplicity** and **Scale**, by providing an enjoyable developer experience. 
 
 The API documentation, Postman Collection and Python library will remain synced and up-to-date with improved navigation and features.
 
