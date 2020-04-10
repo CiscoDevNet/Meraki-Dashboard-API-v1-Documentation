@@ -1,7 +1,7 @@
 
 # Interactive API Docs
 
-Use the interactive API docs to explore the Meraki API endpoints. 
+Use the interactive documentation to explore the Meraki API endpoints. 
 
 Each request will have a complete description of all the required parameters and also allow you to instantly try it out in the online console. Code Templates are also provided for quickly building scripts.
 
