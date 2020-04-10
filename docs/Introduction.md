@@ -22,40 +22,40 @@ In addition, several improvements and new endpoints have been included with this
 
 The API Endpoint documentation and complimenting Postman Collection have a new folder structure for navigating the API. 
 
-- General
-    - devices
-    - networks
-    - organizations
-- Products
-    - appliance
-    - camera
-    - cellularGateway
-    - insight
-    - sm
-    - switch
-    - wireless
+> - General
+>    - devices
+>    - networks
+>    - organizations
+> - Products
+>    - appliance
+>    - camera
+>    - cellularGateway
+>    - insight
+>    - sm
+>    - switch
+>    - wireless
 
 
 #### Categories
 
-The services are grouped into categories. Indicating the types of operations available and the likely permissions required. This should also provide a focused set of resources when building read-only dashboards (**MONITOR**), or automation scripts (**CONFIGURE**).
+The services are grouped into categories. This will provide a focused set of resources when building read-only dashboards (**MONITOR**), or automation scripts (**CONFIGURE**).
 
 
-- appliance
-    - **CONFIGURE**
-        - firewall         
-    - **MONITOR**
-        - performance
+> - appliance
+>    - **CONFIGURE**
+>        - firewall         
+>    - **MONITOR**
+>        - performance
 
 ### Resource Path changes
 
 The endpoint URL paths will always contain the Meraki product if required, reducing ambiguity when working with resources that have similar yet unique functionality. 
 
-**Product Service Groups Examples**
-
-`/appliance/ports`
-
-`/switch/ports`
+> *Examples of a product and service*
+>
+> `/appliance/ports`
+>
+> `/switch/ports`
 
 
 ### Authorization
