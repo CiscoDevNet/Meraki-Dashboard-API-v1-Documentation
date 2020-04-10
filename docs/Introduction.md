@@ -80,11 +80,11 @@ Minor but important detail, the Base URI has change to **v1**
 
 Visit the [Changelog](https://developer.cisco.com/meraki/whats-new/#!v1-0-0-beta-0) for all the details.
 
-## SDKs
+### SDKs
 
 Going forward, the custom Meraki Python library will be the recommended SDK for simplified API scripting. The previously auto-generated Python, Node & Ruby SDKs for **v0** will remain in the Meraki GitHub but will no longer be maintained. 
 
-### Python
+#### Python
 
 The Meraki [Python Library](..#!python) has been updated to take advantage of all the new enhancements!
 
