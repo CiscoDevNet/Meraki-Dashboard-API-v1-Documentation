@@ -1,14 +1,17 @@
 
+# Interactive API Docs
+
 Use the interactive API docs to explore the Meraki API endpoints. 
 
+Each request will have a complete description of all the required parameters and also allow you to instantly try it out in the online console. Code Templates are also provided for quickly building scripts.
 
 <img src="api.png" width="400px">
 
 
 
-## Sandbox
+## Demo and API Key
 
-- Uses a demo API key by default to quickly kick the tires.
+- A demo API key is added by default to quickly kick the tires.
 
 - Add your own API key and paramater values in the **Configuration** menu
 
