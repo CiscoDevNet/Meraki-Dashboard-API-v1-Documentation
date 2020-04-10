@@ -4,6 +4,15 @@ A RESTful API to programmatically manage and monitor Meraki networks at scale.
 
 <img src="../images/cloud-code.png" width="200px">
 
+## What can you do with it?
+
+- Add new organizations, admins, networks, devices, VLANs, and more
+- Configure thousands of networks in minutes
+- On-board and off-board new employees’ teleworker setup automatically
+- Build your own dashboard for store managers, field techs, or unique use cases
+
+Checkout out the [Explore](https://developer.cisco.com/meraki/explore/) section for open source projects, or browse the [Marketplace](https://apps.meraki.io/) for partner solutions.
+
 ## What's New in v1 
 
 The Dashboard API has evolved significantly, providing hundreds of endpoints to manage your Meraki networks!
@@ -90,11 +99,3 @@ The Meraki [Python Library](..#!python) has been updated to take advantage of al
 
 
 
-## What can the Dashboard API be used for?
-
-- Add new organizations, admins, networks, devices, VLANs, and more
-- Configure thousands of networks in minutes
-- On-board and off-board new employees’ teleworker setup automatically
-- Build your own dashboard for store managers, field techs, or unique use cases
-
-Checkout out the [Explore](https://developer.cisco.com/meraki/explore/) section for open source projects, or browse the [Marketplace](https://apps.meraki.io/) for partner solutions.
