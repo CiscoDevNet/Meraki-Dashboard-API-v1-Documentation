@@ -9,7 +9,7 @@ Each request will have a complete description of all the required parameters and
 
 
 
-## Demo and API Key
+## API Key
 
 - A demo API key is added by default to quickly kick the tires.
 
