@@ -16,37 +16,46 @@ In addition, several improvements and new endpoints have been included with this
 
 The API documentation and complimenting Postman Collection will be structured based on General and Product service groups, which will then contain the related resources.
 
-    ```Endpoint Domains
-    General
-        devices
-        networks
-        organizations
-    Products
-        appliance
-        camera
-        switch
-        wireless
-        ...
-    ```
+```
+Endpoint Domains
+```
+```
+General
+    devices
+    networks
+    organizations
+Products
+    appliance
+    camera
+    switch
+    wireless
+    ...
+```
 
-- Each product or scope will have a **CONFIGURE** and/or **MONITOR** folder, to indicate the types of endpoints that are available and the permissions likely required. 
+Each product or scope will have a **CONFIGURE** and/or **MONITOR** folder, to indicate the types of endpoints that are available and the permissions likely required. 
 
-    ```Endpoint Types
-    Products
-        appliance
-            CONFIGURE
-                firewall
-                
-            MONITOR
-                performance
-    ```
+```title
+Endpoint Types
+```
+```
+Products
+    appliance
+        CONFIGURE
+            firewall
+            
+        MONITOR
+            performance
+```
 
 
 ### Resource Path changes
 
 The endpoint URL paths will always contain the Meraki product, reducing ambiquity when working with resources. 
 
-```Product Service Groups
+```title
+Product Service Groups
+```
+```json
 
     `/appliance/ports`
 
@@ -57,9 +66,10 @@ The endpoint URL paths will always contain the Meraki product, reducing ambiquit
 
 The API calls will now use an Authorization Bearer token, per industry standards.
 
-    
-
-    ```header
+    ```title
+    header
+    ```
+    ```json
     {
         "Authorization": Bearer <Meraki_API_Key>
     }
