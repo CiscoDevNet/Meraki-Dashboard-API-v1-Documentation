@@ -35,14 +35,16 @@ The API Endpoint documentation and complimenting Postman Collection are now stru
 
 Each product or scope will have a **CONFIGURE** and/or **MONITOR** folder, to indicate the types of endpoints that are available and the permissions likely required. 
 
+The services will be grouped into categories. This will provide clarity on the types of operations available and the likely permissions required. This should also provide a focused set of resources when building read-only dashboards (**MONITOR**), or automation scripts (**CONFIGURE**).
 
-**Endpoint Types**
 
-    - appliance
-        - CONFIGURE
-            - firewall         
-        - MONITOR
-            - performance
+**Category**
+
+- appliance
+    - CONFIGURE
+        - firewall         
+    - MONITOR
+        - performance
 
 ### Resource Path changes
 
