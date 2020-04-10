@@ -12,7 +12,7 @@ We want to do so much more. But in order for us to include many of these new fea
 
 The focus of this version is on **Simplicity** and **Scale**, by providing an enjoyable developer experience. 
 
-The API documentation, Postman and Python library will remain synced and up-to-date with improved organization.
+The API documentation, Postman Collection and Python library will remain synced and up-to-date with improved organization.
 
 In addition, several improvements and new endpoints have been included with this major release.
 
@@ -20,22 +20,7 @@ In addition, several improvements and new endpoints have been included with this
 
 ### API Documentation
 
-The API Endpoint documentation and complimenting Postman Collection have a new folder structure for navigating the API.
-
-
-#### Domains
-
-**General** 
-
-Services that apply to the scope (i.e network) such as `List the Group Policies for a Network`
-
-**Products** 
-
-Services that apply to a product (i.e wireless) such as `Return A Single SSID`
-
-
-*Folder Structure*
-
+The API Endpoint documentation and complimenting Postman Collection have a new folder structure for navigating the API. Endpoints are now nested within a product or scope, to quickly find the related resources.
 
 - General
     - devices
@@ -50,12 +35,12 @@ Services that apply to a product (i.e wireless) such as `Return A Single SSID`
     - switch
     - wireless
 
+
+
 #### Categories
 
-The services will be grouped into categories. This will provide clarity on the types of operations available and the likely permissions required. This should also provide a focused set of resources when building read-only dashboards (**MONITOR**), or automation scripts (**CONFIGURE**).
+The services are then grouped into categories. Indicating the types of operations available and the likely permissions required. This should also provide a focused set of resources when building read-only dashboards (**MONITOR**), or automation scripts (**CONFIGURE**).
 
-
-*Folder Structure*
 
 - appliance
     - **CONFIGURE**
