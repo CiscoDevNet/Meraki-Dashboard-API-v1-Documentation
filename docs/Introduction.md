@@ -12,7 +12,7 @@ We want to do so much more. But in order for us to include many of these new fea
 
 The focus of this version is on **Simplicity** and **Scale**, by providing an enjoyable developer experience. 
 
-The API documentation, Postman Collection and Python library will remain synced and up-to-date with improved organization.
+The API documentation, Postman Collection and Python library will remain synced and up-to-date with improved navigation and features.
 
 In addition, several improvements and new endpoints have been included with this major release.
 
@@ -20,7 +20,7 @@ In addition, several improvements and new endpoints have been included with this
 
 ### API Documentation
 
-The API Endpoint documentation and complimenting Postman Collection have a new folder structure for navigating the API. Endpoints are now nested within a product or scope, to quickly find the related resources.
+The API Endpoint documentation and complimenting Postman Collection have a new folder structure for navigating the API. 
 
 - General
     - devices
@@ -34,7 +34,6 @@ The API Endpoint documentation and complimenting Postman Collection have a new f
     - sm
     - switch
     - wireless
-
 
 
 #### Categories
