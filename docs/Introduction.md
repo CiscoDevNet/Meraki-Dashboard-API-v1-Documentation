@@ -16,7 +16,6 @@ The API documentation, Postman Collection and Python library will remain synced 
 
 In addition, several improvements and new endpoints have been included with this major release.
 
-## Highlights
 
 ### API Documentation
 
