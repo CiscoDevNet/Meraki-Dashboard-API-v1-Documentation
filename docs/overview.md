@@ -1,13 +1,19 @@
 
 Use the interactive API docs to explore the Meraki API endpoints. 
 
-![live tools](api.png)
 
-- A sandbox API key is provided to quickly kick the tires.
+<img src="api.png" width="400px">
+
+
+
+## Sandbox
+
+- Uses a demo API key by default to quickly kick the tires.
+
 - Add your own API key and paramater values in the **Configuration** menu
 
-![Configuration](../images/interactiveAPIConfig.png)
 
+<img src="../images/interactiveAPIConfig.png" width="400px">
 
 
 
