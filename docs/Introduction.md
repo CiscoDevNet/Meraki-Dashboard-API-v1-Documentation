@@ -38,7 +38,7 @@ The API Endpoint documentation and complimenting Postman Collection have a new f
 
 #### Categories
 
-The services are then grouped into categories. Indicating the types of operations available and the likely permissions required. This should also provide a focused set of resources when building read-only dashboards (**MONITOR**), or automation scripts (**CONFIGURE**).
+The services are grouped into categories. Indicating the types of operations available and the likely permissions required. This should also provide a focused set of resources when building read-only dashboards (**MONITOR**), or automation scripts (**CONFIGURE**).
 
 
 - appliance
@@ -71,6 +71,10 @@ The API calls will now use an Authorization Bearer token, per industry standards
 ```
 
 See the [Changelog](https://developer.cisco.com/meraki/whats-new/#!v1-0-0-beta-0) for all the details.
+
+### Python
+
+The Meraki [Python Library](..#!python) has been updated to take advantage of all the new enhancements!
 
 
 
