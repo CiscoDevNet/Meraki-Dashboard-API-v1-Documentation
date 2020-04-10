@@ -50,7 +50,7 @@ The services are grouped into categories. This will provide a focused set of res
 
 The endpoint URL paths will always contain the Meraki product if required, reducing ambiguity when working with resources that have similar yet unique functionality. 
 
-> *Examples of a product and service*
+> **Examples of a product and service**
 >
 > `/appliance/ports`
 >
@@ -86,7 +86,7 @@ Going forward, the custom Meraki Python library will be the recommended SDK for 
 
 #### Python
 
-The Meraki [Python Library](..#!python) has been updated to take advantage of all the new enhancements!
+The Meraki [Python Library](..#!python) has been updated to take advantage of all the new API enhancements plus many custom features to help both beginners and experienced programmers.
 
 
 
