@@ -6,7 +6,13 @@ A RESTful API to programmatically manage and monitor Meraki networks at scale.
 
 ## What's New in v1 
 
-The Dashboard API has evolved significantly, providing hundreds of endpoints to manage your Meraki networks. With this growth, it started to become challenging to find resources quickly. Meraki prides itself on simplicity and to that end, the API has been restructured to provide a more intuitive experience for working with the API. 
+The Dashboard API has evolved significantly, providing hundreds of endpoints to manage your Meraki networks!
+
+We want to do so much more. But in order for us to include many of these new featues or improvements, we need to break a few things. 
+
+The focus of this version is on **Simplicity** and **Scale**, by providing an enjoyable developer experience. 
+
+The API documentation, Postman and Python library will remain synced and up-to-date with improved organization.
 
 In addition, several improvements and new endpoints have been included with this major release.
 
@@ -14,10 +20,21 @@ In addition, several improvements and new endpoints have been included with this
 
 ### API Documentation
 
-The API Endpoint documentation and complimenting Postman Collection are now structured based on General and Product service groups, which will then contain the related resources.
+The API Endpoint documentation and complimenting Postman Collection have a new folder structure for navigating the API.
 
 
-**Endpoint Domains**
+#### Domains
+
+**General** 
+
+Services that apply to the scope (i.e network) such as `List the Group Policies for a Network`
+
+**Products** 
+
+Services that apply to a product (i.e wireless) such as `Return A Single SSID`
+
+
+*Folder Structure*
 
 
 - General
@@ -33,17 +50,17 @@ The API Endpoint documentation and complimenting Postman Collection are now stru
     - switch
     - wireless
 
-Each product or scope will have a **CONFIGURE** and/or **MONITOR** folder, to indicate the types of endpoints that are available and the permissions likely required. 
+#### Categories
 
 The services will be grouped into categories. This will provide clarity on the types of operations available and the likely permissions required. This should also provide a focused set of resources when building read-only dashboards (**MONITOR**), or automation scripts (**CONFIGURE**).
 
 
-**Category**
+*Folder Structure*
 
 - appliance
-    - CONFIGURE
+    - **CONFIGURE**
         - firewall         
-    - MONITOR
+    - **MONITOR**
         - performance
 
 ### Resource Path changes
