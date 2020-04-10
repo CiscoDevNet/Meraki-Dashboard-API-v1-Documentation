@@ -14,7 +14,7 @@ In addition, several improvements and new endpoints have been included with this
 
 ### API Documentation
 
-The API documentation and complimenting Postman Collection will be structured based on General and Product service groups, which will then contain the related resources.
+The API Endpoint documentation and complimenting Postman Collection are now structured based on General and Product service groups, which will then contain the related resources.
 
 
 **Endpoint Domains**
@@ -33,31 +33,26 @@ The API documentation and complimenting Postman Collection will be structured ba
     - switch
     - wireless
 
-
 Each product or scope will have a **CONFIGURE** and/or **MONITOR** folder, to indicate the types of endpoints that are available and the permissions likely required. 
 
 
 **Endpoint Types**
 
-- Products
     - appliance
         - CONFIGURE
-            - firewall
-            
+            - firewall         
         - MONITOR
             - performance
 
-
-
 ### Resource Path changes
 
-The endpoint URL paths will always contain the Meraki product, reducing ambiguity when working with resources with similar yet unique functionality. 
+The endpoint URL paths will always contain the Meraki product if required, reducing ambiguity when working with resources that have similar yet unique functionality. 
 
 **Product Service Groups Examples**
 
-    `/appliance/ports`
+`/appliance/ports`
 
-    `/switch/ports`
+`/switch/ports`
 
 
 ### Authorization
@@ -66,11 +61,11 @@ The API calls will now use an Authorization Bearer token, per industry standards
 
 **Request Header**
 
-    ```json
-    {
-        "Authorization": Bearer <Meraki_API_Key>
-    }
-    ```
+```json
+{
+    "Authorization": Bearer <Meraki_API_Key>
+}
+```
 
 See the [Changelog](https://developer.cisco.com/meraki/whats-new/#!v1-0-0-beta-0) for all the details.
 
