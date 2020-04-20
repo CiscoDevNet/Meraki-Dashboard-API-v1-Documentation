@@ -27,4 +27,4 @@ Then go to your profile to generate the API key.
 
 > save this key in a secure location, as it represents your admin credentials
 
-![](../images/dashGenerateAPIkey.png)
+<img src="../images/dashGenerateAPIkey.png" width="400px">
