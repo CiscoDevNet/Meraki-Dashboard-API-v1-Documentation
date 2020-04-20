@@ -62,9 +62,11 @@
                     "title": "Action Batches",
                     "items": [
                         {
+                            "title": "Overview",
                             "content": "docs/ActionBatches.md"
                         },
                         {
+                            "title": "Supported Resources",
                             "content": "docs/ActionBatchesResources.md"
                         }
                     ]
