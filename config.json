@@ -12,9 +12,9 @@
             "title": "Endpoints",
             "type": "oas",
             "content": "config/apiv1_draft_cat.json",
-            "config": {       
+            "config": {
                 "overview": {
-                    "markdownPath":"docs/overview.md"
+                    "markdownPath": "docs/overview.md"
                 },
                 "apiKeyGenerator": {
                     "$remoteModule": "config/api_key.js"
@@ -60,7 +60,16 @@
             "items": [
                 {
                     "title": "Action Batches",
-                    "content": "docs/ActionBatches.md"
+                    "items": [
+                        {
+                            "title": "Overview",
+                            "content": "docs/ActionBatches.md"
+                        },
+                        {
+                            "title": "Supported Resources",
+                            "content": "docs/ActionBatchesResources.md"
+                        }
+                    ]
                 }
             ]
         },
