@@ -7,7 +7,11 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+network_id = 'L_646829496481104079'
+rules = [{'comment': 'Deny SSH', 'policy': 'deny', 'ipVersion': 'ipv4', 'protocol': 'tcp', 'srcCidr': '10.1.10.0/24', 'srcPort': 'any', 'dstCidr': '172.16.30/24', 'dstPort': '22', 'vlan': '10'}]
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.switch.updateNetworkSwitchAccessControlLists(
+    network_id, rules
+)
 
 print(response)

@@ -7,7 +7,11 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+network_id = 'L_646829496481104079'
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.appliance.updateNetworkApplianceTrafficShapingUplinkBandwidth(
+    network_id, 
+    bandwidthLimits={'wan1': {'limitUp': 1000000, 'limitDown': 1000000}, 'wan2': {'limitUp': 1000000, 'limitDown': 1000000}, 'cellular': {'limitUp': 51200, 'limitDown': 51200}}
+)
 
 print(response)

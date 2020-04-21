@@ -7,7 +7,14 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+organization_id = '549236'
+name = 'Long Island Office'
+product_types = ['appliance', 'switch', 'camera']
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.organizations.createOrganizationNetwork(
+    organization_id, name, product_types, 
+    tags=' tag1 tag2 ', 
+    timeZone='America/Los_Angeles'
+)
 
 print(response)

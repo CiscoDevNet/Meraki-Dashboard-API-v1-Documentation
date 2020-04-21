@@ -7,7 +7,13 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+serial = 'Q2QN-9J8L-SLPD'
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.wireless.updateDeviceWirelessBluetoothSettings(
+    serial, 
+    uuid='00000000-0000-0000-000-000000000000', 
+    major=13, 
+    minor=125
+)
 
 print(response)

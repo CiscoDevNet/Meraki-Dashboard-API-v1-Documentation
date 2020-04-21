@@ -7,7 +7,14 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+organization_id = '549236'
+email = 'miles@meraki.com'
+name = 'Miles Meraki'
+org_access = 'none'
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.organizations.createOrganizationAdmin(
+    organization_id, email, name, org_access, 
+    tags=[{'tag': 'west', 'access': 'read-only'}]
+)
 
 print(response)

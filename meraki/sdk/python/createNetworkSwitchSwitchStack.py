@@ -7,7 +7,12 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+network_id = 'L_646829496481104079'
+name = 'A cool stack'
+serials = ['QBZY-XWVU-TSRQ', 'QBAB-CDEF-GHIJ']
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.switch.createNetworkSwitchSwitchStack(
+    network_id, name, serials
+)
 
 print(response)

@@ -7,7 +7,11 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+network_id = 'L_646829496481104079'
+servers = [{'host': '1.2.3.4', 'port': 443, 'roles': ['Wireless event log', 'URLs']}]
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.networks.updateNetworkSyslogServers(
+    network_id, servers
+)
 
 print(response)

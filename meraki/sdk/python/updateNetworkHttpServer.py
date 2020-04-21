@@ -7,7 +7,14 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+network_id = 'L_646829496481104079'
+id_ = ''
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.networks.updateNetworkHttpServer(
+    network_id, id_, 
+    name='My HTTP server', 
+    url='https://www.example.com/webhooks', 
+    sharedSecret='foobar'
+)
 
 print(response)

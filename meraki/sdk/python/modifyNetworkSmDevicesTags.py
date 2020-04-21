@@ -7,7 +7,13 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+network_id = 'L_646829496481104079'
+tags = 'tag1,tag2'
+update_action = 'add'
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.sm.modifyNetworkSmDevicesTags(
+    network_id, tags, update_action, 
+    scope='withAny, old_tag'
+)
 
 print(response)

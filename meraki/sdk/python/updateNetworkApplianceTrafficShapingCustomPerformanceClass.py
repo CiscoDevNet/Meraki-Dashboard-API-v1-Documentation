@@ -7,7 +7,15 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+network_id = 'L_646829496481104079'
+custom_performance_class_id = ''
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.appliance.updateNetworkApplianceTrafficShapingCustomPerformanceClass(
+    network_id, custom_performance_class_id, 
+    name='myCustomPerformanceClass', 
+    maxLatency=100, 
+    maxJitter=100, 
+    maxLossPercentage=5
+)
 
 print(response)

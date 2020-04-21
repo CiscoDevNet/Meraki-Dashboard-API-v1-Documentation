@@ -7,7 +7,12 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+organization_id = '549236'
+license_id_to_renew = '123'
+unused_license_id = '1234'
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.organizations.renewOrganizationLicensesSeats(
+    organization_id, license_id_to_renew, unused_license_id
+)
 
 print(response)

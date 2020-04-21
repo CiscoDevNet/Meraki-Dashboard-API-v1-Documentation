@@ -7,7 +7,15 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+network_id = 'L_646829496481104079'
+id_ = '1234'
+name = 'My VLAN'
+subnet = '192.168.1.0/24'
+appliance_ip = '192.168.1.1'
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.appliance.createNetworkApplianceVlan(
+    network_id, id_, name, subnet, appliance_ip, 
+    groupPolicyId='101'
+)
 
 print(response)

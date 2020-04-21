@@ -7,7 +7,15 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+network_id = 'L_646829496481104079'
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.wireless.updateNetworkWirelessBluetoothSettings(
+    network_id, 
+    scanningEnabled=True, 
+    advertisingEnabled=True, 
+    uuid='00000000-0000-0000-000-000000000000', 
+    majorMinorAssignmentMode='Non-unique', 
+    major=1
+)
 
 print(response)

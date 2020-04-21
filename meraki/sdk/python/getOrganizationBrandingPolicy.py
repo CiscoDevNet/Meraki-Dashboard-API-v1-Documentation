@@ -7,7 +7,11 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+organization_id = '549236'
+branding_policy_id = ''
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.organizations.getOrganizationBrandingPolicy(
+    organization_id, branding_policy_id
+)
 
 print(response)

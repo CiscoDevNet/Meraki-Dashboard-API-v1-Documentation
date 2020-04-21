@@ -7,7 +7,12 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+network_id = 'L_646829496481104079'
+number = ''
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.wireless.updateNetworkWirelessSsidFirewallL3FirewallRules(
+    network_id, number, 
+    rules=[{'comment': 'Allow TCP traffic to subnet with HTTP servers.', 'policy': 'allow', 'protocol': 'tcp', 'destPort': 443, 'destCidr': '192.168.1.0/24'}]
+)
 
 print(response)

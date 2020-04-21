@@ -7,7 +7,14 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+serial = 'Q2QN-9J8L-SLPD'
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.devices.updateDevice(
+    serial, 
+    name='My AP', 
+    tags=' recently-added ', 
+    lat=37.4180951010362, 
+    lng=-122.098531723022
+)
 
 print(response)

@@ -7,7 +7,13 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+network_id = 'L_646829496481104079'
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.networks.updateNetworkNetflowSettings(
+    network_id, 
+    reportingEnabled=True, 
+    collectorIp='1.2.3.4', 
+    collectorPort=443
+)
 
 print(response)

@@ -7,7 +7,11 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+serial = 'Q2QN-9J8L-SLPD'
+zone_id = ''
 
-response = dashboard.organizations.getOrganizations()
+response = dashboard.camera.getDeviceCameraAnalyticsZoneHistory(
+    serial, zone_id
+)
 
 print(response)
