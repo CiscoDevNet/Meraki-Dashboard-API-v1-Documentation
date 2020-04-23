@@ -1,16 +1,13 @@
-collect = {}
-organization_id = 'organizationId4'
-collect['organization_id'] = organization_id
+import meraki
 
-claim_organization = ClaimOrganizationModel()
-claim_organization.orders = ['4CXXXXXXX']
-claim_organization.serials = ['Q234-ABCD-5678']
-claim_organization.licenses = []
+# Defining your API key as a variable in source code is not recommended
+API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
+# Instead, use an environment variable as shown under the Usage section
+# @ https://github.com/meraki/dashboard-api-python/
 
-claim_organization.licenses.append(LicenseModel())
-claim_organization.licenses[0].key = 'Z2XXXXXXXXXX'
-claim_organization.licenses[0].mode = Mode2Enum.ADDDEVICES
+dashboard = meraki.DashboardAPI(API_KEY)
 
-collect['claim_organization'] = claim_organization
 
-result = organizations_controller.claim_organization(collect)
+response = dashboard.organizations.getOrganizations()
+
+print(response)

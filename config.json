@@ -23,7 +23,14 @@
                     "$remoteModule": "config/group_domain_cat_api.js"
                 },
                 "exampleAsDefault": true,
-                "expand": 3
+                "expand": 3,
+                "sampleCode": {
+                    "python": {
+                        "folder":"meraki/sdk/python",
+                        "name":"Meraki Python Library",
+                        "highlight":"python"
+                    }
+                }
             }
         },
         {
