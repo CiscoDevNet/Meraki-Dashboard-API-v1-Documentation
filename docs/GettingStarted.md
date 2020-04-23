@@ -16,9 +16,14 @@ In addition to the path URL, an `Authorization` header must be added to every AP
 }
 ```
 
-```cUrl
+```cURL
 curl https://api.meraki.com/api/v1/organizations \
   -H 'Authorization: Bearer {MERAKI-API-KEY}'
+```
+
+```Python library
+import meraki
+dashboard = meraki.DashboardAPI(API_KEY)
 ```
 
 Read more about generating an API key [here](Authorization.md).
