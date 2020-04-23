@@ -27,7 +27,7 @@
                 "sampleCode": {
                     "python": {
                         "folder":"meraki/sdk/python",
-                        "name":"Meraki Python SDK",
+                        "name":"Meraki Python Library",
                         "highlight":"python"
                     }
                 }
