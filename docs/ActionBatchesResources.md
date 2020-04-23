@@ -9,26 +9,29 @@ Cellular gateway dhcp setting| Update common DHCP settings of MGs| `/networks/{n
 Cellular gateway port forwarding rules| Updates the port forwarding rules for a single MG.| `/devices/{serial}/cellularGateway/settings/portForwardingRules`| update
 Cellular gateway subnet pool| Update the subnet pool and mask configuration for MGs in the network.| `/networks/{networkId}/cellularGateway/settings/subnetPool`| update
 Cellular gateway uplink setting| Updates the uplink settings for your MG network.| `/networks/{networkId}/cellularGateway/settings/uplink`| update
+Custom performance class| Delete a custom performance class from an MX network| `/networks/{networkId}/appliance/trafficShaping/customPerformanceClasses/{customPerformanceClassId}`| destroy
+Custom performance class| Update a custom performance class for an MX network| `/networks/{networkId}/appliance/trafficShaping/customPerformanceClasses/{customPerformanceClassId}`| update
+Custom performance class| Add a custom performance class for an MX network| `/networks/{networkId}/appliance/trafficShaping/customPerformanceClasses`| create
 Device| Claim devices into a network| `/networks/{networkId}/devices`| claim
 Dhcp server policy| Update the DHCP server policy| `/networks/{networkId}/switch/dhcpServerPolicy`| update
 Dscp cos mapping| Update the DSCP to CoS mappings| `/networks/{networkId}/switch/dscpToCosMappings`| update
 Floor plan| Destroy a floor plan| `/networks/{networkId}/floorPlans/{floorPlanId}`| destroy
 Floor plan| Update a floor plan's geolocation and other meta data| `/networks/{networkId}/floorPlans/{floorPlanId}`| update
 Group policy| Delete a group policy| `/networks/{networkId}/groupPolicies/{groupPolicyId}`| destroy
-Group policy| Update a group policy| `/networks/{networkId}/groupPolicies/{groupPolicyId}`| update
 Group policy| Create a group policy| `/networks/{networkId}/groupPolicies`| create
+Group policy| Update a group policy| `/networks/{networkId}/groupPolicies/{groupPolicyId}`| update
 License| Assign SM seats to a network. This will increase the managed SM device limit of the network| `/organizations/{organizationId}/licenses`| assignSeats
 License| Move SM seats to another organization| `/organizations/{organizationId}/licenses`| moveSeats
 License| Renew SM seats of a license. This will extend the license expiration date of managed SM devices covered by this license| `/organizations/{organizationId}/licenses`| renewSeats
 License| Update a license| `/organizations/{organizationId}/licenses/{licenseId}`| update
 License| Move licenses to another organization. This will also move any devices that the licenses are assigned to| `/organizations/{organizationId}/licenses`| move
+Link aggregation| Split a link aggregation group into separate ports| `/networks/{networkId}/switch/linkAggregations/{linkAggregationId}`| destroy
 Link aggregation| Create a link aggregation group| `/networks/{networkId}/switch/linkAggregations`| create
 Link aggregation| Update a link aggregation group| `/networks/{networkId}/switch/linkAggregations/{linkAggregationId}`| update
-Link aggregation| Split a link aggregation group into separate ports| `/networks/{networkId}/switch/linkAggregations/{linkAggregationId}`| destroy
 MTU configuration| Update the MTU configuration| `/networks/{networkId}/switch/mtu`| update
 MX VLAN settings| Enable/Disable VLANs for the given network| `/networks/{networkId}/appliance/vlans/settings`| update
 MX connectivity monitoring destination| Update the connectivity testing destinations for an MX network| `/networks/{networkId}/appliance/connectivityMonitoringDestinations`| update
-MX l7 firewall| Update the MX L7 firewall rules for an MX network| `/networks/{networkId}/l7FirewallRules`| update
+MX l7 firewall| Update the MX L7 firewall rules for an MX network| `/networks/{networkId}/appliance/firewall/l7FirewallRules`| update
 MX port| Update the per-port VLAN settings for a single MX port.| `/networks/{networkId}/appliance/ports/{portId}`| update
 MX uplink setting| Updates the uplink bandwidth settings for your MX network.| `/networks/{networkId}/appliance/trafficShaping/uplinkBandwidth`| update
 Management interface settings| Update the management interface settings for a device| `/devices/{serial}/managementInterface`| update
@@ -39,14 +42,14 @@ Multicast| Update multicast settings for a network| `/networks/{networkId}/switc
 Network| Delete a network| `/networks/{networkId}`| destroy
 Network| Create a network| `/organizations/{organizationId}/networks`| create
 Network settings| Update the settings for a network| `/networks/{networkId}/settings`| update
-Qos rule| Add a quality of service rule| `/networks/{networkId}/switch/qosRules`| create
-Qos rule| Delete a quality of service rule| `/networks/{networkId}/switch/qosRules/{qosRuleId}`| destroy
-Qos rule| Update a quality of service rule| `/networks/{networkId}/switch/qosRules/{qosRuleId}`| update
 Qos rule| Update the order in which the rules should be processed by the switch| `/networks/{networkId}/switch/qosRules/order`| update_order
+Qos rule| Delete a quality of service rule| `/networks/{networkId}/switch/qosRules/{qosRuleId}`| destroy
+Qos rule| Add a quality of service rule| `/networks/{networkId}/switch/qosRules`| create
+Qos rule| Update a quality of service rule| `/networks/{networkId}/switch/qosRules/{qosRuleId}`| update
 Quality and retention setting| Update quality and retention settings for the given camera| `/devices/{serial}/camera/qualityAndRetention`| update
+RF profile| Creates new RF profile for this network| `/networks/{networkId}/wireless/rfProfiles`| create
 RF profile| Delete a RF Profile| `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}`| destroy
 RF profile| Updates specified RF profile for this network| `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}`| update
-RF profile| Creates new RF profile for this network| `/networks/{networkId}/wireless/rfProfiles`| create
 Radio settings| Update the radio settings of a device| `/devices/{serial}/wireless/radio/settings`| update
 STP configuration| Updates STP settings| `/networks/{networkId}/switch/stp`| update
 Site to site vpn| Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.| `/networks/{networkId}/appliance/vpn/siteToSiteVpn`| update
@@ -55,6 +58,7 @@ Storm control| Update the storm control configuration for a switch network| `/ne
 Switch port| Cycle a set of switch ports| `/devices/{serial}/switch/ports`| cycle
 Switch port| Update a switch port| `/devices/{serial}/switch/ports/{portId}`| update
 Switch port schedule| Update a switch port schedule| `/networks/{networkId}/switch/portSchedules/{portScheduleId}`| update
+Switch profile port| Update a switch profile port| `/organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports/{portId}`| update
 Traffic shaping settings| Update the traffic shaping settings for an MX network| `/networks/{networkId}/appliance/trafficShaping/rules`| update
 Traffic shaping settings| Update the traffic shaping settings for an SSID on an MR network| `/networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules`| update
 VLAN| Add a VLAN| `/networks/{networkId}/appliance/vlans`| create
