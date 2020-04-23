@@ -115,6 +115,17 @@ Note the `id` for future endpoints that require a `networkId`
 ### Request
 `GET /networks/:networkId/devices`
 
+```cURL
+curl https://api.meraki.com/api/v1/networks/{networkId}/devices \
+  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
+```
+
+```Python
+import meraki
+dashboard = meraki.DashboardAPI(API_KEY)
+response = dashboard.networks.getNetworkDevices(net_id)
+```
+
 ### Response
 ```json
 Successful HTTP Status: 200
@@ -138,6 +149,11 @@ Successful HTTP Status: 200
     }
   }
 ]
+```
+
+```Python
+>>> print(response)
+[{'lat': 37.4180951010362, 'lng': -122.098531723022, 'address': '', 'serial': 'Q2QN-9J8L-SLPD', 'mac': 'e0:55:3d:17:d4:23', 'wan1Ip': '10.10.10.106', 'wan2Ip': None, 'lanIp': '10.10.10.106', 'url': 'https://n149.meraki.com/DevNet-Sandbox-A/n/hZB0Gcvc/manage/nodes/new_list/246656701813795', 'networkId': 'L_646829496481104079', 'model': 'MX65', 'firmware': 'wired-14-40', 'floorPlanId': None}, {'lat': 37.4180951010362, 'lng': -122.098531723022, 'address': '', 'serial': 'Q2HP-F5K5-R88R', 'mac': '88:15:44:df:f3:af', 'lanIp': '192.168.128.2', 'url': 'https://n149.meraki.com/DevNet-Sandbox-A/n/E8DpVavc/manage/nodes/new_list/149624931218351', 'networkId': 'L_646829496481104079', 'model': 'MS220-8P', 'switchProfileId': None, 'firmware': 'switch-11-22', 'floorPlanId': None}, {'lat': 37.4180951010362, 'lng': -122.098531723022, 'address': '', 'serial': 'Q2MD-BHHS-5FDL', 'mac': '88:15:44:60:21:10', 'lanIp': None, 'url': 'https://n149.meraki.com/DevNet-Sandbox-A/n/XT0N4cvc/manage/nodes/new_list/149624922841360', 'networkId': 'L_646829496481104079', 'model': 'MR53', 'firmware': 'wireless-25-14', 'floorPlanId': None}]
 ```
 Note the `serial` for future usage.
 
