@@ -21,7 +21,7 @@ curl https://api.meraki.com/api/v1/organizations \
   -H 'Authorization: Bearer {MERAKI-API-KEY}'
 ```
 
-```Python library
+```Python
 import meraki
 dashboard = meraki.DashboardAPI(API_KEY)
 ```
@@ -38,6 +38,17 @@ To begin navigating the API, you will first need to know your Organization ID. T
 ### Request
 `GET /organizations` 
 
+```cURL
+curl https://api.meraki.com/api/v1/organizations \
+  -H 'Authorization: Bearer {MERAKI-API-KEY}'
+```
+
+```Python
+import meraki
+dashboard = meraki.DashboardAPI(API_KEY)
+print(dashboard.organizations.getOrganizations())
+```
+
 ### Response
 ```json
 Successful HTTP Status: 200
@@ -47,6 +58,11 @@ Successful HTTP Status: 200
     "name":"My org"
   }
 ]
+```
+
+```Python
+>>> print(response)
+[{'id': '549236', 'name': 'DevNet Sandbox', 'url': 'https://n149.meraki.com/o/-t35Mb/manage/organization/overview'}]
 ```
 
 ## Find your Network ID
