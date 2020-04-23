@@ -91,11 +91,8 @@ Visit the [Changelog](https://developer.cisco.com/meraki/whats-new/#!v1-0-0-beta
 
 ### SDKs
 
-Going forward, the custom Meraki Python library will be the recommended SDK for simplified API scripting. The previously auto-generated Python, Node & Ruby SDKs for **v0** will remain in the Meraki GitHub but will no longer be maintained. 
+Going forward, the custom Meraki [Python library](pythonLibrary.md) will be the recommended SDK for simplified API scripting. The previously auto-generated Python, Node.js, and Ruby SDKs for **v0** will remain in the Meraki GitHub but will no longer be maintained. 
 
 #### Python
 
-The Meraki [Python Library](..#!python) has been updated to take advantage of all the new API enhancements plus many custom features to help both beginners and experienced programmers.
-
-
-
+The Meraki [Python Library](pythonLibrary.md) has been updated to take advantage of all the new API enhancements plus many custom features to help both beginners and experienced programmers.

@@ -18,7 +18,7 @@ In addition to the path URL, an `Authorization` header must be added to every AP
 
 ```cURL
 curl https://api.meraki.com/api/v1/organizations \
-  -H 'Authorization: Bearer {MERAKI-API-KEY}'
+  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
 ```
 
 ```Python
@@ -40,13 +40,13 @@ To begin navigating the API, you will first need to know your Organization ID. T
 
 ```cURL
 curl https://api.meraki.com/api/v1/organizations \
-  -H 'Authorization: Bearer {MERAKI-API-KEY}'
+  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
 ```
 
 ```Python
 import meraki
 dashboard = meraki.DashboardAPI(API_KEY)
-print(dashboard.organizations.getOrganizations())
+response = dashboard.organizations.getOrganizations()
 ```
 
 ### Response
@@ -74,6 +74,17 @@ Now that you have an Organization ID, list the networks of the organization.
 ### Request
 `GET /organizations/:organizationId/networks`
 
+```cURL
+curl https://api.meraki.com/api/v1/organizations/{organizationId}/networks \
+  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
+```
+
+```Python
+import meraki
+dashboard = meraki.DashboardAPI(API_KEY)
+response = dashboard.organizations.getOrganizationNetworks(org_id)
+```
+
 ### Response
 ```json
 Successful HTTP Status: 200
@@ -88,6 +99,12 @@ Successful HTTP Status: 200
   }
 ]
 ```
+
+```Python
+>>> print(response)
+[{'id': 'L_646829496481104079', 'organizationId': '549236', 'name': 'DevNet Sandbox Always on READ ONLY', 'timeZone': 'America/Los_Angeles', 'tags': None, 'productTypes': ['appliance', 'switch', 'wireless'], 'type': 'combined', 'disableMyMerakiCom': False, 'disableRemoteStatusPage': True}]
+```
+
 Note the `id` for future endpoints that require a `networkId`
 
 ## Find your Device Serials
