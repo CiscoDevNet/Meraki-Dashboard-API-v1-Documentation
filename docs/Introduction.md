@@ -21,7 +21,7 @@ We want to do so much more. But in order for us to include many of these new fea
 
 The focus of this **major** version is on **Simplicity** and **Scale**, by providing an enjoyable developer experience. 
 
-The API documentation, Postman Collection and Python library will remain synced and up-to-date with improved navigation and features.
+The API documentation, Postman collection, and Python library will remain synced and up-to-date with improved navigation and features.
 
 In addition, several improvements and new endpoints have been included with this major release.
 
