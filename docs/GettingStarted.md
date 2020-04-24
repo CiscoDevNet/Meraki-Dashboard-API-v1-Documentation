@@ -1,10 +1,14 @@
 ## Base URI
 
-Every API request will begin with the following **Base URI**. 
+Every API request will begin with the following **base URI**. 
 
 > `https://api.meraki.com/api/v1`
 
 Read more about the path schema [here](PathSchema.md).
+
+### Python library
+
+If using the Meraki [Python library](pythonLibrary.md), install it via `pip install meraki`.
 
 ## Authorization
 
@@ -12,13 +16,13 @@ In addition to the path URL, an `Authorization` header must be added to every AP
  
 ```json
 {
-	"Authorization": "Bearer <Meraki_API_Key>"
+	"Authorization": "Bearer <API_KEY>"
 }
 ```
 
 ```cURL
 curl https://api.meraki.com/api/v1/organizations \
-  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
+  -L -H 'Authorization: Bearer {API_KEY}'
 ```
 
 ```Python
@@ -28,9 +32,9 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 Read more about generating an API key [here](Authorization.md).
 
-## Find your Organization ID 
+## Find your organization ID 
 
-To begin navigating the API, you will first need to know your Organization ID. This will be required for endpoints needing an `organizationId` parameter.
+To begin navigating the API, you will first need to know your organization ID. This will be required for endpoints needing an `organizationId` parameter.
 
 [List the organizations that the user has privileges on](##!get-organizations)
 
@@ -40,7 +44,7 @@ To begin navigating the API, you will first need to know your Organization ID. T
 
 ```cURL
 curl https://api.meraki.com/api/v1/organizations \
-  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
+  -L -H 'Authorization: Bearer {API_KEY}'
 ```
 
 ```Python
@@ -65,9 +69,9 @@ Successful HTTP Status: 200
 [{'id': '549236', 'name': 'DevNet Sandbox', 'url': 'https://n149.meraki.com/o/-t35Mb/manage/organization/overview'}]
 ```
 
-## Find your Network ID
+## Find your network ID
 
-Now that you have an Organization ID, list the networks of the organization. 
+Now that you have an organization ID, list the networks of the organization. 
  
 [List the networks in an organization](##!get-organization-networks)
 
@@ -76,7 +80,7 @@ Now that you have an Organization ID, list the networks of the organization.
 
 ```cURL
 curl https://api.meraki.com/api/v1/organizations/{organizationId}/networks \
-  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
+  -L -H 'Authorization: Bearer {API_KEY}'
 ```
 
 ```Python
@@ -105,9 +109,9 @@ Successful HTTP Status: 200
 [{'id': 'L_646829496481104079', 'organizationId': '549236', 'name': 'DevNet Sandbox Always on READ ONLY', 'timeZone': 'America/Los_Angeles', 'tags': None, 'productTypes': ['appliance', 'switch', 'wireless'], 'type': 'combined', 'disableMyMerakiCom': False, 'disableRemoteStatusPage': True}]
 ```
 
-Note the `id` for future endpoints that require a `networkId`
+Note the `id` for future endpoints that require a `networkId`.
 
-## Find your Device Serials
+## Find your device serials
  Use the `id` from the `~/networks` response as the `:networkId`  in the following request.
  
 [List the devices in a network](##!get-network-devices)
@@ -117,7 +121,7 @@ Note the `id` for future endpoints that require a `networkId`
 
 ```cURL
 curl https://api.meraki.com/api/v1/networks/{networkId}/devices \
-  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
+  -L -H 'Authorization: Bearer {API_KEY}'
 ```
 
 ```Python
@@ -157,26 +161,53 @@ Successful HTTP Status: 200
 ```
 Note the `serial` for future usage.
 
-## Get Network Device Uplink
- Use the `serial` from the `/networks/:networkId/devices` response as the `:networkId`  in the following request.
+## Get the device's management interface settings
+ Use the `serial` from the `/networks/:networkId/devices` response as the `:serial`  in the following request to determine whether it has been assigned a dynamic or static IP address.
 
-[Return the uplink information for a device](##!get-network-device-uplink)
+[Return the management interface settings for a device](##!get-device-management-interface)
 
 ### Request
-`GET /devices/:serial/uplink`
+`GET /devices/:serial/managementInterface`
+
+```cURL
+curl https://api.meraki.com/api/v1/devices/{serial}/managementInterface \
+  -L -H 'Authorization: Bearer {API_KEY}'
+```
+
+```Python
+import meraki
+dashboard = meraki.DashboardAPI(API_KEY)
+response = dashboard.networks.getNetworkDevices(serial)
+print(response)
+```
 
 ### Response
 ```json
 Successful HTTP Status: 200
-[
-  {
-    "interface": "WAN 1",
-    "status": "Active",
-    "ip": "1.2.3.4",
-    "gateway": "1.2.3.5",
-    "publicIp": "123.123.123.1",
-    "dns": "8.8.8.8, 8.8.4.4",
-    "usingStaticIp": false
+{
+  "ddnsHostnames": {
+    "activeDdnsHostname": "mx1-sample.dynamic-m.com",
+    "ddnsHostnameWan1": "mx1-sample-1.dynamic-m.com",
+    "ddnsHostnameWan2": "mx1-sample-2.dynamic-m.com"
+  },
+  "wan1": {
+    "wanEnabled": "not configured",
+    "usingStaticIp": true,
+    "staticIp": "1.2.3.4",
+    "staticSubnetMask": "255.255.255.0",
+    "staticGatewayIp": "1.2.3.1",
+    "staticDns": [ "1.2.3.2", "1.2.3.3" ],
+    "vlan": 7
+  },
+  "wan2": {
+    "wanEnabled": "enabled",
+    "usingStaticIp": false,
+    "vlan": 2
   }
-]
+}
+```
+
+```Python
+>>> print(response)
+{'wan1': {'wanEnabled': 'not configured', 'usingStaticIp': False, 'vlan': None}, 'wan2': {'wanEnabled': 'not configured', 'usingStaticIp': False, 'vlan': None}, 'ddnsHostnames': {'activeDdnsHostname': 'dnsmb0-wired-mttrcvbqjp.dynamic-m.com', 'ddnsHostnameWan1': 'dnsmb0-wired-mttrcvbqjp-1.dynamic-m.com', 'ddnsHostnameWan2': 'dnsmb0-wired-mttrcvbqjp-2.dynamic-m.com'}}
 ```
