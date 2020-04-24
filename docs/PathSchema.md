@@ -1,6 +1,6 @@
 # Path Schema
 
-The Meraki API resources are organized by scope and then by the product and its related service groups.
+The Meraki API resources are organized by scope, and then by the product and its related service groups.
 
 `baseURI/scope/:id/product/serviceGroup/:id/service/:id`
 
