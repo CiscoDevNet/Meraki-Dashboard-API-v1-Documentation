@@ -11,9 +11,9 @@ Each request will have a complete description of all the required parameters and
 
 ## API Key
 
-- A demo API key is added by default to quickly kick the tires.
+- A demo API key is added by default to easily kick the tires.
 
-- Add your own API key and paramater values in the **Configuration** menu
+- Add your own API key and parameter values in the **Configuration** menu to test against your own environment.
 
 
 <img src="../images/interactiveAPIConfig.png" width="400px">
