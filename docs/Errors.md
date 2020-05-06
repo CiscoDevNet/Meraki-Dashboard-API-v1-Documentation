@@ -26,34 +26,3 @@ If the response code is not specific enough to determine the cause of the issue,
 The API will raise exceptions in the event something failed, such as missing or invalid parameters. 
 We recommend writing code that gracefully handles all possible API exceptions.
 
-*JavaScript Example*
-
-```js
-let input = [];
-let networkId = "L_1234567890";
-input["networkId"] = networkId;
-
-let client = new meraki.ProvisionNetworkClientsModel();
-client.mac = "11:22:33:44:55:66";
-client.name = "TestClient";
-input["provisionNetworkClients"] = client;
-
-meraki.ClientsController.createProvisionNetworkClients(input).then(
-  res => {
-    console.log(res);
-  },
-  err => {
-    console.log(err);
-  }
-);
-```
-
-*Error Handling*
-```js
->
-{ errorMessage: 'HTTP Response Not OK',
-  errorCode: 400,
-  errorResponse:
-   '{"errors":["Missing the following parameters: \'devicePolicy\'"]}' }
-
-```
