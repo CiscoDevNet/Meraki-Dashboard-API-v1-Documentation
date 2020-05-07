@@ -55,7 +55,7 @@ Authorization: Bearer {API_KEY}
 3. If making the API call in cURL, check that the --location-trusted flag is included.
 
 4. If making the API call in Postman, check that the setting “Follow Authorization header” is enabled.
-<img src="../images/authorizationPostman.png" width="400px">
+<img src="../images/authorizationPostman.png" width="600px">
 
 5. If using the [Python library](pythonLibrary.md), authorization is handled automatically, so assuming the right API key is supplied, the code snippet under [getOrganizations](##!get-organizations) “Template > Meraki Python Library” will work w/ the v1 library installed.
-<img src="../images/authorizationPython.png" width="400px">
+<img src="../images/authorizationPython.png" width="800px">
