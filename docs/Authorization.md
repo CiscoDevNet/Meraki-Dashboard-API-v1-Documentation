@@ -52,9 +52,9 @@ If you're get a 401 Unauthorized error (with message _"Missing API key"_) when u
 Authorization: Bearer {API_KEY}
 ```
 
-3. If making the API call in cURL, check that the --location-trusted flag is included.
+3. If making the API call in cURL, check that the **--location-trusted** flag is included.
 
-4. If making the API call in Postman, check that the setting “Follow Authorization header” is enabled.
+4. If making the API call in Postman, check that the setting “_Follow Authorization header_” is enabled.
 <img src="../images/authorizationPostman.png" width="600px">
 
 5. If using the [Python library](pythonLibrary.md), authorization is handled automatically, so assuming the right API key is supplied, the Python code snippet for [getOrganizations](##!get-organizations) > _Template_ > _Meraki Python Library_ will work w/ the v1 library installed.
