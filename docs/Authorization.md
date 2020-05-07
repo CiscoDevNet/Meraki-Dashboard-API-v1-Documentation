@@ -40,3 +40,22 @@ Then go to your profile by clicking on your account email address (on the upper-
 > save this key in a secure location, as it represents your admin credentials
 
 <img src="../images/dashGenerateAPIkey.png" width="400px">
+
+## Troubleshooting
+
+If you're get a 401 Unauthorized error (with message _"Missing API key"_) when using dashboard API v1, check the following to troubleshoot:
+
+1. As an example, when using your API key to retrieve the [GET /organizations](##!get-organizations) endpoint, you should see the same data as shown when navigating to http://api.meraki.com/api/v1/organizations in your browser, using an authenticated session with the credentials that generated the API key.
+
+2. Next, check that your API call has the correct header with the following (and not v0's `X-Cisco-Meraki-API-Key`):
+```json
+Authorization: Bearer {API_KEY}
+```
+
+3. If making the API call in cURL, check that the --location-trusted flag is included.
+
+4. If making the API call in Postman, check that the setting “Follow Authorization header” is enabled.
+<img src="../images/authorizationPostman.png" width="400px">
+
+5. If using the [Python library](pythonLibrary.md), authorization is handled automatically, so assuming the right API key is supplied, the code snippet under [getOrganizations](##!get-organizations) “Template > Meraki Python Library” will work w/ the v1 library installed.
+<img src="../images/authorizationPython.png" width="400px">
