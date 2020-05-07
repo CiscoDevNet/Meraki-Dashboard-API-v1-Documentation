@@ -32,7 +32,7 @@ confirmed| Set to true for immediate execution. Set to false if the action shoul
 synchronous| Force the batch to run synchronous. There can be at most 20 actions in synchronous batch.
 actions| A set of changes to make as part of this action
 resource| Unique identifier for the resource to be acted on
-operation| The operation to be run on the resource, such as "**create**", "**update**", "**destroy**", "**bind**", etc
+operation| The operation to be run on the resource, such as "**create**", "**update**", "**destroy**", etc
 body| The body of the action. Example: `{"tags": tags, "type": "access", "vlan": vlan}`
 
 #### SAMPLE REQUEST
