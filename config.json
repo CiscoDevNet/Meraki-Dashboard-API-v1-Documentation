@@ -16,6 +16,7 @@
                 "overview": {
                     "markdownPath": "docs/overview.md"
                 },
+                "theme":"meraki",
                 "apiKeyGenerator": {
                     "$remoteModule": "config/api_key.js"
                 },
