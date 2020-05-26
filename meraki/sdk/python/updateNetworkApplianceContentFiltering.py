@@ -9,12 +9,12 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
 
-response = dashboard.wireless.updateNetworkWirelessSettings(
+response = dashboard.appliance.updateNetworkApplianceContentFiltering(
     network_id, 
-    meshingEnabled=True, 
-    ipv6BridgeEnabled=False, 
-    locationAnalyticsEnabled=False, 
-    upgradeStrategy='minimizeUpgradeTime'
+    allowedUrlPatterns=['http://www.example.org', 'http://help.com.au'], 
+    blockedUrlPatterns=['http://www.example.com', 'http://www.betting.com'], 
+    blockedUrlCategories=['meraki:contentFiltering/category/1', 'meraki:contentFiltering/category/7'], 
+    urlCategoryListSize='topSites'
 )
 
 print(response)

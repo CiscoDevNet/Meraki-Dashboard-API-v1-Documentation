@@ -14,7 +14,7 @@ response = dashboard.appliance.updateNetworkApplianceVlan(
     network_id, vlan_id, 
     name='My VLAN', 
     subnet='192.168.1.0/24', 
-    applianceIp='192.168.1.1', 
+    applianceIp='192.168.1.2', 
     groupPolicyId='101', 
     dhcpHandling='Run a DHCP server', 
     dhcpLeaseTime='1 day', 

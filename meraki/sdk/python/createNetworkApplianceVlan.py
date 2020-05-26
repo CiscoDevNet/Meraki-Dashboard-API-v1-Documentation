@@ -11,7 +11,7 @@ network_id = 'L_646829496481104079'
 id_ = '1234'
 name = 'My VLAN'
 subnet = '192.168.1.0/24'
-appliance_ip = '192.168.1.1'
+appliance_ip = '192.168.1.2'
 
 response = dashboard.appliance.createNetworkApplianceVlan(
     network_id, id_, name, subnet, appliance_ip, 

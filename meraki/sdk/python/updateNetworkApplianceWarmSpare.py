@@ -8,12 +8,14 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
-client_id = ''
-device_policy = 'Group policy'
+enabled = True
 
-response = dashboard.networks.updateNetworkClientPolicy(
-    network_id, client_id, device_policy, 
-    groupPolicyId='101'
+response = dashboard.appliance.updateNetworkApplianceWarmSpare(
+    network_id, enabled, 
+    spareSerial='Q234-ABCD-5678', 
+    uplinkMode='virtual', 
+    virtualIp1='1.2.3.4', 
+    virtualIp2='1.2.3.4'
 )
 
 print(response)

@@ -8,12 +8,11 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
-client_id = ''
-device_policy = 'Group policy'
 
-response = dashboard.networks.updateNetworkClientPolicy(
-    network_id, client_id, device_policy, 
-    groupPolicyId='101'
+response = dashboard.networks.updateNetworkAlertsSettings(
+    network_id, 
+    defaultDestinations={'emails': ['miles@meraki.com'], 'allAdmins': True, 'snmp': True}, 
+    alerts=[{'type': 'gatewayDown', 'enabled': True, 'alertDestinations': {'emails': ['miles@meraki.com'], 'allAdmins': False, 'snmp': False}, 'filters': {'timeout': 60}}]
 )
 
 print(response)

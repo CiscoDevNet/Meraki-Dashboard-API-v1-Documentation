@@ -9,11 +9,9 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
 client_id = ''
-device_policy = 'Group policy'
 
-response = dashboard.networks.updateNetworkClientPolicy(
-    network_id, client_id, device_policy, 
-    groupPolicyId='101'
+response = dashboard.wireless.getNetworkWirelessClientConnectivityEvents(
+    network_id, client_id, total_pages='all'
 )
 
 print(response)

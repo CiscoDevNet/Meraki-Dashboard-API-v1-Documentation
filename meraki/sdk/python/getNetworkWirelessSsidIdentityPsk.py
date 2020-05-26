@@ -8,12 +8,11 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
-client_id = ''
-device_policy = 'Group policy'
+number = ''
+identity_psk_id = ''
 
-response = dashboard.networks.updateNetworkClientPolicy(
-    network_id, client_id, device_policy, 
-    groupPolicyId='101'
+response = dashboard.wireless.getNetworkWirelessSsidIdentityPsk(
+    network_id, number, identity_psk_id
 )
 
 print(response)
