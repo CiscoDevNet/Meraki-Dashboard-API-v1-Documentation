@@ -60,15 +60,15 @@ Authorization: Bearer {API_KEY}
 5. If using the [Python library](pythonLibrary.md), authorization is handled automatically, so assuming the right API key is supplied, the Python code snippet for [getOrganizations](##!get-organizations) > _Template_ > _Meraki Python Library_ will work w/ the v1 library installed.
 <img src="../images/authorizationPython.png" width="800px">
 
-6. If you really want to write your own functions in Python, then you will need to define a new instance of the requests.Session class that does not _rebuild_auth_ upon a redirect. For example:
+6. If you really want to write your own functions in Python, then you will need to define a new instance of the **requests.Session** class that does not _rebuild_auth_ upon a redirect. For example:
 ```python
 from requests import Session
 class NoRebuildAuthSession(Session):
-  def rebuild_auth(self, prepared_request, response):
-    '''
-    No code here means requests will always preserve the Authorization header when redirected.
-    Be careful not to leak your credentials to untrusted hosts!
-    '''
+    def rebuild_auth(self, prepared_request, response):
+        '''
+        No code here means requests will always preserve the Authorization header when redirected.
+        Be careful not to leak your credentials to untrusted hosts!
+        '''
 session = NoRebuildAuthSession()
 API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 response = session.get('https://api.meraki.com/api/v1/organizations/', headers={'Authorization': f'Bearer {API_KEY}'})
