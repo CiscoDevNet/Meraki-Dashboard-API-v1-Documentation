@@ -75,4 +75,6 @@ response = session.get('https://api.meraki.com/api/v1/organizations/', headers={
 print(response.json())
 ```
 
-6. The behavior here is standard and due to API clients like cURL and Postman stripping the Authorization header, for security purposes, when following an HTTP redirect. Another option without handling redirects is to use the reverse proxy base URL of https://api-mp.meraki.com/api/v1/ (with **-mp** added for this mega-proxy).
+7. If using PowerShell with **Invoke-RestMethod**, make sure that the _-PreserveAuthorizationOnRedirect_ flag is included.
+
+8. The behavior here is standard and due to API clients like cURL and Postman stripping the Authorization header, for security purposes, when following an HTTP redirect. Another option without handling redirects is to use the reverse proxy base URL of https://api-mp.meraki.com/api/v1/ (with **-mp** added for this mega-proxy).
