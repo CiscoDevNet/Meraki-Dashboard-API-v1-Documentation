@@ -13,7 +13,7 @@ port_id = ''
 response = dashboard.switch.updateDeviceSwitchPort(
     serial, port_id, 
     name='My switch port', 
-    tags='tag1 tag2', 
+    tags=['tag1', 'tag2'], 
     enabled=True, 
     type='access', 
     vlan=10, 

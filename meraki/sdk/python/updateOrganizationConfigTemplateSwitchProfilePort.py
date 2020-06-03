@@ -15,7 +15,7 @@ port_id = ''
 response = dashboard.switch.updateOrganizationConfigTemplateSwitchProfilePort(
     organization_id, config_template_id, profile_id, port_id, 
     name='My switch port', 
-    tags='tag1 tag2', 
+    tags=['tag1', 'tag2'], 
     enabled=True, 
     type='access', 
     vlan=10, 

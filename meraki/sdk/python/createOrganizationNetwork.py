@@ -13,7 +13,7 @@ product_types = ['appliance', 'switch', 'camera']
 
 response = dashboard.organizations.createOrganizationNetwork(
     organization_id, name, product_types, 
-    tags=' tag1 tag2 ', 
+    tags=['tag1', 'tag2'], 
     timeZone='America/Los_Angeles'
 )
 

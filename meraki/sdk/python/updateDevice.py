@@ -12,7 +12,7 @@ serial = 'Q2QN-9J8L-SLPD'
 response = dashboard.devices.updateDevice(
     serial, 
     name='My AP', 
-    tags=' recently-added ', 
+    tags=['recently-added'], 
     lat=37.4180951010362, 
     lng=-122.098531723022
 )
