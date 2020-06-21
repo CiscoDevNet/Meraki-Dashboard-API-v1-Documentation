@@ -9,8 +9,12 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
 
-response = dashboard.cellulargateway.getNetworkCellularGatewayDhcp(
-    network_id
+response = dashboard.wireless.updateNetworkWirelessAlternateManagementInterface(
+    network_id, 
+    enabled=True, 
+    vlanId=100, 
+    protocols=['radius', 'snmp', 'syslog', 'ldap'], 
+    accessPoints=[{'serial': 'Q234-ABCD-5678', 'alternateManagementIp': '1.2.3.4', 'subnetMask': '255.255.255.0', 'gateway': '1.2.3.5', 'dns1': '8.8.8.8', 'dns2': '8.8.4.4'}]
 )
 
 print(response)

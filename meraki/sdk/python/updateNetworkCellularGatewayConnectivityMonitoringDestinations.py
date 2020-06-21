@@ -9,7 +9,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
 
-response = dashboard.cellular_gateway.updateNetworkCellularGatewayConnectivityMonitoringDestinations(
+response = dashboard.cellulargateway.updateNetworkCellularGatewayConnectivityMonitoringDestinations(
     network_id, 
     destinations=[{'ip': '8.8.8.8', 'description': 'Google', 'default': False}, {'ip': '1.23.45.67', 'description': 'test description', 'default': True}, {'ip': '9.8.7.6'}]
 )

@@ -9,7 +9,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
 
-response = dashboard.cellular_gateway.updateNetworkCellularGatewayUplink(
+response = dashboard.cellulargateway.updateNetworkCellularGatewayUplink(
     network_id
 )
 

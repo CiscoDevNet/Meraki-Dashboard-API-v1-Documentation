@@ -9,7 +9,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
 
-response = dashboard.cellular_gateway.updateNetworkCellularGatewayDhcp(
+response = dashboard.cellulargateway.updateNetworkCellularGatewayDhcp(
     network_id, 
     dhcpLeaseTime='1 hour', 
     dnsNameservers='custom', 

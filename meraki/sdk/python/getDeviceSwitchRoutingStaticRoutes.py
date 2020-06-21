@@ -7,10 +7,10 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-network_id = 'L_646829496481104079'
+serial = 'Q2QN-9J8L-SLPD'
 
-response = dashboard.cellulargateway.getNetworkCellularGatewayDhcp(
-    network_id
+response = dashboard.switch.getDeviceSwitchRoutingStaticRoutes(
+    serial
 )
 
 print(response)

@@ -8,9 +8,16 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
+switch_stack_id = ''
+static_route_id = ''
 
-response = dashboard.cellulargateway.getNetworkCellularGatewayDhcp(
-    network_id
+response = dashboard.switch.updateNetworkSwitchSwitchStackRoutingStaticRoute(
+    network_id, switch_stack_id, static_route_id, 
+    name='My route', 
+    subnet='192.168.1.0/24', 
+    nextHopIp='1.2.3.4', 
+    advertiseViaOspfEnabled=False, 
+    preferOverOspfRoutesEnabled=False
 )
 
 print(response)

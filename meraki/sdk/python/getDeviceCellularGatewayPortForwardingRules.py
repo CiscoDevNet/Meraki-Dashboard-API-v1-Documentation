@@ -9,7 +9,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 serial = 'Q2QN-9J8L-SLPD'
 
-response = dashboard.cellular_gateway.getDeviceCellularGatewayPortForwardingRules(
+response = dashboard.cellulargateway.getDeviceCellularGatewayPortForwardingRules(
     serial
 )
 

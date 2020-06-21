@@ -8,9 +8,16 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 serial = 'Q2QN-9J8L-SLPD'
+interface_id = ''
 
-response = dashboard.cellulargateway.getDeviceCellularGatewayLan(
-    serial
+response = dashboard.switch.updateDeviceSwitchRoutingInterface(
+    serial, interface_id, 
+    name='L3 interface', 
+    subnet='192.168.1.0/24', 
+    interfaceIp='192.168.1.2', 
+    multicastRouting='disabled', 
+    vlanId=100, 
+    ospfSettings={'area': '0', 'cost': 1, 'isPassiveEnabled': True}
 )
 
 print(response)
