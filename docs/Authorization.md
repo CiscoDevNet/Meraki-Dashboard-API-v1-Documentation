@@ -43,7 +43,9 @@ Then go to your profile by clicking on your account email address (on the upper-
 
 ## Authorization with Bearer Token (beta)
 
-The Dashboard API v1 also supports Bearer authentication using the standard `Authorization` header parameter with the value being a string beginning with `Bearer `. *Note: This authorization method is in beta*
+The Dashboard API v1 also supports Bearer authentication using the standard `Authorization` header parameter. The value will a string beginning with the word `Bearer ` followed by your Meraki API key.
+
+*Note: This authorization method is in beta*
 
  
 ```json
