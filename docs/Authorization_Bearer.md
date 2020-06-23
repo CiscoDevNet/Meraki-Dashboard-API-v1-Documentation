@@ -1,16 +1,16 @@
 ## Authorization
 
-The Meraki Dashboard API requires a header parameter of `X-Cisco-Meraki-API-Key` to provide authorization for each request.
+The Meraki Dashboard API uses Bearer authentication, requiring an API key to be included in the header of each request.
  
 ```json
 {
-	"X-Cisco-Meraki-API-Key": <Meraki_API_Key>
+	"Authorization": Bearer <API_KEY>
 }
 ```
 
-```curl
+```cURL
 curl https://api.meraki.com/api/v1/organizations \
-  -H 'X-Cisco-Meraki-API-Key: {MERAKI-API-KEY}'
+  -L -H 'Authorization: Bearer {API_KEY}'
 ```
 
 ```Python
@@ -41,23 +41,7 @@ Then go to your profile by clicking on your account email address (on the upper-
 
 <img src="../images/dashGenerateAPIkey.png" width="400px">
 
-## Authorization with Bearer Token (beta)
-
-The Dashboard API v1 also supports Bearer authentication using the standard `Authorization` header parameter with the value being a string beginning with `Bearer `. *Note: This authorization method is in beta*
-
- 
-```json
-{
-	"Authorization": Bearer <API_KEY>
-}
-```
-
-```cURL
-curl https://api.meraki.com/api/v1/organizations \
-  -L -H 'Authorization: Bearer {API_KEY}'
-```
-
-### Troubleshooting
+## Troubleshooting
 
 If you're get a 401 Unauthorized error (with message _"Missing API key"_) when using dashboard API v1, check the following to troubleshoot:
 
