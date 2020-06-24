@@ -9,7 +9,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
 
-response = dashboard.cellulargateway.getNetworkCellularGatewayConnectivityMonitoringDestinations(
+response = dashboard.cellularGateway.getNetworkCellularGatewayConnectivityMonitoringDestinations(
     network_id
 )
 

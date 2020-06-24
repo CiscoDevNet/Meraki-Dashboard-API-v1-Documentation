@@ -9,11 +9,10 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
 service = ''
-access = 'restricted'
+access = ''
 
 response = dashboard.networks.updateNetworkFirewalledService(
-    network_id, service, access, 
-    allowedIps=['123.123.123.1']
+    network_id, service, access
 )
 
 print(response)

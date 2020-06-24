@@ -9,7 +9,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481104079'
 
-response = dashboard.cellulargateway.updateNetworkCellularGatewaySubnetPool(
+response = dashboard.cellularGateway.updateNetworkCellularGatewaySubnetPool(
     network_id, 
     mask='24', 
     cidr='192.168.0.0/16'

@@ -9,7 +9,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 serial = 'Q2QN-9J8L-SLPD'
 
-response = dashboard.cellulargateway.getDeviceCellularGatewayLan(
+response = dashboard.cellularGateway.getDeviceCellularGatewayLan(
     serial
 )
 
