@@ -66,17 +66,6 @@ The endpoint URL paths will always contain the Meraki product if required, reduc
 > `/switch/ports`
 
 
-### Authorization
-
-The API calls will now use an Authorization Bearer token, per industry standards.
-
-**Request Header**
-
-```json
-{
-    "Authorization": Bearer <Meraki_API_Key>
-}
-```
 
 ### Base URI
 
