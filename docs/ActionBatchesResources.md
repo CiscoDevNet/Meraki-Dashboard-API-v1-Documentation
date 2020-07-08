@@ -25,9 +25,9 @@ Floor plan| Update a floor plan's geolocation and other meta data| `/networks/{n
 Group policy| Create a group policy| `/networks/{networkId}/groupPolicies`| create
 Group policy| Delete a group policy| `/networks/{networkId}/groupPolicies/{groupPolicyId}`| destroy
 Group policy| Update a group policy| `/networks/{networkId}/groupPolicies/{groupPolicyId}`| update
+L3 interface| Delete a layer 3 interface from the switch| `/devices/{serial}/switch/routing/interfaces/{interfaceId}`| destroy
 L3 interface| Create a layer 3 interface for a switch| `/devices/{serial}/switch/routing/interfaces`| create
 L3 interface| Update a layer 3 interface for a switch| `/devices/{serial}/switch/routing/interfaces/{interfaceId}`| update
-L3 interface| Delete a layer 3 interface from the switch| `/devices/{serial}/switch/routing/interfaces/{interfaceId}`| destroy
 L3 interface dhcp| Update a layer 3 interface DHCP configuration for a switch| `/devices/{serial}/switch/routing/interfaces/{interfaceId}/dhcp`| update
 L3 static route| Delete a layer 3 static route for a switch| `/devices/{serial}/switch/routing/staticRoutes/{staticRouteId}`| destroy
 L3 static route| Create a layer 3 static route for a switch| `/devices/{serial}/switch/routing/staticRoutes`| create
@@ -38,8 +38,8 @@ License| Move SM seats to another organization| `/organizations/{organizationId}
 License| Renew SM seats of a license. This will extend the license expiration date of managed SM devices covered by this license| `/organizations/{organizationId}/licenses`| renewSeats
 License| Update a license| `/organizations/{organizationId}/licenses/{licenseId}`| update
 Link aggregation| Split a link aggregation group into separate ports| `/networks/{networkId}/switch/linkAggregations/{linkAggregationId}`| destroy
-Link aggregation| Create a link aggregation group| `/networks/{networkId}/switch/linkAggregations`| create
 Link aggregation| Update a link aggregation group| `/networks/{networkId}/switch/linkAggregations/{linkAggregationId}`| update
+Link aggregation| Create a link aggregation group| `/networks/{networkId}/switch/linkAggregations`| create
 MTU configuration| Update the MTU configuration| `/networks/{networkId}/switch/mtu`| update
 MX VLAN settings| Enable/Disable VLANs for the given network| `/networks/{networkId}/appliance/vlans/settings`| update
 MX connectivity monitoring destination| Update the connectivity testing destinations for an MX network| `/networks/{networkId}/appliance/connectivityMonitoringDestinations`| update
@@ -50,6 +50,9 @@ Management interface settings| Update the management interface settings for a de
 Monitored media server| Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers`| create
 Monitored media server| Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}`| destroy
 Monitored media server| Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}`| update
+Mqtt broker| Add an MQTT broker| `/networks/{networkId}/mqttBrokers`| create
+Mqtt broker| Delete an MQTT broker| `/networks/{networkId}/mqttBrokers/{mqttBrokerId}`| destroy
+Mqtt broker| Update an MQTT broker| `/networks/{networkId}/mqttBrokers/{mqttBrokerId}`| update
 Multicast| Update multicast settings for a network| `/networks/{networkId}/switch/routing/multicast`| update
 Network| Delete a network| `/networks/{networkId}`| destroy
 Network| Update a network| `/networks/{networkId}`| update
@@ -57,19 +60,23 @@ Network| Combine multiple networks into a single network| `/organizations/{organ
 Network| Create a network| `/organizations/{organizationId}/networks`| create
 Network| Split a combined network into individual networks for each type of device| `/networks/{networkId}`| split
 Network settings| Update the settings for a network| `/networks/{networkId}/settings`| update
+Organization SAML IdP| Create a SAML IdP for your organization.| `/organizations/{organizationId}/saml/idps`| create
+Organization SAML IdP| Update a SAML IdP in your organization| `/organizations/{organizationId}/saml/idps/{idpId}`| update
+Organization SAML IdP| Remove a SAML IdP in your organization.| `/organizations/{organizationId}/saml/idps/{idpId}`| destroy
 Psk group| Create an Identity PSK| `/networks/{networkId}/wireless/ssids/{number}/identityPsks`| create
-Psk group| Update an Identity PSK| `/networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId}`| update
 Psk group| Delete an Identity PSK| `/networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId}`| destroy
+Psk group| Update an Identity PSK| `/networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId}`| update
 Qos rule| Update the order in which the rules should be processed by the switch| `/networks/{networkId}/switch/qosRules/order`| update_order
 Qos rule| Delete a quality of service rule| `/networks/{networkId}/switch/qosRules/{qosRuleId}`| destroy
-Qos rule| Update a quality of service rule| `/networks/{networkId}/switch/qosRules/{qosRuleId}`| update
 Qos rule| Add a quality of service rule| `/networks/{networkId}/switch/qosRules`| create
+Qos rule| Update a quality of service rule| `/networks/{networkId}/switch/qosRules/{qosRuleId}`| update
 Quality and retention setting| Update quality and retention settings for the given camera| `/devices/{serial}/camera/qualityAndRetention`| update
+RF profile| Creates new RF profile for this network| `/networks/{networkId}/wireless/rfProfiles`| create
 RF profile| Delete a RF Profile| `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}`| destroy
 RF profile| Updates specified RF profile for this network| `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}`| update
-RF profile| Creates new RF profile for this network| `/networks/{networkId}/wireless/rfProfiles`| create
 Radio settings| Update the radio settings of a device| `/devices/{serial}/wireless/radio/settings`| update
 STP configuration| Updates STP settings| `/networks/{networkId}/switch/stp`| update
+Sense setting| Update sense settings for the given camera| `/devices/{serial}/camera/sense`| update
 Single lan| Update single LAN configuration| `/networks/{networkId}/appliance/singleLan`| update
 Site to site vpn| Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.| `/networks/{networkId}/appliance/vpn/siteToSiteVpn`| update
 Ssid| Update the attributes of an SSID| `/networks/{networkId}/wireless/ssids/{number}`| update
