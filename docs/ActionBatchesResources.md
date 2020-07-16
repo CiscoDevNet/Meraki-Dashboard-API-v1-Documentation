@@ -54,6 +54,7 @@ Mqtt broker| Add an MQTT broker| `/networks/{networkId}/mqttBrokers`| create
 Mqtt broker| Delete an MQTT broker| `/networks/{networkId}/mqttBrokers/{mqttBrokerId}`| destroy
 Mqtt broker| Update an MQTT broker| `/networks/{networkId}/mqttBrokers/{mqttBrokerId}`| update
 Multicast| Update multicast settings for a network| `/networks/{networkId}/switch/routing/multicast`| update
+Network| Bind a network to a template.| `/networks/{networkId}`| bind
 Network| Delete a network| `/networks/{networkId}`| destroy
 Network| Split a combined network into individual networks for each type of device| `/networks/{networkId}`| split
 Network| Update a network| `/networks/{networkId}`| update
