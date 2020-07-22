@@ -17,7 +17,7 @@ Checkout out the [Explore](https://developer.cisco.com/meraki/explore/) section 
 
 The Dashboard API has evolved significantly, providing hundreds of endpoints to manage your Meraki networks!
 
-We want to do so much more. But in order for us to include many of these new featues or improvements, we need to break a few things. 
+We want to do so much more. But in order for us to include many of these new features or improvements, we need to break a few things. 
 
 The focus of this **major** version is on **Simplicity** and **Scale**, by providing an enjoyable developer experience. 
 
