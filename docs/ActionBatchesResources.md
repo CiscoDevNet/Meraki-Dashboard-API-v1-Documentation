@@ -15,13 +15,13 @@ Config template| Update a configuration template| `/organizations/{organizationI
 Custom performance class| Add a custom performance class for an MX network| `/networks/{networkId}/appliance/trafficShaping/customPerformanceClasses`| create
 Custom performance class| Delete a custom performance class from an MX network| `/networks/{networkId}/appliance/trafficShaping/customPerformanceClasses/{customPerformanceClassId}`| destroy
 Custom performance class| Update a custom performance class for an MX network| `/networks/{networkId}/appliance/trafficShaping/customPerformanceClasses/{customPerformanceClassId}`| update
+Device| Claim devices into a network| `/networks/{networkId}/devices`| claim
 Device| Remove a single device| `/networks/{networkId}/devices`| remove
 Device| Update the attributes of a device| `/devices/{serial}`| update
-Device| Claim devices into a network| `/networks/{networkId}/devices`| claim
 Dhcp server policy| Update the DHCP server policy| `/networks/{networkId}/switch/dhcpServerPolicy`| update
 Dscp cos mapping| Update the DSCP to CoS mappings| `/networks/{networkId}/switch/dscpToCosMappings`| update
-Floor plan| Destroy a floor plan| `/networks/{networkId}/floorPlans/{floorPlanId}`| destroy
 Floor plan| Update a floor plan's geolocation and other meta data| `/networks/{networkId}/floorPlans/{floorPlanId}`| update
+Floor plan| Destroy a floor plan| `/networks/{networkId}/floorPlans/{floorPlanId}`| destroy
 Group policy| Create a group policy| `/networks/{networkId}/groupPolicies`| create
 Group policy| Delete a group policy| `/networks/{networkId}/groupPolicies/{groupPolicyId}`| destroy
 Group policy| Update a group policy| `/networks/{networkId}/groupPolicies/{groupPolicyId}`| update
@@ -29,16 +29,16 @@ L3 interface| Create a layer 3 interface for a switch| `/devices/{serial}/switch
 L3 interface| Delete a layer 3 interface from the switch| `/devices/{serial}/switch/routing/interfaces/{interfaceId}`| destroy
 L3 interface| Update a layer 3 interface for a switch| `/devices/{serial}/switch/routing/interfaces/{interfaceId}`| update
 L3 interface dhcp| Update a layer 3 interface DHCP configuration for a switch| `/devices/{serial}/switch/routing/interfaces/{interfaceId}/dhcp`| update
-L3 static route| Delete a layer 3 static route for a switch| `/devices/{serial}/switch/routing/staticRoutes/{staticRouteId}`| destroy
 L3 static route| Create a layer 3 static route for a switch| `/devices/{serial}/switch/routing/staticRoutes`| create
 L3 static route| Update a layer 3 static route for a switch| `/devices/{serial}/switch/routing/staticRoutes/{staticRouteId}`| update
-License| Move licenses to another organization. This will also move any devices that the licenses are assigned to| `/organizations/{organizationId}/licenses`| move
-License| Renew SM seats of a license. This will extend the license expiration date of managed SM devices covered by this license| `/organizations/{organizationId}/licenses`| renewSeats
-License| Update a license| `/organizations/{organizationId}/licenses/{licenseId}`| update
+L3 static route| Delete a layer 3 static route for a switch| `/devices/{serial}/switch/routing/staticRoutes/{staticRouteId}`| destroy
 License| Assign SM seats to a network. This will increase the managed SM device limit of the network| `/organizations/{organizationId}/licenses`| assignSeats
 License| Move SM seats to another organization| `/organizations/{organizationId}/licenses`| moveSeats
-Link aggregation| Create a link aggregation group| `/networks/{networkId}/switch/linkAggregations`| create
+License| Renew SM seats of a license. This will extend the license expiration date of managed SM devices covered by this license| `/organizations/{organizationId}/licenses`| renewSeats
+License| Update a license| `/organizations/{organizationId}/licenses/{licenseId}`| update
+License| Move licenses to another organization. This will also move any devices that the licenses are assigned to| `/organizations/{organizationId}/licenses`| move
 Link aggregation| Split a link aggregation group into separate ports| `/networks/{networkId}/switch/linkAggregations/{linkAggregationId}`| destroy
+Link aggregation| Create a link aggregation group| `/networks/{networkId}/switch/linkAggregations`| create
 Link aggregation| Update a link aggregation group| `/networks/{networkId}/switch/linkAggregations/{linkAggregationId}`| update
 MTU configuration| Update the MTU configuration| `/networks/{networkId}/switch/mtu`| update
 MX VLAN settings| Enable/Disable VLANs for the given network| `/networks/{networkId}/appliance/vlans/settings`| update
@@ -47,34 +47,37 @@ MX l7 firewall| Update the MX L7 firewall rules for an MX network| `/networks/{n
 MX port| Update the per-port VLAN settings for a single MX port.| `/networks/{networkId}/appliance/ports/{portId}`| update
 MX uplink setting| Updates the uplink bandwidth settings for your MX network.| `/networks/{networkId}/appliance/trafficShaping/uplinkBandwidth`| update
 Management interface settings| Update the management interface settings for a device| `/devices/{serial}/managementInterface`| update
+Meraki auth user| Delete a user configured with Meraki Authentication (currently only 802.1X RADIUS users can be deleted)| `/networks/{networkId}/merakiAuthUsers/{merakiAuthUserId}`| destroy
+Meraki auth user| Update a user configured with Meraki Authentication (currently only 802.1X RADIUS users can be updated)| `/networks/{networkId}/merakiAuthUsers/{merakiAuthUserId}`| update
+Meraki auth user| Create a user configured with Meraki Authentication for a network (currently only 802.1X RADIUS users can be created, and currently, organizations have a 50,000 user cap)| `/networks/{networkId}/merakiAuthUsers`| create
 Monitored media server| Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers`| create
-Monitored media server| Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}`| destroy
 Monitored media server| Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}`| update
+Monitored media server| Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}`| destroy
 Mqtt broker| Add an MQTT broker| `/networks/{networkId}/mqttBrokers`| create
 Mqtt broker| Delete an MQTT broker| `/networks/{networkId}/mqttBrokers/{mqttBrokerId}`| destroy
 Mqtt broker| Update an MQTT broker| `/networks/{networkId}/mqttBrokers/{mqttBrokerId}`| update
 Multicast| Update multicast settings for a network| `/networks/{networkId}/switch/routing/multicast`| update
 Network| Bind a network to a template.| `/networks/{networkId}`| bind
 Network| Delete a network| `/networks/{networkId}`| destroy
-Network| Split a combined network into individual networks for each type of device| `/networks/{networkId}`| split
 Network| Update a network| `/networks/{networkId}`| update
 Network| Combine multiple networks into a single network| `/organizations/{organizationId}/networks`| combine
 Network| Create a network| `/organizations/{organizationId}/networks`| create
+Network| Split a combined network into individual networks for each type of device| `/networks/{networkId}`| split
 Network settings| Update the settings for a network| `/networks/{networkId}/settings`| update
 Organization SAML IdP| Create a SAML IdP for your organization.| `/organizations/{organizationId}/saml/idps`| create
 Organization SAML IdP| Update a SAML IdP in your organization| `/organizations/{organizationId}/saml/idps/{idpId}`| update
 Organization SAML IdP| Remove a SAML IdP in your organization.| `/organizations/{organizationId}/saml/idps/{idpId}`| destroy
 Ospf routing| Update layer 3 OSPF routing configuration| `/networks/{networkId}/switch/routing/ospf`| update
 Psk group| Create an Identity PSK| `/networks/{networkId}/wireless/ssids/{number}/identityPsks`| create
-Psk group| Update an Identity PSK| `/networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId}`| update
 Psk group| Delete an Identity PSK| `/networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId}`| destroy
-Qos rule| Add a quality of service rule| `/networks/{networkId}/switch/qosRules`| create
+Psk group| Update an Identity PSK| `/networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId}`| update
 Qos rule| Update the order in which the rules should be processed by the switch| `/networks/{networkId}/switch/qosRules/order`| update_order
 Qos rule| Delete a quality of service rule| `/networks/{networkId}/switch/qosRules/{qosRuleId}`| destroy
+Qos rule| Add a quality of service rule| `/networks/{networkId}/switch/qosRules`| create
 Qos rule| Update a quality of service rule| `/networks/{networkId}/switch/qosRules/{qosRuleId}`| update
 Quality and retention setting| Update quality and retention settings for the given camera| `/devices/{serial}/camera/qualityAndRetention`| update
-RF profile| Delete a RF Profile| `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}`| destroy
 RF profile| Creates new RF profile for this network| `/networks/{networkId}/wireless/rfProfiles`| create
+RF profile| Delete a RF Profile| `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}`| destroy
 RF profile| Updates specified RF profile for this network| `/networks/{networkId}/wireless/rfProfiles/{rfProfileId}`| update
 Radio settings| Update the radio settings of a device| `/devices/{serial}/wireless/radio/settings`| update
 Rendezvous point| Create a multicast rendezvous point| `/networks/{networkId}/switch/routing/multicast/rendezvousPoints`| create
@@ -98,8 +101,8 @@ Switch stacks l3 static route| Create a layer 3 static route for a switch stack|
 Switch stacks l3 static route| Delete a layer 3 static route for a switch stack| `/networks/{networkId}/switch/switchStacks/{switchStackId}/routing/staticRoutes/{staticRouteId}`| destroy
 Switch stacks l3 static route| Update a layer 3 static route for a switch stack| `/networks/{networkId}/switch/switchStacks/{switchStackId}/routing/staticRoutes/{staticRouteId}`| update
 Switch warm spare settings| Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note that this will irreversibly destroy any existing L3 configuration on the spare.| `/devices/{serial}/switch/warmSpare`| update
-Traffic shaping settings| Update the traffic shaping settings for an MX network| `/networks/{networkId}/appliance/trafficShaping/rules`| update
 Traffic shaping settings| Update the traffic shaping settings for an SSID on an MR network| `/networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules`| update
+Traffic shaping settings| Update the traffic shaping settings for an MX network| `/networks/{networkId}/appliance/trafficShaping/rules`| update
 Uplink selection settings| Update uplink selection settings for an MX network| `/networks/{networkId}/appliance/trafficShaping/uplinkSelection`| update
 VLAN| Add a VLAN| `/networks/{networkId}/appliance/vlans`| create
 VLAN| Delete a VLAN from a network| `/networks/{networkId}/appliance/vlans/{vlanId}`| destroy
