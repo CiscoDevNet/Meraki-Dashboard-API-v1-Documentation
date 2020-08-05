@@ -44,7 +44,7 @@ To begin navigating the API, you will first need to know your organization ID. T
 
 ```cURL
 curl https://api.meraki.com/api/v1/organizations \
-  -L -H 'Authorization: Bearer {API_KEY}'
+  -L -H 'X-Cisco-Meraki-API-Key: {MERAKI-API-KEY}'
 ```
 
 ```Python
@@ -80,7 +80,7 @@ Now that you have an organization ID, list the networks of the organization.
 
 ```cURL
 curl https://api.meraki.com/api/v1/organizations/{organizationId}/networks \
-  -L -H 'Authorization: Bearer {API_KEY}'
+  -L -H 'X-Cisco-Meraki-API-Key: {MERAKI-API-KEY}'
 ```
 
 ```Python
@@ -121,7 +121,7 @@ Note the `id` for future endpoints that require a `networkId`.
 
 ```cURL
 curl https://api.meraki.com/api/v1/networks/{networkId}/devices \
-  -L -H 'Authorization: Bearer {API_KEY}'
+  -L -H 'X-Cisco-Meraki-API-Key: {MERAKI-API-KEY}'
 ```
 
 ```Python
@@ -171,7 +171,7 @@ Note the `serial` for future usage.
 
 ```cURL
 curl https://api.meraki.com/api/v1/devices/{serial}/managementInterface \
-  -L -H 'Authorization: Bearer {API_KEY}'
+  -L -H 'X-Cisco-Meraki-API-Key: {MERAKI-API-KEY}'
 ```
 
 ```Python
