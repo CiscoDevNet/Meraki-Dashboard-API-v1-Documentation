@@ -30,6 +30,9 @@ In addition, several improvements and new endpoints have been included with this
 
 The API Endpoint documentation and complimenting Postman Collection have a new folder structure for navigating the API. 
 
+<table>
+<td>
+
 > - General
 >    - devices
 >    - networks
@@ -42,18 +45,37 @@ The API Endpoint documentation and complimenting Postman Collection have a new f
 >    - sm
 >    - switch
 >    - wireless
+</td>
+<td>
 
+Browse related API operations by **General** cloud settings or by **Products**
+</td>
+</table>
 
 #### Categories
 
-The services are grouped into categories. This will provide a focused set of resources when building read-only dashboards (**MONITOR**), or automation scripts (**CONFIGURE**).
+The services are further grouped into categories, providing a collection of endpoints that behave in a similar way. 
 
+<table>
+<td>
 
-> - appliance
+> - devices
 >    - **CONFIGURE**
->        - firewall         
+>        - update device         
 >    - **MONITOR**
->        - performance
+>        - return clients
+>    - **LIVE Tools**
+>        - reboot device
+</td>
+<td>
+
+**CONFIGURE** endpoints  are for managing cloud configurations
+
+**MONITOR** endpoints will return status and history information
+
+**LIVE TOOL** endpoints will directly interact with the device
+</td>
+</table>
 
 ### Resource Path changes
 
@@ -69,7 +91,7 @@ The endpoint URL paths will always contain the Meraki product if required, reduc
 
 ### Base URI
 
-Minor but important detail, the Base URI has change to **v1**
+Minor but important detail, the Base URI has changed to **v1**
 
 > `https://api.meraki.com/api/v1`
 
