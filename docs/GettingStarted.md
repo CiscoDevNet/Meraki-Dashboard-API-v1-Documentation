@@ -12,17 +12,17 @@ If using the Meraki [Python library](pythonLibrary.md), install it via `pip inst
 
 ## Authorization
 
-In addition to the path URL, an `Authorization` header must be added to every API request with the following format.
+The Meraki Dashboard API requires a header parameter of `X-Cisco-Meraki-API-Key` to provide authorization for each request.
  
 ```json
 {
-	"Authorization": "Bearer <API_KEY>"
+	"X-Cisco-Meraki-API-Key": <Meraki_API_Key>
 }
 ```
 
-```cURL
+```curl
 curl https://api.meraki.com/api/v1/organizations \
-  -L -H 'Authorization: Bearer {API_KEY}'
+  -H 'X-Cisco-Meraki-API-Key: {MERAKI-API-KEY}'
 ```
 
 ```Python
