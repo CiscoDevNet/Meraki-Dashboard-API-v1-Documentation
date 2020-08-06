@@ -7,11 +7,12 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-organization_id = '549236'
-admin_id = ''
+network_id = 'L_646829496481105433'
+interface_ip = '192.168.1.2'
+multicast_group = '192.168.128.0/24'
 
-response = dashboard.organizations.deleteOrganizationAdmin(
-    organization_id, admin_id
+response = dashboard.switch.createNetworkSwitchRoutingMulticastRendezvousPoint(
+    network_id, interface_ip, multicast_group
 )
 
 print(response)

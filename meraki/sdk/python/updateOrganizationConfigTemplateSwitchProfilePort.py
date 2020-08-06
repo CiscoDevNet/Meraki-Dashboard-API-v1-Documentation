@@ -27,9 +27,9 @@ response = dashboard.switch.updateOrganizationConfigTemplateSwitchProfilePort(
     linkNegotiation='Auto negotiate', 
     portScheduleId='1234', 
     udld='Alert only', 
-    accessPolicyType='Sticky MAC whitelist', 
-    stickyMacWhitelist=['34:56:fe:ce:8e:b0', '34:56:fe:ce:8e:b1'], 
-    stickyMacWhitelistLimit=5, 
+    accessPolicyType='Sticky MAC allow list', 
+    stickyMacAllowList=['34:56:fe:ce:8e:b0', '34:56:fe:ce:8e:b1'], 
+    stickyMacAllowListLimit=5, 
     stormControlEnabled=True
 )
 
