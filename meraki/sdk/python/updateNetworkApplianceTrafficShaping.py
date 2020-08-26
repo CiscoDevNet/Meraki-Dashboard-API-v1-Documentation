@@ -7,13 +7,11 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-serial = 'Q2QN-9J8L-SLPD'
+network_id = 'L_646829496481105433'
 
-response = dashboard.wireless.updateDeviceWirelessRadioSettings(
-    serial, 
-    rfProfileId='1234', 
-    twoFourGhzSettings={'channel': 11, 'targetPower': 21}, 
-    fiveGhzSettings={'channel': 149, 'channelWidth': 20, 'targetPower': 15}
+response = dashboard.appliance.updateNetworkApplianceTrafficShaping(
+    network_id, 
+    globalBandwidthLimits={'limitUp': 2048, 'limitDown': 5120}
 )
 
 print(response)
