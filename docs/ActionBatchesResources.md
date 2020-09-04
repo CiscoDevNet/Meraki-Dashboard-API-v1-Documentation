@@ -49,7 +49,7 @@ MX uplink setting| Updates the uplink bandwidth settings for your MX network.| `
 Management interface settings| Update the management interface settings for a device| `/devices/{serial}/managementInterface`| update
 Meraki auth user| Delete a user configured with Meraki Authentication (currently only 802.1X RADIUS users can be deleted)| `/networks/{networkId}/merakiAuthUsers/{merakiAuthUserId}`| destroy
 Meraki auth user| Update a user configured with Meraki Authentication (currently only 802.1X RADIUS users can be updated)| `/networks/{networkId}/merakiAuthUsers/{merakiAuthUserId}`| update
-Meraki auth user| Create a user configured with Meraki Authentication for a network (currently only 802.1X RADIUS users can be created, and currently, organizations have a 50,000 user cap)| `/networks/{networkId}/merakiAuthUsers`| create
+Meraki auth user| Create a user configured with Meraki Authentication for a network (currently supports 802.1X and Splash Guest users, and currently, organizations have a 50,000 user cap)| `/networks/{networkId}/merakiAuthUsers`| create
 Monitored media server| Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers`| create
 Monitored media server| Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}`| update
 Monitored media server| Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}`| destroy
@@ -87,22 +87,22 @@ STP configuration| Updates STP settings| `/networks/{networkId}/switch/stp`| upd
 Sense setting| Update sense settings for the given camera| `/devices/{serial}/camera/sense`| update
 Single lan| Update single LAN configuration| `/networks/{networkId}/appliance/singleLan`| update
 Site to site vpn| Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.| `/networks/{networkId}/appliance/vpn/siteToSiteVpn`| update
-Ssid| Update the attributes of an SSID| `/networks/{networkId}/wireless/ssids/{number}`| update
+Ssid| Update the attributes of an MR SSID| `/networks/{networkId}/wireless/ssids/{number}`| update
 Storm control| Update the storm control configuration for a switch network| `/networks/{networkId}/switch/stormControl`| update
 Switch port| Cycle a set of switch ports| `/devices/{serial}/switch/ports`| cycle
 Switch port| Update a switch port| `/devices/{serial}/switch/ports/{portId}`| update
 Switch port schedule| Update a switch port schedule| `/networks/{networkId}/switch/portSchedules/{portScheduleId}`| update
 Switch profile port| Update a switch profile port| `/organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports/{portId}`| update
-Switch stacks l3 interface| Create a layer 3 interface for a switch stack| `/networks/{networkId}/switch/switchStacks/{switchStackId}/routing/interfaces`| create
-Switch stacks l3 interface| Delete a layer 3 interface from a switch stack| `/networks/{networkId}/switch/switchStacks/{switchStackId}/routing/interfaces/{interfaceId}`| destroy
-Switch stacks l3 interface| Update a layer 3 interface for a switch stack| `/networks/{networkId}/switch/switchStacks/{switchStackId}/routing/interfaces/{interfaceId}`| update
-Switch stacks l3 interface dhcp| Update a layer 3 interface DHCP configuration for a switch stack| `/networks/{networkId}/switch/switchStacks/{switchStackId}/routing/interfaces/{interfaceId}/dhcp`| update
-Switch stacks l3 static route| Create a layer 3 static route for a switch stack| `/networks/{networkId}/switch/switchStacks/{switchStackId}/routing/staticRoutes`| create
-Switch stacks l3 static route| Delete a layer 3 static route for a switch stack| `/networks/{networkId}/switch/switchStacks/{switchStackId}/routing/staticRoutes/{staticRouteId}`| destroy
-Switch stacks l3 static route| Update a layer 3 static route for a switch stack| `/networks/{networkId}/switch/switchStacks/{switchStackId}/routing/staticRoutes/{staticRouteId}`| update
+Switch stacks l3 interface| Create a layer 3 interface for a switch stack| `/networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces`| create
+Switch stacks l3 interface| Delete a layer 3 interface from a switch stack| `/networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces/{interfaceId}`| destroy
+Switch stacks l3 interface| Update a layer 3 interface for a switch stack| `/networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces/{interfaceId}`| update
+Switch stacks l3 interface dhcp| Update a layer 3 interface DHCP configuration for a switch stack| `/networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces/{interfaceId}/dhcp`| update
+Switch stacks l3 static route| Create a layer 3 static route for a switch stack| `/networks/{networkId}/switch/stacks/{switchStackId}/routing/staticRoutes`| create
+Switch stacks l3 static route| Delete a layer 3 static route for a switch stack| `/networks/{networkId}/switch/stacks/{switchStackId}/routing/staticRoutes/{staticRouteId}`| destroy
+Switch stacks l3 static route| Update a layer 3 static route for a switch stack| `/networks/{networkId}/switch/stacks/{switchStackId}/routing/staticRoutes/{staticRouteId}`| update
 Switch warm spare settings| Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note that this will irreversibly destroy any existing L3 configuration on the spare.| `/devices/{serial}/switch/warmSpare`| update
 Traffic shaping settings| Update the traffic shaping settings for an SSID on an MR network| `/networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules`| update
-Traffic shaping settings| Update the traffic shaping settings for an MX network| `/networks/{networkId}/appliance/trafficShaping/rules`| update
+Traffic shaping settings| Update the traffic shaping settings rules for an MX network| `/networks/{networkId}/appliance/trafficShaping/rules`| update
 Uplink selection settings| Update uplink selection settings for an MX network| `/networks/{networkId}/appliance/trafficShaping/uplinkSelection`| update
 VLAN| Add a VLAN| `/networks/{networkId}/appliance/vlans`| create
 VLAN| Delete a VLAN from a network| `/networks/{networkId}/appliance/vlans/{vlanId}`| destroy

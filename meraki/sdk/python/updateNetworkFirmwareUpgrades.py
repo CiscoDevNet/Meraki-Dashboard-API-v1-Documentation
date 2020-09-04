@@ -7,11 +7,11 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-organization_id = '549236'
-admin_id = ''
+network_id = 'L_646829496481105433'
 
-response = dashboard.organizations.deleteOrganizationAdmin(
-    organization_id, admin_id
+response = dashboard.networks.updateNetworkFirmwareUpgrades(
+    network_id, 
+    upgradeWindow={'hourOfDay': '4:00', 'dayOfWeek': 'Sun'}
 )
 
 print(response)

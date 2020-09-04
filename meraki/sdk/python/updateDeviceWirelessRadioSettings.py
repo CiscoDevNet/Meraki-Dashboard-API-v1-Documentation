@@ -11,7 +11,9 @@ serial = 'Q2QN-9J8L-SLPD'
 
 response = dashboard.wireless.updateDeviceWirelessRadioSettings(
     serial, 
-    rfProfileId='1234'
+    rfProfileId='1234', 
+    twoFourGhzSettings={'channel': 11, 'targetPower': 21}, 
+    fiveGhzSettings={'channel': 149, 'channelWidth': 20, 'targetPower': 15}
 )
 
 print(response)
