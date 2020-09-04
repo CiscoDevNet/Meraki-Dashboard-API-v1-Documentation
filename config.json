@@ -5,6 +5,11 @@
             "content": "docs/Introduction.md"
         },
         {
+            "title": "What's Changed",
+            "content": "docs/v0-v1-changes.md"
+            
+        },
+        {
             "title": "Getting Started",
             "content": "docs/GettingStarted.md"
         },
@@ -120,5 +125,6 @@
             "type": "url",
             "content": "https://developer.cisco.com/meraki/whats-new/"
         }
+        
     ]
 }
