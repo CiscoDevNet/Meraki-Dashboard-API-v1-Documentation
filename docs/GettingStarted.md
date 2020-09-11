@@ -1,3 +1,26 @@
+
+
+### Postman Collection
+
+Use graphical desktop utility to explore and interact with the Meraki API.
+
+<div class="postman-run-button"
+data-postman-action="collection/import"
+data-postman-var-1="c751ca894f2eed4c4cbd"></div>
+<script type="text/javascript">
+  (function (p,o,s,t,m,a,n) {
+    !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+    !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
+      (n = o.createElement("script")),
+      (n.id = s+t), (n.async = 1), (n.src = m), n
+    ));
+  }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+</script>
+
+### Python library
+
+If using the Meraki [Python library](pythonLibrary.md), install it via `pip install meraki`.
+
 ## Base URI
 
 Every API request will begin with the following **base URI**. 
@@ -5,10 +28,6 @@ Every API request will begin with the following **base URI**.
 > `https://api.meraki.com/api/v1`
 
 Read more about the path schema [here](PathSchema.md).
-
-### Python library
-
-If using the Meraki [Python library](pythonLibrary.md), install it via `pip install meraki`.
 
 ## Authorization
 
