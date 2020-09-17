@@ -1,4 +1,4 @@
-The Meraki Dashboard API implements the [RFC5988 (Web Linking](https://tools.ietf.org/html/rfc5988)) standard for pagination. Paginated GET endpoints only return a subset of the results in the first response. You must execute subsequent requests to the endpoint with slightly different parameters in order to get the rest of the data. This functionality is important for API endpoints that could theoretically return some obscenely large number of results.
+The Meraki Dashboard API implements the [RFC5988 (Web Linking)](https://tools.ietf.org/html/rfc5988) standard for pagination. Paginated GET endpoints only return a subset of the results in the first response. You must execute subsequent requests to the endpoint with slightly different parameters in order to get the rest of the data. This functionality is important for API endpoints that could theoretically return some obscenely large number of results.
 
 
 ## How does pagination work in the Dashboard API?
