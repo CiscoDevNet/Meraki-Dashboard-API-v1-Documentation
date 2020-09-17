@@ -1,4 +1,4 @@
-Paginated GET endpoints only return a subset of the results in the first response. You must execute subsequent requests to the endpoint with slightly different parameters in order to get the rest of the data. This functionality is important for API endpoints that could theoretically return some obscenely large number of results.
+The Meraki Dashboard API implements the [RFC5988 (Web Linking](https://tools.ietf.org/html/rfc5988)) standard for pagination. Paginated GET endpoints only return a subset of the results in the first response. You must execute subsequent requests to the endpoint with slightly different parameters in order to get the rest of the data. This functionality is important for API endpoints that could theoretically return some obscenely large number of results.
 
 
 ## How does pagination work in the Dashboard API?
@@ -82,3 +82,7 @@ The end user now decides they're sick of paginating. They decide to jump right t
 ```
 
 Notice that the first and last links stayed consistent throughout all of the requests, and in the final request, the next link transformed into a `prev` link (since there is no next set of data). Also notice that this particular endpoint only ever included 3 links at a time in the response rather than all 4 (a unidirectional pagination iteration process). This behaviour is completely implementation-specific.
+
+## Pagination with the Python library
+
+If you are using the Meraki Dashboard API [Python library](https://developer.cisco.com/meraki/api-v1/#python), a convenience mechanism has been added to the functions for endpoints that use pagination with the `total_pages` parameter. Simply pass in that parameter with an integer that specifies the number of pages to retrieve. If you want the library to automatically retrieve all pages, then just pass in -1 or the string "all" for `total_pages`.
