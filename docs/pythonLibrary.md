@@ -22,14 +22,14 @@ While you can make direct HTTP requests to dashboard API in any programming lang
 
 2. Keep your API key safe and secure, as it is similar to a password for your dashboard. If publishing your Python code to a wider audience, please research secure handling of API keys.
 
-3. Install the latest version of [Python 3](ttps://wiki.python.org/moin/BeginnersGuide/NonProgrammers)
+3. Install the latest version of [Python 3](https://wiki.python.org/moin/BeginnersGuide/NonProgrammers)
 
 4. Use _pip_ (or an alternative such as _easy_install_) to install the library from the Python [Package Index](https://pypi.org/project/meraki/):
     * `pip install meraki`
     * If you have both Python3 and Python2 installed, you may need to use `pip3` (so `pip3 install meraki`) along with `python3` on your system
     * If _meraki_ was previously installed, you can upgrade to the latest non-beta release with `pip install --upgrade meraki`
 
-5. Meraki dashboard API v1 is currently in beta, so if you clone this repository and want to use v1 locally, rename the folder "meraki_v1" to "meraki", replacing the v0 contents there. You can also specify the version of the library when installing with _pip_:
+5. If you clone this repository and want to use v1 locally, rename the folder "meraki_v1" to "meraki", replacing the v0 contents there. You can also specify the version of the library when installing with _pip_:
     * See the full [release history](https://pypi.org/project/meraki/#history) to pick the version you want, or use `pip install meraki==` without including a version number to display the list of available versions
     * v0 versions of the Python library begin with _0_ (0.**x**.**y**), and v1 versions begin with _1_ (1.0.0b**z** for beta)
     * Specify the version you want with the install command; for example: `pip install meraki==0.x.y` for v0 or `pip install meraki==1.0.0bz` for v1 beta
@@ -65,3 +65,14 @@ While you can make direct HTTP requests to dashboard API in any programming lang
 6. If you were using this module versions 0.34 and prior, that file's functions are included in the _legacy.py_ file, and you can adapt your existing scripts by replacing their `from meraki import meraki` line to `import meraki`
 
 For a full working script that demos this library, please see and run the **org_wide_clients_v1.py** file included (in **examples** folder). That code collects the clients of all networks, in all orgs to which the key has access. No changes are made, since only GET endpoints are called, and the data is written to local CSV output files.
+
+
+## Documentation
+
+Every operation is documented with a Template example which can be run as a standalone python script.
+
+Find the desired operation in the API docs, then select **Template** in the right console window. Finally, select **Meraki Python Library** to see the python script.
+
+![template screenshot](../images/update-network-python-template-screenshot.png)
+*Example operation https://developer.cisco.com/meraki/api-v1/#!update-network*
+
