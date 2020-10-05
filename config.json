@@ -72,6 +72,10 @@
                 {
                     "title": "Versioning",
                     "content": "docs/Versioning.md"
+                },
+                {
+                    "title": "Path Changes (v0-v1)",
+                    "content": "docs/v0-v1-path-operation-changes.md"
                 }
             ]
         },

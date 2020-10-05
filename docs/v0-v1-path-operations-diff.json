@@ -1,0 +1,1274 @@
+[
+    {
+    "oldPath": "/devices/{serial}/camera/qualityAndRetentionSettings",
+    "newPath": "/devices/{serial}/camera/qualityAndRetention",
+    "oldOperations": [
+    "getDeviceCameraQualityAndRetentionSettings",
+    "updateDeviceCameraQualityAndRetentionSettings"
+    ],
+    "newOperations": [
+    "getDeviceCameraQualityAndRetention",
+    "updateDeviceCameraQualityAndRetention"
+    ]
+    },
+    {
+    "oldPath": "/devices/{serial}/cellularGateway/settings",
+    "newPath": "/devices/{serial}/cellularGateway/lan",
+    "oldOperations": [
+    "getDeviceCellularGatewaySettings",
+    "updateDeviceCellularGatewaySettings"
+    ],
+    "newOperations": [
+    "getDeviceCellularGatewayLan",
+    "updateDeviceCellularGatewayLan"
+    ]
+    },
+    {
+    "oldPath": "/devices/{serial}/cellularGateway/settings/portForwardingRules",
+    "newPath": "/devices/{serial}/cellularGateway/portForwardingRules",
+    "oldOperations": [
+    "getDeviceCellularGatewaySettingsPortForwardingRules",
+    "updateDeviceCellularGatewaySettingsPortForwardingRules"
+    ],
+    "newOperations": [
+    "getDeviceCellularGatewayPortForwardingRules",
+    "updateDeviceCellularGatewayPortForwardingRules"
+    ]
+    },
+    {
+    "oldPath": "/devices/{serial}/switchPortStatuses",
+    "newPath": "/devices/{serial}/switch/ports/statuses",
+    "oldOperations": [
+    "getDeviceSwitchPortStatuses"
+    ],
+    "newOperations": [
+    "getDeviceSwitchPortsStatuses"
+    ]
+    },
+    {
+    "oldPath": "/devices/{serial}/switchPortStatuses/packets",
+    "newPath": "/devices/{serial}/switch/ports/statuses/packets",
+    "oldOperations": [
+    "getDeviceSwitchPortStatusesPackets"
+    ],
+    "newOperations": [
+    "getDeviceSwitchPortsStatusesPackets"
+    ]
+    },
+    {
+    "oldPath": "/devices/{serial}/switchPorts",
+    "newPath": "/devices/{serial}/switch/ports",
+    "oldOperations": [
+    "getDeviceSwitchPorts"
+    ],
+    "newOperations": [
+    "getDeviceSwitchPorts"
+    ]
+    },
+    {
+    "oldPath": "/devices/{serial}/switchPorts/{number}",
+    "newPath": "/devices/{serial}/switch/ports/{portId}",
+    "oldOperations": [
+    "getDeviceSwitchPort",
+    "updateDeviceSwitchPort"
+    ],
+    "newOperations": [
+    "getDeviceSwitchPort",
+    "updateDeviceSwitchPort"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/airMarshal",
+    "newPath": "/networks/{networkId}/wireless/airMarshal",
+    "oldOperations": [
+    "getNetworkAirMarshal"
+    ],
+    "newOperations": [
+    "getNetworkWirelessAirMarshal"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/alertSettings",
+    "newPath": "/networks/{networkId}/alerts/settings",
+    "oldOperations": [
+    "getNetworkAlertSettings",
+    "updateNetworkAlertSettings"
+    ],
+    "newOperations": [
+    "getNetworkAlertsSettings",
+    "updateNetworkAlertsSettings"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/appliancePorts",
+    "newPath": "/networks/{networkId}/appliance/ports",
+    "oldOperations": [
+    "getNetworkAppliancePorts"
+    ],
+    "newOperations": [
+    "getNetworkAppliancePorts"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/appliancePorts/{appliancePortId}",
+    "newPath": "/networks/{networkId}/appliance/ports/{portId}",
+    "oldOperations": [
+    "getNetworkAppliancePort",
+    "updateNetworkAppliancePort"
+    ],
+    "newOperations": [
+    "getNetworkAppliancePort",
+    "updateNetworkAppliancePort"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/bluetoothSettings",
+    "newPath": "/networks/{networkId}/wireless/bluetooth/settings",
+    "oldOperations": [
+    "getNetworkBluetoothSettings",
+    "updateNetworkBluetoothSettings"
+    ],
+    "newOperations": [
+    "getNetworkWirelessBluetoothSettings",
+    "updateNetworkWirelessBluetoothSettings"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/cameras/{serial}/snapshot",
+    "newPath": "/devices/{serial}/camera/generateSnapshot",
+    "oldOperations": [
+    "generateNetworkCameraSnapshot"
+    ],
+    "newOperations": [
+    "generateDeviceCameraSnapshot"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/cameras/{serial}/videoLink",
+    "newPath": "/devices/{serial}/camera/videoLink",
+    "oldOperations": [
+    "getNetworkCameraVideoLink"
+    ],
+    "newOperations": [
+    "getDeviceCameraVideoLink"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/cellularFirewallRules",
+    "newPath": "/networks/{networkId}/appliance/firewall/cellularFirewallRules",
+    "oldOperations": [
+    "getNetworkCellularFirewallRules",
+    "updateNetworkCellularFirewallRules"
+    ],
+    "newOperations": [
+    "getNetworkApplianceFirewallCellularFirewallRules",
+    "updateNetworkApplianceFirewallCellularFirewallRules"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/cellularGateway/settings/connectivityMonitoringDestinations",
+    "newPath": "/networks/{networkId}/cellularGateway/connectivityMonitoringDestinations",
+    "oldOperations": [
+    "getNetworkCellularGatewaySettingsConnectivityMonitoringDestinations",
+    "updateNetworkCellularGatewaySettingsConnectivityMonitoringDestinations"
+    ],
+    "newOperations": [
+    "getNetworkCellularGatewayConnectivityMonitoringDestinations",
+    "updateNetworkCellularGatewayConnectivityMonitoringDestinations"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/cellularGateway/settings/dhcp",
+    "newPath": "/networks/{networkId}/cellularGateway/dhcp",
+    "oldOperations": [
+    "getNetworkCellularGatewaySettingsDhcp",
+    "updateNetworkCellularGatewaySettingsDhcp"
+    ],
+    "newOperations": [
+    "getNetworkCellularGatewayDhcp",
+    "updateNetworkCellularGatewayDhcp"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/cellularGateway/settings/subnetPool",
+    "newPath": "/networks/{networkId}/cellularGateway/subnetPool",
+    "oldOperations": [
+    "getNetworkCellularGatewaySettingsSubnetPool",
+    "updateNetworkCellularGatewaySettingsSubnetPool"
+    ],
+    "newOperations": [
+    "getNetworkCellularGatewaySubnetPool",
+    "updateNetworkCellularGatewaySubnetPool"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/cellularGateway/settings/uplink",
+    "newPath": "/networks/{networkId}/cellularGateway/uplink",
+    "oldOperations": [
+    "getNetworkCellularGatewaySettingsUplink",
+    "updateNetworkCellularGatewaySettingsUplink"
+    ],
+    "newOperations": [
+    "getNetworkCellularGatewayUplink",
+    "updateNetworkCellularGatewayUplink"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/clients/connectionStats",
+    "newPath": "/networks/{networkId}/wireless/clients/connectionStats",
+    "oldOperations": [
+    "getNetworkClientsConnectionStats"
+    ],
+    "newOperations": [
+    "getNetworkWirelessClientsConnectionStats"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/clients/latencyStats",
+    "newPath": "/networks/{networkId}/wireless/clients/latencyStats",
+    "oldOperations": [
+    "getNetworkClientsLatencyStats"
+    ],
+    "newOperations": [
+    "getNetworkWirelessClientsLatencyStats"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/clients/{clientId}/connectionStats",
+    "newPath": "/networks/{networkId}/wireless/clients/{clientId}/connectionStats",
+    "oldOperations": [
+    "getNetworkClientConnectionStats"
+    ],
+    "newOperations": [
+    "getNetworkWirelessClientConnectionStats"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/clients/{clientId}/latencyHistory",
+    "newPath": "/networks/{networkId}/wireless/clients/{clientId}/latencyHistory",
+    "oldOperations": [
+    "getNetworkClientLatencyHistory"
+    ],
+    "newOperations": [
+    "getNetworkWirelessClientLatencyHistory"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/clients/{clientId}/latencyStats",
+    "newPath": "/networks/{networkId}/wireless/clients/{clientId}/latencyStats",
+    "oldOperations": [
+    "getNetworkClientLatencyStats"
+    ],
+    "newOperations": [
+    "getNetworkWirelessClientLatencyStats"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/clients/{clientId}/securityEvents",
+    "newPath": "/networks/{networkId}/appliance/clients/{clientId}/security/events",
+    "oldOperations": [
+    "getNetworkClientSecurityEvents"
+    ],
+    "newOperations": [
+    "getNetworkApplianceClientSecurityEvents"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/connectionStats",
+    "newPath": "/networks/{networkId}/wireless/connectionStats",
+    "oldOperations": [
+    "getNetworkConnectionStats"
+    ],
+    "newOperations": [
+    "getNetworkWirelessConnectionStats"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/connectivityMonitoringDestinations",
+    "newPath": "/networks/{networkId}/appliance/connectivityMonitoringDestinations",
+    "oldOperations": [
+    "getNetworkConnectivityMonitoringDestinations",
+    "updateNetworkConnectivityMonitoringDestinations"
+    ],
+    "newOperations": [
+    "getNetworkApplianceConnectivityMonitoringDestinations",
+    "updateNetworkApplianceConnectivityMonitoringDestinations"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/contentFiltering",
+    "newPath": "/networks/{networkId}/appliance/contentFiltering",
+    "oldOperations": [
+    "getNetworkContentFiltering",
+    "updateNetworkContentFiltering"
+    ],
+    "newOperations": [
+    "getNetworkApplianceContentFiltering",
+    "updateNetworkApplianceContentFiltering"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/contentFiltering/categories",
+    "newPath": "/networks/{networkId}/appliance/contentFiltering/categories",
+    "oldOperations": [
+    "getNetworkContentFilteringCategories"
+    ],
+    "newOperations": [
+    "getNetworkApplianceContentFilteringCategories"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/connectionStats",
+    "newPath": "/networks/{networkId}/wireless/devices/connectionStats",
+    "oldOperations": [
+    "getNetworkDevicesConnectionStats"
+    ],
+    "newOperations": [
+    "getNetworkWirelessDevicesConnectionStats"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/latencyStats",
+    "newPath": "/networks/{networkId}/wireless/devices/latencyStats",
+    "oldOperations": [
+    "getNetworkDevicesLatencyStats"
+    ],
+    "newOperations": [
+    "getNetworkWirelessDevicesLatencyStats"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/{serial}",
+    "newPath": "/devices/{serial}",
+    "oldOperations": [
+    "getNetworkDevice",
+    "updateNetworkDevice"
+    ],
+    "newOperations": [
+    "getDevice",
+    "updateDevice"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/{serial}/blinkLeds",
+    "newPath": "/devices/{serial}/blinkLeds",
+    "oldOperations": [
+    "blinkNetworkDeviceLeds"
+    ],
+    "newOperations": [
+    "blinkDeviceLeds"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/{serial}/connectionStats",
+    "newPath": "/devices/{serial}/wireless/connectionStats",
+    "oldOperations": [
+    "getNetworkDeviceConnectionStats"
+    ],
+    "newOperations": [
+    "getDeviceWirelessConnectionStats"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/{serial}/latencyStats",
+    "newPath": "/devices/{serial}/wireless/latencyStats",
+    "oldOperations": [
+    "getNetworkDeviceLatencyStats"
+    ],
+    "newOperations": [
+    "getDeviceWirelessLatencyStats"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/{serial}/lldp_cdp",
+    "newPath": "/devices/{serial}/lldpCdp",
+    "oldOperations": [
+    "getNetworkDeviceLldp_cdp"
+    ],
+    "newOperations": [
+    "getDeviceLldpCdp"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/{serial}/lossAndLatencyHistory",
+    "newPath": "/devices/{serial}/lossAndLatencyHistory",
+    "oldOperations": [
+    "getNetworkDeviceLossAndLatencyHistory"
+    ],
+    "newOperations": [
+    "getDeviceLossAndLatencyHistory"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/{serial}/managementInterfaceSettings",
+    "newPath": "/devices/{serial}/managementInterface",
+    "oldOperations": [
+    "getNetworkDeviceManagementInterfaceSettings",
+    "updateNetworkDeviceManagementInterfaceSettings"
+    ],
+    "newOperations": [
+    "getDeviceManagementInterface",
+    "updateDeviceManagementInterface"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/{serial}/performance",
+    "newPath": "/devices/{serial}/appliance/performance",
+    "oldOperations": [
+    "getNetworkDevicePerformance"
+    ],
+    "newOperations": [
+    "getDeviceAppliancePerformance"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/{serial}/reboot",
+    "newPath": "/devices/{serial}/reboot",
+    "oldOperations": [
+    "rebootNetworkDevice"
+    ],
+    "newOperations": [
+    "rebootDevice"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/{serial}/remove",
+    "newPath": "/networks/{networkId}/devices/remove",
+    "oldOperations": [
+    "removeNetworkDevice"
+    ],
+    "newOperations": [
+    "removeNetworkDevices"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/{serial}/wireless/radioSettings",
+    "newPath": "/devices/{serial}/wireless/radio/settings",
+    "oldOperations": [
+    "getNetworkDeviceWirelessRadioSettings",
+    "updateNetworkDeviceWirelessRadioSettings"
+    ],
+    "newOperations": [
+    "getDeviceWirelessRadioSettings",
+    "updateDeviceWirelessRadioSettings"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/devices/{serial}/wireless/status",
+    "newPath": "/devices/{serial}/wireless/status",
+    "oldOperations": [
+    "getNetworkDeviceWirelessStatus"
+    ],
+    "newOperations": [
+    "getDeviceWirelessStatus"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/failedConnections",
+    "newPath": "/networks/{networkId}/wireless/failedConnections",
+    "oldOperations": [
+    "getNetworkFailedConnections"
+    ],
+    "newOperations": [
+    "getNetworkWirelessFailedConnections"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/firewalledServices",
+    "newPath": "/networks/{networkId}/appliance/firewall/firewalledServices",
+    "oldOperations": [
+    "getNetworkFirewalledServices"
+    ],
+    "newOperations": [
+    "getNetworkApplianceFirewallFirewalledServices"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/firewalledServices/{service}",
+    "newPath": "/networks/{networkId}/appliance/firewall/firewalledServices/{service}",
+    "oldOperations": [
+    "getNetworkFirewalledService",
+    "updateNetworkFirewalledService"
+    ],
+    "newOperations": [
+    "getNetworkApplianceFirewallFirewalledService",
+    "updateNetworkApplianceFirewallFirewalledService"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/httpServers",
+    "newPath": "/networks/{networkId}/webhooks/httpServers",
+    "oldOperations": [
+    "getNetworkHttpServers",
+    "createNetworkHttpServer"
+    ],
+    "newOperations": [
+    "getNetworkWebhooksHttpServers",
+    "createNetworkWebhooksHttpServer"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/httpServers/webhookTests",
+    "newPath": "/networks/{networkId}/webhooks/webhookTests",
+    "oldOperations": [
+    "createNetworkHttpServersWebhookTest"
+    ],
+    "newOperations": [
+    "createNetworkWebhooksWebhookTest"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/httpServers/webhookTests/{id}",
+    "newPath": "/networks/{networkId}/webhooks/webhookTests/{webhookTestId}",
+    "oldOperations": [
+    "getNetworkHttpServersWebhookTest"
+    ],
+    "newOperations": [
+    "getNetworkWebhooksWebhookTest"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/httpServers/{id}",
+    "newPath": "/networks/{networkId}/webhooks/httpServers/{httpServerId}",
+    "oldOperations": [
+    "getNetworkHttpServer",
+    "updateNetworkHttpServer",
+    "deleteNetworkHttpServer"
+    ],
+    "newOperations": [
+    "getNetworkWebhooksHttpServer",
+    "updateNetworkWebhooksHttpServer",
+    "deleteNetworkWebhooksHttpServer"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/l3FirewallRules",
+    "newPath": "/networks/{networkId}/appliance/firewall/l3FirewallRules",
+    "oldOperations": [
+    "getNetworkL3FirewallRules",
+    "updateNetworkL3FirewallRules"
+    ],
+    "newOperations": [
+    "getNetworkApplianceFirewallL3FirewallRules",
+    "updateNetworkApplianceFirewallL3FirewallRules"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/l7FirewallRules",
+    "newPath": "/networks/{networkId}/appliance/firewall/l7FirewallRules",
+    "oldOperations": [
+    "getNetworkL7FirewallRules",
+    "updateNetworkL7FirewallRules"
+    ],
+    "newOperations": [
+    "getNetworkApplianceFirewallL7FirewallRules",
+    "updateNetworkApplianceFirewallL7FirewallRules"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/l7FirewallRules/applicationCategories",
+    "newPath": "/networks/{networkId}/appliance/firewall/l7FirewallRules/applicationCategories",
+    "oldOperations": [
+    "getNetworkL7FirewallRulesApplicationCategories"
+    ],
+    "newOperations": [
+    "getNetworkApplianceFirewallL7FirewallRulesApplicationCategories"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/latencyStats",
+    "newPath": "/networks/{networkId}/wireless/latencyStats",
+    "oldOperations": [
+    "getNetworkLatencyStats"
+    ],
+    "newOperations": [
+    "getNetworkWirelessLatencyStats"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/netflowSettings",
+    "newPath": "/networks/{networkId}/netflow",
+    "oldOperations": [
+    "getNetworkNetflowSettings",
+    "updateNetworkNetflowSettings"
+    ],
+    "newOperations": [
+    "getNetworkNetflow",
+    "updateNetworkNetflow"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/oneToManyNatRules",
+    "newPath": "/networks/{networkId}/appliance/firewall/oneToManyNatRules",
+    "oldOperations": [
+    "getNetworkOneToManyNatRules",
+    "updateNetworkOneToManyNatRules"
+    ],
+    "newOperations": [
+    "getNetworkApplianceFirewallOneToManyNatRules",
+    "updateNetworkApplianceFirewallOneToManyNatRules"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/oneToOneNatRules",
+    "newPath": "/networks/{networkId}/appliance/firewall/oneToOneNatRules",
+    "oldOperations": [
+    "getNetworkOneToOneNatRules",
+    "updateNetworkOneToOneNatRules"
+    ],
+    "newOperations": [
+    "getNetworkApplianceFirewallOneToOneNatRules",
+    "updateNetworkApplianceFirewallOneToOneNatRules"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/portForwardingRules",
+    "newPath": "/networks/{networkId}/appliance/firewall/portForwardingRules",
+    "oldOperations": [
+    "getNetworkPortForwardingRules",
+    "updateNetworkPortForwardingRules"
+    ],
+    "newOperations": [
+    "getNetworkApplianceFirewallPortForwardingRules",
+    "updateNetworkApplianceFirewallPortForwardingRules"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/security/intrusionSettings",
+    "newPath": "/networks/{networkId}/appliance/security/intrusion",
+    "oldOperations": [
+    "getNetworkSecurityIntrusionSettings",
+    "updateNetworkSecurityIntrusionSettings"
+    ],
+    "newOperations": [
+    "getNetworkApplianceSecurityIntrusion",
+    "updateNetworkApplianceSecurityIntrusion"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/security/malwareSettings",
+    "newPath": "/networks/{networkId}/appliance/security/malware",
+    "oldOperations": [
+    "getNetworkSecurityMalwareSettings",
+    "updateNetworkSecurityMalwareSettings"
+    ],
+    "newOperations": [
+    "getNetworkApplianceSecurityMalware",
+    "updateNetworkApplianceSecurityMalware"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/securityEvents",
+    "newPath": "/networks/{networkId}/appliance/security/events",
+    "oldOperations": [
+    "getNetworkSecurityEvents"
+    ],
+    "newOperations": [
+    "getNetworkApplianceSecurityEvents"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/siteToSiteVpn",
+    "newPath": "/networks/{networkId}/appliance/vpn/siteToSiteVpn",
+    "oldOperations": [
+    "getNetworkSiteToSiteVpn",
+    "updateNetworkSiteToSiteVpn"
+    ],
+    "newOperations": [
+    "getNetworkApplianceVpnSiteToSiteVpn",
+    "updateNetworkApplianceVpnSiteToSiteVpn"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/sm/device/fields",
+    "newPath": "/networks/{networkId}/sm/devices/fields",
+    "oldOperations": [
+    "updateNetworkSmDeviceFields"
+    ],
+    "newOperations": [
+    "updateNetworkSmDevicesFields"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/sm/device/{deviceId}/refreshDetails",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/refreshDetails",
+    "oldOperations": [
+    "refreshNetworkSmDeviceDetails"
+    ],
+    "newOperations": [
+    "refreshNetworkSmDeviceDetails"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/sm/user/{userId}/deviceProfiles",
+    "newPath": "/networks/{networkId}/sm/users/{userId}/deviceProfiles",
+    "oldOperations": [
+    "getNetworkSmUserDeviceProfiles"
+    ],
+    "newOperations": [
+    "getNetworkSmUserDeviceProfiles"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/sm/user/{userId}/softwares",
+    "newPath": "/networks/{networkId}/sm/users/{userId}/softwares",
+    "oldOperations": [
+    "getNetworkSmUserSoftwares"
+    ],
+    "newOperations": [
+    "getNetworkSmUserSoftwares"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/sm/{deviceId}/cellularUsageHistory",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/cellularUsageHistory",
+    "oldOperations": [
+    "getNetworkSmCellularUsageHistory"
+    ],
+    "newOperations": [
+    "getNetworkSmDeviceCellularUsageHistory"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/sm/{deviceId}/certs",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/certs",
+    "oldOperations": [
+    "getNetworkSmCerts"
+    ],
+    "newOperations": [
+    "getNetworkSmDeviceCerts"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/sm/{deviceId}/deviceProfiles",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/deviceProfiles",
+    "oldOperations": [
+    "getNetworkSmDeviceProfiles"
+    ],
+    "newOperations": [
+    "getNetworkSmDeviceDeviceProfiles"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/sm/{deviceId}/networkAdapters",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/networkAdapters",
+    "oldOperations": [
+    "getNetworkSmNetworkAdapters"
+    ],
+    "newOperations": [
+    "getNetworkSmDeviceNetworkAdapters"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/sm/{deviceId}/restrictions",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/restrictions",
+    "oldOperations": [
+    "getNetworkSmRestrictions"
+    ],
+    "newOperations": [
+    "getNetworkSmDeviceRestrictions"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/sm/{deviceId}/securityCenters",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/securityCenters",
+    "oldOperations": [
+    "getNetworkSmSecurityCenters"
+    ],
+    "newOperations": [
+    "getNetworkSmDeviceSecurityCenters"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/sm/{deviceId}/softwares",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/softwares",
+    "oldOperations": [
+    "getNetworkSmSoftwares"
+    ],
+    "newOperations": [
+    "getNetworkSmDeviceSoftwares"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/sm/{deviceId}/wlanLists",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/wlanLists",
+    "oldOperations": [
+    "getNetworkSmWlanLists"
+    ],
+    "newOperations": [
+    "getNetworkSmDeviceWlanLists"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/snmpSettings",
+    "newPath": "/networks/{networkId}/snmp",
+    "oldOperations": [
+    "getNetworkSnmpSettings",
+    "updateNetworkSnmpSettings"
+    ],
+    "newOperations": [
+    "getNetworkSnmp",
+    "updateNetworkSnmp"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/ssids/{number}/l3FirewallRules",
+    "newPath": "/networks/{networkId}/wireless/ssids/{number}/firewall/l3FirewallRules",
+    "oldOperations": [
+    "getNetworkSsidL3FirewallRules",
+    "updateNetworkSsidL3FirewallRules"
+    ],
+    "newOperations": [
+    "getNetworkWirelessSsidFirewallL3FirewallRules",
+    "updateNetworkWirelessSsidFirewallL3FirewallRules"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/ssids/{number}/splashSettings",
+    "newPath": "/networks/{networkId}/wireless/ssids/{number}/splash/settings",
+    "oldOperations": [
+    "getNetworkSsidSplashSettings",
+    "updateNetworkSsidSplashSettings"
+    ],
+    "newOperations": [
+    "getNetworkWirelessSsidSplashSettings",
+    "updateNetworkWirelessSsidSplashSettings"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/ssids/{number}/trafficShaping",
+    "newPath": "/networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules",
+    "oldOperations": [
+    "getNetworkSsidTrafficShaping",
+    "updateNetworkSsidTrafficShaping"
+    ],
+    "newOperations": [
+    "getNetworkWirelessSsidTrafficShapingRules",
+    "updateNetworkWirelessSsidTrafficShapingRules"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/staticRoutes",
+    "newPath": "/networks/{networkId}/appliance/staticRoutes",
+    "oldOperations": [
+    "getNetworkStaticRoutes",
+    "createNetworkStaticRoute"
+    ],
+    "newOperations": [
+    "getNetworkApplianceStaticRoutes",
+    "createNetworkApplianceStaticRoute"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/staticRoutes/{staticRouteId}",
+    "newPath": "/networks/{networkId}/appliance/staticRoutes/{staticRouteId}",
+    "oldOperations": [
+    "getNetworkStaticRoute",
+    "updateNetworkStaticRoute",
+    "deleteNetworkStaticRoute"
+    ],
+    "newOperations": [
+    "getNetworkApplianceStaticRoute",
+    "updateNetworkApplianceStaticRoute",
+    "deleteNetworkApplianceStaticRoute"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/swapWarmSpare",
+    "newPath": "/networks/{networkId}/appliance/warmSpare/swap",
+    "oldOperations": [
+    "swapNetworkWarmspare"
+    ],
+    "newOperations": [
+    "swapNetworkApplianceWarmSpare"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switch/settings/dhcpServerPolicy",
+    "newPath": "/networks/{networkId}/switch/dhcpServerPolicy",
+    "oldOperations": [
+    "getNetworkSwitchSettingsDhcpServerPolicy",
+    "updateNetworkSwitchSettingsDhcpServerPolicy"
+    ],
+    "newOperations": [
+    "getNetworkSwitchDhcpServerPolicy",
+    "updateNetworkSwitchDhcpServerPolicy"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switch/settings/dscpToCosMappings",
+    "newPath": "/networks/{networkId}/switch/dscpToCosMappings",
+    "oldOperations": [
+    "getNetworkSwitchSettingsDscpToCosMappings",
+    "updateNetworkSwitchSettingsDscpToCosMappings"
+    ],
+    "newOperations": [
+    "getNetworkSwitchDscpToCosMappings",
+    "updateNetworkSwitchDscpToCosMappings"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switch/settings/mtu",
+    "newPath": "/networks/{networkId}/switch/mtu",
+    "oldOperations": [
+    "getNetworkSwitchSettingsMtu",
+    "updateNetworkSwitchSettingsMtu"
+    ],
+    "newOperations": [
+    "getNetworkSwitchMtu",
+    "updateNetworkSwitchMtu"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switch/settings/multicast",
+    "newPath": "/networks/{networkId}/switch/routing/multicast",
+    "oldOperations": [
+    "getNetworkSwitchSettingsMulticast",
+    "updateNetworkSwitchSettingsMulticast"
+    ],
+    "newOperations": [
+    "getNetworkSwitchRoutingMulticast",
+    "updateNetworkSwitchRoutingMulticast"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switch/settings/qosRules",
+    "newPath": "/networks/{networkId}/switch/qosRules",
+    "oldOperations": [
+    "getNetworkSwitchSettingsQosRules",
+    "createNetworkSwitchSettingsQosRule"
+    ],
+    "newOperations": [
+    "getNetworkSwitchQosRules",
+    "createNetworkSwitchQosRule"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switch/settings/qosRules/order",
+    "newPath": "/networks/{networkId}/switch/qosRules/order",
+    "oldOperations": [
+    "getNetworkSwitchSettingsQosRulesOrder",
+    "updateNetworkSwitchSettingsQosRulesOrder"
+    ],
+    "newOperations": [
+    "getNetworkSwitchQosRulesOrder",
+    "updateNetworkSwitchQosRulesOrder"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switch/settings/qosRules/{qosRuleId}",
+    "newPath": "/networks/{networkId}/switch/qosRules/{qosRuleId}",
+    "oldOperations": [
+    "getNetworkSwitchSettingsQosRule",
+    "updateNetworkSwitchSettingsQosRule",
+    "deleteNetworkSwitchSettingsQosRule"
+    ],
+    "newOperations": [
+    "getNetworkSwitchQosRule",
+    "updateNetworkSwitchQosRule",
+    "deleteNetworkSwitchQosRule"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switch/settings/stormControl",
+    "newPath": "/networks/{networkId}/switch/stormControl",
+    "oldOperations": [
+    "getNetworkSwitchSettingsStormControl",
+    "updateNetworkSwitchSettingsStormControl"
+    ],
+    "newOperations": [
+    "getNetworkSwitchStormControl",
+    "updateNetworkSwitchStormControl"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switch/settings/stp",
+    "newPath": "/networks/{networkId}/switch/stp",
+    "oldOperations": [
+    "getNetworkSwitchSettingsStp",
+    "updateNetworkSwitchSettingsStp"
+    ],
+    "newOperations": [
+    "getNetworkSwitchStp",
+    "updateNetworkSwitchStp"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switchStacks",
+    "newPath": "/networks/{networkId}/switch/stacks",
+    "oldOperations": [
+    "getNetworkSwitchStacks",
+    "createNetworkSwitchStack"
+    ],
+    "newOperations": [
+    "getNetworkSwitchStacks",
+    "createNetworkSwitchStack"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switchStacks/{switchStackId}",
+    "newPath": "/networks/{networkId}/switch/stacks/{switchStackId}",
+    "oldOperations": [
+    "getNetworkSwitchStack",
+    "deleteNetworkSwitchStack"
+    ],
+    "newOperations": [
+    "getNetworkSwitchStack",
+    "deleteNetworkSwitchStack"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switchStacks/{switchStackId}/add",
+    "newPath": "/networks/{networkId}/switch/stacks/{switchStackId}/add",
+    "oldOperations": [
+    "addNetworkSwitchStack"
+    ],
+    "newOperations": [
+    "addNetworkSwitchStack"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/switchStacks/{switchStackId}/remove",
+    "newPath": "/networks/{networkId}/switch/stacks/{switchStackId}/remove",
+    "oldOperations": [
+    "removeNetworkSwitchStack"
+    ],
+    "newOperations": [
+    "removeNetworkSwitchStack"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/trafficAnalysisSettings",
+    "newPath": "/networks/{networkId}/trafficAnalysis",
+    "oldOperations": [
+    "getNetworkTrafficAnalysisSettings",
+    "updateNetworkTrafficAnalysisSettings"
+    ],
+    "newOperations": [
+    "getNetworkTrafficAnalysis",
+    "updateNetworkTrafficAnalysis"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/trafficShaping",
+    "newPath": "/networks/{networkId}/appliance/trafficShaping",
+    "oldOperations": [
+    "getNetworkTrafficShaping",
+    "updateNetworkTrafficShaping"
+    ],
+    "newOperations": [
+    "getNetworkApplianceTrafficShaping",
+    "updateNetworkApplianceTrafficShaping"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/uplinkSettings",
+    "newPath": "/networks/{networkId}/cellularGateway/uplink",
+    "oldOperations": [
+    "getNetworkUplinkSettings",
+    "updateNetworkUplinkSettings"
+    ],
+    "newOperations": [
+    "getNetworkCellularGatewayUplink",
+    "updateNetworkCellularGatewayUplink"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/vlans",
+    "newPath": "/networks/{networkId}/appliance/vlans",
+    "oldOperations": [
+    "getNetworkVlans",
+    "createNetworkVlan"
+    ],
+    "newOperations": [
+    "getNetworkApplianceVlans",
+    "createNetworkApplianceVlan"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/vlans/{vlanId}",
+    "newPath": "/networks/{networkId}/appliance/vlans/{vlanId}",
+    "oldOperations": [
+    "getNetworkVlan",
+    "updateNetworkVlan",
+    "deleteNetworkVlan"
+    ],
+    "newOperations": [
+    "getNetworkApplianceVlan",
+    "updateNetworkApplianceVlan",
+    "deleteNetworkApplianceVlan"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/vlansEnabledState",
+    "newPath": "/networks/{networkId}/appliance/vlans/settings",
+    "oldOperations": [
+    "getNetworkVlansEnabledState",
+    "updateNetworkVlansEnabledState"
+    ],
+    "newOperations": [
+    "getNetworkApplianceVlansSettings",
+    "updateNetworkApplianceVlansSettings"
+    ]
+    },
+    {
+    "oldPath": "/networks/{networkId}/warmSpareSettings",
+    "newPath": "/networks/{networkId}/appliance/warmSpare",
+    "oldOperations": [
+    "getNetworkWarmSpareSettings",
+    "updateNetworkWarmSpareSettings"
+    ],
+    "newOperations": [
+    "getNetworkApplianceWarmSpare",
+    "updateNetworkApplianceWarmSpare"
+    ]
+    },
+    {
+    "oldPath": "/networks/{network_id}/sm/{id}/connectivity",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/connectivity",
+    "oldOperations": [
+    "getNetworkSmConnectivity"
+    ],
+    "newOperations": [
+    "getNetworkSmDeviceConnectivity"
+    ]
+    },
+    {
+    "oldPath": "/networks/{network_id}/sm/{id}/desktopLogs",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/desktopLogs",
+    "oldOperations": [
+    "getNetworkSmDesktopLogs"
+    ],
+    "newOperations": [
+    "getNetworkSmDeviceDesktopLogs"
+    ]
+    },
+    {
+    "oldPath": "/networks/{network_id}/sm/{id}/deviceCommandLogs",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/deviceCommandLogs",
+    "oldOperations": [
+    "getNetworkSmDeviceCommandLogs"
+    ],
+    "newOperations": [
+    "getNetworkSmDeviceDeviceCommandLogs"
+    ]
+    },
+    {
+    "oldPath": "/networks/{network_id}/sm/{id}/performanceHistory",
+    "newPath": "/networks/{networkId}/sm/devices/{deviceId}/performanceHistory",
+    "oldOperations": [
+    "getNetworkSmPerformanceHistory"
+    ],
+    "newOperations": [
+    "getNetworkSmDevicePerformanceHistory"
+    ]
+    },
+    {
+    "oldPath": "/organizations/{organizationId}/admins/{id}",
+    "newPath": "/organizations/{organizationId}/admins/{adminId}",
+    "oldOperations": [
+    "updateOrganizationAdmin",
+    "deleteOrganizationAdmin"
+    ],
+    "newOperations": [
+    "updateOrganizationAdmin",
+    "deleteOrganizationAdmin"
+    ]
+    },
+    {
+    "oldPath": "/organizations/{organizationId}/configTemplates/{configTemplateId}/switchProfiles",
+    "newPath": "/organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles",
+    "oldOperations": [
+    "getOrganizationConfigTemplateSwitchProfiles"
+    ],
+    "newOperations": [
+    "getOrganizationConfigTemplateSwitchProfiles"
+    ]
+    },
+    {
+    "oldPath": "/organizations/{organizationId}/deviceStatuses",
+    "newPath": "/organizations/{organizationId}/devices/statuses",
+    "oldOperations": [
+    "getOrganizationDeviceStatuses"
+    ],
+    "newOperations": [
+    "getOrganizationDevicesStatuses"
+    ]
+    },
+    {
+    "oldPath": "/organizations/{organizationId}/licenseState",
+    "newPath": "/organizations/{organizationId}/licenses/overview",
+    "oldOperations": [
+    "getOrganizationLicenseState"
+    ],
+    "newOperations": [
+    "getOrganizationLicensesOverview"
+    ]
+    },
+    {
+    "oldPath": "/organizations/{organizationId}/security/intrusionSettings",
+    "newPath": "/organizations/{organizationId}/appliance/security/intrusion",
+    "oldOperations": [
+    "getOrganizationSecurityIntrusionSettings",
+    "updateOrganizationSecurityIntrusionSettings"
+    ],
+    "newOperations": [
+    "getOrganizationApplianceSecurityIntrusion",
+    "updateOrganizationApplianceSecurityIntrusion"
+    ]
+    },
+    {
+    "oldPath": "/organizations/{organizationId}/securityEvents",
+    "newPath": "/organizations/{organizationId}/appliance/security/events",
+    "oldOperations": [
+    "getOrganizationSecurityEvents"
+    ],
+    "newOperations": [
+    "getOrganizationApplianceSecurityEvents"
+    ]
+    },
+    {
+    "oldPath": "/organizations/{organizationId}/thirdPartyVPNPeers",
+    "newPath": "/organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers",
+    "oldOperations": [
+    "getOrganizationThirdPartyVPNPeers",
+    "updateOrganizationThirdPartyVPNPeers"
+    ],
+    "newOperations": [
+    "getOrganizationApplianceVpnThirdPartyVPNPeers",
+    "updateOrganizationApplianceVpnThirdPartyVPNPeers"
+    ]
+    },
+    {
+    "oldPath": "/organizations/{organizationId}/uplinksLossAndLatency",
+    "newPath": "/organizations/{organizationId}/devices/uplinksLossAndLatency",
+    "oldOperations": [
+    "getOrganizationUplinksLossAndLatency"
+    ],
+    "newOperations": [
+    "getOrganizationDevicesUplinksLossAndLatency"
+    ]
+    },
+    {
+    "oldPath": "/organizations/{organizationId}/vpnFirewallRules",
+    "newPath": "/organizations/{organizationId}/appliance/vpn/vpnFirewallRules",
+    "oldOperations": [
+    "getOrganizationVpnFirewallRules",
+    "updateOrganizationVpnFirewallRules"
+    ],
+    "newOperations": [
+    "getOrganizationApplianceVpnVpnFirewallRules",
+    "updateOrganizationApplianceVpnVpnFirewallRules"
+    ]
+    },
+    {
+    "oldPath": "/organizations/{organizationId}/webhookLogs",
+    "newPath": "/organizations/{organizationId}/webhooks/logs",
+    "oldOperations": [
+    "getOrganizationWebhookLogs"
+    ],
+    "newOperations": [
+    "getOrganizationWebhooksLogs"
+    ]
+    }
+    ]
