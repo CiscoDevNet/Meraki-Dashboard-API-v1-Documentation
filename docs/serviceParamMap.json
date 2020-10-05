@@ -1,0 +1,1158 @@
+[
+    {
+        "pathServiceParam": "accessPolicyNumber",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-switch-access-policies' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSwitchAccessPolicies",
+                "method": "get",
+                "path": "/networks/{networkId}/switch/accessPolicies",
+                "responseParam": "accessPolicyNumber"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-switch-access-policy' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSwitchAccessPolicy",
+                "method": "post",
+                "path": "/networks/{networkId}/switch/accessPolicies",
+                "responseParam": "accessPolicyNumber"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "aclId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-adaptive-policy-acls' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationAdaptivePolicyAcls",
+                "method": "get",
+                "path": "/organizations/{organizationId}/adaptivePolicy/acls",
+                "responseParam": "aclId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-adaptive-policy-acl' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationAdaptivePolicyAcl",
+                "method": "post",
+                "path": "/organizations/{organizationId}/adaptivePolicy/acls",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "actionBatchId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-action-batch' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationActionBatch",
+                "method": "post",
+                "path": "/organizations/{organizationId}/actionBatches",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-action-batches' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationActionBatches",
+                "method": "get",
+                "path": "/organizations/{organizationId}/actionBatches",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "adminId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-admins' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationAdmins",
+                "method": "get",
+                "path": "/organizations/{organizationId}/admins",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-admin' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationAdmin",
+                "method": "post",
+                "path": "/organizations/{organizationId}/admins",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "appId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-sm-apps' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSmApps",
+                "method": "get",
+                "path": "/networks/{networkId}/sm/apps",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-sm-app' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSmApp",
+                "method": "post",
+                "path": "/networks/{networkId}/sm/apps",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "attemptId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-umbrella-protection-apply-protection-attempt' target='_blank'>Docs</a>",
+                "operationId": "createNetworkApplianceUmbrellaProtectionApplyProtectionAttempt",
+                "method": "post",
+                "path": "/networks/{networkId}/appliance/umbrella/protection/applyProtectionAttempts",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-group-policy-umbrella-protection-apply-protection-attempt' target='_blank'>Docs</a>",
+                "operationId": "createNetworkGroupPolicyUmbrellaProtectionApplyProtectionAttempt",
+                "method": "post",
+                "path": "/networks/{networkId}/groupPolicies/{groupPolicyId}/umbrella/protection/applyProtectionAttempts",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-sm-bypass-activation-lock-attempt' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSmBypassActivationLockAttempt",
+                "method": "post",
+                "path": "/networks/{networkId}/sm/bypassActivationLockAttempts",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-ssid-umbrella-protection-apply-protection-attempt' target='_blank'>Docs</a>",
+                "operationId": "createNetworkWirelessSsidUmbrellaProtectionApplyProtectionAttempt",
+                "method": "post",
+                "path": "/networks/{networkId}/wireless/ssids/{number}/umbrella/protection/applyProtectionAttempts",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "bluetoothClientId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-bluetooth-clients' target='_blank'>Docs</a>",
+                "operationId": "getNetworkBluetoothClients",
+                "method": "get",
+                "path": "/networks/{networkId}/bluetoothClients",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "brandingPolicyId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-branding-policies' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationBrandingPolicies",
+                "method": "get",
+                "path": "/organizations/{organizationId}/brandingPolicies",
+                "responseParam": "brandingPolicyId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-branding-policy' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationBrandingPolicy",
+                "method": "post",
+                "path": "/organizations/{organizationId}/brandingPolicies",
+                "responseParam": "brandingPolicyId"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "certificateId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-sm-users-certificate' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSmUsersCertificate",
+                "method": "post",
+                "path": "/networks/{networkId}/sm/users/certificates",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-sm-users-certificates' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSmUsersCertificates",
+                "method": "get",
+                "path": "/networks/{networkId}/sm/users/certificates",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "clientId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-clients' target='_blank'>Docs</a>",
+                "operationId": "getNetworkClients",
+                "method": "get",
+                "path": "/networks/{networkId}/clients",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-clients-connection-stats' target='_blank'>Docs</a>",
+                "operationId": "getNetworkWirelessClientsConnectionStats",
+                "method": "get",
+                "path": "/networks/{networkId}/wireless/clients/connectionStats",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-clients-latency-stats' target='_blank'>Docs</a>",
+                "operationId": "getNetworkWirelessClientsLatencyStats",
+                "method": "get",
+                "path": "/networks/{networkId}/wireless/clients/latencyStats",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "configTemplateId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-config-templates' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationConfigTemplates",
+                "method": "get",
+                "path": "/organizations/{organizationId}/configTemplates",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-config-template' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationConfigTemplate",
+                "method": "post",
+                "path": "/organizations/{organizationId}/configTemplates",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "customPerformanceClassId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-traffic-shaping-custom-performance-classes' target='_blank'>Docs</a>",
+                "operationId": "getNetworkApplianceTrafficShapingCustomPerformanceClasses",
+                "method": "get",
+                "path": "/networks/{networkId}/appliance/trafficShaping/customPerformanceClasses",
+                "responseParam": "customPerformanceClassId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-traffic-shaping-custom-performance-class' target='_blank'>Docs</a>",
+                "operationId": "createNetworkApplianceTrafficShapingCustomPerformanceClass",
+                "method": "post",
+                "path": "/networks/{networkId}/appliance/trafficShaping/customPerformanceClasses",
+                "responseParam": "customPerformanceClassId"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "deviceId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-sm-devices' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSmDevices",
+                "method": "get",
+                "path": "/networks/{networkId}/sm/devices",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!checkin-network-sm-devices' target='_blank'>Docs</a>",
+                "operationId": "checkinNetworkSmDevices",
+                "method": "post",
+                "path": "/networks/{networkId}/sm/devices/checkin",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!lock-network-sm-devices' target='_blank'>Docs</a>",
+                "operationId": "lockNetworkSmDevices",
+                "method": "post",
+                "path": "/networks/{networkId}/sm/devices/lock",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!modify-network-sm-devices-tags' target='_blank'>Docs</a>",
+                "operationId": "modifyNetworkSmDevicesTags",
+                "method": "post",
+                "path": "/networks/{networkId}/sm/devices/modifyTags",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!move-network-sm-devices' target='_blank'>Docs</a>",
+                "operationId": "moveNetworkSmDevices",
+                "method": "post",
+                "path": "/networks/{networkId}/sm/devices/move",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!wipe-network-sm-devices' target='_blank'>Docs</a>",
+                "operationId": "wipeNetworkSmDevices",
+                "method": "post",
+                "path": "/networks/{networkId}/sm/devices/wipe",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "floorPlanId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-floor-plans' target='_blank'>Docs</a>",
+                "operationId": "getNetworkFloorPlans",
+                "method": "get",
+                "path": "/networks/{networkId}/floorPlans",
+                "responseParam": "floorPlanId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-floor-plan' target='_blank'>Docs</a>",
+                "operationId": "createNetworkFloorPlan",
+                "method": "post",
+                "path": "/networks/{networkId}/floorPlans",
+                "responseParam": "floorPlanId"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "geofenceId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-sm-geofences' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSmGeofences",
+                "method": "get",
+                "path": "/networks/{networkId}/sm/geofences",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-sm-geofence' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSmGeofence",
+                "method": "post",
+                "path": "/networks/{networkId}/sm/geofences",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "groupId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-adaptive-policy-groups' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationAdaptivePolicyGroups",
+                "method": "get",
+                "path": "/organizations/{organizationId}/adaptivePolicy/groups",
+                "responseParam": "groupId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-adaptive-policy-group' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationAdaptivePolicyGroup",
+                "method": "post",
+                "path": "/organizations/{organizationId}/adaptivePolicy/groups",
+                "responseParam": "groupId"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "groupPolicyId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-group-policies' target='_blank'>Docs</a>",
+                "operationId": "getNetworkGroupPolicies",
+                "method": "get",
+                "path": "/networks/{networkId}/groupPolicies",
+                "responseParam": "groupPolicyId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-group-policy' target='_blank'>Docs</a>",
+                "operationId": "createNetworkGroupPolicy",
+                "method": "post",
+                "path": "/networks/{networkId}/groupPolicies",
+                "responseParam": "groupPolicyId"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "httpServerId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-webhooks-http-servers' target='_blank'>Docs</a>",
+                "operationId": "getNetworkWebhooksHttpServers",
+                "method": "get",
+                "path": "/networks/{networkId}/webhooks/httpServers",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-webhooks-http-server' target='_blank'>Docs</a>",
+                "operationId": "createNetworkWebhooksHttpServer",
+                "method": "post",
+                "path": "/networks/{networkId}/webhooks/httpServers",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "id",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-device-uplink-cellular' target='_blank'>Docs</a>",
+                "operationId": "getNetworkDeviceUplinkCellular",
+                "method": "get",
+                "path": "/networks/{networkId}/devices/{serial}/uplink/cellular",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-device-uplink-cellular' target='_blank'>Docs</a>",
+                "operationId": "createNetworkDeviceUplinkCellular",
+                "method": "post",
+                "path": "/networks/{networkId}/devices/{serial}/uplink/cellular",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-sensors-alerts-profiles' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSensorsAlertsProfiles",
+                "method": "get",
+                "path": "/networks/{networkId}/sensors/alerts/profiles",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-sensors-alerts-profile' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSensorsAlertsProfile",
+                "method": "post",
+                "path": "/networks/{networkId}/sensors/alerts/profiles",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-http-servers-webhook-test' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationHttpServersWebhookTest",
+                "method": "post",
+                "path": "/organizations/{organizationId}/httpServers/webhookTests",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-http-servers' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationHttpServers",
+                "method": "get",
+                "path": "/organizations/{organizationId}/httpServers",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-http-server' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationHttpServer",
+                "method": "post",
+                "path": "/organizations/{organizationId}/httpServers",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "identityPskId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssid-identity-psks' target='_blank'>Docs</a>",
+                "operationId": "getNetworkWirelessSsidIdentityPsks",
+                "method": "get",
+                "path": "/networks/{networkId}/wireless/ssids/{number}/identityPsks",
+                "responseParam": "identityPskId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-ssid-identity-psk' target='_blank'>Docs</a>",
+                "operationId": "createNetworkWirelessSsidIdentityPsk",
+                "method": "post",
+                "path": "/networks/{networkId}/wireless/ssids/{number}/identityPsks",
+                "responseParam": "identityPskId"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "idpId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-saml-idps' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationSamlIdps",
+                "method": "get",
+                "path": "/organizations/{organizationId}/saml/idps",
+                "responseParam": "idpId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-saml-idp' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationSamlIdp",
+                "method": "post",
+                "path": "/organizations/{organizationId}/saml/idps",
+                "responseParam": "idpId"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "interfaceId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-interfaces' target='_blank'>Docs</a>",
+                "operationId": "getDeviceSwitchRoutingInterfaces",
+                "method": "get",
+                "path": "/devices/{serial}/switch/routing/interfaces",
+                "responseParam": "interfaceId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-device-switch-routing-interface' target='_blank'>Docs</a>",
+                "operationId": "createDeviceSwitchRoutingInterface",
+                "method": "post",
+                "path": "/devices/{serial}/switch/routing/interfaces",
+                "responseParam": "interfaceId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-interfaces' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSwitchStackRoutingInterfaces",
+                "method": "get",
+                "path": "/networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces",
+                "responseParam": "interfaceId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-switch-stack-routing-interface' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSwitchStackRoutingInterface",
+                "method": "post",
+                "path": "/networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces",
+                "responseParam": "interfaceId"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "licenseId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-licenses' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationLicenses",
+                "method": "get",
+                "path": "/organizations/{organizationId}/licenses",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!assign-organization-licenses-seats' target='_blank'>Docs</a>",
+                "operationId": "assignOrganizationLicensesSeats",
+                "method": "post",
+                "path": "/organizations/{organizationId}/licenses/assignSeats",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!move-organization-licenses' target='_blank'>Docs</a>",
+                "operationId": "moveOrganizationLicenses",
+                "method": "post",
+                "path": "/organizations/{organizationId}/licenses/move",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!move-organization-licenses-seats' target='_blank'>Docs</a>",
+                "operationId": "moveOrganizationLicensesSeats",
+                "method": "post",
+                "path": "/organizations/{organizationId}/licenses/moveSeats",
+                "responseParam": "licenseId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!renew-organization-licenses-seats' target='_blank'>Docs</a>",
+                "operationId": "renewOrganizationLicensesSeats",
+                "method": "post",
+                "path": "/organizations/{organizationId}/licenses/renewSeats",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "linkAggregationId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-switch-link-aggregations' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSwitchLinkAggregations",
+                "method": "get",
+                "path": "/networks/{networkId}/switch/linkAggregations",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-switch-link-aggregation' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSwitchLinkAggregation",
+                "method": "post",
+                "path": "/networks/{networkId}/switch/linkAggregations",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "merakiAuthUserId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-meraki-auth-users' target='_blank'>Docs</a>",
+                "operationId": "getNetworkMerakiAuthUsers",
+                "method": "get",
+                "path": "/networks/{networkId}/merakiAuthUsers",
+                "responseParam": "merakiAuthUserId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-meraki-auth-user' target='_blank'>Docs</a>",
+                "operationId": "createNetworkMerakiAuthUser",
+                "method": "post",
+                "path": "/networks/{networkId}/merakiAuthUsers",
+                "responseParam": "merakiAuthUserId"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "monitoredMediaServerId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-insight-monitored-media-servers' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationInsightMonitoredMediaServers",
+                "method": "get",
+                "path": "/organizations/{organizationId}/insight/monitoredMediaServers",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-insight-monitored-media-server' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationInsightMonitoredMediaServer",
+                "method": "post",
+                "path": "/organizations/{organizationId}/insight/monitoredMediaServers",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "mqttBrokerId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-mqtt-brokers' target='_blank'>Docs</a>",
+                "operationId": "getNetworkMqttBrokers",
+                "method": "get",
+                "path": "/networks/{networkId}/mqttBrokers",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-mqtt-broker' target='_blank'>Docs</a>",
+                "operationId": "createNetworkMqttBroker",
+                "method": "post",
+                "path": "/networks/{networkId}/mqttBrokers",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "networkId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-networks' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationNetworks",
+                "method": "get",
+                "path": "/organizations/{organizationId}/networks",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-network' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationNetwork",
+                "method": "post",
+                "path": "/organizations/{organizationId}/networks",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!combine-organization-networks' target='_blank'>Docs</a>",
+                "operationId": "combineOrganizationNetworks",
+                "method": "post",
+                "path": "/organizations/{organizationId}/networks/combine",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "networkObjectGroupId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-network-object-groups' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationNetworkObjectGroups",
+                "method": "get",
+                "path": "/organizations/{organizationId}/networkObjectGroups",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-network-object-group' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationNetworkObjectGroup",
+                "method": "post",
+                "path": "/organizations/{organizationId}/networkObjectGroups",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "networkObjectId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-network-objects' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationNetworkObjects",
+                "method": "get",
+                "path": "/organizations/{organizationId}/networkObjects",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-network-object' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationNetworkObject",
+                "method": "post",
+                "path": "/organizations/{organizationId}/networkObjects",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "number",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-ssids' target='_blank'>Docs</a>",
+                "operationId": "getNetworkWirelessSsids",
+                "method": "get",
+                "path": "/networks/{networkId}/wireless/ssids",
+                "responseParam": "number"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "organizationId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organizations' target='_blank'>Docs</a>",
+                "operationId": "getOrganizations",
+                "method": "get",
+                "path": "/organizations",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization' target='_blank'>Docs</a>",
+                "operationId": "createOrganization",
+                "method": "post",
+                "path": "/organizations",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "permissionScopeId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-permission-scopes' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationPermissionScopes",
+                "method": "get",
+                "path": "/organizations/{organizationId}/permissionScopes",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "portId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-device-switch-ports' target='_blank'>Docs</a>",
+                "operationId": "getDeviceSwitchPorts",
+                "method": "get",
+                "path": "/devices/{serial}/switch/ports",
+                "responseParam": "portId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-ports' target='_blank'>Docs</a>",
+                "operationId": "getNetworkAppliancePorts",
+                "method": "get",
+                "path": "/networks/{networkId}/appliance/ports",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-config-template-switch-profile-ports' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationConfigTemplateSwitchProfilePorts",
+                "method": "get",
+                "path": "/organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports",
+                "responseParam": "portId"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "portScheduleId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-switch-port-schedules' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSwitchPortSchedules",
+                "method": "get",
+                "path": "/networks/{networkId}/switch/portSchedules",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-switch-port-schedule' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSwitchPortSchedule",
+                "method": "post",
+                "path": "/networks/{networkId}/switch/portSchedules",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "profileId"
+    },
+    {
+        "pathServiceParam": "qosRuleId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-switch-qos-rules' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSwitchQosRules",
+                "method": "get",
+                "path": "/networks/{networkId}/switch/qosRules",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-switch-qos-rule' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSwitchQosRule",
+                "method": "post",
+                "path": "/networks/{networkId}/switch/qosRules",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "qualityRetentionProfileId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-camera-quality-retention-profiles' target='_blank'>Docs</a>",
+                "operationId": "getNetworkCameraQualityRetentionProfiles",
+                "method": "get",
+                "path": "/networks/{networkId}/camera/qualityRetentionProfiles",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-camera-quality-retention-profile' target='_blank'>Docs</a>",
+                "operationId": "createNetworkCameraQualityRetentionProfile",
+                "method": "post",
+                "path": "/networks/{networkId}/camera/qualityRetentionProfiles",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "regionId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-sm-geofence-regions' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSmGeofenceRegions",
+                "method": "get",
+                "path": "/networks/{networkId}/sm/geofences/{geofenceId}/regions",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-sm-geofence-region' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSmGeofenceRegion",
+                "method": "post",
+                "path": "/networks/{networkId}/sm/geofences/{geofenceId}/regions",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "rendezvousPointId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-switch-routing-multicast-rendezvous-points' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSwitchRoutingMulticastRendezvousPoints",
+                "method": "get",
+                "path": "/networks/{networkId}/switch/routing/multicast/rendezvousPoints",
+                "responseParam": "rendezvousPointId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-switch-routing-multicast-rendezvous-point' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSwitchRoutingMulticastRendezvousPoint",
+                "method": "post",
+                "path": "/networks/{networkId}/switch/routing/multicast/rendezvousPoints",
+                "responseParam": "rendezvousPointId"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "requestId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-pii-requests' target='_blank'>Docs</a>",
+                "operationId": "getNetworkPiiRequests",
+                "method": "get",
+                "path": "/networks/{networkId}/pii/requests",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-pii-request' target='_blank'>Docs</a>",
+                "operationId": "createNetworkPiiRequest",
+                "method": "post",
+                "path": "/networks/{networkId}/pii/requests",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "rfProfileId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-rf-profiles' target='_blank'>Docs</a>",
+                "operationId": "getNetworkWirelessRfProfiles",
+                "method": "get",
+                "path": "/networks/{networkId}/wireless/rfProfiles",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-wireless-rf-profile' target='_blank'>Docs</a>",
+                "operationId": "createNetworkWirelessRfProfile",
+                "method": "post",
+                "path": "/networks/{networkId}/wireless/rfProfiles",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "roleId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-roles' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationRoles",
+                "method": "get",
+                "path": "/organizations/{organizationId}/roles",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-role' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationRole",
+                "method": "post",
+                "path": "/organizations/{organizationId}/roles",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "rolePermissionId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-role-role-permissions' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationRoleRolePermissions",
+                "method": "get",
+                "path": "/organizations/{organizationId}/roles/{roleId}/rolePermissions",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-role-role-permission' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationRoleRolePermission",
+                "method": "post",
+                "path": "/organizations/{organizationId}/roles/{roleId}/rolePermissions",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "samlRoleId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-saml-roles' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationSamlRoles",
+                "method": "get",
+                "path": "/organizations/{organizationId}/samlRoles",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-saml-role' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationSamlRole",
+                "method": "post",
+                "path": "/organizations/{organizationId}/samlRoles",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "serial",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-devices' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationDevices",
+                "method": "get",
+                "path": "/organizations/{organizationId}/devices",
+                "responseParam": "serial"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "service",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-firewall-firewalled-services' target='_blank'>Docs</a>",
+                "operationId": "getNetworkApplianceFirewallFirewalledServices",
+                "method": "get",
+                "path": "/networks/{networkId}/appliance/firewall/firewalledServices",
+                "responseParam": "service"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "staticRouteId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-device-switch-routing-static-routes' target='_blank'>Docs</a>",
+                "operationId": "getDeviceSwitchRoutingStaticRoutes",
+                "method": "get",
+                "path": "/devices/{serial}/switch/routing/staticRoutes",
+                "responseParam": "staticRouteId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-device-switch-routing-static-route' target='_blank'>Docs</a>",
+                "operationId": "createDeviceSwitchRoutingStaticRoute",
+                "method": "post",
+                "path": "/devices/{serial}/switch/routing/staticRoutes",
+                "responseParam": "staticRouteId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-static-routes' target='_blank'>Docs</a>",
+                "operationId": "getNetworkApplianceStaticRoutes",
+                "method": "get",
+                "path": "/networks/{networkId}/appliance/staticRoutes",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-static-route' target='_blank'>Docs</a>",
+                "operationId": "createNetworkApplianceStaticRoute",
+                "method": "post",
+                "path": "/networks/{networkId}/appliance/staticRoutes",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stack-routing-static-routes' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSwitchStackRoutingStaticRoutes",
+                "method": "get",
+                "path": "/networks/{networkId}/switch/stacks/{switchStackId}/routing/staticRoutes",
+                "responseParam": "staticRouteId"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-switch-stack-routing-static-route' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSwitchStackRoutingStaticRoute",
+                "method": "post",
+                "path": "/networks/{networkId}/switch/stacks/{switchStackId}/routing/staticRoutes",
+                "responseParam": "staticRouteId"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "switchStackId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-switch-stacks' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSwitchStacks",
+                "method": "get",
+                "path": "/networks/{networkId}/switch/stacks",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-switch-stack' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSwitchStack",
+                "method": "post",
+                "path": "/networks/{networkId}/switch/stacks",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "tagId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-sm-tags' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSmTags",
+                "method": "get",
+                "path": "/networks/{networkId}/sm/tags",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-sm-tag' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSmTag",
+                "method": "post",
+                "path": "/networks/{networkId}/sm/tags",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "targetGroupId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-sm-target-groups' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSmTargetGroups",
+                "method": "get",
+                "path": "/networks/{networkId}/sm/targetGroups",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-sm-target-group' target='_blank'>Docs</a>",
+                "operationId": "createNetworkSmTargetGroup",
+                "method": "post",
+                "path": "/networks/{networkId}/sm/targetGroups",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "userAccessDeviceId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-sm-user-access-devices' target='_blank'>Docs</a>",
+                "operationId": "getNetworkSmUserAccessDevices",
+                "method": "get",
+                "path": "/networks/{networkId}/sm/userAccessDevices",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "userId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-users' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationUsers",
+                "method": "get",
+                "path": "/organizations/{organizationId}/users",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-organization-users' target='_blank'>Docs</a>",
+                "operationId": "createOrganizationUsers",
+                "method": "post",
+                "path": "/organizations/{organizationId}/users",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "vlanId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-network-appliance-vlans' target='_blank'>Docs</a>",
+                "operationId": "getNetworkApplianceVlans",
+                "method": "get",
+                "path": "/networks/{networkId}/appliance/vlans",
+                "responseParam": "id"
+            },
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-appliance-vlan' target='_blank'>Docs</a>",
+                "operationId": "createNetworkApplianceVlan",
+                "method": "post",
+                "path": "/networks/{networkId}/appliance/vlans",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "vppAccountId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!get-organization-sm-vpp-accounts' target='_blank'>Docs</a>",
+                "operationId": "getOrganizationSmVppAccounts",
+                "method": "get",
+                "path": "/organizations/{organizationId}/sm/vppAccounts",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "webhookTestId",
+        "resourceOperations": [
+            {
+                "documentation": "<a href='https://developer.cisco.com/meraki/api-v1/#!create-network-webhooks-webhook-test' target='_blank'>Docs</a>",
+                "operationId": "createNetworkWebhooksWebhookTest",
+                "method": "post",
+                "path": "/networks/{networkId}/webhooks/webhookTests",
+                "responseParam": "id"
+            }
+        ]
+    },
+    {
+        "pathServiceParam": "zoneId"
+    }
+]

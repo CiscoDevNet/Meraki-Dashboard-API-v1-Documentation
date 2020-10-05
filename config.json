@@ -53,6 +53,10 @@
                     "content": "docs/PathSchema.md"
                 },
                 {
+                    "title": "Path Parameters",
+                    "content": "docs/serviceParamMap.md"
+                },
+                {
                     "title": "Errors",
                     "content": "docs/Errors.md"
                 },
@@ -64,6 +68,7 @@
                     "title": "Rate Limit",
                     "content": "docs/RateLimit.md"
                 },
+                
                 {
                     "title": "Versioning",
                     "content": "docs/Versioning.md"
