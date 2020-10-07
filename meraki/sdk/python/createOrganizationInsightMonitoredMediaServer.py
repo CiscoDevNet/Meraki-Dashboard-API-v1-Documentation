@@ -12,7 +12,8 @@ name = 'Sample VoIP Provider'
 address = '123.123.123.1'
 
 response = dashboard.insight.createOrganizationInsightMonitoredMediaServer(
-    organization_id, name, address
+    organization_id, name, address, 
+    bestEffortMonitoringEnabled=True
 )
 
 print(response)
