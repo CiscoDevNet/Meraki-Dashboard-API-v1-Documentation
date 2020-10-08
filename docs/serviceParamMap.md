@@ -1,8 +1,13 @@
-# Global Meraki Path Paramater IDs
+# Global Meraki Path Parameter IDs
 
-Each service paramater ID has related API endpoint operations which can be used to get the ID's value. 
+Each service API path paramater ID has related API endpoint operations which can be used to get the ID's value. 
 
-Some endpoints will return the parameter named as `id` whereas other operations may return the named ID such as `groupId` or `floorPlanId`. 
+For example, the following API path requires an `organizationId` for its scope and an `adminId` for its service parameter.
+
+`/organizations/{organizationId}/admins/{adminId}`
+
+Some endpoints will return the parameter named as `id` in the body, whereas other operations may return the named ID such as `groupId` or `floorPlanId`. This table provides a helpful map of the global Meraki path parameters and their respective operations. It also includes the ID parameter name you should expect to use for related API operations.
+
 
 ## Service Parameter Operations
 
