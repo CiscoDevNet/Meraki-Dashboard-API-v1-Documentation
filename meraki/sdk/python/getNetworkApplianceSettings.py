@@ -7,14 +7,10 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-organization_id = '549236'
-monitored_media_server_id = ''
+network_id = 'L_646829496481105433'
 
-response = dashboard.insight.updateOrganizationInsightMonitoredMediaServer(
-    organization_id, monitored_media_server_id, 
-    name='Sample VoIP Provider', 
-    address='123.123.123.1', 
-    bestEffortMonitoringEnabled=True
+response = dashboard.appliance.getNetworkApplianceSettings(
+    network_id
 )
 
 print(response)

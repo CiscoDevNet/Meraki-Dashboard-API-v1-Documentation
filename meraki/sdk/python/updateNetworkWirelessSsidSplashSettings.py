@@ -13,7 +13,13 @@ number = ''
 response = dashboard.wireless.updateNetworkWirelessSsidSplashSettings(
     network_id, number, 
     splashUrl='https://www.custom_splash_url.com', 
-    useSplashUrl=True
+    useSplashUrl=True, 
+    redirectUrl='https://example.com', 
+    useRedirectUrl=True, 
+    welcomeMessage='Welcome!', 
+    splashLogo={'md5': 'abcd1234', 'extension': 'jpg'}, 
+    splashImage={'md5': None}, 
+    splashPrepaidFront={'md5': None}
 )
 
 print(response)
