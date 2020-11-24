@@ -1,15 +1,29 @@
 
 name: Close as a feature
 on:
-  issues:
-    types: [labeled]
+  push:
+    branches:
+    - master
+    
 outputs:
   response:
     description: 'cloud sso response'
+
+
 jobs:
-    notification
-        - name: Deploy Stage
-            uses: fjogeleit/http-request-action@master
-            with:
-                url: 'https://cloudsso.cisco.com/as/token.oauth2?grant_type=client_credentials&client_id=${{secrets.client_id}}&client_secret=${{secrets.client_secret}}'
-                method: 'POST'
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      response: ${{steps.step1.response}}
+    steps:
+      - id: step1
+      - name: Close Issue
+        uses: peter-evans/close-issue@v1
+        with:
+          url: 'https://cloudsso.cisco.com/as/token.oauth2?grant_type=client_credentials&client_id=${{secrets.client_id}}&client_secret=${{secrets.client_secret}}'
+          method: POST
+
+
+           
+  
+     
