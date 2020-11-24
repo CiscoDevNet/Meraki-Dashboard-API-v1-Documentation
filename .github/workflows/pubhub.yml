@@ -17,7 +17,6 @@ jobs:
       response: ${{steps.step1.response}}
     steps:
       - id: step1
-      - name: Close Issue
         uses: peter-evans/close-issue@v1
         with:
           url: 'https://cloudsso.cisco.com/as/token.oauth2?grant_type=client_credentials&client_id=${{secrets.client_id}}&client_secret=${{secrets.client_secret}}'
