@@ -4,11 +4,6 @@ on:
   push:
     branches:
     - master
-    
-outputs:
-  response:
-    description: 'cloud sso response'
-
 
 jobs:
   build:
