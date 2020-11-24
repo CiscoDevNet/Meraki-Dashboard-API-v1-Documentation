@@ -10,13 +10,13 @@ jobs:
     outputs:
       response: ${{steps.CloudSSO.response}}
     steps:
-      - name: CloudSSO
+      - name: cloudsso
         uses: fjogeleit/http-request-action@v1.5.0
         with:
           url: 'https://cloudsso.cisco.com/as/token.oauth2?grant_type=client_credentials&client_id=${{secrets.client_id}}&client_secret=${{secrets.client_secret}}'
           method: POST
       - name: echo
-        run: echo ${{jobs.notifications.outputs.response}}
+        run: echo ${{steps.cloudsso.response}}
   PubHub:
     name: trigger api
     runs-on: ubuntu-latest
