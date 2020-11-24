@@ -1,0 +1,15 @@
+
+name: Close as a feature
+on:
+  issues:
+    types: [labeled]
+outputs:
+  response:
+    description: 'cloud sso response'
+jobs:
+    notification
+        - name: Deploy Stage
+            uses: fjogeleit/http-request-action@master
+            with:
+                url: 'https://cloudsso.cisco.com/as/token.oauth2?grant_type=client_credentials&client_id=${{secrets.client_id}}&client_secret=${{secrets.client_secret}}'
+                method: 'POST'
