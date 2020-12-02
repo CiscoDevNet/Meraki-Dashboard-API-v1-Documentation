@@ -18,14 +18,6 @@ jobs:
           method: POST
       - name: echo
         run: echo ${{steps.cloudsso.response}}
-      - name : PubHub API
-        uses: fjogeleit/http-request-action@v1.5.0
-        with:
-          url: 'https://api.cisco.com/api/v1.0/projects/sync/2864/'
-          customHeaders: '{"X-Authorization":"Token ${{secrets.pubhub_token}}", "Authorization" : "Bearer ${{fromJson(steps.cloudsso.response)}}"}'
-
-  
-
 
 
 
