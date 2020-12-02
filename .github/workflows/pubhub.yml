@@ -22,23 +22,8 @@ jobs:
         uses: fjogeleit/http-request-action@v1.5.0
         with:
           url: 'https://api.cisco.com/api/v1.0/projects/sync/2864/'
-          customHeaders: '{"X-Authorization":"Token ${{secrets.pubhub_token}}", "Authorization" : "Bearer ${{fromJson(needs.notification.outputs.response)}}"}'
+          customHeaders: '{"X-Authorization":"Token ${{secrets.pubhub_token}}", "Authorization" : "Bearer ${{fromJson(steps.cloudsso.response)}}"}'
 
-
-  PubHub:
-    name: trigger api
-    runs-on: ubuntu-latest
-    needs: notification
-    steps:
-      - name : PubHub API
-        uses: fjogeleit/http-request-action@v1.5.0
-        with:
-          url: 'https://api.cisco.com/api/v1.0/projects/sync/2864/'
-          customHeaders: '{"X-Authorization":"Token ${{secrets.pubhub_token}}", "Authorization" : "Bearer ${{fromJson(needs.notification.outputs.response)}}"}'
-
-
-
-           
   
 
 
