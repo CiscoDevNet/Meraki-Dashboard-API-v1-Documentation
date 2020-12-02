@@ -24,7 +24,6 @@ jobs:
           url: 'https://cloudsso.cisco.com/as/token.oauth2?grant_type=client_credentials&client_id=${{secrets.client_id}}&client_secret=${{secrets.client_secret}}'
           method: POST
       - name: echo
-        uses: ./
         run: echo ${{steps.cloudsso.response}}
 
 
