@@ -12,11 +12,6 @@ jobs:
     steps:
       - name: echo
         run: echo "Starting https request"
-      - name: Request Postment Echo GET
-        uses: fjogeleit/http-request-action@v1.5.0
-        with:
-          url: 'https://postman-echo.com/get'
-          method: 'GET'
       - name: cloudsso
         uses: fjogeleit/http-request-action@v1.5.0
         id: ciscosso
