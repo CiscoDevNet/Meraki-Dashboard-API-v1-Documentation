@@ -10,28 +10,28 @@ jobs:
     outputs:
       response: ${{steps.CloudSSO.response}}
     steps:
+      - name: echo
+        run: echo "Starting https request"
+      - name: Request Postment Echo GET
+        uses: fjogeleit/http-request-action@v1.5.0
+        with:
+          url: 'https://postman-echo.com/get'
+          method: 'GET'
       - name: cloudsso
         uses: fjogeleit/http-request-action@v1.5.0
+        id: ciscosso
         with:
           url: 'https://cloudsso.cisco.com/as/token.oauth2?grant_type=client_credentials&client_id=${{secrets.client_id}}&client_secret=${{secrets.client_secret}}'
           method: POST
-      - name: echo
-        run: echo ${{steps.cloudsso.response}}
-  PubHub:
-    name: trigger api
-    runs-on: ubuntu-latest
-    needs: notification
-    steps:
       - name : PubHub API
         uses: fjogeleit/http-request-action@v1.5.0
         with:
-          url: 'https://api.cisco.com/api/v1.0/projects/sync/2864/'
-          customHeaders: '{"X-Authorization":"Token ${{secrets.pubhub_token}}", "Authorization" : "Bearer ${{fromJson(needs.notification.outputs.response)}}"}'
+          url: 'https://api.cisco.com/api/v1.0/projects/sync/${{secrets.project_id}}/'
+          timeout: 60000
+          customHeaders: '{"X-Authorization":"Token ${{secrets.pubhub_token}}", "Authorization" : "Bearer ${{fromJson(steps.ciscosso.outputs.response).access_token}}"}'
+          method: GET
 
 
-
-           
-  
 
 
 
