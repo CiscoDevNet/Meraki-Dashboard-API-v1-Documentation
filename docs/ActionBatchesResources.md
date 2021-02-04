@@ -2,6 +2,7 @@
 **Group**|**Summary**|**Resource**|**operation** 
 :-------------:|:-------------:|:-------------:|:-------------:
 Bgp setting| Update a Hub BGP Configuration| `/networks/{networkId}/appliance/vpn/bgp`| update
+Billing| Update the billing settings| `/networks/{networkId}/wireless/billing`| update
 Bluetooth device setting| Update the bluetooth settings for a wireless device| `/devices/{serial}/wireless/bluetooth/settings`| update
 Camera video settings| Update video settings for the given camera| `/devices/{serial}/camera/video/settings`| update
 Cellular gateway connectivity monitoring destination| Update the connectivity testing destinations for an MG network| `/networks/{networkId}/cellularGateway/connectivityMonitoringDestinations`| update
@@ -21,6 +22,7 @@ Device| Claim devices into a network| `/networks/{networkId}/devices`| claim
 Device| Remove a single device| `/networks/{networkId}/devices`| remove
 Dhcp server policy| Update the DHCP server policy| `/networks/{networkId}/switch/dhcpServerPolicy`| update
 Dscp cos mapping| Update the DSCP to CoS mappings| `/networks/{networkId}/switch/dscpToCosMappings`| update
+Firmware upgrades update| Update current maintenance window for a network| `/networks/{networkId}/firmwareUpgrades`| update
 Floor plan| Destroy a floor plan| `/networks/{networkId}/floorPlans/{floorPlanId}`| destroy
 Floor plan| Update a floor plan's geolocation and other meta data| `/networks/{networkId}/floorPlans/{floorPlanId}`| update
 Group policy| Create a group policy| `/networks/{networkId}/groupPolicies`| create
@@ -48,9 +50,9 @@ MX l7 firewall| Update the MX L7 firewall rules for an MX network| `/networks/{n
 MX port| Update the per-port VLAN settings for a single MX port.| `/networks/{networkId}/appliance/ports/{portId}`| update
 MX uplink setting| Updates the uplink bandwidth settings for your MX network.| `/networks/{networkId}/appliance/trafficShaping/uplinkBandwidth`| update
 Management interface settings| Update the management interface settings for a device| `/devices/{serial}/managementInterface`| update
-Meraki auth user| Create a user configured with Meraki Authentication for a network (currently supports 802.1X, splash guest, and client VPN users, and currently, organizations have a 50,000 user cap)| `/networks/{networkId}/merakiAuthUsers`| create
-Meraki auth user| Delete a user configured with Meraki Authentication (currently, 802.1X RADIUS, splash guest, and client VPN users can be deleted)| `/networks/{networkId}/merakiAuthUsers/{merakiAuthUserId}`| destroy
-Meraki auth user| Update a user configured with Meraki Authentication (currently, 802.1X RADIUS, splash guest, and client VPN users can be deleted)| `/networks/{networkId}/merakiAuthUsers/{merakiAuthUserId}`| update
+Meraki auth user| Authorize a user configured with Meraki Authentication for a network (currently supports 802.1X, splash guest, and client VPN users, and currently, organizations have a 50,000 user cap)| `/networks/{networkId}/merakiAuthUsers`| create
+Meraki auth user| Deauthorize a user. To reauthorize a user after deauthorizing them, POST to this endpoint. (Currently, 802.1X RADIUS, splash guest, and client VPN users can be deauthorized.)| `/networks/{networkId}/merakiAuthUsers/{merakiAuthUserId}`| destroy
+Meraki auth user| Update a user configured with Meraki Authentication (currently, 802.1X RADIUS, splash guest, and client VPN users can be updated)| `/networks/{networkId}/merakiAuthUsers/{merakiAuthUserId}`| update
 Monitored media server| Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers`| create
 Monitored media server| Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}`| destroy
 Monitored media server| Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.| `/organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId}`| update
@@ -90,6 +92,7 @@ Sense setting| Update sense settings for the given camera| `/devices/{serial}/ca
 Single lan| Update single LAN configuration| `/networks/{networkId}/appliance/singleLan`| update
 Site to site vpn| Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.| `/networks/{networkId}/appliance/vpn/siteToSiteVpn`| update
 Ssid| Update the attributes of an MR SSID| `/networks/{networkId}/wireless/ssids/{number}`| update
+Ssid device type group policies| Update the device type group policies for the SSID| `/networks/{networkId}/wireless/ssids/{number}/deviceTypeGroupPolicies`| update
 Ssid splash settings| Modify the splash page settings for the given SSID| `/networks/{networkId}/wireless/ssids/{number}/splash/settings`| update
 Storm control| Update the storm control configuration for a switch network| `/networks/{networkId}/switch/stormControl`| update
 Switch| Clone port-level and some switch-level configuration settings from a source switch to one or more target switches. Cloned settings include: Aggregation Groups, Power Settings, Multicast Settings, MTU Configuration, STP Bridge priority, Port Mirroring| `/organizations/{organizationId}/switch/devices`| clone
@@ -111,6 +114,7 @@ Switch warm spare settings| Update warm spare configuration for a switch. The sp
 Traffic shaping settings| Update the traffic shaping settings rules for an MX network| `/networks/{networkId}/appliance/trafficShaping/rules`| update
 Traffic shaping settings| Update the traffic shaping settings for an SSID on an MR network| `/networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules`| update
 Uplink selection settings| Update uplink selection settings for an MX network| `/networks/{networkId}/appliance/trafficShaping/uplinkSelection`| update
+User access device| Delete a User Access Device| `/networks/{networkId}/sm/userAccessDevices/{userAccessDeviceId}`| destroy
 VLAN| Add a VLAN| `/networks/{networkId}/appliance/vlans`| create
 VLAN| Delete a VLAN from a network| `/networks/{networkId}/appliance/vlans/{vlanId}`| destroy
 VLAN| Update a VLAN| `/networks/{networkId}/appliance/vlans/{vlanId}`| update
