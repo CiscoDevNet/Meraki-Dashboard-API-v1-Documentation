@@ -123,3 +123,5 @@ Warm spare| Update MX warm spare settings| `/networks/{networkId}/appliance/warm
 Wireless alternate management interface| Update alternate management interface and device static IP| `/networks/{networkId}/wireless/alternateManagementInterface`| update
 Wireless l7 firewall| Update the L7 firewall rules of an SSID on an MR network| `/networks/{networkId}/wireless/ssids/{number}/firewall/l7FirewallRules`| update
 Wireless settings| Update the wireless settings for a network| `/networks/{networkId}/wireless/settings`| update
+
+ 
