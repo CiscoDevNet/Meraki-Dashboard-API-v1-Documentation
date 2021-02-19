@@ -9,11 +9,8 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
 
-response = dashboard.networks.updateNetworkSettings(
-    network_id, 
-    localStatusPageEnabled=True, 
-    remoteStatusPageEnabled=True, 
-    secureConnect={'enabled': False}
+response = dashboard.appliance.getNetworkApplianceVpnBgp(
+    network_id
 )
 
 print(response)

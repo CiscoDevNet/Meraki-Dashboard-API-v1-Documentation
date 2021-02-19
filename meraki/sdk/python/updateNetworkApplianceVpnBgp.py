@@ -8,12 +8,13 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
+enabled = True
 
-response = dashboard.networks.updateNetworkSettings(
-    network_id, 
-    localStatusPageEnabled=True, 
-    remoteStatusPageEnabled=True, 
-    secureConnect={'enabled': False}
+response = dashboard.appliance.updateNetworkApplianceVpnBgp(
+    network_id, enabled, 
+    asNumber=64515, 
+    ibgpHoldTimer=120, 
+    neighbors=[{'ip': '10.10.10.22', 'remoteAsNumber': 64343, 'receiveLimit': 120, 'allowTransit': True, 'ebgpHoldTimer': 180, 'ebgpMultihop': 2}]
 )
 
 print(response)

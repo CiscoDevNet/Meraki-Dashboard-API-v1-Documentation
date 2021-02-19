@@ -18,6 +18,7 @@ response = dashboard.switch.updateNetworkSwitchAccessPolicy(
     radiusCoaSupportEnabled=False, 
     radiusAccountingEnabled=True, 
     radiusAccountingServers=[{'host': '1.2.3.4', 'port': 22, 'secret': 'password1'}], 
+    radiusGroupAttribute='11', 
     hostMode='Single-Host', 
     accessPolicyType='Hybrid authentication', 
     increaseAccessSpeed=False, 

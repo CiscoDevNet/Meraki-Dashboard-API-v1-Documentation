@@ -9,11 +9,10 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
 
-response = dashboard.networks.updateNetworkSettings(
+response = dashboard.wireless.updateNetworkWirelessBilling(
     network_id, 
-    localStatusPageEnabled=True, 
-    remoteStatusPageEnabled=True, 
-    secureConnect={'enabled': False}
+    currency='USD', 
+    plans=[{'id': '1', 'price': '5', 'bandwidthLimits': {'limitUp': 1000, 'limitDown': 1000}, 'timeLimit': '1 hour'}]
 )
 
 print(response)

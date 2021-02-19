@@ -19,6 +19,7 @@ url_redirect_walled_garden_enabled = True
 response = dashboard.switch.createNetworkSwitchAccessPolicy(
     network_id, name, radius_servers, radius_testing_enabled, radius_coa_support_enabled, radius_accounting_enabled, host_mode, url_redirect_walled_garden_enabled, 
     radiusAccountingServers=[{'host': '1.2.3.4', 'port': 22, 'secret': 'password1'}], 
+    radiusGroupAttribute='11', 
     accessPolicyType='Hybrid authentication', 
     increaseAccessSpeed=False, 
     guestVlanId=100, 

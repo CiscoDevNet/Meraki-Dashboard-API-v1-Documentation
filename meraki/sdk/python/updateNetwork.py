@@ -13,7 +13,8 @@ response = dashboard.networks.updateNetwork(
     network_id, 
     name='Long Island Office', 
     timeZone='America/Los_Angeles', 
-    tags=['tag1', 'tag2']
+    tags=['tag1', 'tag2'], 
+    notes='Combined network for Long Island Office'
 )
 
 print(response)
