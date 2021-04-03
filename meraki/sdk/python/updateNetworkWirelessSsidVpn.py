@@ -8,10 +8,11 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
+number = ''
 
-response = dashboard.networks.updateNetworkFirmwareUpgrades(
-    network_id, 
-    products={'switch': {'nextUpgrade': {'toVersion': {'id': 7857}}}}
+response = dashboard.wireless.updateNetworkWirelessSsidVpn(
+    network_id, number, 
+    splitTunnel={'enabled': True, 'rules': [{'protocol': 'any', 'destCidr': '1.1.1.1/32', 'destPort': 'any', 'policy': 'allow', 'comment': 'split tunnel rule 1'}, {'destCidr': 'foo.com', 'destPort': 'any', 'policy': 'deny', 'comment': 'split tunnel rule 2'}]}
 )
 
 print(response)
