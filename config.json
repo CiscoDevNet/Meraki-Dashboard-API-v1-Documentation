@@ -128,7 +128,6 @@
             "title": "Changelog",
             "type": "url",
             "content": "https://developer.cisco.com/meraki/whats-new/"
-        }
-        
+        }      
     ]
 }
