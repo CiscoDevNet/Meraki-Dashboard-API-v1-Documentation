@@ -1,6 +1,6 @@
 # Postman Collection
 
-Postman Collections are a way to group requests together for exploring the Meraki API and automating common tasks. 
+Postman Collections are a way to group API requests together for exploring the APIs and automating common tasks. 
 
 Click the following **Run in Postman** button to launch Meraki Dashboard v1.7.0 Postman collection and try out the APIs in Postman.
 
