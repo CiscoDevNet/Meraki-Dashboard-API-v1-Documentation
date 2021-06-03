@@ -6,6 +6,7 @@ Bgp setting| Update a Hub BGP Configuration| `/networks/{networkId}/appliance/vp
 Billing| Update the billing settings| `/networks/{networkId}/wireless/billing`| update
 Bluetooth device setting| Update the bluetooth settings for a wireless device| `/devices/{serial}/wireless/bluetooth/settings`| update
 Camera video settings| Update video settings for the given camera| `/devices/{serial}/camera/video/settings`| update
+Camera wireless profile settings| Assign wireless profiles to the given camera. Incremental updates are not supported, all profile assignment need to be supplied at once.| `/devices/{serial}/camera/wirelessProfiles`| update
 Cellular gateway connectivity monitoring destination| Update the connectivity testing destinations for an MG network| `/networks/{networkId}/cellularGateway/connectivityMonitoringDestinations`| update
 Cellular gateway device lan| Update the LAN Settings for a single MG.| `/devices/{serial}/cellularGateway/lan`| update
 Cellular gateway dhcp setting| Update common DHCP settings of MGs| `/networks/{networkId}/cellularGateway/dhcp`| update
@@ -19,11 +20,12 @@ Custom performance class| Add a custom performance class for an MX network| `/ne
 Custom performance class| Delete a custom performance class from an MX network| `/networks/{networkId}/appliance/trafficShaping/customPerformanceClasses/{customPerformanceClassId}`| destroy
 Custom performance class| Update a custom performance class for an MX network| `/networks/{networkId}/appliance/trafficShaping/customPerformanceClasses/{customPerformanceClassId}`| update
 Device| Update the attributes of a device| `/devices/{serial}`| update
-Device| Claim devices into a network| `/networks/{networkId}/devices`| claim
+Device| Claim devices into a network. (Note: for recently claimed devices, it may take a few minutes for API requsts against that device to succeed)| `/networks/{networkId}/devices`| claim
 Device| Remove a single device| `/networks/{networkId}/devices`| remove
 Dhcp server policy| Update the DHCP server policy| `/networks/{networkId}/switch/dhcpServerPolicy`| update
 Dscp cos mapping| Update the DSCP to CoS mappings| `/networks/{networkId}/switch/dscpToCosMappings`| update
-Firmware upgrades update| Update current maintenance window for a network| `/networks/{networkId}/firmwareUpgrades`| update
+Firmware upgrade rollback| Rollback a Firmware Upgrade For A Network| `/networks/{networkId}/firmwareUpgrades/rollbacks`| create
+Firmware upgrades update| Update firmware upgrade information for a network| `/networks/{networkId}/firmwareUpgrades`| update
 Floor plan| Destroy a floor plan| `/networks/{networkId}/floorPlans/{floorPlanId}`| destroy
 Floor plan| Update a floor plan's geolocation and other meta data| `/networks/{networkId}/floorPlans/{floorPlanId}`| update
 Group policy| Create a group policy| `/networks/{networkId}/groupPolicies`| create
@@ -64,6 +66,7 @@ Multicast| Update multicast settings for a network| `/networks/{networkId}/switc
 Network| Bind a network to a template.| `/networks/{networkId}`| bind
 Network| Delete a network| `/networks/{networkId}`| destroy
 Network| Split a combined network into individual networks for each type of device| `/networks/{networkId}`| split
+Network| Unbind a network from a template.| `/networks/{networkId}`| unbind
 Network| Update a network| `/networks/{networkId}`| update
 Network| Combine multiple networks into a single network| `/organizations/{organizationId}/networks`| combine
 Network| Create a network| `/organizations/{organizationId}/networks`| create
@@ -93,8 +96,11 @@ Sense setting| Update sense settings for the given camera| `/devices/{serial}/ca
 Single lan| Update single LAN configuration| `/networks/{networkId}/appliance/singleLan`| update
 Site to site vpn| Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.| `/networks/{networkId}/appliance/vpn/siteToSiteVpn`| update
 Ssid| Update the attributes of an MR SSID| `/networks/{networkId}/wireless/ssids/{number}`| update
+Ssid bonjour forwarding| Update the bonjour forwarding setting and rules for the SSID| `/networks/{networkId}/wireless/ssids/{number}/bonjourForwarding`| update
 Ssid device type group policies| Update the device type group policies for the SSID| `/networks/{networkId}/wireless/ssids/{number}/deviceTypeGroupPolicies`| update
+Ssid outage schedule| Update the outage schedule for the SSID| `/networks/{networkId}/wireless/ssids/{number}/schedules`| update
 Ssid splash settings| Modify the splash page settings for the given SSID| `/networks/{networkId}/wireless/ssids/{number}/splash/settings`| update
+Ssid vpn| Update the VPN settings for the SSID| `/networks/{networkId}/wireless/ssids/{number}/vpn`| update
 Storm control| Update the storm control configuration for a switch network| `/networks/{networkId}/switch/stormControl`| update
 Switch| Clone port-level and some switch-level configuration settings from a source switch to one or more target switches. Cloned settings include: Aggregation Groups, Power Settings, Multicast Settings, MTU Configuration, STP Bridge priority, Port Mirroring| `/organizations/{organizationId}/switch/devices`| clone
 Switch access policy| Create an access policy for a switch network. This endpoint only supports access policies with 'My RADIUS server' as authentication method.| `/networks/{networkId}/switch/accessPolicies`| create
@@ -124,4 +130,3 @@ Warm spare| Update MX warm spare settings| `/networks/{networkId}/appliance/warm
 Wireless alternate management interface| Update alternate management interface and device static IP| `/networks/{networkId}/wireless/alternateManagementInterface`| update
 Wireless l7 firewall| Update the L7 firewall rules of an SSID on an MR network| `/networks/{networkId}/wireless/ssids/{number}/firewall/l7FirewallRules`| update
 Wireless settings| Update the wireless settings for a network| `/networks/{networkId}/wireless/settings`| update
-
