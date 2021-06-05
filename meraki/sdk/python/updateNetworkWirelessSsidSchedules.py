@@ -9,12 +9,11 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
 number = ''
-name = 'Sample Identity PSK'
-group_policy_id = '101'
 
-response = dashboard.wireless.createNetworkWirelessSsidIdentityPsk(
-    network_id, number, name, group_policy_id, 
-    passphrase='NIalareK'
+response = dashboard.wireless.updateNetworkWirelessSsidSchedules(
+    network_id, number, 
+    enabled=True, 
+    ranges=[{'startDay': 'Tuesday', 'startTime': '01:00', 'endDay': 'Tuesday', 'endTime': '05:00'}, {'startDay': 'Fri', 'startTime': '19:00', 'endDay': 'monday', 'endTime': '05:00'}]
 )
 
 print(response)
