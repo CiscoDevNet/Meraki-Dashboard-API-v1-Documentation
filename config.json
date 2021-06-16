@@ -104,12 +104,7 @@
                     "title": "Postman Collection ",
                     "content": "docs/postman.md"
                 },
-                
-                {
-                    "title": "Postman v1",
-                    "content": "https://documenter.getpostman.com/view/897512/SzYXYfmJ",
-                    "type": "url"
-                },
+                             
                 {
                     "title": "SDKs",
                     "items": [
