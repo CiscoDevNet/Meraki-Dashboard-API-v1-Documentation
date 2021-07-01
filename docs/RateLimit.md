@@ -1,6 +1,6 @@
 ### Per Organization
-* Dashboard API is limited to **5 requests per second**, per organization
-* A burst of 5 additional requests are allowed in the first second, so a maximum of 15 requests in the first 2 seconds
+* Each Meraki organization has a call budget of **10 requests per second**.
+* A burst of 10 additional requests are allowed in the first second, so a maximum of 30 requests in the first 2 seconds
 * Rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket)
 * Furthermore, a concurrency limit of **10 concurrent requests per IP** is enforced
 
