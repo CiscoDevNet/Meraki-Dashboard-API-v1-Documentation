@@ -13,14 +13,13 @@ number = ''
 response = dashboard.wireless.updateNetworkWirelessSsidHotspot20(
     network_id, number, 
     enabled=True, 
-    operatorName='Meraki Product Management', 
-    venueName='SF Branch', 
-    venueType='Unspecified Assembly', 
-    networkType='Private network', 
-    domainList=['meraki.local', 'domain2.com'], 
+    operator={'name': 'Meraki Product Management'}, 
+    venue={'name': 'SF Branch', 'type': 'Unspecified Assembly'}, 
+    networkAccessType='Private network', 
+    domains=['meraki.local', 'domain2.com'], 
     roamConsortOis=['ABC123', '456EFG'], 
     mccMncs=[{'mcc': '123', 'mnc': '456'}, {'mcc': '563', 'mnc': '232'}], 
-    naiRealms=[{'format': 1, 'name': 'Realm 1', 'methods': [{'id': '1', 'params': ['Non-EAP Inner Authentication: MSCHAP', 'EAP Inner Authentication: EAP-TTLS with MSCHAPv2']}]}]
+    naiRealms=[{'format': 1, 'name': 'Realm 1', 'methods': [{'id': '1', 'authenticationTypes': {'nonEapInnerAuthentication': ['MSCHAP'], 'eapInnerAuthentication': ['EAP-TTLS with MSCHAPv2'], 'credentials': [], 'tunneledEapMethodCredentials': []}}]}]
 )
 
 print(response)

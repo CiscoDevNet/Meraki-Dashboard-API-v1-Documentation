@@ -12,9 +12,9 @@ http_server_id = ''
 
 response = dashboard.networks.updateNetworkWebhooksHttpServer(
     network_id, http_server_id, 
-    name='My HTTP server', 
-    url='https://www.example.com/webhooks', 
-    sharedSecret='foobar'
+    name='What's in a name, anyway?', 
+    url='https://example.com', 
+    sharedSecret='shhh'
 )
 
 print(response)
