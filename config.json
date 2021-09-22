@@ -97,14 +97,45 @@
             ]
         },
         {
-            "title": "Resources",
+            "title": "Developer Resources",
+            "config": {
+              "expand": 0
+            },
+            "items": [
+              {
+                "title": "Sandbox",
+                "content": "resources/sandbox.md"
+              },
+              {
+                "title": "Learning Labs",
+                "content": "https://developer.cisco.com/learning/",
+                "type": "url"
+              },
+              {
+                "title": "Code Exchange",
+                "content": "https://developer.cisco.com/codeexchange/",
+                "type": "url"
+              },
+              {
+                "title": "Automation Exchange",
+                "content": "https://developer.cisco.com/network-automation/",
+                "type": "url"
+              },
+              {
+                "title": "Ecosystem Exchange",
+                "content": "https://developer.cisco.com/ecosystem/",
+                "type": "url"
+              }
+            ]
+          },
+        {
+            "title": "Developer Support",
             "items": [
                 
                 {
                     "title": "Postman Collection ",
                     "content": "docs/postman.md"
-                },
-                             
+                },           
                 {
                     "title": "SDKs",
                     "items": [
@@ -117,6 +148,10 @@
                             "content": "docs/pythonLibrary.md"
                         }
                     ]
+                },
+                {
+                    "title": "Developer Support",
+                    "content": "docs/support.md"
                 }
             ]
         },
