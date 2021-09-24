@@ -104,7 +104,6 @@
                     "title": "Postman Collection ",
                     "content": "docs/postman.md"
                 },
-                             
                 {
                     "title": "SDKs",
                     "items": [
@@ -119,6 +118,10 @@
                     ]
                 }
             ]
+        },
+        {
+            "title": "Support",
+            "content": "docs/support.md"
         },
         {
             "title": "Webhooks",
