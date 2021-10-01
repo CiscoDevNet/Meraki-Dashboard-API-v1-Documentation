@@ -10,11 +10,11 @@ dashboard = meraki.DashboardAPI(API_KEY)
 network_id = 'L_646829496481105433'
 number = ''
 name = 'Sample Identity PSK'
-passphrase = 'NIalareK'
 group_policy_id = '101'
 
 response = dashboard.wireless.createNetworkWirelessSsidIdentityPsk(
-    network_id, number, name, passphrase, group_policy_id
+    network_id, number, name, group_policy_id, 
+    passphrase='NIalareK'
 )
 
 print(response)

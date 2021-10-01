@@ -13,7 +13,9 @@ response = dashboard.networks.updateNetworkNetflow(
     network_id, 
     reportingEnabled=True, 
     collectorIp='1.2.3.4', 
-    collectorPort=443
+    collectorPort=443, 
+    etaEnabled=True, 
+    etaDstPort=443
 )
 
 print(response)

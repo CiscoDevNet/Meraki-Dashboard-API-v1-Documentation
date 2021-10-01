@@ -12,7 +12,8 @@ serial = 'Q2QN-9J8L-SLPD'
 response = dashboard.camera.updateDeviceCameraSense(
     serial, 
     senseEnabled=True, 
-    mqttBrokerId='1234'
+    mqttBrokerId='1234', 
+    audioDetection={'enabled': False}
 )
 
 print(response)

@@ -8,12 +8,9 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
-name = 'What's in a name, anyway?'
-url = 'https://example.com'
 
-response = dashboard.networks.createNetworkWebhooksHttpServer(
-    network_id, name, url, 
-    sharedSecret='shhh'
+response = dashboard.networks.getNetworkClientsOverview(
+    network_id
 )
 
 print(response)

@@ -99,10 +99,10 @@
         {
             "title": "Resources",
             "items": [
+                
                 {
-                    "title": "Postman v1",
-                    "content": "https://documenter.getpostman.com/view/897512/SzYXYfmJ",
-                    "type": "url"
+                    "title": "Postman Collection ",
+                    "content": "docs/postman.md"
                 },
                 {
                     "title": "SDKs",
@@ -118,6 +118,10 @@
                     ]
                 }
             ]
+        },
+        {
+            "title": "Support",
+            "content": "docs/support.md"
         },
         {
             "title": "Webhooks",
