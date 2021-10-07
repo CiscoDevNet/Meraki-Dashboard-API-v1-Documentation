@@ -24,6 +24,7 @@ Device| Claim devices into a network. (Note: for recently claimed devices, it ma
 Device| Remove a single device| `/networks/{networkId}/devices`| remove
 Dhcp server policy| Update the DHCP server policy| `/networks/{networkId}/switch/dhcpServerPolicy`| update
 Dscp cos mapping| Update the DSCP to CoS mappings| `/networks/{networkId}/switch/dscpToCosMappings`| update
+Eap override| Update the EAP overridden parameters for an SSID.| `/networks/{networkId}/wireless/ssids/{number}/eapOverride`| update
 Firmware upgrade rollback| Rollback a Firmware Upgrade For A Network| `/networks/{networkId}/firmwareUpgrades/rollbacks`| create
 Firmware upgrades update| Update firmware upgrade information for a network| `/networks/{networkId}/firmwareUpgrades`| update
 Floor plan| Destroy a floor plan| `/networks/{networkId}/floorPlans/{floorPlanId}`| destroy
@@ -31,6 +32,7 @@ Floor plan| Update a floor plan's geolocation and other meta data| `/networks/{n
 Group policy| Create a group policy| `/networks/{networkId}/groupPolicies`| create
 Group policy| Delete a group policy| `/networks/{networkId}/groupPolicies/{groupPolicyId}`| destroy
 Group policy| Update a group policy| `/networks/{networkId}/groupPolicies/{groupPolicyId}`| update
+Hotspot20| Update the Hotspot 2.0 settings of an SSID| `/networks/{networkId}/wireless/ssids/{number}/hotspot20`| update
 L3 interface| Create a layer 3 interface for a switch| `/devices/{serial}/switch/routing/interfaces`| create
 L3 interface| Delete a layer 3 interface from the switch| `/devices/{serial}/switch/routing/interfaces/{interfaceId}`| destroy
 L3 interface| Update a layer 3 interface for a switch| `/devices/{serial}/switch/routing/interfaces/{interfaceId}`| update
@@ -103,9 +105,9 @@ Ssid splash settings| Modify the splash page settings for the given SSID| `/netw
 Ssid vpn| Update the VPN settings for the SSID| `/networks/{networkId}/wireless/ssids/{number}/vpn`| update
 Storm control| Update the storm control configuration for a switch network| `/networks/{networkId}/switch/stormControl`| update
 Switch| Clone port-level and some switch-level configuration settings from a source switch to one or more target switches. Cloned settings include: Aggregation Groups, Power Settings, Multicast Settings, MTU Configuration, STP Bridge priority, Port Mirroring| `/organizations/{organizationId}/switch/devices`| clone
-Switch access policy| Create an access policy for a switch network. This endpoint only supports access policies with 'My RADIUS server' as authentication method.| `/networks/{networkId}/switch/accessPolicies`| create
+Switch access policy| Create an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.| `/networks/{networkId}/switch/accessPolicies`| create
 Switch access policy| Delete an access policy for a switch network| `/networks/{networkId}/switch/accessPolicies/{accessPolicyNumber}`| destroy
-Switch access policy| Update an access policy for a switch network. This endpoint only supports access policies with 'My RADIUS server' as authentication method.| `/networks/{networkId}/switch/accessPolicies/{accessPolicyNumber}`| update
+Switch access policy| Update an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.| `/networks/{networkId}/switch/accessPolicies/{accessPolicyNumber}`| update
 Switch port| Cycle a set of switch ports| `/devices/{serial}/switch/ports`| cycle
 Switch port| Update a switch port| `/devices/{serial}/switch/ports/{portId}`| update
 Switch port schedule| Update a switch port schedule| `/networks/{networkId}/switch/portSchedules/{portScheduleId}`| update
@@ -122,11 +124,17 @@ Traffic shaping settings| Update the traffic shaping settings rules for an MX ne
 Traffic shaping settings| Update the traffic shaping settings for an SSID on an MR network| `/networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules`| update
 Uplink selection settings| Update uplink selection settings for an MX network| `/networks/{networkId}/appliance/trafficShaping/uplinkSelection`| update
 User access device| Delete a User Access Device| `/networks/{networkId}/sm/userAccessDevices/{userAccessDeviceId}`| destroy
+V1/adaptive policy acl| Creates new adaptive policy ACL| `/organizations/{organizationId}/adaptivePolicy/acls`| create
+V1/adaptive policy acl| Deletes the specified adaptive policy ACL. Note this adaptive policy ACL will also be removed from policies using it.| `/organizations/{organizationId}/adaptivePolicy/acls/{id}`| destroy
+V1/adaptive policy acl| Updates an adaptive policy ACL| `/organizations/{organizationId}/adaptivePolicy/acls/{id}`| update
+V1/adaptive policy settings| Update global adaptive policy settings| `/organizations/{organizationId}/adaptivePolicy/settings`| update
 VLAN| Add a VLAN| `/networks/{networkId}/appliance/vlans`| create
 VLAN| Delete a VLAN from a network| `/networks/{networkId}/appliance/vlans/{vlanId}`| destroy
 VLAN| Update a VLAN| `/networks/{networkId}/appliance/vlans/{vlanId}`| update
+Vmx| Claim a vMX into a network| `/networks/{networkId}/devices/claim`| claim
 Warm spare| Swap MX primary and warm spare appliances| `/networks/{networkId}/appliance/warmSpare`| swap
 Warm spare| Update MX warm spare settings| `/networks/{networkId}/appliance/warmSpare`| update
 Wireless alternate management interface| Update alternate management interface and device static IP| `/networks/{networkId}/wireless/alternateManagementInterface`| update
 Wireless l7 firewall| Update the L7 firewall rules of an SSID on an MR network| `/networks/{networkId}/wireless/ssids/{number}/firewall/l7FirewallRules`| update
 Wireless settings| Update the wireless settings for a network| `/networks/{networkId}/wireless/settings`| update
+
