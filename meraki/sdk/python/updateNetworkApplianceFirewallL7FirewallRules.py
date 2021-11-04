@@ -11,7 +11,7 @@ network_id = 'L_646829496481105433'
 
 response = dashboard.appliance.updateNetworkApplianceFirewallL7FirewallRules(
     network_id, 
-    rules=[{'policy': 'deny', 'type': 'application', 'value': {'id': 'meraki:layer7/application/67', 'name': 'Xbox LIVE'}}, {'policy': 'deny', 'type': 'applicationCategory', 'value': {'id': 'meraki:layer7/category/2', 'name': 'Blogging'}}, {'policy': 'deny', 'type': 'host', 'value': 'google.com'}, {'policy': 'deny', 'type': 'port', 'value': '23'}, {'policy': 'deny', 'type': 'ipRange', 'value': '10.11.12.00/24'}, {'policy': 'deny', 'type': 'ipRange', 'value': '10.11.12.00/24:5555'}, {'policy': 'deny', 'type': 'blockedCountries', 'value': ['AX', 'CA']}, {'policy': 'deny', 'type': 'allowedCountries', 'value': ['US']}]
+    rules=[{'policy': 'deny', 'type': 'host', 'value': 'google.com'}, {'policy': 'deny', 'type': 'port', 'value': '23'}, {'policy': 'deny', 'type': 'ipRange', 'value': '10.11.12.00/24'}, {'policy': 'deny', 'type': 'ipRange', 'value': '10.11.12.00/24:5555'}]
 )
 
 print(response)

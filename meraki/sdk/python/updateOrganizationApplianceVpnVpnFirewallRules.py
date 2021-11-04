@@ -11,7 +11,7 @@ organization_id = '549236'
 
 response = dashboard.appliance.updateOrganizationApplianceVpnVpnFirewallRules(
     organization_id, 
-    rules=[{'comment': 'Allow TCP traffic to subnet with HTTP servers.', 'policy': 'allow', 'protocol': 'tcp', 'destPort': 443, 'destCidr': '192.168.1.0/24', 'srcPort': 'Any', 'srcCidr': 'Any', 'syslogEnabled': False}]
+    rules=[{'comment': 'Allow TCP traffic to subnet with HTTP servers.', 'policy': 'allow', 'protocol': 'tcp', 'destPort': '443', 'destCidr': '192.168.1.0/24', 'srcPort': 'Any', 'srcCidr': 'Any', 'syslogEnabled': False}]
 )
 
 print(response)

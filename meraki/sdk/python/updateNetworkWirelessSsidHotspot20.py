@@ -19,7 +19,7 @@ response = dashboard.wireless.updateNetworkWirelessSsidHotspot20(
     domains=['meraki.local', 'domain2.com'], 
     roamConsortOis=['ABC123', '456EFG'], 
     mccMncs=[{'mcc': '123', 'mnc': '456'}, {'mcc': '563', 'mnc': '232'}], 
-    naiRealms=[{'format': 1, 'name': 'Realm 1', 'methods': [{'id': '1', 'authenticationTypes': {'nonEapInnerAuthentication': ['MSCHAP'], 'eapInnerAuthentication': ['EAP-TTLS with MSCHAPv2'], 'credentials': [], 'tunneledEapMethodCredentials': []}}]}]
+    naiRealms=[{'format': '1', 'name': 'Realm 1', 'methods': [{'id': '1', 'authenticationTypes': {'nonEapInnerAuthentication': ['MSCHAP'], 'eapInnerAuthentication': ['EAP-TTLS with MSCHAPv2'], 'credentials': [], 'tunneledEapMethodCredentials': []}}]}]
 )
 
 print(response)

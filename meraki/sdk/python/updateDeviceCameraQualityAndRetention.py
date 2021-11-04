@@ -11,12 +11,12 @@ serial = 'Q2QN-9J8L-SLPD'
 
 response = dashboard.camera.updateDeviceCameraQualityAndRetention(
     serial, 
-    profileId=None, 
+    profileId='1234', 
     motionBasedRetentionEnabled=False, 
     audioRecordingEnabled=False, 
     restrictedBandwidthModeEnabled=False, 
     quality='Standard', 
-    resolution=720, 
+    resolution='1280x720', 
     motionDetectorVersion=2
 )
 

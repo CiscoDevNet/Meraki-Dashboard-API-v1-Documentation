@@ -14,7 +14,9 @@ response = dashboard.networks.updateNetworkMqttBroker(
     network_id, mqtt_broker_id, 
     name='MQTT_Broker_1', 
     host='1.1.1.1', 
-    port=1234
+    port=1234, 
+    security={'mode': 'tls', 'tls': {'hasCaCertificate': True, 'verifyHostnames': True}}, 
+    authentication={'username': 'Username'}
 )
 
 print(response)

@@ -13,7 +13,7 @@ update_action = 'add'
 
 response = dashboard.sm.modifyNetworkSmDevicesTags(
     network_id, tags, update_action, 
-    scope='withAny, old_tag'
+    scope=['withAny, old_tag']
 )
 
 print(response)

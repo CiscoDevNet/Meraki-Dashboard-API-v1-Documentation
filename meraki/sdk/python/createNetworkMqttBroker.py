@@ -13,7 +13,9 @@ host = '1.1.1.1'
 port = 1234
 
 response = dashboard.networks.createNetworkMqttBroker(
-    network_id, name, host, port
+    network_id, name, host, port, 
+    security={'mode': 'tls', 'tls': {'hasCaCertificate': True, 'verifyHostnames': True}}, 
+    authentication={'username': 'Username'}
 )
 
 print(response)

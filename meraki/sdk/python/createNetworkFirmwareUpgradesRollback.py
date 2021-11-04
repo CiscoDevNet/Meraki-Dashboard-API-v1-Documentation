@@ -14,7 +14,7 @@ response = dashboard.networks.createNetworkFirmwareUpgradesRollback(
     network_id, reasons, 
     product='switch', 
     time='2020-10-21T02:00:00Z', 
-    toVersion={'id': 7857}
+    toVersion={'id': '7857'}
 )
 
 print(response)

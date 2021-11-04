@@ -19,12 +19,12 @@ response = dashboard.appliance.updateNetworkApplianceVlan(
     dhcpHandling='Run a DHCP server', 
     dhcpLeaseTime='1 day', 
     dhcpBootOptionsEnabled=False, 
-    dhcpBootNextServer=None, 
-    dhcpBootFilename=None, 
+    dhcpBootNextServer='1.2.3.4', 
+    dhcpBootFilename='sample.file', 
     fixedIpAssignments={'22:33:44:55:66:77': {'ip': '1.2.3.4', 'name': 'Some client name'}}, 
     reservedIpRanges=[{'start': '192.168.1.0', 'end': '192.168.1.1', 'comment': 'A reserved IP range'}], 
     dnsNameservers='google_dns', 
-    dhcpOptions=[{'code': 5, 'type': 'text', 'value': 'five'}]
+    dhcpOptions=[{'code': '5', 'type': 'text', 'value': 'five'}]
 )
 
 print(response)
