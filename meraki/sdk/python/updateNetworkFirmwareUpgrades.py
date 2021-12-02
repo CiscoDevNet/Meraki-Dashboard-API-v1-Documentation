@@ -11,7 +11,7 @@ network_id = 'L_646829496481105433'
 
 response = dashboard.networks.updateNetworkFirmwareUpgrades(
     network_id, 
-    products={'switch': {'nextUpgrade': {'toVersion': {'id': 7857}}}}
+    products={'switch': {'nextUpgrade': {'toVersion': {'id': '7857'}}}}
 )
 
 print(response)

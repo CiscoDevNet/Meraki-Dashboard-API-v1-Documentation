@@ -7,11 +7,12 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-network_id = 'L_646829496481105433'
-name = 'Sample quality retention profile'
+serial = 'Q2QN-9J8L-SLPD'
+target = '75.75.75.75'
 
-response = dashboard.camera.createNetworkCameraQualityRetentionProfile(
-    network_id, name
+response = dashboard.devices.createDeviceLiveToolsPing(
+    serial, target, 
+    count=2
 )
 
 print(response)

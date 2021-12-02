@@ -16,7 +16,7 @@ response = dashboard.switch.updateNetworkSwitchRoutingOspf(
     deadTimerInSeconds=40, 
     areas=[{'areaId': '1284392014819', 'areaName': 'Backbone', 'areaType': 'normal'}], 
     md5AuthenticationEnabled=True, 
-    md5AuthenticationKey={'id': '1234', 'passphrase': 'abc1234'}
+    md5AuthenticationKey={'id': 1234, 'passphrase': 'abc1234'}
 )
 
 print(response)

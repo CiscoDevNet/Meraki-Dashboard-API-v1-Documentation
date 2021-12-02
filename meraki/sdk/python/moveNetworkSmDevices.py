@@ -12,7 +12,7 @@ new_network = 'N_24329156'
 
 response = dashboard.sm.moveNetworkSmDevices(
     network_id, new_network, 
-    ids='"1284392014819"'
+    ids=['1284392014819']
 )
 
 print(response)

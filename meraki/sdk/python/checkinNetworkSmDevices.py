@@ -11,7 +11,7 @@ network_id = 'L_646829496481105433'
 
 response = dashboard.sm.checkinNetworkSmDevices(
     network_id, 
-    ids='"1284392014819"'
+    ids=['1284392014819']
 )
 
 print(response)

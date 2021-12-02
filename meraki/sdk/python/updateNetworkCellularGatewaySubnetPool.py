@@ -11,7 +11,7 @@ network_id = 'L_646829496481105433'
 
 response = dashboard.cellularGateway.updateNetworkCellularGatewaySubnetPool(
     network_id, 
-    mask='24', 
+    mask=24, 
     cidr='192.168.0.0/16'
 )
 

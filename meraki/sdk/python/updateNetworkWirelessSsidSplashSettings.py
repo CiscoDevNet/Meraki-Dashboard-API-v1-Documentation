@@ -18,8 +18,8 @@ response = dashboard.wireless.updateNetworkWirelessSsidSplashSettings(
     useRedirectUrl=True, 
     welcomeMessage='Welcome!', 
     splashLogo={'md5': 'abcd1234', 'extension': 'jpg'}, 
-    splashImage={'md5': None}, 
-    splashPrepaidFront={'md5': None}
+    splashImage={'md5': '542cccac8d7dedee0f185311d154d194'}, 
+    splashPrepaidFront={'md5': '542cccac8d7dedee0f185311d154d194'}
 )
 
 print(response)

@@ -15,8 +15,8 @@ response = dashboard.switch.updateNetworkSwitchQosRule(
     vlan=100, 
     protocol='TCP', 
     srcPort=2000, 
-    srcPortRange=None, 
-    dstPort=None, 
+    srcPortRange='70-80', 
+    dstPort=3000, 
     dstPortRange='3000-3100', 
     dscp=0
 )

@@ -13,12 +13,12 @@ access_policy_number = ''
 response = dashboard.switch.updateNetworkSwitchAccessPolicy(
     network_id, access_policy_number, 
     name='Access policy #1', 
-    radiusServers=[{'host': '1.2.3.4', 'port': 22, 'secret': 'password1'}], 
+    radiusServers=[{'host': '1.2.3.4', 'port': 22, 'secret': 'secret'}], 
     radius={'criticalAuth': {'dataVlanId': 100, 'voiceVlanId': 100, 'suspendPortBounce': True}, 'failedAuthVlanId': 100, 'reAuthenticationInterval': 120, 'suspendReAuthentication': True}, 
     radiusTestingEnabled=False, 
     radiusCoaSupportEnabled=False, 
     radiusAccountingEnabled=True, 
-    radiusAccountingServers=[{'host': '1.2.3.4', 'port': 22, 'secret': 'password1'}], 
+    radiusAccountingServers=[{'host': '1.2.3.4', 'port': 22, 'secret': 'secret'}], 
     radiusGroupAttribute='11', 
     hostMode='Single-Host', 
     accessPolicyType='Hybrid authentication', 
@@ -26,7 +26,7 @@ response = dashboard.switch.updateNetworkSwitchAccessPolicy(
     guestVlanId=100, 
     voiceVlanClients=True, 
     urlRedirectWalledGardenEnabled=True, 
-    urlRedirectWalledGardenRanges='192.168.1.0/24'
+    urlRedirectWalledGardenRanges=['192.168.1.0/24']
 )
 
 print(response)
