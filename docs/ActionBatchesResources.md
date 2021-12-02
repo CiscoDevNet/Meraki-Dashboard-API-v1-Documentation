@@ -1,6 +1,10 @@
 
 **Group**|**Summary**|**Resource**|**operation** 
 :-------------:|:-------------:|:-------------:|:-------------:
+Adaptive policy| Add an Adaptive Policy| `/organizations/{organizationId}/adaptivePolicy/policies`| create
+Adaptive policy| Delete an Adaptive Policy| `/organizations/{organizationId}/adaptivePolicy/policies/{adaptivePolicyId}`| destroy
+Adaptive policy| Update an Adaptive Policy| `/organizations/{organizationId}/adaptivePolicy/policies/{adaptivePolicyId}`| update
+Adaptive policy group| Deletes the specified adaptive policy group and any associated policies and references| `/organizations/{organizationId}/adaptivePolicy/groups/{groupId}`| destroy
 Alternate management interface| Update the switch alternate management interface for the network| `/networks/{networkId}/switch/alternateManagementInterface`| update
 Bgp setting| Update a Hub BGP Configuration| `/networks/{networkId}/appliance/vpn/bgp`| update
 Billing| Update the billing settings| `/networks/{networkId}/wireless/billing`| update
@@ -73,6 +77,9 @@ Network| Update a network| `/networks/{networkId}`| update
 Network| Combine multiple networks into a single network| `/organizations/{organizationId}/networks`| combine
 Network| Create a network| `/organizations/{organizationId}/networks`| create
 Network settings| Update the settings for a network| `/networks/{networkId}/settings`| update
+Org wide alerts/alert config| Create an organization-wide alert configuration| `/organizations/{organizationId}/alerts/profiles`| create
+Org wide alerts/alert config| Removes an organization-wide alert config| `/organizations/{organizationId}/alerts/profiles/{alertConfigId}`| destroy
+Org wide alerts/alert config| Update an organization-wide alert config| `/organizations/{organizationId}/alerts/profiles/{alertConfigId}`| update
 Organization SAML IdP| Create a SAML IdP for your organization.| `/organizations/{organizationId}/saml/idps`| create
 Organization SAML IdP| Remove a SAML IdP in your organization.| `/organizations/{organizationId}/saml/idps/{idpId}`| destroy
 Organization SAML IdP| Update a SAML IdP in your organization| `/organizations/{organizationId}/saml/idps/{idpId}`| update
@@ -127,6 +134,8 @@ User access device| Delete a User Access Device| `/networks/{networkId}/sm/userA
 V1/adaptive policy acl| Creates new adaptive policy ACL| `/organizations/{organizationId}/adaptivePolicy/acls`| create
 V1/adaptive policy acl| Deletes the specified adaptive policy ACL. Note this adaptive policy ACL will also be removed from policies using it.| `/organizations/{organizationId}/adaptivePolicy/acls/{id}`| destroy
 V1/adaptive policy acl| Updates an adaptive policy ACL| `/organizations/{organizationId}/adaptivePolicy/acls/{id}`| update
+V1/adaptive policy group| Creates a new adaptive policy group| `/organizations/{organizationId}/adaptivePolicy/groups`| create
+V1/adaptive policy group| Updates an adaptive policy group. If updating "Infrastructure", only the SGT is allowed. Cannot update "Unknown".| `/organizations/{organizationId}/adaptivePolicy/groups/{groupId}`| update
 V1/adaptive policy settings| Update global adaptive policy settings| `/organizations/{organizationId}/adaptivePolicy/settings`| update
 VLAN| Add a VLAN| `/networks/{networkId}/appliance/vlans`| create
 VLAN| Delete a VLAN from a network| `/networks/{networkId}/appliance/vlans/{vlanId}`| destroy
