@@ -69,7 +69,7 @@ Successful HTTP Status: *201*
 
 ```json
  {
-   "id": "173869674715420,
+   "id": "173869674715420",
     "status": {
         "completed": true,
         "failed": false,
