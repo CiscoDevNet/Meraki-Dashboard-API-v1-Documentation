@@ -10,7 +10,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 network_id = 'L_646829496481105433'
 
 response = dashboard.networks.getNetworkClientsBandwidthUsageHistory(
-    network_id
+    network_id, total_pages='all'
 )
 
 print(response)

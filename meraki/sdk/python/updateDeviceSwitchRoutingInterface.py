@@ -17,7 +17,8 @@ response = dashboard.switch.updateDeviceSwitchRoutingInterface(
     interfaceIp='192.168.1.2', 
     multicastRouting='disabled', 
     vlanId=100, 
-    ospfSettings={'area': '0', 'cost': 1, 'isPassiveEnabled': True}
+    ospfSettings={'area': '0', 'cost': 1, 'isPassiveEnabled': True}, 
+    ipv6={'assignmentMode': 'static', 'address': '1:2:3:4::1', 'prefix': '1:2:3:4::/48', 'gateway': '1:2:3:4::2'}
 )
 
 print(response)
