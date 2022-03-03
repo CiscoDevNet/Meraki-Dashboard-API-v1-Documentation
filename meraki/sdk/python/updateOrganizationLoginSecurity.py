@@ -10,7 +10,20 @@ dashboard = meraki.DashboardAPI(API_KEY)
 organization_id = '549236'
 
 response = dashboard.organizations.updateOrganizationLoginSecurity(
-    organization_id
+    organization_id, 
+    enforcePasswordExpiration=True, 
+    passwordExpirationDays=90, 
+    enforceDifferentPasswords=True, 
+    numDifferentPasswords=3, 
+    enforceStrongPasswords=True, 
+    enforceAccountLockout=True, 
+    accountLockoutAttempts=3, 
+    enforceIdleTimeout=True, 
+    idleTimeoutMinutes=30, 
+    enforceTwoFactorAuth=True, 
+    enforceLoginIpRanges=True, 
+    loginIpRanges=['192.195.83.1', '192.195.83.255'], 
+    apiAuthentication={'ipRestrictionsForKeys': {'enabled': True, 'ranges': ['192.195.83.1', '192.168.33.33']}}
 )
 
 print(response)

@@ -28,7 +28,9 @@ response = dashboard.switch.updateDeviceSwitchPort(
     accessPolicyType='Sticky MAC allow list', 
     stickyMacAllowList=['34:56:fe:ce:8e:b0', '34:56:fe:ce:8e:b1'], 
     stickyMacAllowListLimit=5, 
-    stormControlEnabled=True
+    stormControlEnabled=True, 
+    adaptivePolicyGroupId='123', 
+    peerSgtCapable=False
 )
 
 print(response)

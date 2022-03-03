@@ -93,6 +93,15 @@
                             "content": "docs/ActionBatchesResources.md"
                         }
                     ]
+                },
+                {
+                    "title": "User Agents",
+                    "items": [
+                        {
+                            "title": "Overview",
+                            "content": "docs/UserAgents.md"
+                        }
+                    ]
                 }
             ]
         },
