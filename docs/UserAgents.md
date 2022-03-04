@@ -30,7 +30,7 @@ If you want to include version information, do so as follows:
 ApplicationName/1.0 VendorName
 ```
 
-Regardless of your branding guidelines, your application name and venor name *must* omit all spaces, hypens, and special characters. When providing a custom user agent string in API calls, keep in mind that the information is typically exclusively valuable to Meraki dashboard admins, so it's not necessary to include sometimes arcane information, as is common practice amongst web browsers.
+Regardless of your branding guidelines, your application name and vendor name *must* omit all spaces, hypens, and special characters. When providing a custom user agent string in API calls, keep in mind that the information is typically exclusively valuable to Meraki dashboard admins, so it's not necessary to include sometimes arcane information, as is common practice amongst web browsers.
 
 ### Examples
 
