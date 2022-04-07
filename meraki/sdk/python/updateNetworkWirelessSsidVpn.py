@@ -12,6 +12,7 @@ number = ''
 
 response = dashboard.wireless.updateNetworkWirelessSsidVpn(
     network_id, number, 
+    concentrator={'networkId': 'N_123', 'name': 'some concentrator name'}, 
     splitTunnel={'enabled': True, 'rules': [{'protocol': 'Any', 'destCidr': '1.1.1.1/32', 'destPort': 'any', 'policy': 'allow', 'comment': 'split tunnel rule 1'}, {'destCidr': 'foo.com', 'destPort': 'any', 'policy': 'deny', 'comment': 'split tunnel rule 2'}]}, 
     failover={'requestIp': '1.1.1.1', 'heartbeatInterval': 10, 'idleTimeout': 30}
 )

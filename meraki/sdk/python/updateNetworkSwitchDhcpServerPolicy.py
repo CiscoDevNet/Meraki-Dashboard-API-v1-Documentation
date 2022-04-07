@@ -12,7 +12,8 @@ network_id = 'L_646829496481105433'
 response = dashboard.switch.updateNetworkSwitchDhcpServerPolicy(
     network_id, 
     defaultPolicy='block', 
-    allowedServers=['00:50:56:00:00:01', '00:50:56:00:00:02']
+    allowedServers=['00:50:56:00:00:01', '00:50:56:00:00:02'], 
+    blockedServers=['00:50:56:00:00:03', '00:50:56:00:00:04']
 )
 
 print(response)

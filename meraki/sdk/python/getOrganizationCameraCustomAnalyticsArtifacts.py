@@ -9,9 +9,8 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 organization_id = '549236'
 
-response = dashboard.organizations.releaseFromOrganizationInventory(
-    organization_id, 
-    serials=['Q234-ABCD-5678']
+response = dashboard.camera.getOrganizationCameraCustomAnalyticsArtifacts(
+    organization_id
 )
 
 print(response)

@@ -10,7 +10,10 @@ dashboard = meraki.DashboardAPI(API_KEY)
 organization_id = '549236'
 
 response = dashboard.organizations.claimIntoOrganizationInventory(
-    organization_id
+    organization_id, 
+    orders=['4CXXXXXXX'], 
+    serials=['Q234-ABCD-5678'], 
+    licenses=[{'key': 'Z2XXXXXXXXXX', 'mode': 'addDevices'}]
 )
 
 print(response)
