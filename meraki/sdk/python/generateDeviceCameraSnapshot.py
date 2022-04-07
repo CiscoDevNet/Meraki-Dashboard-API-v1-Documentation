@@ -10,7 +10,9 @@ dashboard = meraki.DashboardAPI(API_KEY)
 serial = 'Q2QN-9J8L-SLPD'
 
 response = dashboard.camera.generateDeviceCameraSnapshot(
-    serial
+    serial, 
+    timestamp='2021-04-30T15:18:08Z', 
+    fullframe=False
 )
 
 print(response)

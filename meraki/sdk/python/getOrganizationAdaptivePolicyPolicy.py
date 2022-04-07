@@ -7,14 +7,11 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-network_id = 'L_646829496481105433'
-name = 'Example Webhook Server'
-url = 'https://example.com'
+organization_id = '549236'
+adaptive_policy_id = ''
 
-response = dashboard.networks.createNetworkWebhooksHttpServer(
-    network_id, name, url, 
-    sharedSecret='shhh', 
-    payloadTemplate={'payloadTemplateId': 'wpt_00001', 'name': 'Meraki (included)'}
+response = dashboard.organizations.getOrganizationAdaptivePolicyPolicy(
+    organization_id, adaptive_policy_id
 )
 
 print(response)

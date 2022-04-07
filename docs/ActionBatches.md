@@ -1,12 +1,16 @@
+# Action Batches
+
 Action Batches are a special type of Dashboard API mechanism for submitting batched configuration requests in a single synchronous or asynchronous transaction. Action Batches are ideal for bulk configuration, either in the initial provisioning process, or for rolling out wide-scale configuration changes. For example, add a switch to a network, configure all 48 ports, and set the switch’s management interface in a single POST.
 
 ## Use Cases
+
 * Deploy multiple changes across networks and devices
-* Run Batches synchronously or asynchronously 
+* Run Batches synchronously or asynchronously
 * Avoid hitting the API rate limit for high-scale configuration changes
 * Ensure all updates will succeed before changes are committed
 
 ## Details
+
 * Action batches allow an API client to define a batch of write actions (**create**, **update**, **destroy**, etc.).
 * Batches are run **atomically** (all or nothing, no partial success).
 * Batches are run **asynchronously** by default. Smaller batches can be run **synchronously**.
@@ -19,13 +23,15 @@ Action Batches are a special type of Dashboard API mechanism for submitting batc
 * Batches will not be executed until the confirmed property is set. Once a batch is confirmed it cannot be deleted. If a batch is defined but not confirmed it will be **automatically deleted after one week**.
 
 ## Create an Action Batch
+
 To create an Action Batch, you will need to send a POST request containing an array or resources to be updated and whether or not it should run immediately. You can also select if the batch should run synchronously or asynchronously depending on the size of the batch.
 
-```
+```Dashboard API
 POST /organizations/{organizationId}/actionBatches
 ```
 
 ### PARAMETERS
+
 **Parameter**|**Description**
 :-------------: |:-------------:
 confirmed| Set to true for immediate execution. Set to false if the action should be previewed before executing.
@@ -36,6 +42,7 @@ operation| The operation to be run on the resource, such as "**create**", "**upd
 body| The body of the action. Example: `{"tags": tags, "type": "access", "vlan": vlan}`
 
 #### SAMPLE REQUEST
+
 ```bash
 curl -X POST https://api.meraki.com/api/v0/organizations/1234567890/actionBatches \
 -L \
@@ -57,26 +64,33 @@ curl -X POST https://api.meraki.com/api/v0/organizations/1234567890/actionBatche
 ```
 
 #### SAMPLE RESPONSE
-```
-Successful HTTP Status: 201
 
-	{
-	  "id": "123",
-	  "status": "completed",
-	  "confirmed": true,
-	  "actions": [
-	    {
-	      "resource": "/devices/QXXX-XXXX-XXXX/switchPorts/3",
-	      "operation": "update",
-	      "body": {
-	        "enabled": false
-	      }
-	    }
-	  ]
-	}
+Successful HTTP Status: *201*
+
+```json
+ {
+   "id": "173869674715420",
+    "status": {
+        "completed": true,
+        "failed": false,
+        "errors": [],
+        "createdResources": []
+    }
+   "confirmed": true,
+   "actions": [
+     {
+       "resource": "/devices/QXXX-XXXX-XXXX/switchPorts/3",
+       "operation": "update",
+       "body": {
+         "enabled": false
+       }
+     }
+   ]
+ }
 ```
 
-# API Endpoints
+## API Endpoints
+
 This group of Dashboard API endpoints are available to submit, monitor and manage your Action Batches. Refer to the respective endpoint links for more details.
 
 [Create an action batch](##!create-organization-action-batch)
@@ -99,9 +113,10 @@ This group of Dashboard API endpoints are available to submit, monitor and manag
 
 `PUT /organizations/{organizationId}/actionBatches/{id}`
 
-## Response Errors
+### Response Errors
 
-### Unsupported operation
+#### Unsupported operation
+
 When you have attempted to use an API endpoint that is not a supported resource as listed above.
 
 ```json
@@ -112,7 +127,8 @@ When you have attempted to use an API endpoint that is not a supported resource 
 }
 ```
 
-### Execution error
+#### Execution error
+
 If the batch fails because one of the resources had an error, the `status` parameter will contain additional information.
 
 ```json
@@ -121,13 +137,14 @@ If the batch fails because one of the resources had an error, the `status` param
         "failed": true,
         "errors": [
             "Error occurred while executing create /networks/L_643451796760561416/vlans/ with {\"id\":111,\"name\":\"New-VLAN\",\"applianceIp\":\"172.16.111.1\",\"subnet\":\"172.16.111.0/24\"}: Validation failed: Vlan has already been taken"
-        ]
-    },
+        ],
+        "createdResources": []
+    }
 ```
 
-# Example Script
+## Example Script
 
-This example Python script will create a new VLAN on a Meraki MX Security Appliance. It will then update multiple switches with new tags. Finally, several ports will be updated to leverage the new VLAN settings. 
+This example Python script will create a new VLAN on a Meraki MX Security Appliance. It will then update multiple switches with new tags. Finally, several ports will be updated to leverage the new VLAN settings.
 
 ```python
 # actionBatch-VlanUpdate.py
@@ -191,6 +208,7 @@ response = requests.post(url, json=payload, headers=headers)
 print(response.text)
 
 ```
+
 ```bash
 $ python3 actionBatch-VlanUpdate.py 
 {"id":"643451796760559653","organizationId":"1234567","confirmed":true,"synchronous":true,"status":{"completed":true,"failed":false,"errors":[]},"actions":[{"resource":"/networks/L_00000000000000/vlans/","operation":"create","body": ....
