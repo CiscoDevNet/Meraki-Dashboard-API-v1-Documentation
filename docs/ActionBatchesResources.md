@@ -9,6 +9,7 @@ Alternate management interface| Update the switch alternate management interface
 Bgp setting| Update a Hub BGP Configuration| `/networks/{networkId}/appliance/vpn/bgp`| update
 Billing| Update the billing settings| `/networks/{networkId}/wireless/billing`| update
 Bluetooth device setting| Update the bluetooth settings for a wireless device| `/devices/{serial}/wireless/bluetooth/settings`| update
+Camera custom analytics settings| Update custom analytics settings for a camera| `/devices/{serial}/camera/customAnalytics`| update
 Camera video settings| Update video settings for the given camera| `/devices/{serial}/camera/video/settings`| update
 Camera wireless profile settings| Assign wireless profiles to the given camera. Incremental updates are not supported, all profile assignment need to be supplied at once.| `/devices/{serial}/camera/wirelessProfiles`| update
 Cellular gateway connectivity monitoring destination| Update the connectivity testing destinations for an MG network| `/networks/{networkId}/cellularGateway/connectivityMonitoringDestinations`| update
@@ -26,7 +27,7 @@ Custom performance class| Update a custom performance class for an MX network| `
 Device| Update the attributes of a device| `/devices/{serial}`| update
 Device| Claim devices into a network. (Note: for recently claimed devices, it may take a few minutes for API requsts against that device to succeed)| `/networks/{networkId}/devices`| claim
 Device| Remove a single device| `/networks/{networkId}/devices`| remove
-Dhcp server policy| Update the DHCP server policy| `/networks/{networkId}/switch/dhcpServerPolicy`| update
+Dhcp server policy| Update the DHCP server settings. Blocked/allowed servers are only applied when default policy is allow/block, respectively| `/networks/{networkId}/switch/dhcpServerPolicy`| update
 Dscp cos mapping| Update the DSCP to CoS mappings| `/networks/{networkId}/switch/dscpToCosMappings`| update
 Eap override| Update the EAP overridden parameters for an SSID.| `/networks/{networkId}/wireless/ssids/{number}/eapOverride`| update
 Firmware upgrade rollback| Rollback a Firmware Upgrade For A Network| `/networks/{networkId}/firmwareUpgrades/rollbacks`| create
@@ -37,6 +38,7 @@ Group policy| Create a group policy| `/networks/{networkId}/groupPolicies`| crea
 Group policy| Delete a group policy| `/networks/{networkId}/groupPolicies/{groupPolicyId}`| destroy
 Group policy| Update a group policy| `/networks/{networkId}/groupPolicies/{groupPolicyId}`| update
 Hotspot20| Update the Hotspot 2.0 settings of an SSID| `/networks/{networkId}/wireless/ssids/{number}/hotspot20`| update
+L3 firewall| Update the L3 firewall rules of an SSID on an MR network| `/networks/{networkId}/wireless/ssids/{number}/firewall/l3FirewallRules`| update
 L3 interface| Create a layer 3 interface for a switch| `/devices/{serial}/switch/routing/interfaces`| create
 L3 interface| Delete a layer 3 interface from the switch| `/devices/{serial}/switch/routing/interfaces/{interfaceId}`| destroy
 L3 interface| Update a layer 3 interface for a switch| `/devices/{serial}/switch/routing/interfaces/{interfaceId}`| update
@@ -141,8 +143,12 @@ VLAN| Add a VLAN| `/networks/{networkId}/appliance/vlans`| create
 VLAN| Delete a VLAN from a network| `/networks/{networkId}/appliance/vlans/{vlanId}`| destroy
 VLAN| Update a VLAN| `/networks/{networkId}/appliance/vlans/{vlanId}`| update
 Vmx| Claim a vMX into a network| `/networks/{networkId}/devices/claim`| claim
+Vmx token| Generate a new vMX authentication token| `/devices/{serial}/appliance/vmx/authenticationToken`| create
 Warm spare| Swap MX primary and warm spare appliances| `/networks/{networkId}/appliance/warmSpare`| swap
 Warm spare| Update MX warm spare settings| `/networks/{networkId}/appliance/warmSpare`| update
+Webhook template| Create a webhook payload template for a network| `/networks/{networkId}/webhooks/payloadTemplates`| create
+Webhook template| Destroy a webhook payload template for a network. Does not work for included templates ('wpt_00001', 'wpt_00002', 'wpt_00003' or 'wpt_00004')| `/networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId}`| destroy
+Webhook template| Update a webhook payload template for a network| `/networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId}`| update
 Wireless alternate management interface| Update alternate management interface and device static IP| `/networks/{networkId}/wireless/alternateManagementInterface`| update
 Wireless l7 firewall| Update the L7 firewall rules of an SSID on an MR network| `/networks/{networkId}/wireless/ssids/{number}/firewall/l7FirewallRules`| update
 Wireless settings| Update the wireless settings for a network| `/networks/{networkId}/wireless/settings`| update
