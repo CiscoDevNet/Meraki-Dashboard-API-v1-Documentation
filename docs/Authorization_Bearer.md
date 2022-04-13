@@ -43,7 +43,7 @@ Then go to your profile by clicking on your account email address (on the upper-
 
 ## Troubleshooting
 
-If you're get a 401 Unauthorized error (with message _"Missing API key"_) when using dashboard API v1, check the following to troubleshoot:
+If you get a 401 Unauthorized error (with message _"Missing API key"_) when using dashboard API v1, check the following to troubleshoot:
 
 1. As an example, when using your API key to retrieve the [GET /organizations](##!get-organizations) endpoint, you should see the same data as shown when navigating to [https://api.meraki.com/api/v1/organizations](https://api.meraki.com/api/v1/organizations) in your browser, using an authenticated session with the credentials that generated the API key.
 
@@ -77,4 +77,4 @@ print(response.json())
 
 7. If using PowerShell with **Invoke-RestMethod**, make sure that the _-PreserveAuthorizationOnRedirect_ flag is included.
 
-8. The behavior here is standard and due to API clients like cURL and Postman stripping the Authorization header, for security purposes, when following an HTTP redirect. Another option without handling redirects is to use the reverse proxy base URL of https://api-mp.meraki.com/api/v1/ (with **-mp** added for this mega-proxy).
+8. The behavior here is standard and due to API clients like cURL and Postman stripping the Authorization header, for security purposes, when following an HTTP redirect.

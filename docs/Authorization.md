@@ -41,11 +41,9 @@ Then go to your profile by clicking on your account email address (on the upper-
 
 <img src="../images/dashGenerateAPIkey.png" width="400px">
 
-## Authorization with Bearer Token (beta)
+## Authorization with Bearer Token
 
 The Dashboard API v1 also supports Bearer authentication using the standard `Authorization` header parameter. The value will be a string that begins with the word `Bearer `, followed by your Meraki API key.
-
-*Note: This authorization method is in beta*
 
  
 ```json
@@ -96,4 +94,4 @@ print(response.json())
 
 7. If using PowerShell with **Invoke-RestMethod**, make sure that the _-PreserveAuthorizationOnRedirect_ flag is included.
 
-8. The behavior here is standard and due to API clients like cURL and Postman stripping the Authorization header, for security purposes, when following an HTTP redirect. Another option without handling redirects is to use the reverse proxy base URL of https://api-mp.meraki.com/api/v1/ (with **-mp** added for this mega-proxy).
+8. The behavior here is standard and due to API clients like cURL and Postman stripping the Authorization header, for security purposes, when following an HTTP redirect.
