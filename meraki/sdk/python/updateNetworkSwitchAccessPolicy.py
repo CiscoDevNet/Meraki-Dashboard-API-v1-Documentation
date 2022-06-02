@@ -24,6 +24,7 @@ response = dashboard.switch.updateNetworkSwitchAccessPolicy(
     accessPolicyType='Hybrid authentication', 
     increaseAccessSpeed=False, 
     guestVlanId=100, 
+    dot1x={'controlDirection': 'inbound'}, 
     voiceVlanClients=True, 
     urlRedirectWalledGardenEnabled=True, 
     urlRedirectWalledGardenRanges=['192.168.1.0/24']

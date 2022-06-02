@@ -8,14 +8,10 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
+trusted_server_id = ''
 
-response = dashboard.switch.updateNetworkSwitchDhcpServerPolicy(
-    network_id, 
-    alerts={'email': {'enabled': False}}, 
-    defaultPolicy='block', 
-    allowedServers=['00:50:56:00:00:01', '00:50:56:00:00:02'], 
-    blockedServers=['00:50:56:00:00:03', '00:50:56:00:00:04'], 
-    arpInspection={'enabled': False}
+response = dashboard.switch.deleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(
+    network_id, trusted_server_id
 )
 
 print(response)
