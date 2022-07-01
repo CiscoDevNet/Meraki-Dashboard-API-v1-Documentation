@@ -12,7 +12,9 @@ device_fields = {'name': "Miles's phone", 'notes': "Here's some info about my de
 
 response = dashboard.sm.updateNetworkSmDevicesFields(
     network_id, device_fields, 
-    id='1284392014819'
+    wifiMac='00:11:22:33:44:55', 
+    id='1284392014819', 
+    serial='Q234-ABCD-5678'
 )
 
 print(response)

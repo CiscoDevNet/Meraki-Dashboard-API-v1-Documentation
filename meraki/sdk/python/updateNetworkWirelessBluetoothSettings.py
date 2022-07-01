@@ -15,7 +15,8 @@ response = dashboard.wireless.updateNetworkWirelessBluetoothSettings(
     advertisingEnabled=True, 
     uuid='00000000-0000-0000-000-000000000000', 
     majorMinorAssignmentMode='Non-unique', 
-    major=1
+    major=1, 
+    minor=1
 )
 
 print(response)

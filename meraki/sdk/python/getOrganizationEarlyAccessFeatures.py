@@ -7,10 +7,10 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-network_i_d = ''
+organization_id = '549236'
 
-response = dashboard.networks.getNetworkClientsPolicies(
-    network_i_d
+response = dashboard.organizations.getOrganizationEarlyAccessFeatures(
+    organization_id
 )
 
 print(response)

@@ -11,7 +11,8 @@ organization_id = '549236'
 
 response = dashboard.organizations.updateOrganization(
     organization_id, 
-    name='My organization'
+    name='My organization', 
+    api={'enabled': True}
 )
 
 print(response)

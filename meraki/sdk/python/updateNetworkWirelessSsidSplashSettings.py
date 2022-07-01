@@ -14,12 +14,19 @@ response = dashboard.wireless.updateNetworkWirelessSsidSplashSettings(
     network_id, number, 
     splashUrl='https://www.custom_splash_url.com', 
     useSplashUrl=True, 
+    splashTimeout=1440, 
     redirectUrl='https://example.com', 
     useRedirectUrl=True, 
     welcomeMessage='Welcome!', 
     splashLogo={'md5': 'abcd1234', 'extension': 'jpg'}, 
-    splashImage={'md5': '542cccac8d7dedee0f185311d154d194'}, 
-    splashPrepaidFront={'md5': '542cccac8d7dedee0f185311d154d194'}
+    splashImage={'md5': '542cccac8d7dedee0f185311d154d194', 'extension': 'jpg'}, 
+    splashPrepaidFront={'md5': '542cccac8d7dedee0f185311d154d194', 'extension': 'jpg'}, 
+    blockAllTrafficBeforeSignOn=False, 
+    controllerDisconnectionBehavior='default', 
+    allowSimultaneousLogins=False, 
+    guestSponsorship={'durationInMinutes': 30, 'guestCanRequestTimeframe': False}, 
+    billing={'freeAccess': {'enabled': True, 'durationInMinutes': 120}, 'prepaidAccessFastLoginEnabled': True, 'replyToEmailAddress': 'user@email.com'}, 
+    sentryEnrollment={'systemsManagerNetwork': {'id': 'N_1234'}, 'strength': 'focused', 'enforcedSystems': ['iOS']}
 )
 
 print(response)

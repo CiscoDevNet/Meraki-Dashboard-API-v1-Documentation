@@ -11,7 +11,11 @@ network_id = 'L_646829496481105433'
 
 response = dashboard.sm.lockNetworkSmDevices(
     network_id, 
-    ids=['1284392014819']
+    wifiMacs=['00:11:22:33:44:55'], 
+    ids=['1284392014819', '2983092129865'], 
+    serials=['Q234-ABCD-0001', 'Q234-ABCD-0002', 'Q234-ABCD-0003'], 
+    scope=['withAny', 'tag1', 'tag2'], 
+    pin=123456
 )
 
 print(response)

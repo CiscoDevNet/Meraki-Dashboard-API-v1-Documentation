@@ -7,11 +7,10 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-network_id = 'L_646829496481105433'
-switch_stack_id = ''
+organization_id = '549236'
 
-response = dashboard.switch.deleteNetworkSwitchSwitchStack(
-    network_id, switch_stack_id
+response = dashboard.organizations.getOrganizationDevicesAvailabilities(
+    organization_id, total_pages='all'
 )
 
 print(response)

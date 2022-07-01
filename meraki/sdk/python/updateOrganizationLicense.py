@@ -11,7 +11,8 @@ organization_id = '549236'
 license_id = ''
 
 response = dashboard.organizations.updateOrganizationLicense(
-    organization_id, license_id
+    organization_id, license_id, 
+    deviceSerial='Q234-ABCD-5678'
 )
 
 print(response)

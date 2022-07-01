@@ -14,6 +14,7 @@ response = dashboard.networks.createNetworkWebhooksWebhookTest(
     network_id, url, 
     sharedSecret='shhh', 
     payloadTemplateId='wpt_00001', 
+    payloadTemplateName='Payload Template', 
     alertTypeId='power_supply_down'
 )
 

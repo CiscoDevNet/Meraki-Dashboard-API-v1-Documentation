@@ -14,7 +14,7 @@ response = dashboard.switch.updateNetworkSwitchAlternateManagementInterface(
     enabled=True, 
     vlanId=100, 
     protocols=['radius', 'snmp', 'syslog'], 
-    switches=[{'serial': 'Q234-ABCD-5678', 'alternateManagementIp': '1.2.3.4'}]
+    switches=[{'serial': 'Q234-ABCD-5678', 'alternateManagementIp': '1.2.3.4', 'subnetMask': '255.255.255.0', 'gateway': '1.2.3.5'}]
 )
 
 print(response)

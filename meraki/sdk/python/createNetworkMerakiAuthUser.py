@@ -9,12 +9,12 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
 email = 'miles@meraki.com'
-name = 'Miles Meraki'
-password = 'secret'
 authorizations = [{'ssidNumber': 1, 'expiresAt': '2018-03-13T00:00:00.090210Z'}]
 
 response = dashboard.networks.createNetworkMerakiAuthUser(
-    network_id, email, name, password, authorizations, 
+    network_id, email, authorizations, 
+    name='Miles Meraki', 
+    password='secret', 
     accountType='802.1X', 
     emailPasswordToUser=False
 )

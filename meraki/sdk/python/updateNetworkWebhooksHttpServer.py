@@ -14,7 +14,7 @@ response = dashboard.networks.updateNetworkWebhooksHttpServer(
     network_id, http_server_id, 
     name='Example Webhook Server', 
     sharedSecret='shhh', 
-    payloadTemplate={'payloadTemplateId': 'wpt_00001', 'name': 'Meraki (included)'}
+    payloadTemplate={'payloadTemplateId': 'wpt_00001'}
 )
 
 print(response)
