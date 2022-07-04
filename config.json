@@ -142,5 +142,8 @@
             "type": "url",
             "content": "https://developer.cisco.com/meraki/whats-new/"
         }      
-    ]
+    ],
+    "config":{
+        "useNPS": "caojnpr4so6v581tptl0"
+    }
 }
