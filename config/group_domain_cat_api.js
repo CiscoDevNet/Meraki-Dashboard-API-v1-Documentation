@@ -7,7 +7,7 @@
 const groupBy = function (operation, meta) {
     let path = ""
     let tags = operation.tags;
-    let scopes = ['organizations', 'networks', 'devices'];
+    let scopes = ['administered', 'organizations', 'networks', 'devices'];
     if(scopes.find(s => tags[0] === s)){
         path = "GENERAL/";
     }else{
