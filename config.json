@@ -1,52 +1,34 @@
 {
     "items": [
         {
-            "title": "Introduction",
-            "content": "docs/Introduction.md"
-        },
-        
-        {
-            "title": "Getting Started",
-            "content": "docs/GettingStarted.md"
-        },
-        {
-            "title": "Endpoints",
-            "type": "oas",
-            "content": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec2.json",
-            "config": {
-                "overview": {
-                    "markdownPath": "docs/overview.md"
-                },
-                "theme":"meraki",
-                "apiKeyGenerator": {
-                    "$remoteModule": "config/api_key.js"
-                },
-                "groupBy": {
-                    "$remoteModule": "config/group_domain_cat_api.js"
-                },
-                "exampleAsDefault": true,
-                "expand": 3,
-                "sampleCode": {
-                    "python": {
-                        "folder":"meraki/sdk/python",
-                        "name":"Meraki Python Library",
-                        "highlight":"python"
-                    }
-                },
-                "variables": {
-                    "organizationId":"549236",
-                    "networkId":"L_646829496481105433",
-                    "serial":"Q2QN-9J8L-SLPD"
-                }
-            }
-        },
-        {
-            "title": "Reference",
+            "title": "Meraki Dashboard API",
             "items": [
                 {
-                    "title": "Authorization",
-                    "content": "docs/Authorization.md"
+                    "title": "Introduction",
+                    "content": "docs/Introduction.md"
                 },
+                {
+                    "title": "Authentication",
+                    "content": "docs/Authorization.md",
+                    "uri": "authorization"
+                },
+                {
+                    "title": "Getting Started",
+                    "content": "docs/GettingStarted.md"
+                },
+                {
+                    "title": "API Changelog",
+                    "content": "https://developer.cisco.com/meraki/whats-new/",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "title": "Guides",
+            "config": {
+                "expand": 0
+            },
+            "items": [
                 {
                     "title": "Schema",
                     "content": "docs/PathSchema.md"
@@ -75,12 +57,7 @@
                 {
                     "title": "Path Changes",
                     "content": "docs/v0-v1-path-operation-changes.md"
-                }
-            ]
-        },
-        {
-            "title": "Guides",
-            "items": [
+                },
                 {
                     "title": "Action Batches",
                     "items": [
@@ -102,11 +79,50 @@
                             "content": "docs/UserAgents.md"
                         }
                     ]
+                },
+                {
+                    "title": "Webhooks",
+                    "content": "https://meraki.io/webhooks",
+                    "type": "url"
                 }
             ]
         },
         {
-            "title": "Resources",
+            "title": "API Reference",
+            "type": "oas",
+            "content": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec2.json",
+            "config": {
+                "overview": {
+                    "markdownPath": "docs/overview.md"
+                },
+                "theme":"meraki",
+                "apiKeyGenerator": {
+                    "$remoteModule": "config/api_key.js"
+                },
+                "groupBy": {
+                    "$remoteModule": "config/group_domain_cat_api.js"
+                },
+                "exampleAsDefault": true,
+                "expand": 0,
+                "sampleCode": {
+                    "python": {
+                        "folder":"meraki/sdk/python",
+                        "name":"Meraki Python Library",
+                        "highlight":"python"
+                    }
+                },
+                "variables": {
+                    "organizationId":"549236",
+                    "networkId":"L_646829496481105433",
+                    "serial":"Q2QN-9J8L-SLPD"
+                }
+            }
+        },
+        {
+            "title": "Developer Resources",
+            "config": {
+                "expand": 0
+            },
             "items": [
                 
                 {
@@ -125,22 +141,41 @@
                             "content": "docs/pythonLibrary.md"
                         }
                     ]
+                },
+                {
+                    "title": "Learning Labs",
+                    "content": "https://developer.cisco.com/learning/tracks/Meraki-v0/",
+                    "type": "url"
+                },
+                {
+                    "title": "Sandbox",
+                    "content": "https://devnetsandbox.cisco.com/RM/Diagram/Index/a9487767-deef-4855-b3e3-880e7f39eadc?diagramType=Topology",
+                    "type": "url"
+                },
+                {
+                    "title": "Code Exchange",
+                    "content": "https://developer.cisco.com/codeexchange/platforms/meraki",
+                    "type": "url"
                 }
             ]
         },
         {
-            "title": "Support",
-            "content": "docs/support.md"
-        },
-        {
-            "title": "Webhooks",
-            "content": "https://meraki.io/webhooks",
-            "type": "url"
-        },
-        {
-            "title": "Changelog",
-            "type": "url",
-            "content": "https://developer.cisco.com/meraki/whats-new/"
-        }      
+            "title": "Community and Support",
+            "config": {
+                "expand": 0
+             },
+            "items": [
+                {
+                    "title": "Developer Support",
+                    "content": "docs/support.md",
+                    "uri": "support"
+                },
+                {
+                    "title": "Community",
+                    "content": "https://community.meraki.com/t5/Developers-APIs/bd-p/api",
+                    "type": "url"
+                }
+            ]
+        }     
     ]
 }
