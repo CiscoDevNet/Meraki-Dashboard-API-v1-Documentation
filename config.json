@@ -95,7 +95,6 @@
             "config": {
                 "overview": {
                     "markdownPath": "docs/overview.md",
-                    "expand": 2
                     
                 },
                 "theme":"meraki",
@@ -106,7 +105,7 @@
                     "$remoteModule": "config/group_domain_cat_api.js"
                 },
                 "exampleAsDefault": true,
-                "expand": 0,
+                "expand": 2,
                 "sampleCode": {
                     "python": {
                         "folder":"meraki/sdk/python",
