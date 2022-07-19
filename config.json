@@ -1,16 +1,95 @@
 {
     "items": [
         {
-            "title": "Introduction",
-            "content": "docs/Introduction.md"
+            "title": "Meraki Dashboard API",
+            "items": [
+                {
+                    "title": "Introduction",
+                    "content": "docs/Introduction.md"
+                },
+                {
+                    "title": "Authentication",
+                    "content": "docs/Authorization.md",
+                    "uri": "authorization"
+                },
+                {
+                    "title": "Getting Started",
+                    "content": "docs/GettingStarted.md"
+                },
+                {
+                    "title": "API Changelog",
+                    "content": "https://developer.cisco.com/meraki/whats-new/",
+                    "type": "url"
+                }
+            ]
         },
-        
         {
-            "title": "Getting Started",
-            "content": "docs/GettingStarted.md"
+            "title": "Guides",
+            "config": {
+                "expand": 0
+            },
+            "items": [
+                {
+                    "title": "Action Batches",
+                    "items": [
+                        {
+                            "title": "Overview",
+                            "content": "docs/ActionBatches.md"
+                        },
+                        {
+                            "title": "Supported Resources",
+                            "content": "docs/ActionBatchesResources.md"
+                        }
+                    ]
+                },
+                
+                {
+                    "title": "Path Parameters",
+                    "content": "docs/serviceParamMap.md"
+                },
+                {
+                    "title": "Errors",
+                    "content": "docs/Errors.md"
+                },
+                {
+                    "title": "Pagination",
+                    "content": "docs/Pagination.md"
+                },
+                {
+                    "title": "Path Changes",
+                    "content": "docs/v0-v1-path-operation-changes.md"
+                },
+                {
+                    "title": "Rate Limit",
+                    "content": "docs/RateLimit.md"
+                },
+                {
+                    "title": "Schema",
+                    "content": "docs/PathSchema.md"
+                },
+                {
+                    "title": "User Agents",
+                    "items": [
+                        {
+                            "title": "Overview",
+                            "content": "docs/UserAgents.md"
+                        }
+                    ]
+                },
+                {
+                    "title": "Versioning",
+                    "content": "docs/Versioning.md"
+                },
+                         
+                {
+                    "title": "Webhooks",
+                    "content": "https://meraki.io/webhooks",
+                    "type": "url"
+                }
+            ]
         },
         {
-            "title": "Endpoints",
+            "title": "API Reference",
             "type": "oas",
             "content": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec2.json",
             "config": {
@@ -25,7 +104,7 @@
                     "$remoteModule": "config/group_domain_cat_api.js"
                 },
                 "exampleAsDefault": true,
-                "expand": 3,
+                "expand": 0,
                 "sampleCode": {
                     "python": {
                         "folder":"meraki/sdk/python",
@@ -41,72 +120,10 @@
             }
         },
         {
-            "title": "Reference",
-            "items": [
-                {
-                    "title": "Authorization",
-                    "content": "docs/Authorization.md"
-                },
-                {
-                    "title": "Schema",
-                    "content": "docs/PathSchema.md"
-                },
-                {
-                    "title": "Path Parameters",
-                    "content": "docs/serviceParamMap.md"
-                },
-                {
-                    "title": "Errors",
-                    "content": "docs/Errors.md"
-                },
-                {
-                    "title": "Pagination",
-                    "content": "docs/Pagination.md"
-                },
-                {
-                    "title": "Rate Limit",
-                    "content": "docs/RateLimit.md"
-                },
-                
-                {
-                    "title": "Versioning",
-                    "content": "docs/Versioning.md"
-                },
-                {
-                    "title": "Path Changes",
-                    "content": "docs/v0-v1-path-operation-changes.md"
-                }
-            ]
-        },
-        {
-            "title": "Guides",
-            "items": [
-                {
-                    "title": "Action Batches",
-                    "items": [
-                        {
-                            "title": "Overview",
-                            "content": "docs/ActionBatches.md"
-                        },
-                        {
-                            "title": "Supported Resources",
-                            "content": "docs/ActionBatchesResources.md"
-                        }
-                    ]
-                },
-                {
-                    "title": "User Agents",
-                    "items": [
-                        {
-                            "title": "Overview",
-                            "content": "docs/UserAgents.md"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Resources",
+            "title": "Developer Resources",
+            "config": {
+                "expand": 0
+            },
             "items": [
                 
                 {
@@ -125,23 +142,43 @@
                             "content": "docs/pythonLibrary.md"
                         }
                     ]
+                },
+                {
+                    "title": "Learning Labs",
+                    "content": "https://developer.cisco.com/learning/tracks/Meraki-v0/",
+                    "type": "url"
+                },
+                {
+                    "title": "Sandbox",
+                    "content": "https://devnetsandbox.cisco.com/RM/Diagram/Index/a9487767-deef-4855-b3e3-880e7f39eadc?diagramType=Topology",
+                    "type": "url"
+                },
+                {
+                    "title": "Code Exchange",
+                    "content": "https://developer.cisco.com/codeexchange/platforms/meraki",
+                    "type": "url"
                 }
             ]
         },
         {
-            "title": "Support",
-            "content": "docs/support.md"
-        },
-        {
-            "title": "Webhooks",
-            "content": "https://meraki.io/webhooks",
-            "type": "url"
-        },
-        {
-            "title": "Changelog",
-            "type": "url",
-            "content": "https://developer.cisco.com/meraki/whats-new/"
-        }      
+            "title": "Community and Support",
+            "config": {
+                "expand": 0
+             },
+            "items": [
+                {
+                    "title": "Developer Support",
+                    "content": "docs/support.md",
+                    "uri": "support"
+                },
+                {
+                    "title": "Community",
+                    "content": "https://community.meraki.com/t5/Developers-APIs/bd-p/api",
+                    "type": "url"
+                }
+            ]
+        }     
+      
     ],
     "config":{
         "useNPS": "caojnpr4so6v581tptl0"
