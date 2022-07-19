@@ -94,7 +94,9 @@
             "content": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec2.json",
             "config": {
                 "overview": {
-                    "markdownPath": "docs/overview.md"
+                    "markdownPath": "docs/overview.md",
+                    "expand": 2
+                    
                 },
                 "theme":"meraki",
                 "apiKeyGenerator": {
