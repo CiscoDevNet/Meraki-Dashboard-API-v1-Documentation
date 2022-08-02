@@ -42,7 +42,6 @@
                         }
                     ]
                 },
-                
                 {
                     "title": "Path Parameters",
                     "content": "docs/serviceParamMap.md"
@@ -80,7 +79,6 @@
                     "title": "Versioning",
                     "content": "docs/Versioning.md"
                 },
-                         
                 {
                     "title": "Webhooks",
                     "content": "https://meraki.io/webhooks",
@@ -95,9 +93,8 @@
             "config": {
                 "overview": {
                     "markdownPath": "docs/overview.md"
-                    
                 },
-                "theme":"meraki",
+                "theme": "meraki",
                 "apiKeyGenerator": {
                     "$remoteModule": "config/api_key.js"
                 },
@@ -108,15 +105,15 @@
                 "expand": 3,
                 "sampleCode": {
                     "python": {
-                        "folder":"meraki/sdk/python",
-                        "name":"Meraki Python Library",
-                        "highlight":"python"
+                        "folder": "meraki/sdk/python",
+                        "name": "Meraki Python Library",
+                        "highlight": "python"
                     }
                 },
                 "variables": {
-                    "organizationId":"549236",
-                    "networkId":"L_646829496481105433",
-                    "serial":"Q2QN-9J8L-SLPD"
+                    "organizationId": "549236",
+                    "networkId": "L_646829496481105433",
+                    "serial": "Q2QN-9J8L-SLPD"
                 }
             }
         },
@@ -126,7 +123,6 @@
                 "expand": 0
             },
             "items": [
-                
                 {
                     "title": "Postman Collection ",
                     "content": "docs/postman.md"
@@ -165,7 +161,7 @@
             "title": "Community and Support",
             "config": {
                 "expand": 0
-             },
+            },
             "items": [
                 {
                     "title": "Developer Support",
@@ -178,10 +174,9 @@
                     "type": "url"
                 }
             ]
-        }     
-      
+        }
     ],
-    "config":{
+    "config": {
         "useNPS": "caojnpr4so6v581tptl0"
     }
 }
