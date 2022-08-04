@@ -1,5 +1,16 @@
 
-# Interactive API Docs (Early Access)
+# Early API Access
+
+An evolving set of in-development APIs for software developers interested in providing feedback on API feature design prior to general availability. Designed for use in testing environments where breaking API changes are acceptable. When enabled, all APIs are subject to breaking changes without prior notice. This feature can only be applied to the entire organization.
+
+[Changelog](/meraki/whats-new/#!v1-beta) 
+
+[GitHub](https://github.com/meraki/openapi/tree/v1-beta)
+
+[Community]9https://community.meraki.com/t5/Developers-APIs/bd-p/api)
+
+
+# Interactive API Docs
 
 Use the interactive documentation to explore the Meraki API endpoints. 
 
