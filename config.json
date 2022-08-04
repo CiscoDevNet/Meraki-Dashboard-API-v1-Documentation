@@ -122,7 +122,7 @@
             "type": "oas",
             "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec2.json",
             "config": {
-                "overview": "docs/overview.md",
+                "overview": "docs/overview-early-access.md",
                 "theme": "meraki",
                 "apiKeyGenerator": {
                     "$remoteModule": "config/api_key.js"
