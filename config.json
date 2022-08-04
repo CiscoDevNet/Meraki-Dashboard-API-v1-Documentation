@@ -99,7 +99,7 @@
                     "$remoteModule": "config/api_key.js"
                 },
                 "groupBy": {
-                    "$remoteModule": "config/group_domain_cat_api.js"
+                    "$remoteModule": "config/group_platform.js"
                 },
                 "exampleAsDefault": true,
                 "expand": 3,
@@ -110,6 +110,31 @@
                         "highlight": "python"
                     }
                 },
+                "variables": {
+                    "organizationId": "549236",
+                    "networkId": "L_646829496481105433",
+                    "serial": "Q2QN-9J8L-SLPD"
+                }
+            }
+        },
+        {
+            "title": "API Reference (Early Acess)",
+            "type": "oas",
+            "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec2.json",
+            "config": {
+                "overview": "docs/overview.md",
+                "theme": "meraki",
+                "apiKeyGenerator": {
+                    "$remoteModule": "config/api_key.js"
+                },
+                "groupBy": {
+                    "$remoteModule": "config/group_platform.js"
+                },
+                "filterBy": {
+                    "$remoteModule": "config/filter_only_beta.js"
+                },
+                "exampleAsDefault": true,
+                "expand": 3,
                 "variables": {
                     "organizationId": "549236",
                     "networkId": "L_646829496481105433",
