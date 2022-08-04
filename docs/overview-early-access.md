@@ -7,7 +7,7 @@ An evolving set of in-development APIs for software developers interested in pro
 
 [GitHub](https://github.com/meraki/openapi/tree/v1-beta)
 
-[Community]9https://community.meraki.com/t5/Developers-APIs/bd-p/api)
+[Community](https://community.meraki.com/t5/Developers-APIs/bd-p/api)
 
 
 # Interactive API Docs
