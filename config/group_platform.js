@@ -42,7 +42,7 @@ const groupBy = function (operation, meta) {
         
     // Build Folder Tree
     console.log('tags',tags)
-    let tLength = tags.length
+    if(tags.length == 2){tags.push(tags[0])}// add scope as a service folder
     tags.forEach((t,i) => {
       
         if(i == 1 && t === 'liveTools' && tags[0] === 'devices'){
@@ -54,7 +54,7 @@ const groupBy = function (operation, meta) {
         // if(i == 0 && scopes.find(s => tags[i] === s && s !== 'administered' )){
         //     // skip scope
         // }
-        else if(i == 0 && scopes.find(s => tags[i] === s)){
+        else if(i == 0 && scopes.find(s => tags[0] === s)){
             // skip scope
         }
         // else if( i == 1 && t !== "liveTools"){
@@ -90,12 +90,12 @@ let productTest = {
     tags: [ 'switch', 'monitor', 'devices', 'ports', 'statuses']
 }
 let scopeTest = {
-    tags: [ 'networks', 'configure', 'floorPlans']
+    tags: [ 'networks', 'configure']
 }
 
 
-console.log("productTest", productTest, groupBy(productTest));
+//console.log("productTest", productTest, groupBy(productTest));
 // PRODUCTS/switch/MONITOR/devices/ports
 
-//console.log("scopeTest", scopeTest, groupBy(scopeTest));
-// GENERAL/networks/CONFIGURE/floorPlans
+console.log("scopeTest", scopeTest, groupBy(scopeTest));
+// Platform/networks/CONFIGURE/floorPlans
