@@ -30,52 +30,17 @@ In addition, several improvements and new endpoints have been included with this
 
 The API Endpoint documentation and complimenting Postman Collection have a new folder structure for navigating the API. 
 
-<table>
-<td>
 
-> - General
->    - devices
->    - networks
->    - organizations
-> - Products
->    - appliance
->    - camera
->    - cellularGateway
->    - insight
->    - sm
->    - switch
->    - wireless
-</td>
-<td>
-
-Browse related API operations by **General** cloud settings or by **Products**
-</td>
-</table>
 
 #### Categories
 
-The services are further grouped into categories, providing a collection of endpoints that behave in a similar way. 
-
-<table>
-<td>
-
-> - devices
->    - **CONFIGURE**
->        - update device         
->    - **MONITOR**
->        - return clients
->    - **LIVE Tools**
->        - reboot device
-</td>
-<td>
+The services are grouped into categories, providing a collection of endpoints that behave in a similar way. 
 
 **CONFIGURE** endpoints  are for managing cloud configurations
 
 **MONITOR** endpoints will return status and history information
 
 **LIVE TOOL** endpoints will directly interact with the device
-</td>
-</table>
 
 ### Resource Path changes
 
