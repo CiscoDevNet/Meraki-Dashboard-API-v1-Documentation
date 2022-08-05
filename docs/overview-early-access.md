@@ -1,14 +1,15 @@
 
 # Early API Access
 
-An evolving set of in-development APIs for software developers interested in providing feedback on API feature design prior to general availability. Designed for use in testing environments where breaking API changes are acceptable. When enabled, all APIs are subject to breaking changes without prior notice. This feature can only be applied to the entire organization.
+An evolving set of in-development APIs for software developers interested in providing feedback on API feature design prior to general availability. Designed for use in testing environments where breaking API changes are acceptable. When enabled, all APIs are subject to breaking changes without prior notice. New API operations or operations with new parameters will be listed in the API Reference (Early Access) section of these docs. 
 
-[Changelog](/meraki/whats-new/#!v1-beta) 
+[Changelog](https://developer.cisco.com/meraki/whats-new/#!v1-beta) 
+
+[Community](https://community.meraki.com/t5/Developers-APIs/Beta-testing-with-the-Meraki-Developer-Early-Access-program/m-p/145344#M5808)
 
 [GitHub](https://github.com/meraki/openapi/tree/v1-beta)
 
-[Community](https://community.meraki.com/t5/Developers-APIs/bd-p/api)
-
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/897512-5368b2fb-18fe-4b29-8490-1fd8a5ce1421?action=collection%2Ffork&collection-url=entityId%3D897512-5368b2fb-18fe-4b29-8490-1fd8a5ce1421%26entityType%3Dcollection%26workspaceId%3Dd14bb47a-881b-4021-8c80-df026b0ec8e2)
 
 # Interactive API Docs
 

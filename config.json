@@ -118,7 +118,7 @@
             }
         },
         {
-            "title": "API Reference (Early Acess)",
+            "title": "API Reference (Early Access)",
             "type": "oas",
             "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec2.json",
             "config": {
