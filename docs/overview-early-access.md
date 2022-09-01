@@ -3,6 +3,12 @@
 
 An evolving set of in-development APIs for software developers interested in providing feedback on API feature design prior to general availability. Designed for use in testing environments where breaking API changes are acceptable. When enabled, all APIs are subject to breaking changes without prior notice. New API operations or operations with new parameters will be listed in the API Reference (Early Access) section of these docs. 
 
+Get started by enabling your test organization now.
+
+*Dashboard --> Organizations --> Early Access*
+
+<img src="../images/early-access-screenshot.png" width="600px">
+
 [Changelog](https://developer.cisco.com/meraki/whats-new/#!v1-beta) 
 
 [Community](https://community.meraki.com/t5/Developers-APIs/Beta-testing-with-the-Meraki-Developer-Early-Access-program/m-p/145344#M5808)
