@@ -46,7 +46,7 @@ const groupBy = function (operation, meta) {
     tags.forEach((t,i) => {
       
         if(i == 1 && t === 'liveTools' && tags[0] === 'devices'){
-            path += t + "/devices/";
+            path += t;
         }else if(i === 1 && tags[0] === 'administered'){
             path += t + "/administered/";
         
