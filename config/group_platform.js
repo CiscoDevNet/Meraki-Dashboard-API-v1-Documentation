@@ -47,14 +47,13 @@ const groupBy = function (operation, meta) {
       
         if(i == 1 && t === 'liveTools' && tags[0] === 'devices'){
             path += t + "/devices/";
-        }
-        if(i === 1 && tags[0] === 'administered'){
+        }else if(i === 1 && tags[0] === 'administered'){
             path += t + "/administered/";
-        }
+        
         // if(i == 0 && scopes.find(s => tags[i] === s && s !== 'administered' )){
         //     // skip scope
         // }
-        else if(i == 0 && scopes.find(s => tags[0] === s)){
+        }else if(i == 0 && scopes.find(s => tags[0] === s)){
             // skip scope
         }
         // else if( i == 1 && t !== "liveTools"){
