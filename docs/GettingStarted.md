@@ -23,9 +23,13 @@ If using the Meraki [Python library](pythonLibrary.md), install it via `pip inst
 
 ## Base URI
 
-Every API request will begin with the following **base URI**. 
+In most parts of the world, every API request will begin with the following **base URI**: 
 
 > `https://api.meraki.com/api/v1`
+
+For organizations hosted in the China dashboard, please specify the following base URI instead:
+
+> `https://api.meraki.cn/api/v1`
 
 Read more about the path schema [here](PathSchema.md).
 
