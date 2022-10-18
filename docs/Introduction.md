@@ -52,14 +52,15 @@ The endpoint URL paths will always contain the Meraki product if required, reduc
 >
 > `/switch/ports`
 
-
-
 ### Base URI
 
-Minor but important detail, the Base URI has changed to **v1**
+In most parts of the world, every API request will begin with the following **base URI**: 
 
 > `https://api.meraki.com/api/v1`
 
+For organizations hosted in the China dashboard, please specify the following base URI instead:
+
+> `https://api.meraki.cn/api/v1`
 
 ### See all the changes
 
