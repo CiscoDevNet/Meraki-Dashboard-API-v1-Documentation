@@ -68,11 +68,11 @@ It's usually trivial to add user agent headers to your API requests. All HTTP re
 
 ### Python library
 
-If using the Meraki [Python library](pythonLibrary.md), then simply pass the kwarg `MERAKI_PYTHON_SDK_CALLER` in your session definition.
+If using the Meraki [Python library](pythonLibrary.md), then simply pass the kwarg `caller` in your session definition.
 
 ``` Python
 import meraki
-dashboard = meraki.DashboardAPI(MERAKI_PYTHON_SDK_CALLER='PlanetCraftLite/0.8b LunarCommander')
+dashboard = meraki.DashboardAPI(caller='PlanetCraftLite/0.8b LunarCommander')
 ```
 
 Alternatively, you can modify the library's config.py file to set this globally. [Consult the docs](https://github.com/meraki/dashboard-api-python) for more information.
