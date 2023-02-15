@@ -85,3 +85,18 @@ If using the Invoke-WebRequest method, then provide the `-UserAgent` flag in eac
 $userAgent = 'ApplicationName VendorName'
 $apiCallExample = Invoke-WebRequest -URI $uri -Headers $headers -UserAgent $userAgent
 ```
+
+### Java
+
+If using the HttpURLConnection module, then use setRequestProperty to send the user agent:
+
+``` Java
+import java.net.HttpURLConnection;
+String userAgent = "ApplicationName VendorName"
+
+HttpURLConnection connectionExample = null;
+urlExample = new URL(exampleStringUrl); // appropriate endpoint URL here
+connection = (HttpURLConnection) urlExample.openConnection();
+// other setRequestProperties here, e.g. Bearer Auth, etc.
+connection.setRequestProperty("User-Agent", userAgent);
+```
