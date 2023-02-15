@@ -79,7 +79,7 @@ Alternatively, you can modify the library's config.py file to set this globally.
 
 ### PowerShell
 
-If using the Invoke-WebRequest method, then provide the `-UserAgent` flag in each of your requests:
+If using the `Invoke-WebRequest` method, then provide the `-UserAgent` flag in each of your requests:
 
 ``` PowerShell
 $userAgent = 'ApplicationName VendorName'
@@ -88,7 +88,7 @@ $apiCallExample = Invoke-WebRequest -URI $uri -Headers $headers -UserAgent $user
 
 ### Java
 
-If using the HttpURLConnection module, then use setRequestProperty to send the user agent:
+If using the `HttpURLConnection` module, then use `setRequestProperty` to send the user agent:
 
 ``` Java
 import java.net.HttpURLConnection;
