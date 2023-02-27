@@ -18,7 +18,7 @@ const groupBy = function (operation, meta) {
     let path = ""
     let tags = [...[],...operation.tags]
    // let releaseStage = operation["x-release-stage"] || ""
-    let scopes = ['organizations', 'networks', 'devices','administered','licensing','nac','secureConnect'];
+    let scopes = ['organizations', 'networks', 'devices','administered'];
     if(scopes.find(s => tags[0] === s)){
         path = "Platform/";
     }else{
