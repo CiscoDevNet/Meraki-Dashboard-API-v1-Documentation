@@ -16,6 +16,7 @@ response = dashboard.appliance.updateNetworkAppliancePort(
     dropUntaggedTraffic=False, 
     type='access', 
     vlan=3, 
+    allowedVlans='all', 
     accessPolicy='open'
 )
 

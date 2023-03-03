@@ -16,7 +16,9 @@ response = dashboard.appliance.updateNetworkApplianceVlan(
     subnet='192.168.1.0/24', 
     applianceIp='192.168.1.2', 
     groupPolicyId='101', 
+    vpnNatSubnet='192.168.1.0/24', 
     dhcpHandling='Run a DHCP server', 
+    dhcpRelayServerIps=['192.168.1.0/24', '192.168.128.0/24'], 
     dhcpLeaseTime='1 day', 
     dhcpBootOptionsEnabled=False, 
     dhcpBootNextServer='1.2.3.4', 
@@ -24,7 +26,12 @@ response = dashboard.appliance.updateNetworkApplianceVlan(
     fixedIpAssignments={'22:33:44:55:66:77': {'ip': '1.2.3.4', 'name': 'Some client name'}}, 
     reservedIpRanges=[{'start': '192.168.1.0', 'end': '192.168.1.1', 'comment': 'A reserved IP range'}], 
     dnsNameservers='google_dns', 
-    dhcpOptions=[{'code': '5', 'type': 'text', 'value': 'five'}]
+    dhcpOptions=[{'code': '5', 'type': 'text', 'value': 'five'}], 
+    templateVlanType='same', 
+    cidr='192.168.1.0/24', 
+    mask=28, 
+    ipv6={'enabled': True, 'prefixAssignments': [{'autonomous': False, 'staticPrefix': '2001:db8:3c4d:15::/64', 'staticApplianceIp6': '2001:db8:3c4d:15::1', 'origin': {'type': 'internet', 'interfaces': ['wan0']}}]}, 
+    mandatoryDhcp={'enabled': True}
 )
 
 print(response)

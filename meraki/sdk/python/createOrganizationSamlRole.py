@@ -14,7 +14,7 @@ org_access = 'none'
 response = dashboard.organizations.createOrganizationSamlRole(
     organization_id, role, org_access, 
     tags=[{'tag': 'west', 'access': 'read-only'}], 
-    networks=[{'id': 'N_1234', 'access': 'full'}]
+    networks=[{'id': 'N_24329156', 'access': 'full'}]
 )
 
 print(response)

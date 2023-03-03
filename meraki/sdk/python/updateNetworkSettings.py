@@ -13,8 +13,8 @@ response = dashboard.networks.updateNetworkSettings(
     network_id, 
     localStatusPageEnabled=True, 
     remoteStatusPageEnabled=True, 
-    secureConnect={'enabled': False}, 
-    localStatusPage={'authentication': {'enabled': False, 'username': 'admin'}}
+    localStatusPage={'authentication': {'enabled': False, 'password': 'miles123'}}, 
+    securePort={'enabled': False}
 )
 
 print(response)

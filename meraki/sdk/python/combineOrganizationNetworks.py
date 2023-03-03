@@ -12,7 +12,8 @@ name = 'Long Island Office'
 network_ids = ['N_1234', 'N_5678']
 
 response = dashboard.organizations.combineOrganizationNetworks(
-    organization_id, name, network_ids
+    organization_id, name, network_ids, 
+    enrollmentString='my-enrollment-string'
 )
 
 print(response)

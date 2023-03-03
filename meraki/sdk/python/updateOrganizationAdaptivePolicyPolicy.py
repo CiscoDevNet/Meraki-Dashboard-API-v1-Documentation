@@ -8,10 +8,10 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 organization_id = '549236'
-adaptive_policy_id = ''
+id_ = ''
 
 response = dashboard.organizations.updateOrganizationAdaptivePolicyPolicy(
-    organization_id, adaptive_policy_id, 
+    organization_id, id_, 
     sourceGroup={'id': '222', 'name': 'IoT Devices', 'sgt': 50}, 
     destinationGroup={'id': '333', 'name': 'IoT Servers', 'sgt': 51}, 
     acls=[{'id': '444', 'name': 'Block web'}], 

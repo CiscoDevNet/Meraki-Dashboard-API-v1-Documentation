@@ -10,7 +10,8 @@ dashboard = meraki.DashboardAPI(API_KEY)
 name = 'My organization'
 
 response = dashboard.organizations.createOrganization(
-    name
+    name, 
+    management={'details': [{'name': 'MSP ID', 'value': '123456'}]}
 )
 
 print(response)

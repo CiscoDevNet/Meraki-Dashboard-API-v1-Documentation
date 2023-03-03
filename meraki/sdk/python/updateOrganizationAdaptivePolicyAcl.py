@@ -8,10 +8,10 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 organization_id = '549236'
-id_ = ''
+acl_id = ''
 
 response = dashboard.organizations.updateOrganizationAdaptivePolicyAcl(
-    organization_id, id_, 
+    organization_id, acl_id, 
     name='Block sensitive web traffic', 
     description='Blocks sensitive web traffic', 
     rules=[{'policy': 'deny', 'protocol': 'tcp', 'srcPort': '1,33', 'dstPort': '22-30'}, {'policy': 'allow', 'protocol': 'any', 'srcPort': 'any', 'dstPort': 'any'}], 

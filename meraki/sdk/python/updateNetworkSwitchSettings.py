@@ -10,10 +10,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 network_id = 'L_646829496481105433'
 
 response = dashboard.switch.updateNetworkSwitchSettings(
-    network_id, 
-    vlan=100, 
-    useCombinedPower=False, 
-    powerExceptions=[{'serial': 'Q234-ABCD-0001', 'powerType': 'redundant'}, {'serial': 'Q234-ABCD-0002', 'powerType': 'combined'}, {'serial': 'Q234-ABCD-0003', 'powerType': 'redundant'}, {'serial': 'Q234-ABCD-0004', 'powerType': 'useNetworkSetting'}]
+    network_id
 )
 
 print(response)

@@ -19,6 +19,7 @@ response = dashboard.switch.updateDeviceSwitchRoutingInterface(
     vlanId=100, 
     defaultGateway='192.168.1.1', 
     ospfSettings={'area': '0', 'cost': 1, 'isPassiveEnabled': True}, 
+    ospfV3={'area': '1', 'cost': 2, 'isPassiveEnabled': True}, 
     ipv6={'assignmentMode': 'static', 'prefix': '1:2:3:4::/48', 'address': '1:2:3:4::1', 'gateway': '1:2:3:4::2'}
 )
 

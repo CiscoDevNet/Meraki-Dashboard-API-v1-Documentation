@@ -16,7 +16,8 @@ response = dashboard.networks.createNetworkMerakiAuthUser(
     name='Miles Meraki', 
     password='secret', 
     accountType='802.1X', 
-    emailPasswordToUser=False
+    emailPasswordToUser=False, 
+    isAdmin=False
 )
 
 print(response)

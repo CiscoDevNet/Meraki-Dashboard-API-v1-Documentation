@@ -11,7 +11,11 @@ network_id = 'L_646829496481105433'
 number = ''
 
 response = dashboard.wireless.updateNetworkWirelessSsidEapOverride(
-    network_id, number
+    network_id, number, 
+    timeout=5, 
+    identity={'retries': 5, 'timeout': 5}, 
+    maxRetries=5, 
+    eapolKey={'retries': 5, 'timeoutInMs': 5000}
 )
 
 print(response)

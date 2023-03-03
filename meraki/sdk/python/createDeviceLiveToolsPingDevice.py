@@ -10,7 +10,8 @@ dashboard = meraki.DashboardAPI(API_KEY)
 serial = 'Q2QN-9J8L-SLPD'
 
 response = dashboard.devices.createDeviceLiveToolsPingDevice(
-    serial
+    serial, 
+    count=3
 )
 
 print(response)

@@ -14,7 +14,8 @@ response = dashboard.wireless.updateNetworkWirelessSettings(
     meshingEnabled=True, 
     ipv6BridgeEnabled=False, 
     locationAnalyticsEnabled=False, 
-    upgradeStrategy='minimizeUpgradeTime'
+    upgradeStrategy='minimizeUpgradeTime', 
+    ledLightsOn=False
 )
 
 print(response)

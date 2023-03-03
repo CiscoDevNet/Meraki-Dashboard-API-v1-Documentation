@@ -15,8 +15,8 @@ response = dashboard.organizations.updateOrganizationBrandingPolicy(
     name='My Branding Policy', 
     enabled=True, 
     adminSettings={'appliesTo': 'All admins of networks...', 'values': ['N_1234', 'L_5678']}, 
-    helpSettings={'helpTab': 'show', 'getHelpSubtab': 'default or inherit', 'communitySubtab': 'show', 'casesSubtab': 'hide', 'dataProtectionRequestsSubtab': 'default or inherit', 'getHelpSubtabKnowledgeBaseSearch': '<h1>Some custom HTML content</h1>', 'universalSearchKnowledgeBaseSearch': 'hide', 'ciscoMerakiProductDocumentation': 'show', 'supportContactInfo': 'show', 'newFeaturesSubtab': 'show', 'firewallInfoSubtab': 'hide', 'apiDocsSubtab': 'default or inherit', 'hardwareReplacementsSubtab': 'hide', 'smForums': 'hide'}, 
-    customLogo={'enabled': True, 'image': {'preview': {'url': 'https://meraki-na.s3.amazonaws.com/org-assets/my-image.png', 'expiresAt': '2022-04-06T06:19:27-07:00'}}}
+    helpSettings={'helpTab': 'show', 'getHelpSubtab': 'default or inherit', 'communitySubtab': 'show', 'casesSubtab': 'hide', 'dataProtectionRequestsSubtab': 'default or inherit', 'getHelpSubtabKnowledgeBaseSearch': '<h1>Some custom HTML content</h1>', 'universalSearchKnowledgeBaseSearch': 'hide', 'ciscoMerakiProductDocumentation': 'show', 'supportContactInfo': 'show', 'newFeaturesSubtab': 'show', 'firewallInfoSubtab': 'hide', 'apiDocsSubtab': 'default or inherit', 'hardwareReplacementsSubtab': 'hide', 'smForums': 'hide', 'helpWidget': 'hide'}, 
+    customLogo={'enabled': True, 'image': {'contents': 'Hyperg26C8F4h8CvcoUqpA==', 'format': 'jpg'}}
 )
 
 print(response)

@@ -11,10 +11,11 @@ network_id = 'L_646829496481105433'
 
 response = dashboard.networks.updateNetwork(
     network_id, 
-    name='Long Island Office', 
+    name='Main Office', 
     timeZone='America/Los_Angeles', 
     tags=['tag1', 'tag2'], 
-    notes='Combined network for Long Island Office'
+    enrollmentString='my-enrollment-string', 
+    notes='Additional description of the network'
 )
 
 print(response)

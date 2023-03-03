@@ -10,7 +10,8 @@ dashboard = meraki.DashboardAPI(API_KEY)
 network_id = 'L_646829496481105433'
 
 response = dashboard.networks.unbindNetwork(
-    network_id
+    network_id, 
+    retainConfigs=True
 )
 
 print(response)

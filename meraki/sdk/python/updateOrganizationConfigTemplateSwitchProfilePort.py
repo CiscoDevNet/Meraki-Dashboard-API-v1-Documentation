@@ -17,10 +17,11 @@ response = dashboard.switch.updateOrganizationConfigTemplateSwitchProfilePort(
     name='My switch port', 
     tags=['tag1', 'tag2'], 
     enabled=True, 
+    poeEnabled=True, 
     type='access', 
     vlan=10, 
     voiceVlan=20, 
-    poeEnabled=True, 
+    allowedVlans='1,3,5-10', 
     isolationEnabled=False, 
     rstpEnabled=True, 
     stpGuard='disabled', 
@@ -28,9 +29,14 @@ response = dashboard.switch.updateOrganizationConfigTemplateSwitchProfilePort(
     portScheduleId='1234', 
     udld='Alert only', 
     accessPolicyType='Sticky MAC allow list', 
+    accessPolicyNumber=2, 
+    macAllowList=['34:56:fe:ce:8e:b0', '34:56:fe:ce:8e:b1'], 
     stickyMacAllowList=['34:56:fe:ce:8e:b0', '34:56:fe:ce:8e:b1'], 
     stickyMacAllowListLimit=5, 
-    stormControlEnabled=True
+    stormControlEnabled=True, 
+    flexibleStackingEnabled=True, 
+    daiTrusted=False, 
+    profile={'enabled': False, 'id': '1284392014819', 'iname': 'iname'}
 )
 
 print(response)

@@ -12,9 +12,10 @@ saml_role_id = ''
 
 response = dashboard.organizations.updateOrganizationSamlRole(
     organization_id, saml_role_id, 
+    role='myrole', 
     orgAccess='none', 
     tags=[{'tag': 'west', 'access': 'read-only'}], 
-    networks=[{'id': 'N_1234', 'access': 'full'}]
+    networks=[{'id': 'N_24329156', 'access': 'full'}]
 )
 
 print(response)

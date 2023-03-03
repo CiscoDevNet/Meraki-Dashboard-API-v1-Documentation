@@ -10,7 +10,10 @@ dashboard = meraki.DashboardAPI(API_KEY)
 network_id = 'L_646829496481105433'
 
 response = dashboard.appliance.updateNetworkApplianceSettings(
-    network_id
+    network_id, 
+    clientTrackingMethod='MAC address', 
+    deploymentMode='routed', 
+    dynamicDns={'prefix': 'test', 'enabled': True}
 )
 
 print(response)

@@ -12,6 +12,7 @@ organization_id = '549236'
 response = dashboard.organizations.updateOrganization(
     organization_id, 
     name='My organization', 
+    management={'details': [{'name': 'MSP ID', 'value': '123456'}]}, 
     api={'enabled': True}
 )
 

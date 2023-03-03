@@ -11,7 +11,11 @@ network_id = 'L_646829496481105433'
 meraki_auth_user_id = ''
 
 response = dashboard.networks.updateNetworkMerakiAuthUser(
-    network_id, meraki_auth_user_id
+    network_id, meraki_auth_user_id, 
+    name='Miles Meraki', 
+    password='secret', 
+    emailPasswordToUser=False, 
+    authorizations=[{'ssidNumber': 1, 'expiresAt': '2018-03-13T00:00:00.090210Z'}]
 )
 
 print(response)

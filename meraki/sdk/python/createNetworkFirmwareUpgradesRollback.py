@@ -8,7 +8,7 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
-reasons = [{'category': 'performance', 'comment': 'Network was slower with the upgrade'}, {'category': 'stability', 'comment': "We saw some errors in the logs we didn't expect"}]
+reasons = [{'category': 'performance', 'comment': 'Network was slower with the upgrade'}]
 
 response = dashboard.networks.createNetworkFirmwareUpgradesRollback(
     network_id, reasons, 

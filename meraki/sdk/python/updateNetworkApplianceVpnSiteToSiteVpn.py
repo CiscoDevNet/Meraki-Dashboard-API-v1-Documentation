@@ -12,8 +12,8 @@ mode = 'spoke'
 
 response = dashboard.appliance.updateNetworkApplianceVpnSiteToSiteVpn(
     network_id, mode, 
-    hubs=[{'hubId': 'N_4901849', 'useDefaultRoute': True}, {'hubId': 'N_1892489', 'useDefaultRoute': False}], 
-    subnets=[{'localSubnet': '192.168.1.0/24', 'useVpn': True}, {'localSubnet': '192.168.128.0/24', 'useVpn': True}]
+    hubs=[{'hubId': 'N_4901849', 'useDefaultRoute': True}], 
+    subnets=[{'localSubnet': '192.168.1.0/24', 'useVpn': True}]
 )
 
 print(response)
