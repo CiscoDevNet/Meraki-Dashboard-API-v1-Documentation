@@ -15,7 +15,12 @@ response = dashboard.appliance.createNetworkApplianceVlan(
     network_id, id_, name, 
     subnet='192.168.1.0/24', 
     applianceIp='192.168.1.2', 
-    groupPolicyId='101'
+    groupPolicyId='101', 
+    templateVlanType='same', 
+    cidr='192.168.1.0/24', 
+    mask=28, 
+    ipv6={'enabled': True, 'prefixAssignments': [{'autonomous': False, 'staticPrefix': '2001:db8:3c4d:15::/64', 'staticApplianceIp6': '2001:db8:3c4d:15::1', 'origin': {'type': 'internet', 'interfaces': ['wan0']}}]}, 
+    mandatoryDhcp={'enabled': True}
 )
 
 print(response)
