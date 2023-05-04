@@ -14,7 +14,7 @@ response = dashboard.organizations.updateOrganizationAdaptivePolicyAcl(
     organization_id, acl_id, 
     name='Block sensitive web traffic', 
     description='Blocks sensitive web traffic', 
-    rules=[{'policy': 'deny', 'protocol': 'tcp', 'srcPort': '1,33', 'dstPort': '22-30'}, {'policy': 'allow', 'protocol': 'any', 'srcPort': 'any', 'dstPort': 'any'}], 
+    rules=[{'policy': 'deny', 'protocol': 'tcp', 'srcPort': '1,33', 'dstPort': '22-30'}], 
     ipVersion='ipv6'
 )
 

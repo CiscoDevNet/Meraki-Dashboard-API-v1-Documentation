@@ -12,7 +12,7 @@ payload_template_id = ''
 
 response = dashboard.networks.updateNetworkWebhooksPayloadTemplate(
     network_id, payload_template_id, 
-    name='Weeb Hooks', 
+    name='Custom Template', 
     body='{"event_type":"{{alertTypeId}}","client_payload":{"text":"{{alertData}}"}}', 
     headers=[{'name': 'Authorization', 'template': 'Bearer {{sharedSecret}}'}], 
     bodyFile='Qm9keSBGaWxl', 

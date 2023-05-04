@@ -14,8 +14,9 @@ identity_psk_id = ''
 response = dashboard.wireless.updateNetworkWirelessSsidIdentityPsk(
     network_id, number, identity_psk_id, 
     name='Sample Identity PSK', 
-    passphrase='NIalareK', 
-    groupPolicyId='101'
+    passphrase='secret', 
+    groupPolicyId='101', 
+    expiresAt='2018-02-11T00:00:00.090210Z'
 )
 
 print(response)
