@@ -101,6 +101,9 @@
                 "groupBy": {
                     "$remoteModule": "config/group_platform.js"
                 },
+                "sortBy": {
+                    "$remoteModule": "config/sort_by.js"
+                },
                 "exampleAsDefault": true,
                 "expand": 3,
                 "sampleCode": {
