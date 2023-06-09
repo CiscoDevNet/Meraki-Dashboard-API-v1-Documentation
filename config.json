@@ -88,8 +88,8 @@
         },
         {
             "title": "API Reference",
-            "type": "oas3",
-            "content": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec3.json",
+            "type": "oas",
+            "content": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec2.json",
             "config": {
                 "overview": {
                     "markdownPath": "docs/overview.md"
@@ -122,8 +122,8 @@
         },
         {
             "title": "API Reference (Early Access)",
-            "type": "oas3",
-            "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec3.json",
+            "type": "oas",
+            "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec2.json",
             "config": {
                 "overview": {
                     "markdownPath":"docs/overview-early-access.md"
