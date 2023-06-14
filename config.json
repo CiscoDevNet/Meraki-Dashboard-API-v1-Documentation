@@ -123,7 +123,7 @@
         {
             "title": "API Reference (Early Access)",
             "type": "oas3",
-            "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec2.json",
+            "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec3.json",
             "config": {
                 "overview": {
                     "markdownPath":"docs/overview-early-access.md"
