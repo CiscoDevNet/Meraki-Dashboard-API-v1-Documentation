@@ -16,14 +16,14 @@ curl https://api.meraki.com/api/v1/organizations \
 ```
 
 ```Python
+# Example 1: Best practice
 # This example will read the local environment variable `MERAKI_DASHBOARD_API_KEY`
 # so that you don't have to add it to your source code. Please see above if you
 # haven't already created this environment variable.
 import meraki
 dashboard = meraki.DashboardAPI()
-```
 
-```Python (alternative)
+# Example 2: Riskier
 # Defining your API key as a variable in source code is not recommended. Please
 # consult the above regarding best practices.
 import meraki
