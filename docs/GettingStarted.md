@@ -1,8 +1,19 @@
+# Getting Started
 
+## Overview
+
+In this guide, we'll:
+
+1. Find out which organizations we can access using our auth token
+2. Retrieve the list of networks in one of those organizations
+3. Retrieve the list of devices in one of those organizations
+4. Find the uplink addresses for one or two Meraki devices in that organization using query parameters
+
+## Tools
 
 ### Postman Collection
 
-Use graphical desktop utility to explore and interact with the Meraki API.
+If you prefer to use a graphical desktop utility, you can use [Postman and our Postman collection](https://documenter.getpostman.com/view/897512/SzYXYfmJ) to explore and interact with the Meraki API.
 
 <div class="postman-run-button"
 data-postman-action="collection/import"
@@ -19,11 +30,11 @@ data-postman-var-1="c751ca894f2eed4c4cbd"></div>
 
 ### Python library
 
-If using the Meraki [Python library](pythonLibrary.md), install it via `pip install meraki`.
+If using Python, we recommend using the Meraki [Python library](pythonLibrary.md). Install it via `pip install meraki`.
 
 ## Base URI
 
-In most parts of the world, every API request will begin with the following **base URI**: 
+In most parts of the world, every API request will begin with the following **base URI**:
 
 > `https://api.meraki.com/api/v1`
 
@@ -35,17 +46,17 @@ Read more about the path schema [here](PathSchema.md).
 
 ## Authorization
 
-The Meraki Dashboard API requires a header parameter of `X-Cisco-Meraki-API-Key` to provide authorization for each request.
- 
-```json
+The Meraki Dashboard API requires a bearer token to provide authorization for each request. [Read more about API auth here](#!authorization).
+
+```JSON
 {
-	"X-Cisco-Meraki-API-Key": <Meraki_API_Key>
+ "Authorization": "Bearer <Meraki_API_Key>"
 }
 ```
 
 ```curl
 curl https://api.meraki.com/api/v1/organizations \
-  -H 'X-Cisco-Meraki-API-Key: {MERAKI-API-KEY}'
+  -H 'Authorization: Bearer {MERAKI-API-KEY}'
 ```
 
 ```Python
@@ -53,21 +64,21 @@ import meraki
 dashboard = meraki.DashboardAPI(API_KEY)
 ```
 
-Read more about generating an API key [here](Authorization.md).
-
-## Find your organization ID 
+## Find your organization ID
 
 To begin navigating the API, you will first need to know your organization ID. This will be required for endpoints needing an `organizationId` parameter.
 
+> **NB:** some response attributes irrelevant to this guide may be ommitted from the examples for brevity.
+
 [List the organizations that the user has privileges on](##!get-organizations)
 
-
 ### Request
-`GET /organizations` 
+
+`GET /organizations`
 
 ```cURL
 curl https://api.meraki.com/api/v1/organizations \
-  -L -H 'X-Cisco-Meraki-API-Key: {MERAKI-API-KEY}'
+  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
 ```
 
 ```Python
@@ -77,33 +88,35 @@ response = dashboard.organizations.getOrganizations()
 ```
 
 ### Response
-```json
+
+```JSON
 Successful HTTP Status: 200
 [
   {
-    "id":12345678,
-    "name":"My org"
+    "id": "549236",
+    "name":"DevNet Sandbox"
   }
 ]
 ```
 
 ```Python
 >>> print(response)
-[{'id': '549236', 'name': 'DevNet Sandbox', 'url': 'https://n149.meraki.com/o/-t35Mb/manage/organization/overview'}]
+[{'id': '549236', 'name': 'DevNet Sandbox'}]
 ```
 
 ## Find your network ID
 
-Now that you have an organization ID, list the networks of the organization. 
- 
-[List the networks in an organization](##!get-organization-networks)
+Now that you have an organization ID, list the networks of the organization.
+
+[List the networks in an organization documentation](##!get-organization-networks)
 
 ### Request
+
 `GET /organizations/:organizationId/networks`
 
 ```cURL
 curl https://api.meraki.com/api/v1/organizations/{organizationId}/networks \
-  -L -H 'X-Cisco-Meraki-API-Key: {MERAKI-API-KEY}'
+  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
 ```
 
 ```Python
@@ -113,7 +126,8 @@ response = dashboard.organizations.getOrganizationNetworks(org_id)
 ```
 
 ### Response
-```json
+
+```JSON
 Successful HTTP Status: 200
 [
   {
@@ -134,103 +148,158 @@ Successful HTTP Status: 200
 
 Note the `id` for future endpoints that require a `networkId`.
 
-## Find your device serials
+## Find your devices and their serials
+
  Use the `id` from the `~/networks` response as the `:networkId`  in the following request.
- 
-[List the devices in a network](##!get-network-devices)
+
+[List the devices in an organization](##!list-the-devices-in-an-organization)
 
 ### Request
-`GET /networks/:networkId/devices`
+
+`GET /organizations/:organizationId/devices`
 
 ```cURL
-curl https://api.meraki.com/api/v1/networks/{networkId}/devices \
-  -L -H 'X-Cisco-Meraki-API-Key: {MERAKI-API-KEY}'
+curl https://api.meraki.com/api/v1/organizations/{organizationId}/devices \
+  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
 ```
 
 ```Python
 import meraki
 dashboard = meraki.DashboardAPI(API_KEY)
-response = dashboard.networks.getNetworkDevices(net_id)
+response = dashboard.organizations.getOrganizationDevices({organizationId})
 ```
 
 ### Response
-```json
+
+```JSON
 Successful HTTP Status: 200
 [
-  {
-    "name": "My AP",
-    "lat": 37.4180951010362,
-    "lng": -122.098531723022,
-    "serial": "Q234-ABCD-5678",
-    "mac": "00:11:22:33:44:55",
-    "model": "MR34",
-    "address": "1600 Pennsylvania Ave",
-    "notes": "My AP's note",
-    "lanIp": "1.2.3.4",
-    "tags": " recently-added ",
-    "networkId": "N_24329156",
-    "beaconIdParams": {
-      "uuid": "00000000-0000-0000-0000-000000000000",
-      "major": 5,
-      "minor": 3
+    {
+        "name": "My AP",
+        "lat": 37.4180951010362,
+        "lng": -122.098531723022,
+        "address": "1600 Pennsylvania Ave",
+        "notes": "My AP note",
+        "tags": [ "recently-added" ],
+        "networkId": "N_24329156",
+        "serial": "Q234-ABCD-5678",
+        "model": "MR34",
+        "mac": "00:11:22:33:44:55",
+        "lanIp": "1.2.3.4",
+        "firmware": "wireless-25-14",
+        "productType": "wireless"
     }
-  }
 ]
 ```
 
 ```Python
 >>> print(response)
-[{'lat': 37.4180951010362, 'lng': -122.098531723022, 'address': '', 'serial': 'Q2QN-9J8L-SLPD', 'mac': 'e0:55:3d:17:d4:23', 'wan1Ip': '10.10.10.106', 'wan2Ip': None, 'lanIp': '10.10.10.106', 'url': 'https://n149.meraki.com/DevNet-Sandbox-A/n/hZB0Gcvc/manage/nodes/new_list/246656701813795', 'networkId': 'L_646829496481105433', 'model': 'MX65', 'firmware': 'wired-14-40', 'floorPlanId': None}, {'lat': 37.4180951010362, 'lng': -122.098531723022, 'address': '', 'serial': 'Q2HP-F5K5-R88R', 'mac': '88:15:44:df:f3:af', 'lanIp': '192.168.128.2', 'url': 'https://n149.meraki.com/DevNet-Sandbox-A/n/E8DpVavc/manage/nodes/new_list/149624931218351', 'networkId': 'L_646829496481105433', 'model': 'MS220-8P', 'switchProfileId': None, 'firmware': 'switch-11-22', 'floorPlanId': None}, {'lat': 37.4180951010362, 'lng': -122.098531723022, 'address': '', 'serial': 'Q2MD-BHHS-5FDL', 'mac': '88:15:44:60:21:10', 'lanIp': None, 'url': 'https://n149.meraki.com/DevNet-Sandbox-A/n/XT0N4cvc/manage/nodes/new_list/149624922841360', 'networkId': 'L_646829496481105433', 'model': 'MR53', 'firmware': 'wireless-25-14', 'floorPlanId': None}]
+[{ 'name': 'My AP', 'lat': 37.4180951010362, 'lng': -122.098531723022, 'address': '1600 Pennsylvania Ave', 'notes': 'My AP note', 'tags': [ 'recently-added' ], 'networkId': 'N_24329156', 'serial': 'Q234-ABCD-5678', 'model': 'MR34', 'mac': '00:11:22:33:44:55', 'lanIp': '1.2.3.4', 'firmware': 'wireless-25-14', 'productType': 'wireless'}]
 ```
-Note the `serial` for future usage.
 
-## Get the device's management interface settings
- Use the `serial` from the `/networks/:networkId/devices` response as the `:serial`  in the following request to determine whether it has been assigned a dynamic or static IP address.
+Note the `serial` for use in requests allowing a serial as path or query parameter. If you have two devices in your organization, note two of them.
 
-[Return the management interface settings for a device](##!get-device-management-interface)
+## Get devices uplinks addresses
 
-### Request
-`GET /devices/:serial/managementInterface`
+Depending on configuration, some Meraki devices support multiple uplink addresses. To find them, you can use this endpoint to return the uplinks addresses for _all_ devices in an organization, but for this example, we'll filter it to one or two specific devices using the `serials[]` query parameter.
+
+[List the current uplink addresses for devices in an organization documentation](##!list-the-current-uplink-addresses-for-devices-in-an-organization)
+
+### Request for one device
+
+`GET /organizations/:organizationId/devices/uplinks/addresses/byDevice?serials[]={serial}`
 
 ```cURL
-curl https://api.meraki.com/api/v1/devices/{serial}/managementInterface \
-  -L -H 'X-Cisco-Meraki-API-Key: {MERAKI-API-KEY}'
+curl https://api.meraki.com/api/v1/organizations/:organizationId/devices/uplinks/addresses/byDevice?serials[]={serial} \
+  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
 ```
 
 ```Python
 import meraki
 dashboard = meraki.DashboardAPI(API_KEY)
-response = dashboard.networks.getNetworkDevices(serial)
-print(response)
+response = dashboard.organizations.getOrganizationDevicesUplinksAddressesByDevice({organizationId}, serials=["{serial}"])
 ```
 
-### Response
-```json
+### Response for one device
+
+```JSON
 Successful HTTP Status: 200
-{
-  "ddnsHostnames": {
-    "activeDdnsHostname": "mx1-sample.dynamic-m.com",
-    "ddnsHostnameWan1": "mx1-sample-1.dynamic-m.com",
-    "ddnsHostnameWan2": "mx1-sample-2.dynamic-m.com"
+[
+ {
+  "mac": "00:11:22:33:44:55",
+  "name": "My Switch 1",
+  "network": {
+   "id": "L_24329156"
   },
-  "wan1": {
-    "wanEnabled": "not configured",
-    "usingStaticIp": true,
-    "staticIp": "1.2.3.4",
-    "staticSubnetMask": "255.255.255.0",
-    "staticGatewayIp": "1.2.3.1",
-    "staticDns": [ "1.2.3.2", "1.2.3.3" ],
-    "vlan": 7
-  },
-  "wan2": {
-    "wanEnabled": "enabled",
-    "usingStaticIp": false,
-    "vlan": 2
-  }
-}
+  "productType": "switch",
+  "serial": "{serial}",
+  "tags": [
+   "example",
+   "switch"
+  ],
+  "uplinks": [
+   {
+    "interface": "man1",
+    "addresses": [
+     {
+      "protocol": "ipv4",
+      "address": "10.0.1.2",
+      "gateway": "10.0.1.1",
+      "assignmentMode": "dynamic",
+      "nameservers": {
+       "addresses": [
+        "208.67.222.222",
+        "208.67.220.220"
+       ]
+      },
+      "public": {
+       "address": "78.11.19.49"
+      }
+     },
+     {
+      "protocol": "ipv6",
+      "address": "2600:1700:ae0::c8ff:fe1e:12d2",
+      "gateway": "fe80::fe1b:202a",
+      "assignmentMode": "dynamic",
+      "nameservers": {
+       "addresses": [
+        "::",
+        "::"
+       ]
+      },
+      "public": {
+       "address": None
+      }
+     }
+    ]
+   }
+  ]
+ }
+]
 ```
 
 ```Python
+[{'mac': '00:11:22:33:44:55', 'name': 'My Switch 1', 'network': {'id': 'L_24329156'}, 'productType': 'switch', 'serial': '{serial}', 'tags': ['example', 'switch'], 'uplinks': [{'interface': 'man1', 'addresses': [{'protocol': 'ipv4', 'address': '10.0.1.2', 'gateway': '10.0.1.1', 'assignmentMode': 'dynamic', 'nameservers': {'addresses': ['208.67.222.222', '208.67.220.220']}, 'public': {'address': '78.11.19.49'}}, {'protocol': 'ipv6', 'address': '2600:1700:ae0::c8ff:fe1e:12d2', 'gateway': 'fe80::fe1b:202a', 'assignmentMode': 'dynamic', 'nameservers': {'addresses': ['::', '::']}, 'public': {'address': None}}]}]}]
+```
+
+### Request for two devices
+
+`GET /organizations/:organizationId/devices/uplinks/addresses/byDevice?serials[]={serial1}&serials[]={serial1}&serials[]={serial2}`
+
+```cURL
+curl https://api.meraki.com/api/v1/organizations/:organizationId/devices/uplinks/addresses/byDevice?serials[]={serial1}&serials[]={serial2} \
+  -L -H 'Authorization: Bearer {MERAKI-API-KEY}'
+```
+
+```Python
+import meraki
+dashboard = meraki.DashboardAPI(API_KEY)
+response = dashboard.organizations.getOrganizationDevicesUplinksAddressesByDevice({organizationId}, serials=["{serial1}", "{serial2}"])
+```
+
+### Response for two devices
+
+```Python
 >>> print(response)
-{'wan1': {'wanEnabled': 'not configured', 'usingStaticIp': False, 'vlan': None}, 'wan2': {'wanEnabled': 'not configured', 'usingStaticIp': False, 'vlan': None}, 'ddnsHostnames': {'activeDdnsHostname': 'dnsmb0-wired-mttrcvbqjp.dynamic-m.com', 'ddnsHostnameWan1': 'dnsmb0-wired-mttrcvbqjp-1.dynamic-m.com', 'ddnsHostnameWan2': 'dnsmb0-wired-mttrcvbqjp-2.dynamic-m.com'}}
+[{'mac': '00:11:22:33:44:55', 'name': 'My Switch 1', 'network': {'id': 'L_24329156'}, 'productType': 'switch', 'serial': '{serial1}', 'tags': ['example', 'switch'], 'uplinks': [{'interface': 'man1', 'addresses': [{'protocol': 'ipv4', 'address': '10.0.1.2', 'gateway': '10.0.1.1', 'assignmentMode': 'dynamic', 'nameservers': {'addresses': ['208.67.222.222', '208.67.220.220']}, 'public': {'address': '78.11.19.49'}}, {'protocol': 'ipv6', 'address': '2600:1700:ae0::c8ff:fe1e:12d2', 'gateway': 'fe80::fe1b:202a', 'assignmentMode': 'dynamic', 'nameservers': {'addresses': ['::', '::']}, 'public': {'address': None}}]}]}, {'mac': '00:11:22:33:44:55', 'name': 'My Switch 2', 'network': {'id': 'L_24329156'}, 'productType': 'switch', 'serial': '{serial2}', 'tags': ['example', 'switch'], 'uplinks': [{'interface': 'man1', 'addresses': [{'protocol': 'ipv4', 'address': '10.0.1.3', 'gateway': '10.0.1.1', 'assignmentMode': 'dynamic', 'nameservers': {'addresses': ['208.67.222.222', '208.67.220.220']}, 'public': {'address': '78.11.19.49'}}, {'protocol': 'ipv6', 'address': '2600:1700:ae0:f84c::9c2f', 'gateway': 'fe80::aa46::202a', 'assignmentMode': 'dynamic', 'nameservers': {'addresses': ['::', '::']}, 'public': {'address': None}}]}]}]
 ```
