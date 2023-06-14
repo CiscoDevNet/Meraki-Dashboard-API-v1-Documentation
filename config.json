@@ -122,7 +122,7 @@
         },
         {
             "title": "API Reference (Early Access)",
-            "type": "oas",
+            "type": "oas3",
             "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec2.json",
             "config": {
                 "overview": {
@@ -137,6 +137,9 @@
                 },
                 "filterBy": {
                     "$remoteModule": "config/filter_only_beta.js"
+                },
+                "sortrBy": {
+                    "$remoteModule": "config/sort_by.js"
                 },
                 "exampleAsDefault": true,
                 "expand": 3,
