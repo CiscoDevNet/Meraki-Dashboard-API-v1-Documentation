@@ -1,35 +1,41 @@
 ## Authorization
 
-The Meraki Dashboard API requires a header parameter of `X-Cisco-Meraki-API-Key` to provide authorization for each request.
- 
-```json
+Dashboard API v1 supports Bearer Auth using the standard `Authorization` header parameter. The value will be a string that begins with the word `Bearer`, followed by your Meraki API key.
+
+> **Note:** When developing scripts, it's a best practice to create a local environment variable `MERAKI_DASHBOARD_API_KEY` and set it to your API key, so that you can omit it from your source code. Instructions vary by operating system, so please consult your OS vendor for more information.
+
+```JSON
 {
-	"X-Cisco-Meraki-API-Key": <Meraki_API_Key>
+ "Authorization": "Bearer <API_KEY>"
 }
 ```
 
-```curl
+```cURL
 curl https://api.meraki.com/api/v1/organizations \
-  -H 'X-Cisco-Meraki-API-Key: {MERAKI-API-KEY}'
+  -L -H 'Authorization: Bearer {API_KEY}'
 ```
 
 ```Python
+# This example will read the local environment variable `MERAKI_DASHBOARD_API_KEY`
+# so that you don't have to add it to your source code. Please see above if you
+# haven't already created this environment variable.
 import meraki
-
-# Defining your API key as a variable in source code is not recommended
-API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
-dashboard = meraki.DashboardAPI(API_KEY)
-
-# Instead, use an environment variable, for example:
-# export MERAKI_DASHBOARD_API_KEY=6bec40cf957de430a6f1f2baa056b99a4fac9ea0
 dashboard = meraki.DashboardAPI()
+```
+
+```Python (alternative)
+# Defining your API key as a variable in source code is not recommended. Please
+# consult the above regarding best practices.
+import meraki
+API_KEY = '6bec40cf957de430a6f1f2baf056b99a4fac9ea0'
+dashboard = meraki.DashboardAPI(API_KEY)
 ```
 
 ## Obtaining your Meraki API key
 
 In order to interact with the Dashboard API, you must first obtain an API key.
 
-- Open your Meraki dashboard: https://dashboard.meraki.com
+- Open your Meraki dashboard: <https://dashboard.meraki.com>
 - Once logged in, navigate to the _Organization > Settings_ page.
 - Ensure that the API Access is set to “Enable access to the Cisco Meraki Dashboard API”
 
@@ -41,22 +47,6 @@ Then go to your profile by clicking on your account email address (on the upper-
 
 <img src="../images/dashGenerateAPIkey.png" width="400px">
 
-## Authorization with Bearer Token
-
-The Dashboard API v1 also supports Bearer authentication using the standard `Authorization` header parameter. The value will be a string that begins with the word `Bearer `, followed by your Meraki API key.
-
- 
-```json
-{
-	"Authorization": "Bearer <API_KEY>"
-}
-```
-
-```cURL
-curl https://api.meraki.com/api/v1/organizations \
-  -L -H 'Authorization: Bearer {API_KEY}'
-```
-
 ### Troubleshooting
 
 If you get a 401 Unauthorized error (with message _"Missing API key"_) when using dashboard API v1 with Bearer token, check the following to troubleshoot:
@@ -65,7 +55,7 @@ If you get a 401 Unauthorized error (with message _"Missing API key"_) when usin
 
 2. Next, check that your API call has the correct header with the following (and not v0's `X-Cisco-Meraki-API-Key`):
 
-```json
+```JSON
 Authorization: Bearer {API_KEY}
 ```
 
@@ -78,6 +68,7 @@ Authorization: Bearer {API_KEY}
 <img src="../images/authorizationPython.png" width="800px">
 
 6. If you really want to write your own functions in Python, then you will need to define a new instance of the **requests.Session** class that does not _rebuild_auth_ upon a redirect. For example:
+
 ```python
 from requests import Session
 class NoRebuildAuthSession(Session):
@@ -87,9 +78,9 @@ class NoRebuildAuthSession(Session):
       Be careful not to leak your credentials to untrusted hosts!
       '''
 session = NoRebuildAuthSession()
-API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
+API_KEY = '6bec40cf957de430a6f1f2baf056b99a4fac9ea0'
 response = session.get('https://api.meraki.com/api/v1/organizations/', headers={'Authorization': f'Bearer {API_KEY}'})
-print(response.json())
+print(response.JSON())
 ```
 
 7. If using PowerShell with **Invoke-RestMethod**, make sure that the _-PreserveAuthorizationOnRedirect_ flag is included.
