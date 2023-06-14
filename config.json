@@ -88,7 +88,7 @@
         },
         {
             "title": "API Reference",
-            "type": "oas",
+            "type": "oas3",
             "content": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec2.json",
             "config": {
                 "overview": {
@@ -138,7 +138,7 @@
                 "filterBy": {
                     "$remoteModule": "config/filter_only_beta.js"
                 },
-                "sortrBy": {
+                "sortBy": {
                     "$remoteModule": "config/sort_by.js"
                 },
                 "exampleAsDefault": true,
