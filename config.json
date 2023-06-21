@@ -34,7 +34,8 @@
                     "items": [
                         {
                             "title": "Overview",
-                            "content": "docs/ActionBatches.md"
+                            "content": "docs/ActionBatches.md",
+                            "uri": "action-batches-overview"
                         },
                         {
                             "title": "Supported Resources",
@@ -71,7 +72,8 @@
                     "items": [
                         {
                             "title": "Overview",
-                            "content": "docs/UserAgents.md"
+                            "content": "docs/UserAgents.md",
+                            "uri": "user-agents-overview"
                         }
                     ]
                 },
