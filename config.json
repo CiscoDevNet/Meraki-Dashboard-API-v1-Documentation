@@ -141,7 +141,7 @@
                     "$remoteModule": "config/api_key.js"
                 },
                 "httpBearer": {
-                     "bearerToken": "Bearer 75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6"
+                     "bearerToken": "75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6"
                 }, 
                 "labelConfig": {
                     "endpoint": {
