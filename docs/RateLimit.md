@@ -70,3 +70,5 @@ else:
 3. Use **Action Batches** for bulk constructive/destructive operations (``POST``, ``PUT``, ``DELETE``). To read more about Action Batches, visit the [Meraki Blog](https://meraki.cisco.com/blog/2019/06/action-batches-a-recipe-for-success/) or [GitHub Demo](https://developer.cisco.com/codeexchange/github/repo/shiyuechengineer/action-batches/). Action Batches are a perfect tool for submitting batched configuration requests in a single synchronous or asynchronous transaction.
 
 > If you have further questions or concerns around the API rate limit, please contact Meraki [support](mailto:support@meraki.com) about your use case.
+
+4. Use **Get Organization Devices Availabilities History API**:[API Reference](https://developer.cisco.com/meraki/api-v1/get-organization-devices-availabilities-history/). This endpoint returns the time-stamped availability change events that occurred for the organization's devices in the requested timespan, and is a hyper-efficient means of monitoring device availabilities.
