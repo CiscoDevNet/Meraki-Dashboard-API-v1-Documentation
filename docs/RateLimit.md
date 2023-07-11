@@ -71,4 +71,4 @@ else:
 
 > If you have further questions or concerns around the API rate limit, please contact Meraki [support](mailto:support@meraki.com) about your use case.
 
-4. Use **Get Organization Devices Availabilities History API**:[API Reference](https://developer.cisco.com/meraki/api-v1/get-organization-devices-availabilities-history/). This endpoint returns the time-stamped availability change events that occurred for the organization's devices in the requested timespan, and is a hyper-efficient means of monitoring device availabilities.
+4. Use **Get Organization Devices Availabilities History API**, visit the [API Reference](https://developer.cisco.com/meraki/api-v1/get-organization-devices-availabilities-history/). This endpoint returns the time-stamped availability change events that occurred for the organization's devices in the requested timespan, and is a hyper-efficient means of monitoring device availabilities.
