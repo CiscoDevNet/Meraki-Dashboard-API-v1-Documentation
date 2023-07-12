@@ -152,7 +152,7 @@ Note the `id` for future endpoints that require a `networkId`.
 
  Use the `id` from the `~/networks` response as the `:networkId`  in the following request.
 
-[List the devices in an organization](##!list-the-devices-in-an-organization)
+[List the devices in an organization](##!get-organization-devices/)
 
 ### Request
 
@@ -203,7 +203,7 @@ Note the `serial` for use in requests allowing a serial as path or query paramet
 
 Depending on configuration, some Meraki devices support multiple uplink addresses. To find them, you can use this endpoint to return the uplinks addresses for _all_ devices in an organization, but for this example, we'll filter it to one or two specific devices using the `serials[]` query parameter.
 
-[List the current uplink addresses for devices in an organization documentation](##!list-the-current-uplink-addresses-for-devices-in-an-organization)
+[List the current uplink addresses for devices in an organization documentation](##!get-organization-devices-uplinks-addresses-by-device)
 
 ### Request for one device
 
