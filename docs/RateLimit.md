@@ -6,14 +6,15 @@ API call budgets define the number of API calls that an API client can make in a
 
 ## Per organization
 
-* Each Meraki organization has a call budget of **10 requests per second**, regardless of the number of API applications interacting with that organization.
+Each Meraki organization has a call budget of **10 requests per second**, regardless of the number of API applications interacting with that organization.
 * A burst of 10 additional requests are allowed in the first second, yielding a maximum of 30 requests in the first 2 seconds.
 * The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
-* This budget is shared across all API applications in the organization that leverage [API authentication](https://developer.cisco.com/meraki/api-v1/authorization/). You can [check the recent API activity](https://developer.cisco.com/meraki/api-v1/get-organization-api-requests-overview-response-codes-by-interval/) for the given organization to understand if you are sharing the budget with other applications.
+
+This budget is shared across all API applications in the organization that leverage [API authentication](https://developer.cisco.com/meraki/api-v1/authorization/). You can [check the recent API activity](https://developer.cisco.com/meraki/api-v1/get-organization-api-requests-overview-response-codes-by-interval/) for the given organization to understand if you are sharing the budget with other applications.
 
 ## Per source IP address
 
-* Each source IP address making API requests has a call budget of **100 requests per second**, regardless of the number of API clients working from that IP address.
+Each source IP address making API requests has a call budget of **100 requests per second**, regardless of the number of API clients working from that IP address.
 
 ## Response codes
 
