@@ -53,15 +53,13 @@ else:
     # Handle other response codes
 ```
 
-### Monitoring
+### Monitoring best practices
 
 Strategize your data polling. The most common cause of `429` responses is unnecessarily frequent polling of information that changes infrequently after day 1 of a network deployment, such as the list of [networks](https://developer.cisco.com/meraki/api-v1/get-organization-networks/) or [policy objects](https://developer.cisco.com/meraki/api-v1/get-organization-policy-objects/) in an organization.
 
-### Use the most efficient endpoints for your use case
+#### Use the most efficient endpoints for your use case
 
-evelop your application using the most efficient API calls available for your use case, especially if your application provides monitoring features. 
-
-#### Examples
+Develop your application using the most efficient API calls available for your use case, especially if your application provides monitoring features.
 
 ##### Retrieving network topology information including LLDP/CDP
 
