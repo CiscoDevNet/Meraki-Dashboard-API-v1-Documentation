@@ -1,12 +1,13 @@
-# Call budgets
+# Rate limit
 
 ## Purpose and importance
 
-API call budgets define the number of API calls that an API client can make in a given amount of time and are a safeguard against runaway applications and malicious behavior. Call budgets (or rate limits) are a standard feature of high performance APIs across industries and working within the provided call budget is table stakes for any developer building an application that consumes the API. The best practice is for applications manage API call budgets effectively and avoid making API calls in excess of the limit.
+API call budgets define the number of API calls that an API client can make in a given amount of time and are a safeguard against runaway applications and malicious behavior. Call budgets (or rate limits) are a standard feature of high performance APIs across industries and working within the provided call budget is table stakes for any developer building an application that consumes the API. The best practice is for applications to manage API call budgets effectively and avoid making API calls in excess of the limit.
 
 ## Per organization
 
 Each Meraki organization has a call budget of **10 requests per second**, regardless of the number of API applications interacting with that organization.
+
 * A burst of 10 additional requests are allowed in the first second, yielding a maximum of 30 requests in the first 2 seconds.
 * The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
 
