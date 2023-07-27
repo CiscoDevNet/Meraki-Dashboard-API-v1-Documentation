@@ -76,7 +76,7 @@ Call the organization-wide [getOrganizationDevices](https://developer.cisco.com/
 
 ##### Monitoring device availability (status)
 
-Call the organization-wide [getOrganizationDevicesAvailabilitiesChangeHistory](https://community.meraki.com/t5/Developers-APIs/Now-GA-Device-Availability-Change-History/m-p/202186#M8657) to catch up on availability (status) changes since your last org-wide poll of [getOrganizationDevicesAvailabilities](https://developer.cisco.com/meraki/api-v1/get-organization-devices-availabilities/) or [getOrganizationDevicesStatuses](https://developer.cisco.com/meraki/api-v1/get-organization-devices-statuses/), rather than re-polling the information for all devices all over again.
+Call the organization-wide [getOrganizationDevicesAvailabilitiesChangeHistory](https://developer.cisco.com/meraki/api-v1/get-organization-devices-availabilities-change-history/) to catch up on availability (status) changes since your last org-wide poll of [getOrganizationDevicesAvailabilities](https://developer.cisco.com/meraki/api-v1/get-organization-devices-availabilities/) or [getOrganizationDevicesStatuses](https://developer.cisco.com/meraki/api-v1/get-organization-devices-statuses/), rather than re-polling the information for all devices all over again.
 
 ##### Retrieving network clients
 
