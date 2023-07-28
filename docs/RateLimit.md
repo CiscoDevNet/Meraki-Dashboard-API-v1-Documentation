@@ -90,7 +90,7 @@ Call the network-wide API call [getNetworkClients](https://developer.cisco.com/m
 
 #### Configuration sync and "golden template" enforcement
 
-Once you are confident that an organization is configured correctly, leverage [getOrganizationConfiguarationChanges](https://developer.cisco.com/meraki/api-v1/get-organization-configuration-changes/) to identify deviations from the last known intended configuration. This is more efficient than re-polling every configuration setting and then running diffs in your application.
+Once you are confident that an organization is configured correctly, leverage [getOrganizationConfigurationChanges](https://developer.cisco.com/meraki/api-v1/get-organization-configuration-changes/) to identify deviations from the last known intended configuration. This is more efficient than re-polling every configuration setting and then running diffs in your application.
 
 #### Use configuration templates
 
@@ -100,8 +100,8 @@ Once you are confident that an organization is configured correctly, leverage [g
 
 If your application is rate limited, your application or another application in the organization, or from your application's source IP address, may not be managing the call budget effectively.
 
-1. Ensure your application is following [our best practices](#best-practices-and-tips-for-managing-call-budgets). If you are using an [ecosystem partner application](https://apps.meraki.io), our partners are committed to following our best practices. Please reach out to the developer for your application if you have any questions about partner application behavior or budget consumption.
+1. Ensure your application is following [our best practices](https://developer.cisco.com/meraki/api-v1/rate-limit/#best-practices-and-tips-for-managing-call-budgets). If you are using an [ecosystem partner application](https://apps.meraki.io), our partners are committed to following our best practices. Please reach out to the developer for your application if you have any questions about partner application behavior or budget consumption.
 2. You can [check the recent API activity](https://developer.cisco.com/meraki/api-v1/get-organization-api-requests-overview-response-codes-by-interval/) for the given organization to understand if you are sharing the budget with other applications.
-3. Scripts that run with little to no maintenance can degrade the performance of your organization's API requests and use up your budget unnecessarily. [Audit your organization's API consumption](https://testing-developer.cisco.com/pubhub/docs/2864/new/#search/api%20requests) on a regular basis.
+3. Scripts that run with little to no maintenance can degrade the performance of your organization's API requests and use up your budget unnecessarily. [Audit your organization's API consumption](https://developer.cisco.com/meraki/api-v1/search/api%20requests/) on a regular basis.
 
 You can find more answers about call budgets in [our developer community](https://community.meraki.com/t5/Developers-APIs/bd-p/api).
