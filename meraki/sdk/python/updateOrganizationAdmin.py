@@ -14,7 +14,8 @@ response = dashboard.organizations.updateOrganizationAdmin(
     organization_id, admin_id, 
     name='Miles Meraki', 
     orgAccess='none', 
-    tags=[{'tag': 'west', 'access': 'read-only'}]
+    tags=[{'tag': 'west', 'access': 'read-only'}], 
+    networks=[{'id': 'N_24329156', 'access': 'full'}]
 )
 
 print(response)

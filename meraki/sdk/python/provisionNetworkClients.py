@@ -8,7 +8,7 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
-clients = [{'mac': '00:11:22:33:44:55', 'clientId': 'k74272e', 'name': "Miles's phone"}]
+clients = [{'mac': '00:11:22:33:44:55', 'clientId': 'k74272e', 'name': "Miles's phone", 'message': 'Blocked message for client'}]
 device_policy = 'Group policy'
 
 response = dashboard.networks.provisionNetworkClients(

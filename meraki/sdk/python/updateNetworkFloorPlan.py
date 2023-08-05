@@ -11,7 +11,14 @@ network_id = 'L_646829496481105433'
 floor_plan_id = ''
 
 response = dashboard.networks.updateNetworkFloorPlan(
-    network_id, floor_plan_id
+    network_id, floor_plan_id, 
+    name='HQ Floor Plan', 
+    center={'lat': 37.770040510499996, 'lng': -122.38714009525}, 
+    bottomLeftCorner={'lat': 37.770040510499996, 'lng': -122.38714009525}, 
+    bottomRightCorner={'lat': 37.770040510499996, 'lng': -122.38714009525}, 
+    topLeftCorner={'lat': 37.770040510499996, 'lng': -122.38714009525}, 
+    topRightCorner={'lat': 37.770040510499996, 'lng': -122.38714009525}, 
+    imageContents='2a9edd3f4ffd80130c647d13eacb59f3'
 )
 
 print(response)

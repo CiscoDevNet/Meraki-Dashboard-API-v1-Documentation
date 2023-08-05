@@ -10,7 +10,8 @@ dashboard = meraki.DashboardAPI(API_KEY)
 network_id = 'L_646829496481105433'
 
 response = dashboard.cellularGateway.updateNetworkCellularGatewayUplink(
-    network_id
+    network_id, 
+    bandwidthLimits={'limitUp': 1000, 'limitDown': 1000}
 )
 
 print(response)

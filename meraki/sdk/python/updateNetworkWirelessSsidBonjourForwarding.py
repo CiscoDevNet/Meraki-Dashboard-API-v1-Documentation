@@ -13,7 +13,8 @@ number = ''
 response = dashboard.wireless.updateNetworkWirelessSsidBonjourForwarding(
     network_id, number, 
     enabled=True, 
-    rules=[{'description': 'A simple bonjour rule', 'vlanId': '1', 'services': ['All Services']}]
+    rules=[{'description': 'A simple bonjour rule', 'vlanId': '1', 'services': ['All Services']}], 
+    exception={'enabled': True}
 )
 
 print(response)

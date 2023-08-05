@@ -21,7 +21,8 @@ response = dashboard.appliance.updateNetworkApplianceSsid(
     encryptionMode='wpa', 
     wpaEncryptionMode='WPA2 only', 
     visible=True, 
-    dhcpEnforcedDeauthentication={'enabled': True}
+    dhcpEnforcedDeauthentication={'enabled': True}, 
+    dot11w={'enabled': True, 'required': True}
 )
 
 print(response)

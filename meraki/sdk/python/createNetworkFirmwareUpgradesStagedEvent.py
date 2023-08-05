@@ -12,7 +12,7 @@ stages = [{'group': {'id': '1234'}, 'milestones': {'scheduledFor': '2018-02-11T0
 
 response = dashboard.networks.createNetworkFirmwareUpgradesStagedEvent(
     network_id, stages, 
-    products={'switch': {'nextUpgrade': {'toVersion': {'id': '1234'}}}}
+    products={'switch': {'nextUpgrade': {'toVersion': {'id': '1234'}}}, 'switchCatalyst': {'nextUpgrade': {'toVersion': {'id': '4321'}}}}
 )
 
 print(response)

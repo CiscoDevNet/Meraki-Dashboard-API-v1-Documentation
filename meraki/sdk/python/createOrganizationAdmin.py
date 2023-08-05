@@ -14,7 +14,9 @@ org_access = 'none'
 
 response = dashboard.organizations.createOrganizationAdmin(
     organization_id, email, name, org_access, 
-    tags=[{'tag': 'west', 'access': 'read-only'}]
+    tags=[{'tag': 'west', 'access': 'read-only'}], 
+    networks=[{'id': 'N_24329156', 'access': 'full'}], 
+    authenticationMethod='Email'
 )
 
 print(response)

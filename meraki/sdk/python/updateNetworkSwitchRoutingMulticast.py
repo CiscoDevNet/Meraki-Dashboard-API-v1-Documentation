@@ -12,7 +12,7 @@ network_id = 'L_646829496481105433'
 response = dashboard.switch.updateNetworkSwitchRoutingMulticast(
     network_id, 
     defaultSettings={'igmpSnoopingEnabled': True, 'floodUnknownMulticastTrafficEnabled': True}, 
-    overrides=[{'switches': ['Q234-ABCD-0001', 'Q234-ABCD-0002', 'Q234-ABCD-0003'], 'igmpSnoopingEnabled': True, 'floodUnknownMulticastTrafficEnabled': True}, {'stacks': ['789102', '123456', '129102'], 'igmpSnoopingEnabled': True, 'floodUnknownMulticastTrafficEnabled': True}]
+    overrides=[{'switches': ['Q234-ABCD-0001', 'Q234-ABCD-0002', 'Q234-ABCD-0003'], 'igmpSnoopingEnabled': True, 'floodUnknownMulticastTrafficEnabled': True}, {'stacks': ['789102', '123456', '129102'], 'igmpSnoopingEnabled': True, 'floodUnknownMulticastTrafficEnabled': True}, {'switchProfiles': ['1234', '4567'], 'igmpSnoopingEnabled': True, 'floodUnknownMulticastTrafficEnabled': True}]
 )
 
 print(response)
