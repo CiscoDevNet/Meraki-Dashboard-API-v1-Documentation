@@ -23,10 +23,14 @@ jobs:
           rm -rf meraki/sdk/python
       - name: Download newest generator
         run: |
+          pwd
           curl https://github.com/meraki/dashboard-api-python/raw/main/generator/generate_snippets.py -o generate_snippets.py
+          ls
       - name: Regenerate Python Library snippets
         run: |
-          python ./generate_snippets.py
+          pwd
+          ls
+          python generate_snippets.py
       - name: Move snippets
         run: |
           mv code_snippets meraki/sdk/python
