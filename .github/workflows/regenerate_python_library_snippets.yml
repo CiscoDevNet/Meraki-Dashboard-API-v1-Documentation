@@ -23,10 +23,7 @@ jobs:
           rm -rf meraki/sdk/python
       - name: Download newest generator
         run: |
-          curl https://github.com/meraki/dashboard-api-python/raw/main/generator/generate_snippets.py -o generate_snippets.py
-      - name: Set permissions
-        run: |
-          chmod 755 generate_snippets.py
+          wget https://github.com/meraki/dashboard-api-python/raw/main/generator/generate_snippets.py
       - name: Regenerate Python Library snippets
         run: |
           python generate_snippets.py
