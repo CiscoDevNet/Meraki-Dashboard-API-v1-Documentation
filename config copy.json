@@ -97,15 +97,15 @@
                     "markdownPath": "docs/overview.md"
                 },
                 "theme": "meraki",
-                "httpBearer": {
-                    "bearerToken": "75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6"
-                },
+                 "httpBearer": {
+                     "bearerToken": "75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6"
+                }, 
                 "labelConfig": {
                     "endpoint": {
                         "field": "operationId",
                         "format": "startCase"
                     }
-                },
+                }, 
                 "groupBy": {
                     "$remoteModule": "config/group_platform.js"
                 },
@@ -134,18 +134,18 @@
             "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec3.json",
             "config": {
                 "overview": {
-                    "markdownPath": "docs/overview-early-access.md"
+                    "markdownPath":"docs/overview-early-access.md"
                 },
                 "theme": "meraki",
                 "httpBearer": {
-                    "bearerToken": "75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6"
-                },
+                     "bearerToken": "75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6"
+                }, 
                 "labelConfig": {
                     "endpoint": {
                         "field": "operationId",
                         "format": "startCase"
                     }
-                },
+                }, 
                 "groupBy": {
                     "$remoteModule": "config/group_platform.js"
                 },
@@ -165,13 +165,17 @@
             }
         },
         {
+            "title": "Developer Resources",
+            "config": {
+                "expand": 0
+            },
             "items": [
-                
                 {
-                    "title": "Libraries & SDKs",
-                    "config": {
-                        "expand": 1
-                    },
+                    "title": "Postman Collection ",
+                    "content": "docs/postman.md"
+                },
+                {
+                    "title": "SDKs",
                     "items": [
                         {
                             "title": "Overview",
@@ -180,21 +184,9 @@
                         {
                             "title": "Python",
                             "content": "docs/pythonLibrary.md"
-                        },
-                        {
-                            "title": "Postman Collection ",
-                            "content": "docs/postman.md"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "title": "Developer Resources",
-            "config": {
-                "expand": 1
-            },
-            "items": [
+                },
                 {
                     "title": "Learning Labs",
                     "content": "https://developer.cisco.com/learning/tracks/Meraki-v0/",
