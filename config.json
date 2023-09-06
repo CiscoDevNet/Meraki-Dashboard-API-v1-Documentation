@@ -165,27 +165,22 @@
             }
         },
         {
+            "title": "Libraries & SDKs",
+            "config": {
+                "expand": 1
+            },
             "items": [
-                
                 {
-                    "title": "Libraries & SDKs",
-                    "config": {
-                        "expand": 1
-                    },
-                    "items": [
-                        {
-                            "title": "Overview",
-                            "content": "docs/SDKoverview.md"
-                        },
-                        {
-                            "title": "Python",
-                            "content": "docs/pythonLibrary.md"
-                        },
-                        {
-                            "title": "Postman Collection ",
-                            "content": "docs/postman.md"
-                        }
-                    ]
+                    "title": "Overview",
+                    "content": "docs/SDKoverview.md"
+                },
+                {
+                    "title": "Python",
+                    "content": "docs/pythonLibrary.md"
+                },
+                {
+                    "title": "Postman Collection ",
+                    "content": "docs/postman.md"
                 }
             ]
         },
