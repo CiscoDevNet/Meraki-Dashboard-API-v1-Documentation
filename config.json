@@ -21,6 +21,10 @@
                     "content": "docs/RateLimit.md"
                 },
                 {
+                    "title": "Errors",
+                    "content": "docs/Errors.md"
+                },
+                {
                     "title": "User Agents",
                     "items": [
                         {
@@ -62,18 +66,13 @@
                     "content": "docs/serviceParamMap.md"
                 },
                 {
-                    "title": "Errors",
-                    "content": "docs/Errors.md"
-                },
-                {
                     "title": "Pagination",
                     "content": "docs/Pagination.md"
                 },
                 {
                     "title": "Path Changes",
                     "content": "docs/v0-v1-path-operation-changes.md"
-                },
-                
+                },               
                 {
                     "title": "Schema",
                     "content": "docs/PathSchema.md"
@@ -158,7 +157,7 @@
                     "$remoteModule": "config/sort_by.js"
                 },
                 "exampleAsDefault": true,
-                "expand": 3,
+                "expand": 0,
                 "variables": {
                     "organizationId": "1215707",
                     "networkId": "N_784752235069315754",
