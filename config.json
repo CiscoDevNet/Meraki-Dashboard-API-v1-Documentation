@@ -8,13 +8,13 @@
                     "content": "docs/Introduction.md"
                 },
                 {
+                    "title": "Getting Started",
+                    "content": "docs/GettingStarted.md"
+                },
+                {
                     "title": "Authentication",
                     "content": "docs/Authorization.md",
                     "uri": "authorization"
-                },
-                {
-                    "title": "Getting Started",
-                    "content": "docs/GettingStarted.md"
                 },
                 {
                     "title": "Rate Limit",
