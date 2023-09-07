@@ -180,7 +180,8 @@
                 },
                 {
                     "title": "Postman Collection ",
-                    "content": "docs/postman.md"
+                    "content": "https://developer.cisco.com/meraki/build/meraki-postman-collection-getting-started/introduction/#dashboard-api-and-postman",
+                    "type":"url"
                 }
             ]
         },
