@@ -17,12 +17,12 @@
                     "uri": "authorization"
                 },
                 {
-                    "title": "Rate Limit",
-                    "content": "docs/RateLimit.md"
-                },
-                {
                     "title": "Errors",
                     "content": "docs/Errors.md"
+                },
+                {
+                    "title": "Rate Limit",
+                    "content": "docs/RateLimit.md"
                 },
                 {
                     "title": "User Agents",
@@ -33,6 +33,10 @@
                             "uri": "user-agents-overview"
                         }
                     ]
+                },
+                {
+                    "title": "Versioning",
+                    "content": "docs/Versioning.md"
                 },
                 {
                     "title": "API Changelog",
@@ -76,11 +80,6 @@
                 {
                     "title": "Schema",
                     "content": "docs/PathSchema.md"
-                },
-                
-                {
-                    "title": "Versioning",
-                    "content": "docs/Versioning.md"
                 },
                 {
                     "title": "Webhooks",
