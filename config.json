@@ -17,6 +17,20 @@
                     "content": "docs/GettingStarted.md"
                 },
                 {
+                    "title": "Rate Limit",
+                    "content": "docs/RateLimit.md"
+                },
+                {
+                    "title": "User Agents",
+                    "items": [
+                        {
+                            "title": "Overview",
+                            "content": "docs/UserAgents.md",
+                            "uri": "user-agents-overview"
+                        }
+                    ]
+                },
+                {
                     "title": "API Changelog",
                     "content": "https://developer.cisco.com/meraki/whats-new/",
                     "type": "url"
@@ -59,24 +73,12 @@
                     "title": "Path Changes",
                     "content": "docs/v0-v1-path-operation-changes.md"
                 },
-                {
-                    "title": "Rate Limit",
-                    "content": "docs/RateLimit.md"
-                },
+                
                 {
                     "title": "Schema",
                     "content": "docs/PathSchema.md"
                 },
-                {
-                    "title": "User Agents",
-                    "items": [
-                        {
-                            "title": "Overview",
-                            "content": "docs/UserAgents.md",
-                            "uri": "user-agents-overview"
-                        }
-                    ]
-                },
+                
                 {
                     "title": "Versioning",
                     "content": "docs/Versioning.md"
