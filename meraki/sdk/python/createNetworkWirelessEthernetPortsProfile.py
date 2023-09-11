@@ -8,15 +8,12 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
+name = 'name'
+ports = [{'name': 'port', 'enabled': True, 'ssid': 1, 'pskGroupId': '2'}]
 
-response = dashboard.wireless.updateNetworkWirelessSettings(
-    network_id, 
-    meshingEnabled=True, 
-    ipv6BridgeEnabled=False, 
-    locationAnalyticsEnabled=False, 
-    upgradeStrategy='minimizeUpgradeTime', 
-    ledLightsOn=False, 
-    namedVlans={'poolDhcpMonitoring': {'enabled': True, 'duration': 5}}
+response = dashboard.wireless.createNetworkWirelessEthernetPortsProfile(
+    network_id, name, ports, 
+    usbPorts=[{'name': 'usb port', 'enabled': True, 'ssid': 2}]
 )
 
 print(response)

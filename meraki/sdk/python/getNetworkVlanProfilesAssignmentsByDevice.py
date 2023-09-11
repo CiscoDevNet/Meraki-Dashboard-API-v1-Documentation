@@ -9,14 +9,8 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
 
-response = dashboard.wireless.updateNetworkWirelessSettings(
-    network_id, 
-    meshingEnabled=True, 
-    ipv6BridgeEnabled=False, 
-    locationAnalyticsEnabled=False, 
-    upgradeStrategy='minimizeUpgradeTime', 
-    ledLightsOn=False, 
-    namedVlans={'poolDhcpMonitoring': {'enabled': True, 'duration': 5}}
+response = dashboard.networks.getNetworkVlanProfilesAssignmentsByDevice(
+    network_id, total_pages='all'
 )
 
 print(response)

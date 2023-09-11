@@ -14,7 +14,8 @@ response = dashboard.networks.updateNetworkSettings(
     localStatusPageEnabled=True, 
     remoteStatusPageEnabled=True, 
     localStatusPage={'authentication': {'enabled': False, 'password': 'miles123'}}, 
-    securePort={'enabled': False}
+    securePort={'enabled': False}, 
+    namedVlans={'enabled': True}
 )
 
 print(response)

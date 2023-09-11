@@ -69,7 +69,8 @@ response = dashboard.wireless.updateNetworkWirelessSsid(
     mandatoryDhcpEnabled=False, 
     adultContentFilteringEnabled=False, 
     dnsRewrite={'enabled': True, 'dnsCustomNameservers': ['8.8.8.8', '8.8.4.4']}, 
-    speedBurst={'enabled': True}
+    speedBurst={'enabled': True}, 
+    namedVlans={'tagging': {'enabled': True, 'defaultVlanName': 'My VLAN', 'byApTags': [{'tags': ['tag1', 'tag2'], 'vlanName': 'My VLAN'}]}, 'radius': {'guestVlan': {'enabled': True, 'name': 'Guest VLAN'}}}
 )
 
 print(response)

@@ -9,14 +9,10 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
 
-response = dashboard.wireless.updateNetworkWirelessSettings(
+response = dashboard.appliance.updateNetworkApplianceTrafficShapingVpnExclusions(
     network_id, 
-    meshingEnabled=True, 
-    ipv6BridgeEnabled=False, 
-    locationAnalyticsEnabled=False, 
-    upgradeStrategy='minimizeUpgradeTime', 
-    ledLightsOn=False, 
-    namedVlans={'poolDhcpMonitoring': {'enabled': True, 'duration': 5}}
+    custom=[{'protocol': 'tcp', 'destination': '192.168.3.0/24', 'port': '8000'}], 
+    majorApplications=[{'id': 'meraki:vpnExclusion/application/2', 'name': 'Office 365 Sharepoint'}]
 )
 
 print(response)

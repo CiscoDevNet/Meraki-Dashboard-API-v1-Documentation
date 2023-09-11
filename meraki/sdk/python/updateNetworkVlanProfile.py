@@ -8,15 +8,13 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
+iname = ''
+name = 'My VLAN profile name'
+vlan_names = [{'name': 'named-1', 'vlanId': '1'}]
+vlan_groups = [{'name': 'named-group-1', 'vlanIds': '2,5-7'}]
 
-response = dashboard.wireless.updateNetworkWirelessSettings(
-    network_id, 
-    meshingEnabled=True, 
-    ipv6BridgeEnabled=False, 
-    locationAnalyticsEnabled=False, 
-    upgradeStrategy='minimizeUpgradeTime', 
-    ledLightsOn=False, 
-    namedVlans={'poolDhcpMonitoring': {'enabled': True, 'duration': 5}}
+response = dashboard.networks.updateNetworkVlanProfile(
+    network_id, iname, name, vlan_names, vlan_groups
 )
 
 print(response)
