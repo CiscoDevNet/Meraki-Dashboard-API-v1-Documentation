@@ -53,8 +53,8 @@ Install the collection ([Galaxy link](https://galaxy.ansible.com/cisco/meraki))
 ansible-galaxy collection install cisco.meraki -f
 ```
 
-## Use
-First, your Meraki API key needs to be available for the playbook to use. You can leverage environment variables `export MERAKI_DASHBOARD_API_KEY=093b24e85df15a3e66f1fc359f4c48493eaa1b73`, or create a `credentials.yml` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/credentials.yml) file.
+## Usage
+First, your Meraki API key needs to be available for the playbook to use. You can leverage environment variables `export MERAKI_DASHBOARD_API_KEY=093b24e85df15a3e66f1fc359f4c48493eaa1b73`, or create a `credentials.yml` file. ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/credentials.yml))
 
 >**Note:** Storing your API key in an unencrypted text file is not recommended for security reasons.
 
@@ -84,12 +84,14 @@ meraki_inherit_logging_config: False
 ```
 
 Create a `hosts` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/hosts)) file that uses `[meraki_servers]` with your Cisco Meraki Settings:
+
 ```
 [meraki_servers]
 meraki_server
 ```
 
 Then, create a playbook `myplaybook.yml` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/who_am_i.yml)) referencing the variables in your credentials.yml file and specifying the full namespace path to the module, plugin and/or role:
+
 ```
 ---
 - hosts: localhost
@@ -103,14 +105,16 @@ Then, create a playbook `myplaybook.yml` ([example](https://github.com/meraki/da
 ```
 
 Execute the playbook:
+
 ```
 ansible-playbook -i hosts myplaybook.yml
 ```
+
 In the `playbooks` [directory](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/) you can find more examples and use cases.
 
 ### See Also:
 
-* [Ansible Using collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) for more details.
+[Ansible Using collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) for more details.
 
 ## Attention macOS users
 
@@ -123,6 +127,7 @@ ERROR! A worker was found in a dead state
 ```
 
 If that's the case try setting this environment variable:
+
 ```
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 ```
@@ -145,6 +150,7 @@ New minor and major releases as well as deprecations will follow new releases an
 The modules that were there before, usually with a `meraki` prefix, are maintained until version 2.x.x, with the same structure used in previous versions. The old modules will disappear in the next major release and only the new modules will remain. Each old module has its deprecation marking, indicating which is the new equivalent.
 
 ### Example
+
 - Old module:
   ```yml
   - name: Create webhook
