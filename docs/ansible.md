@@ -16,11 +16,9 @@ Other versions of this collection have support for previous Cisco Meraki version
 |--------------------------|------------------------------|-------------------------------|
 | 1.33.0                    | 1.0.0                       |1.33.0                         |
 
-*Notes*:
-
-
-1. The "Python 'merakisdk' version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "merakisdk" than those listed.
-2. The "Cisco Meraki version" column has the value of the `meraki_version` you should use for the Ansible collection.
+> *Notes*:
+    1. The "Python 'merakisdk' version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "merakisdk" than those listed.
+    2. The "Cisco Meraki version" column has the value of the `meraki_version` you should use for the Ansible collection.
 
 ## Installing according to Compatibility Matrix
 
@@ -43,22 +41,28 @@ ansible-galaxy collection install cisco.meraki:1.0.0
 
 ## Install
 Ansible must be installed ([Install guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
+
 ```
 sudo pip install ansible
 ```
 
 Python Meraki SDK must be installed
+
 ```
 sudo pip install meraki
 ```
 
 Install the collection ([Galaxy link](https://galaxy.ansible.com/cisco/meraki))
+
 ```
 ansible-galaxy collection install cisco.meraki
 ```
+
 ## Use
 First, your Meraki API key needs to be available for the playbook to use. You can leverage environment variables `export MERAKI_DASHBOARD_API_KEY=093b24e85df15a3e66f1fc359f4c48493eaa1b73`, or create a `credentials.yml` ([example](https://github.com/cisco-en-programmability/meraki-ansible/blob/main/playbooks/credentials.template)) file.
+
 **Note:** storing your API key in an unencrypted text file is not recommended for security reasons.
+
 ```
 ---
 meraki_api_key: "ABC"
@@ -85,12 +89,14 @@ meraki_inherit_logging_config: False
 ```
 
 Create a `hosts` ([example](https://github.com/cisco-en-programmability/meraki-ansible/blob/main/playbooks/hosts)) file that uses `[meraki_servers]` with your Cisco Meraki Settings:
+
 ```
 [meraki_servers]
 meraki_server
 ```
 
 Then, create a playbook `myplaybook.yml` ([example](https://github.com/cisco-en-programmability/meraki-ansible/blob/main/playbooks/tag.yml)) referencing the variables in your credentials.yml file and specifying the full namespace path to the module, plugin and/or role:
+
 ```
 ---
 - hosts: localhost
@@ -104,6 +110,7 @@ Then, create a playbook `myplaybook.yml` ([example](https://github.com/cisco-en-
 ```
 
 Execute the playbook:
+
 ```
 ansible-playbook -i hosts myplaybook.yml
 ```
@@ -114,21 +121,25 @@ In the `playbooks` [directory](https://github.com/cisco-en-programmability/merak
 Getting the latest/nightly collection build
 
 Clone the meraki-ansible repository.
+
 ```
 git clone https://github.com/cisco-en-programmability/meraki-ansible.git
 ```
 
 Go to the meraki-ansible directory
+
 ```
 cd meraki-ansible
 ```
 
 Pull the latest master from the repo
+
 ```
 git pull origin master
 ```
 
 Build and install a collection from source
+
 ```
 ansible-galaxy collection build --force
 ansible-galaxy collection install cisco-meraki-* --force
@@ -149,6 +160,7 @@ ERROR! A worker was found in a dead state
 ```
 
 If that's the case try setting this environment variable:
+
 ```
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 ```
@@ -177,30 +189,32 @@ The modules that were there before, usually with a `meraki` prefix, are maintain
 
 ### Example
 - Old module:
-  ```yml
-  - name: Create webhook
-    cisco.meraki.meraki_webhook:
-      auth_key: abc123
-      state: present
-      org_name: YourOrg
-      net_name: YourNet
-      name: Test_Hook
-      url: https://webhook.url/
-      shared_secret: shhhdonttellanyone
-      payload_template_name: 'Slack (included)'
-    delegate_to: localhost
-  ```
+
+```yml
+- name: Create webhook
+cisco.meraki.meraki_webhook:
+    auth_key: abc123
+    state: present
+    org_name: YourOrg
+    net_name: YourNet
+    name: Test_Hook
+    url: https://webhook.url/
+    shared_secret: shhhdonttellanyone
+    payload_template_name: 'Slack (included)'
+delegate_to: localhost
+```
 - New module:
-  ```yml
-  - name: Create webhook
-    cisco.meraki.networks_webhooks_http_servers:
-      meraki_api_key: "{{meraki_api_key}}"
-      state: present
-      name: Test_Hook
-      networkId: "{{network_id}}"
-      payloadTemplate:
-        name: Slack (included)
-        payloadTemplateId: wpt_00001
-      sharedSecret: shhhdonttellanyone
-      url: https://webhook.url/
-  ```
+
+```yml
+- name: Create webhook
+cisco.meraki.networks_webhooks_http_servers:
+    meraki_api_key: "{{meraki_api_key}}"
+    state: present
+    name: Test_Hook
+    networkId: "{{network_id}}"
+    payloadTemplate:
+    name: Slack (included)
+    payloadTemplateId: wpt_00001
+    sharedSecret: shhhdonttellanyone
+    url: https://webhook.url/
+```
