@@ -1,10 +1,10 @@
-# Ansible Modules for Meraki
+# Ansible
 
-The meraki-ansible project provides an Ansible collection for managing and automating your Cisco Meraki environment. It consists of a set of modules and roles for performing tasks related to Meraki.
+An Ansible collection for managing and automating your Cisco Meraki environment. It consists of a set of modules and roles for performing tasks related to Meraki.
 
 This collection has been tested and supports Cisco Meraki v1.33.0
 
-*Note: This collection is not compatible with versions of Ansible before v2.14.*
+> *Note: This collection is not compatible with versions of Ansible before v2.14.*
 
 Other versions of this collection have support for previous Cisco Meraki versions. The recommended versions are listed below on the [Compatibility matrix](https://github.com/meraki/dashboard-api-ansible#compatibility-matrix).
 
@@ -14,11 +14,9 @@ Other versions of this collection have support for previous Cisco Meraki version
 |--------------------------|------------------------------|-------------------------------|
 | 1.33.0                    | 1.0.0                       |1.33.0                         |
 
-*Notes*:
 
-
-1. The "Python 'meraki' SDK version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "meraki" than those listed.
-2. The "Cisco Meraki version" column has the value of the `meraki_version` you should use for the Ansible collection.
+- The "Python 'meraki' SDK version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "meraki" than those listed.
+- The "Cisco Meraki version" column has the value of the `meraki_version` you should use for the Ansible collection.
 
 ## Installing according to Compatibility Matrix
 
