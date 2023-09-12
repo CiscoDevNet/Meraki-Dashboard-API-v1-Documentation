@@ -186,6 +186,18 @@
             ]
         },
         {
+            "title": "Infrastructure as Code",
+            "config": {
+                "expand": 1
+            },
+            "items": [
+                {
+                    "title": "Ansible",
+                    "content": "docs/ansible.md"
+                }
+            ]
+        },
+        {
             "title": "Developer Resources",
             "config": {
                 "expand": 1
