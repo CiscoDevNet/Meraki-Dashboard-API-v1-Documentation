@@ -1,64 +1,69 @@
+
 # Ansible
 
-An Ansible collection for managing and automating your Cisco Meraki environment. It consists of a set of modules and roles for performing tasks related to Meraki.
+## Introduction
 
-This collection has been tested and supports Cisco Meraki v1.33.0
+Ansible is an open-source automation tool sponsored by Red Hat, widely used across IT roles from system administrators to developers. This document describes an Ansible Collection tailored to work with the Cisco Meraki Dashboard API. An Ansible Collection is a package format that bundles various Ansible content types, such as playbooks, roles, modules, and plugins. These collections can be shared and installed through platforms like Ansible Galaxy or other Galaxy servers, such as Pulp 3.
 
-> *Note: This collection is not compatible with versions of Ansible before v2.14.*
+## Understanding Ansible Playbooks
 
-Other versions of this collection have support for previous Cisco Meraki versions. The recommended versions are listed below on the [Compatibility matrix](https://github.com/meraki/dashboard-api-ansible#compatibility-matrix).
+An Ansible Playbook serves as a blueprint for automation tasks. It outlines the steps that Ansible will execute on specified inventories or groups of hosts. A playbook comprises 'plays,' which are ordered groupings of tasks. Each task is executed by an Ansible module that encapsulates the logic and parameters for that task. Playbooks can be saved, shared, or reused, which ensures consistent execution of tasks and codifies operational knowledge.
 
-## Compatibility matrix
+## Pre-requisites
 
-| Cisco Meraki version | Ansible "cisco.meraki" version | Python "DashboardAPI" version |
-|--------------------------|------------------------------|-------------------------------|
-| 1.33.0                    | 1.0.0                       |1.33.0                         |
+- Ansible version 2.9 or higher
+- Python version 3.6 or higher
+- [Python Meraki SDK v1.33.0](https://github.com/meraki/dashboard-api-python) or newer
 
+## Installation and Configuration
 
-- The "Python 'meraki' SDK version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "meraki" than those listed.
-- The "Cisco Meraki version" column has the value of the `meraki_version` you should use for the Ansible collection.
+### Installation Steps
 
-## Installing according to Compatibility Matrix
+1. **Install Ansible**
+    ```bash
+    pip install ansible
+    ```
+    *or on a Mac*
+    ```bash
+    brew install ansible
+    ```
 
-For example, for Cisco Meraki 1.33.0, it is recommended to use Ansible "cisco.meraki" v1.0.0 and Python "meraki DashboardAPI" v1.33.0.
+    **(Optional with Virtual Environment)**
+        Create a virtual environment for ansible to run in
 
-To get the Python Meraki SDK v1.33.0 in a fresh development environment:
-```
-pip install meraki
-```
+    ```bash
+    python3 -m venv ansible
+    source ansible2.9/bin/activate
+    ```
 
-To get the Ansible collection v1.0.0 in a fresh development environment:
-```
-ansible-galaxy collection install cisco.meraki -f
-```
+2. **Install Python Meraki SDK**
+    ```bash
+    pip install meraki
+    ```
+    *or on a Mac*
+    ```bash
+    pip3 install meraki
+    ```
 
-## Requirements
-- Ansible >= 2.9
-- [Python Meraki SDK](https://github.com/meraki/dashboard-api-python) v1.33.0 or newer
-- Python >= 3.6, as the Meraki SDK doesn't support Python version 2.x
+3. **Install Ansible Collection**
+    ```bash
+    ansible-galaxy collection install cisco.meraki -f
+    ```
 
-## Install
-Ansible must be installed ([Install guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
-```
-pip install ansible
-```
+### Additional Configuration Options
 
-Python Meraki SDK must be installed
-```
-pip install meraki
-```
+Ansible supports multiple sources for configuring its behavior, including configuration files, environment variables, command-line options, playbook keywords, and variables. Configuration files are sought in the following order:
 
-Install the collection ([Galaxy link](https://galaxy.ansible.com/cisco/meraki))
-```
-ansible-galaxy collection install cisco.meraki -f
-```
+1. `ANSIBLE_CONFIG` environment variable, if set
+2. `ansible.cfg` in the current directory
+3. `~/.ansible.cfg` in the home directory
+4. `/etc/ansible/ansible.cfg`
 
-## Usage
-First, your Meraki API key needs to be available for the playbook to use. You can leverage environment variables `export MERAKI_DASHBOARD_API_KEY=093b24e85df15a3e66f1fc359f4c48493eaa1b73`, or create a `credentials.yml` file. ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/credentials.yml))
+Ansible will use the first configuration file it finds from this list, ignoring the others.
 
->**Note:** Storing your API key in an unencrypted text file is not recommended for security reasons.
+Below is an example `ansible.cfg` file with configuration options specific to the Cisco Meraki Ansible collection:
 
-```
+```yaml
 ---
 meraki_api_key: "ABC"
 meraki_base_url: "https://api.meraki.com/api/v1"
@@ -83,99 +88,124 @@ meraki_use_iterator_for_get_pages: False
 meraki_inherit_logging_config: False
 ```
 
-Create a `hosts` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/hosts)) file that uses `[meraki_servers]` with your Cisco Meraki Settings:
+## How to Use
+
+### API Authentication
+
+1. **Environment Variable**
+    ```bash
+    export MERAKI_DASHBOARD_API_KEY=YOUR_API_KEY_HERE
+    ```
+
+
+2. **Credentials File**
+    - Create a `credentials.yml` file.
+        - Refer to this [example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/credentials.yml).
+    - Encrypt it, with Anisble Vault! 
+    ```
+    $ ansible-vault encrypt credentials.yml
+    ```
+    - Learn more about securing and using your Ansible credentials [here](https://docs.ansible.com/ansible/latest/vault_guide/index.html).
+
+
+
+3. **Ansible Configuration File**
+    - Create or use our exsiting `ansible.cfg` file.
+    - Refer to this [Ansible doc](https://docs.ansible.com/ansible/latest/reference_appendices/config.html).
+
+    > **Security Alert:** This option could store API keys in plain text, which is not recommended.
+
+
+### Example Playbook
+
+1. **Create a `hosts` File**
+    ```bash
+    [meraki_servers]
+    meraki_server
+    ```
+
+2. **Develop the Playbook**
+Create a file called `myplaybook.yml`
+    ```yml
+    ---
+    - hosts: localhost
+    gather_facts: false
+    tasks:
+        - name: Get administered _identities _me
+        cisco.meraki.administered_identities_me_info:
+            meraki_suppress_logging: true
+        register: me
+
+        - name: Show current Meraki administrator
+        ansible.builtin.debug:
+            msg: "{{ me.meraki_response.name }} - {{me.meraki_response.email}}"
+        
+        - name: Get all Organizations
+        cisco.meraki.organizations_info:
+            meraki_suppress_logging: true
+        register: result
+        - name: Show Organizations List
+        ansible.builtin.debug:
+            msg: "{{ result | json_query('meraki_response[*].name') }}"
+    ```
+
+3. **Execute the Playbook**
+
+    ```bash
+    ansible-playbook -i hosts myplaybook.yml
+    ```
+
+This command runs the playbook, targeting the hosts defined in the `hosts` file and performing the tasks specified in `myplaybook.yml`.
+
+4. **Results**
 
 ```
-[meraki_servers]
-meraki_server
-```
+PLAY [localhost] ******************************************************************************************************************
 
-Then, create a playbook `myplaybook.yml` ([example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/who_am_i.yml)) referencing the variables in your credentials.yml file and specifying the full namespace path to the module, plugin and/or role:
+TASK [Get all administered _identities _me] ******************************************************************************************************************
+ok: [localhost]
 
-```
----
-- hosts: localhost
-  gather_facts: false
-  tasks:
-    - name: Get all administered _identities _me
-      cisco.meraki.administered_identities_me_info:
-        meraki_suppress_logging: true
-      register: result
+TASK [Show current Meraki administrator] ******************************************************************************************************************
+ok: [localhost] => {
+    "msg": "Miles Meraki - miles@meraki.com"
+}
 
-```
+TASK [Get all Organizations] ******************************************************************************************************************
+ok: [localhost]
 
-Execute the playbook:
+TASK [Show Organizations List] ******************************************************************************************************************
+ok: [localhost] => {
+    "msg": [
+        "Test",
+        "API-Test",
+        "Sample Company",
+        "Sample Org Inc.",
+        "Support Lab Test"
+    ]
+}
 
-```
-ansible-playbook -i hosts myplaybook.yml
-```
-
-In the `playbooks` [directory](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/) you can find more examples and use cases.
-
-### See Also:
-
-[Ansible Using collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) for more details.
-
-## Attention macOS users
-
-If you're using macOS you may receive this error when running your playbook:
+PLAY RECAP *******************************************************************************************************************************************************************************************************
+localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0     
 
 ```
-objc[34120]: +[__NSCFConstantString initialize] may have been in progress in another thread when fork() was called.
-objc[34120]: +[__NSCFConstantString initialize] may have been in progress in another thread when fork() was called. We cannot safely call it or ignore it in the fork() child process. Crashing instead. Set a breakpoint on objc_initializeAfterForkError to debug.
-ERROR! A worker was found in a dead state
-```
 
-If that's the case try setting this environment variable:
+## Additional Information
 
-```
+- [Ansible Using Collections Documentation](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html)
+
+## macOS Troubleshooting
+
+If you encounter `objc_initializeAfterForkError` or `ERROR! A worker was found in a dead state` errors on macOS, set the following environment variable:
+
+```bash
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 ```
 
-## Contributing to this collection
+## Contributions and Feedback
 
-Ongoing development efforts and contributions to this collection are tracked as issues in this repository.
+For contributions, issues, or enhancements, please [open an issue or create a PR](https://github.com/meraki/dashboard-api-ansible/issues).
 
-We welcome community contributions to this collection. If you find problems, need an enhancement or need a new module, please open an issue or create a PR against the [Cisco Meraki Ansible collection repository](https://github.com/meraki/dashboard-api-ansible/issues).
+## Release Management
 
-## Releasing, Versioning and Deprecation
+We adhere to [Semantic Versioning](https://semver.org/). Version updates will align with Cisco Meraki product updates, REST API changes, and Python SDK releases.
 
-This collection follows [Semantic Versioning](https://semver.org/). More details on versioning can be found [in the Ansible docs](https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html#collection-versions).
-
-New minor and major releases as well as deprecations will follow new releases and deprecations of the Cisco Meraki product, its REST API and the corresponding Python SDK, which this project relies on. 
-
-
-## New collection modules
-
-The modules that were there before, usually with a `meraki` prefix, are maintained until version 2.x.x, with the same structure used in previous versions. The old modules will disappear in the next major release and only the new modules will remain. Each old module has its deprecation marking, indicating which is the new equivalent.
-
-### Example
-
-- Old module:
-  ```yml
-  - name: Create webhook
-    cisco.meraki.meraki_webhook:
-      auth_key: abc123
-      state: present
-      org_name: YourOrg
-      net_name: YourNet
-      name: Test_Hook
-      url: https://webhook.url/
-      shared_secret: shhhdonttellanyone
-      payload_template_name: 'Slack (included)'
-    delegate_to: localhost
-  ```
-- New module:
-  ```yml
-  - name: Create webhook
-    cisco.meraki.networks_webhooks_http_servers:
-      meraki_api_key: "{{meraki_api_key}}"
-      state: present
-      name: Test_Hook
-      networkId: "{{network_id}}"
-      payloadTemplate:
-        name: Slack (included)
-        payloadTemplateId: wpt_00001
-      sharedSecret: shhhdonttellanyone
-      url: https://webhook.url/
-  ```
