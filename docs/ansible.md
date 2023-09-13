@@ -97,6 +97,7 @@ meraki_inherit_logging_config: False
     export MERAKI_DASHBOARD_API_KEY=YOUR_API_KEY_HERE
     ```
 
+**(Alternative Authentication Options)**
 
 2. **Credentials File**
     - Create a `credentials.yml` file.
@@ -188,6 +189,8 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0     
 
 ```
+
+**Success! Now you have a working Meraki Ansible collection and can begin automating your cloud networks!** 
 
 ## Additional Information
 
