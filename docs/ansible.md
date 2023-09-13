@@ -20,6 +20,7 @@ An Ansible Playbook serves as a blueprint for automation tasks. It outlines the 
 ### Installation Steps
 
 1. **Install Ansible**
+
     ```bash
     pip install ansible
     ```
@@ -37,6 +38,7 @@ An Ansible Playbook serves as a blueprint for automation tasks. It outlines the 
     ```
 
 2. **Install Python Meraki SDK**
+
     ```bash
     pip install meraki
     ```
@@ -46,6 +48,7 @@ An Ansible Playbook serves as a blueprint for automation tasks. It outlines the 
     ```
 
 3. **Install Ansible Collection**
+
     ```bash
     ansible-galaxy collection install cisco.meraki -f
     ```
@@ -93,6 +96,7 @@ meraki_inherit_logging_config: False
 ### API Authentication
 
 1. **Environment Variable**
+
     ```bash
     export MERAKI_DASHBOARD_API_KEY=YOUR_API_KEY_HERE
     ```
@@ -120,6 +124,7 @@ meraki_inherit_logging_config: False
 ### Example Playbook
 
 1. **Create a `hosts` File**
+
     ```bash
     [meraki_servers]
     meraki_server
@@ -127,6 +132,7 @@ meraki_inherit_logging_config: False
 
 2. **Develop the Playbook**
 Create a file called `myplaybook.yml`
+
     ```yml
     ---
     - hosts: localhost
