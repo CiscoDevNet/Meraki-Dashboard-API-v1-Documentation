@@ -29,14 +29,6 @@ An Ansible Playbook serves as a blueprint for automation tasks. It outlines the 
     brew install ansible
     ```
 
-    **(Optional with Virtual Environment)**
-        Create a virtual environment for ansible to run in
-
-    ```bash
-    python3 -m venv ansible
-    source ansible2.9/bin/activate
-    ```
-
 2. **Install Python Meraki SDK**
 
     ```bash
@@ -53,72 +45,32 @@ An Ansible Playbook serves as a blueprint for automation tasks. It outlines the 
     ansible-galaxy collection install cisco.meraki -f
     ```
 
-### Additional Configuration Options
+**(Alternative install with Virtual Environment)**
+    
+Create a virtual environment for ansible to run in
 
-Ansible supports multiple sources for configuring its behavior, including configuration files, environment variables, command-line options, playbook keywords, and variables. Configuration files are sought in the following order:
-
-1. `ANSIBLE_CONFIG` environment variable, if set
-2. `ansible.cfg` in the current directory
-3. `~/.ansible.cfg` in the home directory
-4. `/etc/ansible/ansible.cfg`
-
-Ansible will use the first configuration file it finds from this list, ignoring the others.
-
-Below is an example `ansible.cfg` file with configuration options specific to the Cisco Meraki Ansible collection:
-
-```yaml
----
-meraki_api_key: "ABC"
-meraki_base_url: "https://api.meraki.com/api/v1"
-meraki_single_request_timeout: ""
-meraki_certificate_path: ""
-meraki_requests_proxy: True
-meraki_wait_on_rate_limit: 60
-meraki_nginx_429_retry_wait_time: 60
-meraki_action_batch_retry_wait_time: 60
-meraki_retry_4xx_error: False
-meraki_retry_4xx_error_wait_time: 60
-meraki_maximum_retries: 2
-meraki_output_log: True
-meraki_log_file_prefix: "meraki_api_"
-meraki_log_path: ""
-meraki_print_console: True
-meraki_suppress_logging: False
-meraki_simulate: False
-meraki_be_geo_id: ""
-meraki_caller: ""
-meraki_use_iterator_for_get_pages: False
-meraki_inherit_logging_config: False
+```bash
+python3 -m venv ansible
+source ansible/bin/activate
+pip3 install ansible
+pip3 install meraki
+ansible-galaxy collection install cisco.meraki -f
 ```
+
 
 ## How to Use
 
 ### API Authentication
 
-1. **Environment Variable**
+1. **Environment Variable** (preferred)
 
-    ```bash
-    export MERAKI_DASHBOARD_API_KEY=YOUR_API_KEY_HERE
-    ```
+In your terminal, set your Meraki API key to an environment variable.
 
-**(Alternative Authentication Options)**
-
-2. **Credentials File**
-    - Create a `credentials.yml` file.
-        - Refer to this [example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/credentials.yml).
-    - Encrypt it, with Anisble Vault! 
-    ```
-    $ ansible-vault encrypt credentials.yml
-    ```
-    - Learn more about securing and using your Ansible credentials [here](https://docs.ansible.com/ansible/latest/vault_guide/index.html).
+```bash
+export MERAKI_DASHBOARD_API_KEY=YOUR_API_KEY_HERE
+```
 
 
-
-3. **Ansible Configuration File**
-    - Create or use our exsiting `ansible.cfg` file.
-    - Refer to this [Ansible doc](https://docs.ansible.com/ansible/latest/reference_appendices/config.html).
-
-    > **Security Alert:** This option could store API keys in plain text, which is not recommended.
 
 
 ### Example Playbook
@@ -198,6 +150,68 @@ localhost                  : ok=4    changed=0    unreachable=0    failed=0    s
 
 **Success! Now you have a working Meraki Ansible collection and can begin automating your cloud networks!** 
 
+
+## Advanced Options
+
+### Authentication
+
+There are alternatives to providing your Meraki API key for use with the Ansible collection. 
+
+1. **Credentials File**
+- Create a `credentials.yml` file.
+    - Refer to this [example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/credentials.yml).
+- Encrypt it, with Anisble Vault! 
+
+```
+$ ansible-vault encrypt credentials.yml
+```
+- Learn more about securing and using your Ansible credentials [here](https://docs.ansible.com/ansible/latest/vault_guide/index.html).
+
+
+
+2. **Configuration File**
+- Create or use our exsiting `ansible.cfg` file defined in the next section.
+- Refer to this [Ansible doc](https://docs.ansible.com/ansible/latest/reference_appendices/config.html) for more information.
+
+> **Security Alert:** This option could store API keys in plain text, which is not recommended.
+
+### **Ansible Configuration**
+
+Ansible supports multiple sources for configuring its behavior, including configuration files, environment variables, command-line options, playbook keywords, and variables. Configuration files are sought in the following order:
+
+1. `ANSIBLE_CONFIG` environment variable, if set
+2. `ansible.cfg` in the current directory
+3. `~/.ansible.cfg` in the home directory
+4. `/etc/ansible/ansible.cfg`
+
+Ansible will use the first configuration file it finds from this list, ignoring the others.
+
+Below is an example `ansible.cfg` file with configuration options specific to the Cisco Meraki Ansible collection:
+
+```yaml
+---
+meraki_api_key: "ABC"
+meraki_base_url: "https://api.meraki.com/api/v1"
+meraki_single_request_timeout: ""
+meraki_certificate_path: ""
+meraki_requests_proxy: True
+meraki_wait_on_rate_limit: 60
+meraki_nginx_429_retry_wait_time: 60
+meraki_action_batch_retry_wait_time: 60
+meraki_retry_4xx_error: False
+meraki_retry_4xx_error_wait_time: 60
+meraki_maximum_retries: 2
+meraki_output_log: True
+meraki_log_file_prefix: "meraki_api_"
+meraki_log_path: ""
+meraki_print_console: True
+meraki_suppress_logging: False
+meraki_simulate: False
+meraki_be_geo_id: ""
+meraki_caller: ""
+meraki_use_iterator_for_get_pages: False
+meraki_inherit_logging_config: False
+```
 ## Additional Information
 
 - [Ansible Using Collections Documentation](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html)
