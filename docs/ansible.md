@@ -83,7 +83,8 @@ export MERAKI_DASHBOARD_API_KEY=YOUR_API_KEY_HERE
     ```
 
 2. **Develop the Playbook**
-Create a file called `myplaybook.yml`
+
+    Create a file called `myplaybook.yml`
 
     ```yml
     ---
@@ -107,6 +108,8 @@ Create a file called `myplaybook.yml`
         ansible.builtin.debug:
             msg: "{{ result | json_query('meraki_response[*].name') }}"
     ```
+
+    In this example, we will be gathering the identity of the administrator associated with this Meraki API and a list of the Organizations that it has access to.
 
 3. **Execute the Playbook**
 
