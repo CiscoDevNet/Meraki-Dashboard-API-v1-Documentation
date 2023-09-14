@@ -243,11 +243,11 @@ meraki_inherit_logging_config: False
 ```
 ## Resources
 
-- [Meraki Ansible Collection Documentation](https://docs.ansible.com/ansible/latest/collections/cisco/meraki/index.html)
+- [Documentation](https://docs.ansible.com/ansible/latest/collections/cisco/meraki/index.html)
 
-- [Meraki Anisble Collection - Galaxy Hub](https://galaxy.ansible.com/cisco/meraki)
+- [Galaxy Hub](https://galaxy.ansible.com/cisco/meraki)
 
-- [Meraki Ansible Collection - GitHub](https://github.com/meraki/dashboard-api-ansible)
+- [GitHub](https://github.com/meraki/dashboard-api-ansible)
 
 
 
