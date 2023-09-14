@@ -21,7 +21,7 @@ Playbooks can be saved, shared, or reused, which ensures consistent execution of
 - Python version 3.6 or higher
 - [Python Meraki SDK v1.33.0](https://github.com/meraki/dashboard-api-python) or newer
 
-## Installation and Configuration
+## Installation
 
 
 1. **Install Ansible**
