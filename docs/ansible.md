@@ -84,7 +84,7 @@ The easiest way to provide access to your Meraki infrastracture is by setting yo
 
 
 
-### Example Playbook
+### Playbooks
 
 Let's build our first playbook.
 
@@ -174,6 +174,7 @@ In this example, we will be gathering the identity of the administrator associat
 
 **Success! Now you have a working Meraki Ansible collection and can begin configuring your Infrastructure as Code!** 
 
+Explore more example [playbooks](https://github.com/meraki/dashboard-api-ansible/tree/main/playbooks).
 
 ## Advanced Options
 
