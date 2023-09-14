@@ -5,6 +5,8 @@
 
 Ansible is an open-source automation tool sponsored by Red Hat, widely used across IT roles from system administrators to developers. This Ansible Collection is tailored to work with the Cisco Meraki Dashboard API, providing a powerful and simple **Infrastructure as Code** solution.  
 
+More info: [Meraki Ansible Collection - Reference Guide](https://docs.ansible.com/ansible/latest/collections/cisco/meraki/index.html)
+
 ## Ansible Basics
 
 An Ansible Collection is a package format that bundles various Ansible content types, such as playbooks, roles, modules, and plugins. 
@@ -239,13 +241,17 @@ meraki_caller: ""
 meraki_use_iterator_for_get_pages: False
 meraki_inherit_logging_config: False
 ```
-## Additional Information
+## Resources
+
+- [Meraki Ansible Collection Documentation](https://docs.ansible.com/ansible/latest/collections/cisco/meraki/index.html)
 
 - [Meraki Anisble Collection - Galaxy Hub](https://galaxy.ansible.com/cisco/meraki)
 
 - [Meraki Ansible Collection - GitHub](https://github.com/meraki/dashboard-api-ansible)
 
-- [Ansible Using Collections Documentation](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html)
+
+
+- [Learning Lab](https://developer.cisco.com/learning/labs/meraki-dashboard-ansible/introduction/)
 
 ## Troubleshooting
 
