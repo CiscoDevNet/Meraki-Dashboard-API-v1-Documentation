@@ -3,11 +3,15 @@
 
 ## Introduction
 
-Ansible is an open-source automation tool sponsored by Red Hat, widely used across IT roles from system administrators to developers. This document describes an Ansible Collection tailored to work with the Cisco Meraki Dashboard API. An Ansible Collection is a package format that bundles various Ansible content types, such as playbooks, roles, modules, and plugins. These collections can be shared and installed through platforms like Ansible Galaxy or other Galaxy servers, such as Pulp 3.
+Ansible is an open-source automation tool sponsored by Red Hat, widely used across IT roles from system administrators to developers. This Ansible Collection is tailored to work with the Cisco Meraki Dashboard API, providing a powerful and simple **Infrastructure as Code** solution.  
 
-## Understanding Ansible Playbooks
+## Ansible Basics
 
-An Ansible Playbook serves as a blueprint for automation tasks. It outlines the steps that Ansible will execute on specified inventories or groups of hosts. A playbook comprises 'plays,' which are ordered groupings of tasks. Each task is executed by an Ansible module that encapsulates the logic and parameters for that task. Playbooks can be saved, shared, or reused, which ensures consistent execution of tasks and codifies operational knowledge.
+An Ansible Collection is a package format that bundles various Ansible content types, such as playbooks, roles, modules, and plugins. 
+
+A playbook serves as a blueprint for automation tasks. It outlines the steps that Ansible will execute on specified inventories or groups of `hosts`. A playbook comprises `plays`, which are ordered groupings of `tasks`. Each task is executed by an Ansible module that encapsulates the logic and parameters for that task. 
+
+Playbooks can be saved, shared, or reused, which ensures consistent execution of tasks and codifies operational knowledge.
 
 ## Pre-requisites
 
@@ -17,7 +21,6 @@ An Ansible Playbook serves as a blueprint for automation tasks. It outlines the 
 
 ## Installation and Configuration
 
-### Installation Steps
 
 1. **Install Ansible**
 
@@ -29,6 +32,8 @@ An Ansible Playbook serves as a blueprint for automation tasks. It outlines the 
     brew install ansible
     ```
 
+    More info: [Ansible Installation docs](https://docs.ansible.com/ansible/latest/installation_guide/index.html).
+
 2. **Install Python Meraki SDK**
 
     ```bash
@@ -39,6 +44,8 @@ An Ansible Playbook serves as a blueprint for automation tasks. It outlines the 
     pip3 install meraki
     ```
 
+    More info: [Meraki Python library docs](https://developer.cisco.com/meraki/api-v1/python/)
+
 3. **Install Ansible Collection**
 
     ```bash
@@ -47,7 +54,7 @@ An Ansible Playbook serves as a blueprint for automation tasks. It outlines the 
 
 **(Alternative install with Virtual Environment)**
     
-Create a virtual environment for ansible to run in
+Create a virtual environment for Ansible and the Meraki API to run in.
 
 ```bash
 python3 -m venv ansible
@@ -57,25 +64,35 @@ pip3 install meraki
 ansible-galaxy collection install cisco.meraki -f
 ```
 
-
+More info: [Python Virtual Environments](https://docs.python.org/3/tutorial/venv.html) 
 ## How to Use
+
+Once you have everything installed, obtain your Meraki API key, set your authentication up and start building your first Playbook.
 
 ### API Authentication
 
-1. **Environment Variable** (preferred)
+The easiest way to provide access to your Meraki infrastracture is by setting your API key to an environment variable. Ansible will use the Meraki python library to make the API requests with the provided key details.
 
-In your terminal, set your Meraki API key to an environment variable.
+1. **Environment Variable**
 
-```bash
-export MERAKI_DASHBOARD_API_KEY=YOUR_API_KEY_HERE
-```
+    In your terminal, set your [Meraki API key]((https://developer.cisco.com/meraki/api-v1/authorization/)) to an environment variable.
+
+    ```bash
+    export MERAKI_DASHBOARD_API_KEY=YOUR_API_KEY_HERE
+    ```
 
 
 
 
 ### Example Playbook
 
-1. **Create a `hosts` File**
+Let's build our first playbook.
+
+In this example, we will be gathering the identity of the administrator associated with this Meraki API key and then print the name and email. We will then return a list of the Meraki organization names with their respective IDs.
+
+1. **Hosts File**
+
+    Create a file called `hosts` and copy the following code into it.
 
     ```bash
     [meraki_servers]
@@ -84,7 +101,7 @@ export MERAKI_DASHBOARD_API_KEY=YOUR_API_KEY_HERE
 
 2. **Develop the Playbook**
 
-    Create a file called `myplaybook.yml`
+    Create a file called `myplaybook.yml` and copy the following code into it.
 
     ```yml
     ---
@@ -109,49 +126,53 @@ export MERAKI_DASHBOARD_API_KEY=YOUR_API_KEY_HERE
             msg: "{{ result | json_query('meraki_response[*].name') }}"
     ```
 
-    In this example, we will be gathering the identity of the administrator associated with this Meraki API and a list of the Organizations that it has access to.
+  
 
 3. **Execute the Playbook**
+
+    This command runs the playbook, targeting the hosts defined in the `hosts` file and performs the tasks specified in `myplaybook.yml`.
 
     ```bash
     ansible-playbook -i hosts myplaybook.yml
     ```
 
-This command runs the playbook, targeting the hosts defined in the `hosts` file and performing the tasks specified in `myplaybook.yml`.
+
 
 4. **Results**
 
-```
-PLAY [localhost] ******************************************************************************************************************
+    The terminal should display our results as each task is completed. If you run into any issues, check your spacing, or refer to the Troubleshooting section in this guide. 
 
-TASK [Get all administered _identities _me] ******************************************************************************************************************
-ok: [localhost]
+    ```bash
+    PLAY [localhost] ******************************************************************************************************************
 
-TASK [Show current Meraki administrator] ******************************************************************************************************************
-ok: [localhost] => {
-    "msg": "Miles Meraki - miles@meraki.com"
-}
+    TASK [Get all administered _identities _me] ******************************************************************************************************************
+    ok: [localhost]
 
-TASK [Get all Organizations] ******************************************************************************************************************
-ok: [localhost]
+    TASK [Show current Meraki administrator] ******************************************************************************************************************
+    ok: [localhost] => {
+        "msg": "Miles Meraki - miles@meraki.com"
+    }
 
-TASK [Show Organizations List] ******************************************************************************************************************
-ok: [localhost] => {
-    "msg": [
-        "Test",
-        "API-Test",
-        "Sample Company",
-        "Sample Org Inc.",
-        "Support Lab Test"
-    ]
-}
+    TASK [Get all Organizations] ******************************************************************************************************************
+    ok: [localhost]
 
-PLAY RECAP *******************************************************************************************************************************************************************************************************
-localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0     
+    TASK [Show Organizations List] ******************************************************************************************************************
+    ok: [localhost] => {
+        "msg": [
+            "Test",
+            "API-Test",
+            "Sample Company",
+            "Sample Org Inc.",
+            "Support Lab Test"
+        ]
+    }
 
-```
+    PLAY RECAP *******************************************************************************************************************************************************************************************************
+    localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0     
 
-**Success! Now you have a working Meraki Ansible collection and can begin automating your cloud networks!** 
+    ```
+
+**Success! Now you have a working Meraki Ansible collection and can begin configuring your Infrastructure as Code!** 
 
 
 ## Advanced Options
@@ -165,18 +186,20 @@ There are alternatives to providing your Meraki API key for use with the Ansible
     - Refer to this [example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/credentials.yml).
 - Encrypt it, with Anisble Vault! 
 
-```
-$ ansible-vault encrypt credentials.yml
-```
-- Learn more about securing and using your Ansible credentials [here](https://docs.ansible.com/ansible/latest/vault_guide/index.html).
+    ```bash
+    $ ansible-vault encrypt credentials.yml
+    ```
+    More info: [Anisble Credentials Vault Guide](https://docs.ansible.com/ansible/latest/vault_guide/index.html).
 
 
 
 2. **Configuration File**
-- Create or use our exsiting `ansible.cfg` file defined in the next section.
-- Refer to this [Ansible doc](https://docs.ansible.com/ansible/latest/reference_appendices/config.html) for more information.
+    - Create or use an exsiting `ansible.cfg` file defined in the next section.
+    - Set `meraki_api_key: "Your-API-Key"` to your API key
+    
+    More info: [Ansible Configurations](https://docs.ansible.com/ansible/latest/reference_appendices/config.html)
 
-> **Security Alert:** This option could store API keys in plain text, which is not recommended.
+    > **Security Alert:** This option could store API keys in plain text, which is not recommended.
 
 ### **Ansible Configuration**
 
@@ -217,15 +240,23 @@ meraki_inherit_logging_config: False
 ```
 ## Additional Information
 
+- [Meraki Anisble Collection - Galaxy Hub](https://galaxy.ansible.com/cisco/meraki)
+
+- [Meraki Ansible Collection - GitHub](https://github.com/meraki/dashboard-api-ansible)
+
 - [Ansible Using Collections Documentation](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html)
 
-## macOS Troubleshooting
+## Troubleshooting
 
-If you encounter `objc_initializeAfterForkError` or `ERROR! A worker was found in a dead state` errors on macOS, set the following environment variable:
+### Mac OS 
+
+If you encounter `ERROR! A worker was found in a dead state` or `objc_initializeAfterForkError`  errors, set the following environment variable:
 
 ```bash
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 ```
+
+
 
 ## Contributions and Feedback
 
