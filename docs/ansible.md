@@ -15,7 +15,7 @@ A playbook serves as a blueprint for automation tasks. It outlines the steps tha
 
 Playbooks can be saved, shared, or reused, which ensures consistent execution of tasks and codifies operational knowledge.
 
-## Pre-requisites
+## Prerequisites
 
 - Ansible version 2.9 or higher
 - Python version 3.6 or higher
