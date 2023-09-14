@@ -88,7 +88,7 @@ The easiest way to provide access to your Meraki infrastracture is by setting yo
 
 Let's build our first playbook.
 
-In this example, we will be gathering the identity of the administrator associated with this Meraki API key and then print the name and email. We will then return a list of the Meraki organization names with their respective IDs.
+In this example, we will be gathering the identity of the administrator associated with this Meraki API key and then print the name and email. We will then return a list of the Meraki organization names this administrator can manage.
 
 1. **Hosts File**
 
