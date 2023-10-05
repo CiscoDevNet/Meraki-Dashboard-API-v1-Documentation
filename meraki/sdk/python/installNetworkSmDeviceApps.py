@@ -7,10 +7,13 @@ API_KEY = '6bec40cf957de430a6f1f2baa056b99a4fac9ea0'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-organization_id = '549236'
+network_id = 'L_646829496481105433'
+device_id = ''
+app_ids = ['1284392014819', '2983092129865']
 
-response = dashboard.organizations.getOrganizationFirmwareUpgrades(
-    organization_id, total_pages='all'
+response = dashboard.sm.installNetworkSmDeviceApps(
+    network_id, device_id, app_ids, 
+    force=False
 )
 
 print(response)
