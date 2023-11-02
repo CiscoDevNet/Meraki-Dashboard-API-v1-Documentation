@@ -170,6 +170,29 @@
             }
         },
         {
+            "title": "Integrated APIs",
+            "items": [
+                {
+                    "title": "Overview",
+                    "content": "docs/integrated-apis-overview.md"
+                },
+                {
+                    "title": "SecureConnect",
+                    "type": "oas3",
+                    "content": "https://raw.githubusercontent.com/meraki/secure-connect-openapi/main/secure_connect_oas_beta.json",
+                    "config": {
+                        
+                        "theme": "meraki",
+                        "expand": 2,
+                        "exampleAsDefault": true,
+                        "groupBy": {
+                            "$remoteModule": "config/group_api_tag.js"
+                        }
+                    }
+                }
+            ]
+        },
+        {
             "title": "Libraries & SDKs",
             "config": {
                 "expand": 1
