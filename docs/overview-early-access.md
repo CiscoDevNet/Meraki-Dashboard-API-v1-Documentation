@@ -29,12 +29,9 @@ Each request will have a complete description of all the required parameters and
 
 ## API Key
 
-- A demo API key is added by default to easily kick the tires.
+- A demo API key is added by default so that you can send a request in one click of the "Run" button. 
 
-- Add your own API key and parameter values in the **Configuration** menu to test against your own environment.
-
-
-<img src="../images/interactiveAPIConfig.png" width="600px">
+- You can use [Postman|https://developer.cisco.com/meraki/build/meraki-postman-collection-getting-started/introduction/#dashboard-api-and-postman] to use your own API keys and make calls against yoru own environment.
 
 
 
