@@ -219,7 +219,7 @@ An example JSON payload from a webhook callback following a ping operation:
   }
 }
 ```
-**Demo in action**
+**Demo**
 
 <img src="livetools-callbacks-demo.gif" width="800px">
 
@@ -308,13 +308,14 @@ When the action batch is processed, a callback is sent to the specified URL with
   }
 }
 ```
-
 - **callbackId**: The unique identifier for the callback.
 - **organization**: Details of the organization.
 - **actionBatchId**: Identifier of the action batch.
 - **sentAt**: Timestamp of when the callback was sent.
 - **message**: Contains the status of the action batch and detailed results.
 
+**Demo**
+<img src="actionbatch-callbacks-demo.gif" width="800px"/>
 
 
 ## Troubleshooting Callbacks
