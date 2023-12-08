@@ -360,7 +360,7 @@ To aid in troubleshooting, utilize the following monitoring tools and endpoints:
 If after troubleshooting you are still facing issues:
 
 - **[Meraki Community](https://meraki.io/community)**: Engage with the Meraki community for insights and advice.
-- **[Support Tickets](https://meraki.cisco.com/meraki-support)**: Open a support ticket with Meraki, providing detailed information about the issue and the steps already taken.
+- **[Meraki Support](https://meraki.cisco.com/meraki-support/overview/)**: Open a support ticket with Meraki, providing detailed information about the issue and the steps already taken.
 
 ## **Additional Resources**
 
