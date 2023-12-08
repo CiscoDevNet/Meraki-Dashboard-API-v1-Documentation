@@ -66,6 +66,10 @@
                     ]
                 },
                 {
+                    "title": "Callbacks",
+                    "content": "docs/Callbacks.md"
+                },
+                {
                     "title": "Path Parameters",
                     "content": "docs/serviceParamMap.md"
                 },
