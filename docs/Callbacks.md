@@ -155,17 +155,16 @@ An example JSON response from the `/callbacks/statuses` endpoint:
 
 The following endpoints are examples within the Meraki Dashboard API that support callbacks, enabling asynchronous operations:
 
-1. **Ping**: `POST /devices/{serial}/liveTools/ping`
-   - [Ping Endpoint Documentation](https://developer.cisco.com/meraki/api-v1/create-device-live-tools-ping/)
-2. **Ping Device**: `POST /devices/{serial}/liveTools/pingDevice`
-   - [Ping Device Endpoint Documentation](https://developer.cisco.com/meraki/api-v1/create-device-live-tools-ping-device/)
-3. **Wake on LAN**: `POST /devices/{serial}/liveTools/wakeOnLan`
-   - [Wake on LAN Endpoint Documentation](https://developer.cisco.com/meraki/api-v1/create-device-live-tools-wake-on-lan/)
+- [Ping](https://developer.cisco.com/meraki/api-v1/create-device-live-tools-ping/): `POST /devices/{serial}/liveTools/ping`
+   
+- [Ping](https://developer.cisco.com/meraki/api-v1/create-device-live-tools-ping-device/): `POST /devices/{serial}/liveTools/pingDevice`
+   
+- [Wake on LAN](https://developer.cisco.com/meraki/api-v1/create-device-live-tools-wake-on-lan/): `POST /devices/{serial}/liveTools/wakeOnLan`
+   
 
 #### Bulk Action Jobs
 
-- **Action Batches**: `POST /organizations/{organizationId}/actionBatches`
-  - [Action Batches Endpoint Documentation](https://developer.cisco.com/meraki/api-v1/create-organization-action-batch/)
+- [Action Batches](https://developer.cisco.com/meraki/api-v1/create-organization-action-batch/): `POST /organizations/{organizationId}/actionBatches`
 
 ## Example Usage
 
@@ -234,7 +233,7 @@ Suppose we want to update the settings of multiple networks in an organization. 
 
 **Endpoint**: `POST /organizations/{organizationId}/actionBatches`
 
-[Action Batches Endpoint Documentation](https://developer.cisco.com/meraki/api-v1/create-organization-action-batch/)
+[API Docs](https://developer.cisco.com/meraki/api-v1/create-organization-action-batch/)
 
 #### Request Body
 
