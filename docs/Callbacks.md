@@ -366,6 +366,7 @@ If after troubleshooting you are still facing issues:
 * [Meraki Webhooks Guide](https://meraki.io/webhooks)
 * [OpenAPI v3 Callbacks Specification](https://swagger.io/docs/specification/callbacks/)
 
+* [Google Sheets Webhook Receiver with callbacks](https://github.com/dexterlabora/meraki-gsheet-webhook-receiver)
 
 
 
