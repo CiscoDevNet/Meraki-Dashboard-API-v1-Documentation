@@ -6,7 +6,7 @@
 
 ### What is a Callback?
 
-A "Callback" is an advanced programming feature that provides notifications upon the completion of a long-running operation. Unlike standard API calls that return immediately, callbacks issue results via a webhook when they become available. This aligns with the OpenAPI v3 specification, promoting standardized asynchronous operations.
+A "Callback" is a programming feature that provides notifications upon the completion of a long-running operation. Unlike standard API calls that return immediately, callbacks issue results via a webhook when they become available. This aligns with the OpenAPI v3 specification, promoting standardized asynchronous operations.
 
 ### What is a Webhook?
 
@@ -104,6 +104,8 @@ Learn more about customizing the shape and security of your callback webhooks.
 ### Callback Status
 
 This endpoint provides detailed status information about a specific callback, including its current state, any errors encountered, the initiating user, and the related webhook details.
+
+**Endpoint**: `GET /organizations/{organizationId}/webhooks/callbacks/statuses/{callbackId}`
 
 [API Docs](https://developer.cisco.com/meraki/api-v1/get-organization-webhooks-callbacks-status/)
 
@@ -218,8 +220,9 @@ An example JSON payload from a webhook callback following a ping operation:
   }
 }
 ```
-Demo in action
-<img src="./livetools-callbacks-demo.gif" width="800px">
+**Demo in action**
+
+<img src="livetools-callbacks-demo.gif" width="800px">
 
 ### Example: Action Batches with Callbacks
 
@@ -228,8 +231,6 @@ This example illustrates the use of callbacks in conjunction with an Action Batc
 #### Scenario
 
 Suppose we want to update the settings of multiple networks in an organization. Given the potentially long processing time, we'll use a callback to receive status updates on the batch operation.
-
-#### Endpoint: Action Batches
 
 **Endpoint**: `POST /organizations/{organizationId}/actionBatches`
 
