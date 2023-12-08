@@ -315,6 +315,7 @@ When the action batch is processed, a callback is sent to the specified URL with
 - **message**: Contains the status of the action batch and detailed results.
 
 **Demo**
+
 <img src="actionbatch-callbacks-demo.gif" width="800px"/>
 
 
