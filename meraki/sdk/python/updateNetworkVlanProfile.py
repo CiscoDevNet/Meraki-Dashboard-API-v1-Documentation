@@ -12,7 +12,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 network_id = 'L_646829496481105433'
 iname = ''
 name = 'My VLAN profile name'
-vlan_names = [{'name': 'named-1', 'vlanId': '1'}]
+vlan_names = [{'name': 'named-1', 'vlanId': '1', 'adaptivePolicyGroup': {'id': '791'}}]
 vlan_groups = [{'name': 'named-group-1', 'vlanIds': '2,5-7'}]
 
 response = dashboard.networks.updateNetworkVlanProfile(
