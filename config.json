@@ -80,7 +80,11 @@
                 {
                     "title": "Path Changes",
                     "content": "docs/v0-v1-path-operation-changes.md"
-                },               
+                },      
+                {
+                    "title": "Query Parameters",
+                    "content": "docs/QueryParameters.md"
+                },             
                 {
                     "title": "Schema",
                     "content": "docs/PathSchema.md"
