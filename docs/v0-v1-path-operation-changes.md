@@ -7,8 +7,8 @@
     font-size: smaller;
 }
 
-div {
-    max-width: 800px;
+div .widgets {
+    max-width: 90%;
     overflow-x: scroll;
 }
 </style>
