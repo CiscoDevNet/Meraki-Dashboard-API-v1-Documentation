@@ -6,10 +6,6 @@
 #resultTable {
     font-size: smaller;
 }
-
-div .widgets {
-    overflow-x: visible;
-}
 </style>
 
 <pubhub>
