@@ -4,9 +4,9 @@
 
 <style>
 #resultTable{
-    font-size:smaller;
-    width: 100%;
-    x-overflow: scroll;
+    font-size: smaller !important;
+    width: 100% !important;
+    x-overflow: scroll !important;
 }
 
 </style>
