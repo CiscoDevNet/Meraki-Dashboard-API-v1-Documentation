@@ -8,8 +8,7 @@
 }
 
 div .widgets {
-    max-width: 90%;
-    overflow-x: scroll;
+    overflow-x: visible;
 }
 </style>
 
