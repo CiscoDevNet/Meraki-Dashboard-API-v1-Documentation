@@ -11,7 +11,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
 name = 'My Sensor Alert Profile'
-conditions = [{'metric': 'temperature', 'threshold': {'temperature': {'celsius': 20.5, 'fahrenheit': 70.0, 'quality': 'good'}, 'humidity': {'relativePercentage': 65, 'quality': 'inadequate'}, 'water': {'present': True}, 'door': {'open': True}, 'tvoc': {'concentration': 400, 'quality': 'poor'}, 'pm25': {'concentration': 90, 'quality': 'fair'}, 'noise': {'ambient': {'level': 120, 'quality': 'poor'}}, 'indoorAirQuality': {'score': 80, 'quality': 'fair'}}, 'direction': 'above', 'duration': 60}]
+conditions = [{'metric': 'temperature', 'threshold': {'temperature': {'celsius': 20.5, 'fahrenheit': 70.0, 'quality': 'good'}, 'humidity': {'relativePercentage': 65, 'quality': 'inadequate'}, 'water': {'present': True}, 'door': {'open': True}, 'tvoc': {'concentration': 400, 'quality': 'poor'}, 'pm25': {'concentration': 90, 'quality': 'fair'}, 'noise': {'ambient': {'level': 120, 'quality': 'poor'}}, 'indoorAirQuality': {'score': 80, 'quality': 'fair'}, 'realPower': {'draw': 14.1}, 'apparentPower': {'draw': 17.2}, 'powerFactor': {'percentage': 81}, 'current': {'draw': 0.14}, 'voltage': {'level': 119.5}, 'frequency': {'level': 58.8}, 'upstreamPower': {'outageDetected': True}}, 'direction': 'above', 'duration': 60}]
 
 response = dashboard.sensor.createNetworkSensorAlertsProfile(
     network_id, name, conditions, 

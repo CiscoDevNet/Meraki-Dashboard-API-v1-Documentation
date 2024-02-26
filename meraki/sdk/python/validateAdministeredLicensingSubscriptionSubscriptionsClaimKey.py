@@ -9,14 +9,10 @@ API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-network_id = 'L_646829496481105433'
+claim_key = 'S2345-6789A-BCDEF-GHJKM'
 
-response = dashboard.sm.checkinNetworkSmDevices(
-    network_id, 
-    wifiMacs=['00:11:22:33:44:55'], 
-    ids=['1284392014819', '2983092129865'], 
-    serials=['XY0XX0Y0X0', 'A01B01CD00E', 'X02YZ1ZYZX'], 
-    scope=['withAny', 'tag1', 'tag2']
+response = dashboard.licensing.validateAdministeredLicensingSubscriptionSubscriptionsClaimKey(
+    claim_key
 )
 
 print(response)

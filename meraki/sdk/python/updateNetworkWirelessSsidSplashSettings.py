@@ -20,6 +20,7 @@ response = dashboard.wireless.updateNetworkWirelessSsidSplashSettings(
     redirectUrl='https://example.com', 
     useRedirectUrl=True, 
     welcomeMessage='Welcome!', 
+    themeId='c3ddcb4f16785ee747ab5ffc10867d6c8ea704be', 
     splashLogo={'md5': 'abcd1234', 'extension': 'jpg', 'image': {'format': 'jpg', 'contents': 'Q2lzY28gTWVyYWtp'}}, 
     splashImage={'md5': '542cccac8d7dedee0f185311d154d194', 'extension': 'jpg', 'image': {'format': 'jpg', 'contents': 'Q2lzY28gTWVyYWtp'}}, 
     splashPrepaidFront={'md5': '542cccac8d7dedee0f185311d154d194', 'extension': 'jpg', 'image': {'format': 'jpg', 'contents': 'Q2lzY28gTWVyYWtp'}}, 

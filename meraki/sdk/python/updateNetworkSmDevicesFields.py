@@ -16,7 +16,7 @@ response = dashboard.sm.updateNetworkSmDevicesFields(
     network_id, device_fields, 
     wifiMac='00:11:22:33:44:55', 
     id='1284392014819', 
-    serial='Q234-ABCD-5678'
+    serial='XY0XX0Y0X0'
 )
 
 print(response)

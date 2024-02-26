@@ -15,7 +15,7 @@ response = dashboard.sm.lockNetworkSmDevices(
     network_id, 
     wifiMacs=['00:11:22:33:44:55'], 
     ids=['1284392014819', '2983092129865'], 
-    serials=['Q234-ABCD-0001', 'Q234-ABCD-0002', 'Q234-ABCD-0003'], 
+    serials=['XY0XX0Y0X0', 'A01B01CD00E', 'X02YZ1ZYZX'], 
     scope=['withAny', 'tag1', 'tag2'], 
     pin=123456
 )

@@ -9,14 +9,13 @@ API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-network_id = 'L_646829496481105433'
+serial = 'Q2QN-9J8L-SLPD'
+vlan_id = 12
+mac = '00:11:22:33:44:55'
 
-response = dashboard.sm.checkinNetworkSmDevices(
-    network_id, 
-    wifiMacs=['00:11:22:33:44:55'], 
-    ids=['1284392014819', '2983092129865'], 
-    serials=['XY0XX0Y0X0', 'A01B01CD00E', 'X02YZ1ZYZX'], 
-    scope=['withAny', 'tag1', 'tag2']
+response = dashboard.devices.createDeviceLiveToolsWakeOnLan(
+    serial, vlan_id, mac, 
+    callback={'url': 'https://webhook.site/28efa24e-f830-4d9f-a12b-fbb9e5035031', 'sharedSecret': 'secret', 'httpServer': {'id': 'aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M='}, 'payloadTemplate': {'id': 'wpt_2100'}}
 )
 
 print(response)

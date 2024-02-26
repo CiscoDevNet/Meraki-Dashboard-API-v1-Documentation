@@ -11,7 +11,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
 
-response = dashboard.sm.checkinNetworkSmDevices(
+response = dashboard.sm.shutdownNetworkSmDevices(
     network_id, 
     wifiMacs=['00:11:22:33:44:55'], 
     ids=['1284392014819', '2983092129865'], 
