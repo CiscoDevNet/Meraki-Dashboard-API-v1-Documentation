@@ -1,0 +1,64 @@
+.container {
+    width: 100%;
+}
+.table-container {
+    display: block;
+    width: 100%; /* Full width of its parent */
+    overflow-x: auto; /* Horizontal scroll for overflow */
+    overflow-y: hidden; /* No vertical scroll */
+}
+
+.scrollable-table {
+    display: block;
+    max-height: calc(100vh - 150px); /* Full height minus header/footer */
+    overflow-y: auto; /* Vertical scroll for overflow */
+}
+
+table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Collapse borders */
+    table-layout: fixed; /* Fixed table layout for even distribution */
+}
+
+.scrollable-table thead th {
+    background-color: #f2f2f2 !important;
+    position: sticky !important;
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+    padding-left: 20px !important;
+    top: 0;
+    z-index: 10;
+}
+
+
+
+.scrollable-table td {
+    padding-bottom: 0px !important;
+}
+
+th, td {
+    border: 1px solid #ddd; /* Cell borders */
+    padding: 5px; /* Cell padding */ 
+    text-align: left; /* Text align left */
+    vertical-align: top; /* Align text to top */
+}
+
+
+.table-filters input {
+    width: 100%; /* Fill cell width */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Clear filters button */
+.clear-filters {
+    padding: 2px 5px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table-container {
+        overflow-x: scroll; /* Allow scroll on smaller screens */
+    }
+}

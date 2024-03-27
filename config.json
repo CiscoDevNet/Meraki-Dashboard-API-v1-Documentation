@@ -97,6 +97,13 @@
             ]
         },
         {
+            "title": "API Index",
+            "content": "docs/api-index/meraki-api-index.html",
+            "type": "html",
+            "showPageNavigationBtn": false,
+            "showSubNavigation": false
+        },
+        {
             "title": "API Reference",
             "type": "oas3",
             "content": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec3.json",
