@@ -209,19 +209,20 @@ async function generateData() {
             <script src="api-index-html.script.js"></script>
         </head>
         <body>     
-            <div class="container">
+            
         
                <!-- <h1>API Index</h1> -->
-               
+               <div style="padding-left:10px">
                 <p>
-                <button class="clear-filters" onclick="clearFilters()">Clear Filters</button> <a style="padding-left:30px" href="${CSV_FILENAME}" class="export" >Download CSV </a> <a style="padding-left:30px" href="https://github.com/meraki/openapi" class="export" >OpenAPI Specification</a></div>
+                    <button class="clear-filters" onclick="clearFilters()">Clear Filters</button> <a style="padding-left:30px" href="${CSV_FILENAME}" class="export" >Download CSV </a> <a style="padding-left:30px" href="https://github.com/meraki/openapi" class="export" >OpenAPI Specification</a></div>
                 </p>
+               </div>
            
                 ${markdownToHtmlTable(markdownReport, fields)}
 
                 
                 <p style="padding-left:30px"><i> API v${apiVersion}</i></p>
-            </div>
+           
             
         </body>
         </html>
