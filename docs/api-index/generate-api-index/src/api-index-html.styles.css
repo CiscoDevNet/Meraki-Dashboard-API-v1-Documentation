@@ -12,6 +12,7 @@
     display: block;
     max-height: calc(100vh - 150px); /* Full height minus header/footer */
     overflow-y: auto; /* Vertical scroll for overflow */
+    font-size: 95% !important;
 }
 
 table {
