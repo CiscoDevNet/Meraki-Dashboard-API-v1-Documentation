@@ -89,7 +89,7 @@ function parseSwaggerPaths(spec) {
                 releaseStage = "deprecated"
             }
             const summary = operation.summary;
-            const apiDocsUrl = `https://developer.cisco.com/meraki/api/${toKebabCase(operationId)}/`;
+            const apiDocsUrl = `https://developer.cisco.com/meraki/api-v1/${toKebabCase(operationId)}/`;
             const methodPath = `${method.toUpperCase()} ${path}`;
             const summaryText = releaseStage !== "GA" ? `${summary} (${releaseStage.toUpperCase()})` : summary;
             const summaryLink = `[${summaryText}](${apiDocsUrl})`;
