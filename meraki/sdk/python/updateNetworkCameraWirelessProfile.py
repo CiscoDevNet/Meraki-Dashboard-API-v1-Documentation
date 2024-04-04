@@ -13,7 +13,10 @@ network_id = 'L_646829496481105433'
 wireless_profile_id = ''
 
 response = dashboard.camera.updateNetworkCameraWirelessProfile(
-    network_id, wireless_profile_id
+    network_id, wireless_profile_id, 
+    name='wireless profile A', 
+    ssid={'name': 'ssid test', 'authMode': '8021x-radius', 'encryptionMode': 'wpa-eap', 'psk': 'sampleKey'}, 
+    identity={'username': 'identityname', 'password': 'password123'}
 )
 
 print(response)

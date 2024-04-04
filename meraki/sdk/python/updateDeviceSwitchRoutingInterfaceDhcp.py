@@ -15,6 +15,7 @@ interface_id = ''
 response = dashboard.switch.updateDeviceSwitchRoutingInterfaceDhcp(
     serial, interface_id, 
     dhcpMode='dhcpServer', 
+    dhcpRelayServerIps=['1.2.3.4'], 
     dhcpLeaseTime='1 day', 
     dnsNameserversOption='custom', 
     dnsCustomNameservers=['8.8.8.8, 8.8.4.4'], 
@@ -23,7 +24,7 @@ response = dashboard.switch.updateDeviceSwitchRoutingInterfaceDhcp(
     bootFileName='home_boot_file', 
     dhcpOptions=[{'code': '5', 'type': 'text', 'value': 'five'}], 
     reservedIpRanges=[{'start': '192.168.1.1', 'end': '192.168.1.10', 'comment': 'A reserved IP range'}], 
-    fixedIpAssignments=[{'mac': '22:33:44:55:66:77', 'name': 'Cisco Meraki valued client', 'ip': '192.168.1.12'}]
+    fixedIpAssignments=[{'name': 'Cisco Meraki valued client', 'mac': '22:33:44:55:66:77', 'ip': '192.168.1.12'}]
 )
 
 print(response)

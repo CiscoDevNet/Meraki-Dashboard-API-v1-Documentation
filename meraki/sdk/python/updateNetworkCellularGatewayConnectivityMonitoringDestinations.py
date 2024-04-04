@@ -13,7 +13,7 @@ network_id = 'L_646829496481105433'
 
 response = dashboard.cellularGateway.updateNetworkCellularGatewayConnectivityMonitoringDestinations(
     network_id, 
-    destinations=[{'ip': '8.8.8.8', 'description': 'Google', 'default': False}, {'ip': '1.23.45.67', 'description': 'test description', 'default': True}, {'ip': '9.8.7.6'}]
+    destinations=[{'ip': '1.2.3.4', 'description': 'Google', 'default': False}]
 )
 
 print(response)

@@ -14,7 +14,7 @@ serial = 'Q2QN-9J8L-SLPD'
 response = dashboard.cellularGateway.updateDeviceCellularGatewayLan(
     serial, 
     reservedIpRanges=[{'start': '192.168.1.0', 'end': '192.168.1.1', 'comment': 'A reserved IP range'}], 
-    fixedIpAssignments=[{'mac': '0b:00:00:00:00:ac', 'name': 'server 1', 'ip': '192.168.0.10'}, {'mac': '0b:00:00:00:00:ab', 'name': 'server 2', 'ip': '192.168.0.20'}]
+    fixedIpAssignments=[{'name': 'server 1', 'ip': '192.168.0.10', 'mac': '0b:00:00:00:00:ac'}]
 )
 
 print(response)

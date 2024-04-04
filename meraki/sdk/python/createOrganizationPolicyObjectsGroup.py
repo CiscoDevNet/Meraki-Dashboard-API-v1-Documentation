@@ -14,7 +14,8 @@ name = 'Web Servers - Datacenter 10'
 
 response = dashboard.organizations.createOrganizationPolicyObjectsGroup(
     organization_id, name, 
-    objectIds=[]
+    category='NetworkObjectGroup', 
+    objectIds=[100]
 )
 
 print(response)

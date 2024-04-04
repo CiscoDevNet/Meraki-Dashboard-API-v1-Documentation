@@ -14,7 +14,7 @@ network_id = 'L_646829496481105433'
 response = dashboard.switch.updateNetworkSwitchStp(
     network_id, 
     rstpEnabled=True, 
-    stpBridgePriority=[{'switches': ['Q234-ABCD-0001', 'Q234-ABCD-0002', 'Q234-ABCD-0003'], 'stpPriority': 4096}, {'stacks': ['789102', '123456', '129102'], 'stpPriority': 28672}]
+    stpBridgePriority=[{'switchProfiles': ['1098', '1099', '1100'], 'switches': ['Q234-ABCD-0001', 'Q234-ABCD-0002', 'Q234-ABCD-0003'], 'stacks': ['789102', '123456', '129102'], 'stpPriority': 4096}]
 )
 
 print(response)

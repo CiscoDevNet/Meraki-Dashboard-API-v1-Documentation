@@ -12,12 +12,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 network_id = 'L_646829496481105433'
 
 response = dashboard.networks.updateNetworkNetflow(
-    network_id, 
-    reportingEnabled=True, 
-    collectorIp='1.2.3.4', 
-    collectorPort=443, 
-    etaEnabled=True, 
-    etaDstPort=443
+    network_id
 )
 
 print(response)

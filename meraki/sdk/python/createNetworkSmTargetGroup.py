@@ -13,8 +13,8 @@ network_id = 'L_646829496481105433'
 
 response = dashboard.sm.createNetworkSmTargetGroup(
     network_id, 
-    name='My target group', 
-    scope='none'
+    name='Target group name', 
+    scope='withAny, tag1, tag2'
 )
 
 print(response)

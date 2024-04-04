@@ -14,8 +14,8 @@ target_group_id = ''
 
 response = dashboard.sm.updateNetworkSmTargetGroup(
     network_id, target_group_id, 
-    name='My target group', 
-    scope='none'
+    name='Target group name', 
+    scope='withAny, tag1, tag2'
 )
 
 print(response)

@@ -16,7 +16,7 @@ response = dashboard.appliance.updateNetworkApplianceVpnBgp(
     network_id, enabled, 
     asNumber=64515, 
     ibgpHoldTimer=120, 
-    neighbors=[{'ip': '10.10.10.22', 'remoteAsNumber': 64343, 'receiveLimit': 120, 'allowTransit': True, 'ebgpHoldTimer': 180, 'ebgpMultihop': 2}]
+    neighbors=[{'ip': '10.10.10.22', 'ipv6': {'address': '2002::1234:abcd:ffff:c0a8:101'}, 'remoteAsNumber': 64343, 'receiveLimit': 120, 'allowTransit': True, 'ebgpHoldTimer': 180, 'ebgpMultihop': 2, 'sourceInterface': 'wan1', 'nextHopIp': '1.2.3.4', 'ttlSecurity': {'enabled': False}, 'authentication': {'password': 'abc123'}}]
 )
 
 print(response)

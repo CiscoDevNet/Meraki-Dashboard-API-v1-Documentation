@@ -11,7 +11,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 organization_id = '549236'
 type = 'wanUtilization'
-alert_condition = {'duration': 60, 'window': 600, 'bit_rate_bps': 10000, 'interface': 'wan1'}
+alert_condition = {'duration': 60, 'window': 600, 'bit_rate_bps': 10000, 'loss_ratio': 0.1, 'latency_ms': 100, 'jitter_ms': 100, 'mos': 3.5, 'interface': 'wan1'}
 recipients = {'emails': ['admin@example.org'], 'httpServerIds': ['aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcGF0aA==']}
 network_tags = ['tag1', 'tag2']
 

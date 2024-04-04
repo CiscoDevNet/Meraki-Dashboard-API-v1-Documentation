@@ -15,7 +15,8 @@ subnet = '192.168.1.0/24'
 gateway_ip = '1.2.3.5'
 
 response = dashboard.appliance.createNetworkApplianceStaticRoute(
-    network_id, name, subnet, gateway_ip
+    network_id, name, subnet, gateway_ip, 
+    gatewayVlanId='100'
 )
 
 print(response)

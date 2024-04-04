@@ -15,7 +15,11 @@ response = dashboard.networks.createNetworkPiiRequest(
     network_id, 
     type='delete', 
     datasets=['usage', 'events'], 
-    mac='00:77:00:77:00:77'
+    username='milesmeraki', 
+    email='miles@meraki.com', 
+    mac='00:11:22:33:44:55', 
+    smDeviceId='15551677676480', 
+    smUserId='212406'
 )
 
 print(response)

@@ -15,7 +15,8 @@ number = ''
 response = dashboard.wireless.updateNetworkWirelessSsidSchedules(
     network_id, number, 
     enabled=True, 
-    ranges=[{'startDay': 'Tuesday', 'startTime': '01:00', 'endDay': 'Tuesday', 'endTime': '05:00'}, {'startDay': 'Fri', 'startTime': '19:00', 'endDay': 'monday', 'endTime': '05:00'}]
+    ranges=[{'startDay': 'Tuesday', 'startTime': '01:00', 'endDay': 'Tuesday', 'endTime': '05:00'}], 
+    rangesInSeconds=[{'start': 604800, 'end': 0}]
 )
 
 print(response)

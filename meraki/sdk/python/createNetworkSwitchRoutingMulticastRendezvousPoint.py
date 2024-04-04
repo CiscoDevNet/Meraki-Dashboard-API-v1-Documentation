@@ -11,7 +11,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
 interface_ip = '192.168.1.2'
-multicast_group = '192.168.128.0/24'
+multicast_group = 'Any'
 
 response = dashboard.switch.createNetworkSwitchRoutingMulticastRendezvousPoint(
     network_id, interface_ip, multicast_group

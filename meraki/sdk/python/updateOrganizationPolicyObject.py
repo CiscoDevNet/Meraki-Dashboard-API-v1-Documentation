@@ -15,7 +15,11 @@ policy_object_id = ''
 response = dashboard.organizations.updateOrganizationPolicyObject(
     organization_id, policy_object_id, 
     name='Web Servers - Datacenter 10', 
-    groupIds=[]
+    cidr='10.0.0.0/24', 
+    fqdn='example.com', 
+    mask='255.255.0.0', 
+    ip='1.2.3.4', 
+    groupIds=['8']
 )
 
 print(response)

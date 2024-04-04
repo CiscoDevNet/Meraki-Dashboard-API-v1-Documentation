@@ -14,6 +14,7 @@ network_id = 'L_646829496481105433'
 response = dashboard.networks.updateNetworkSnmp(
     network_id, 
     access='users', 
+    communityString='sample', 
     users=[{'username': 'AzureDiamond', 'passphrase': 'hunter2'}]
 )
 

@@ -11,10 +11,11 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
 name = 'wireless profile A'
-ssid = {'name': 'ssid test', 'authMode': '8021x-radius', 'encryptionMode': 'wpa-eap'}
+ssid = {'name': 'ssid test', 'authMode': '8021x-radius', 'encryptionMode': 'wpa-eap', 'psk': 'sampleKey'}
 
 response = dashboard.camera.createNetworkCameraWirelessProfile(
-    network_id, name, ssid
+    network_id, name, ssid, 
+    identity={'username': 'identityname', 'password': 'password123'}
 )
 
 print(response)

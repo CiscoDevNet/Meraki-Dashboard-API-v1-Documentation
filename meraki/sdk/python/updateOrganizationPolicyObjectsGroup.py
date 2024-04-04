@@ -15,7 +15,7 @@ policy_object_group_id = ''
 response = dashboard.organizations.updateOrganizationPolicyObjectsGroup(
     organization_id, policy_object_group_id, 
     name='Web Servers - Datacenter 10', 
-    objectIds=[]
+    objectIds=[100]
 )
 
 print(response)

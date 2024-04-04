@@ -16,7 +16,9 @@ response = dashboard.organizations.updateOrganizationSnmp(
     v2cEnabled=False, 
     v3Enabled=True, 
     v3AuthMode='SHA', 
+    v3AuthPass='password', 
     v3PrivMode='AES128', 
+    v3PrivPass='password', 
     peerIps=['123.123.123.1']
 )
 

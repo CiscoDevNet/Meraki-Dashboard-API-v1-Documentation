@@ -10,7 +10,7 @@ API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 network_id = 'L_646829496481105433'
-rules = [{'lanIp': '192.168.128.1', 'allowedIps': ['any'], 'name': 'Description of Port Forwarding Rule', 'protocol': 'tcp', 'publicPort': '8100-8101', 'localPort': '442-443', 'uplink': 'both'}]
+rules = [{'name': 'Description of Port Forwarding Rule', 'lanIp': '192.168.128.1', 'uplink': 'both', 'publicPort': '8100-8101', 'localPort': '442-443', 'allowedIps': ['any'], 'protocol': 'tcp'}]
 
 response = dashboard.appliance.updateNetworkApplianceFirewallPortForwardingRules(
     network_id, rules

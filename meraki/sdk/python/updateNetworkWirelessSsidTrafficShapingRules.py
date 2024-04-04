@@ -16,7 +16,7 @@ response = dashboard.wireless.updateNetworkWirelessSsidTrafficShapingRules(
     network_id, number, 
     trafficShapingEnabled=True, 
     defaultRulesEnabled=True, 
-    rules=[{'definitions': [{'type': 'host', 'value': 'google.com'}], 'perClientBandwidthLimits': {'settings': 'custom', 'bandwidthLimits': {'limitUp': 1000, 'limitDown': 1000}}, 'dscpTagValue': 0, 'pcpTagValue': 0}]
+    rules=[{'definitions': [{'type': 'host', 'value': 'google.com'}], 'perClientBandwidthLimits': {'settings': 'custom', 'bandwidthLimits': {'limitUp': 1000000, 'limitDown': 1000000}}, 'dscpTagValue': 0, 'pcpTagValue': 0}]
 )
 
 print(response)

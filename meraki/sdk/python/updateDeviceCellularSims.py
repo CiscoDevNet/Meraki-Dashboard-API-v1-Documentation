@@ -12,7 +12,9 @@ dashboard = meraki.DashboardAPI(API_KEY)
 serial = 'Q2QN-9J8L-SLPD'
 
 response = dashboard.devices.updateDeviceCellularSims(
-    serial
+    serial, 
+    sims=[{'slot': 'sim1', 'isPrimary': False, 'apns': [{'name': 'internet', 'allowedIpTypes': ['ipv4', 'ipv6'], 'authentication': {'type': 'pap', 'username': 'milesmeraki', 'password': 'secret'}}]}], 
+    simFailover={'enabled': True, 'timeout': 300}
 )
 
 print(response)

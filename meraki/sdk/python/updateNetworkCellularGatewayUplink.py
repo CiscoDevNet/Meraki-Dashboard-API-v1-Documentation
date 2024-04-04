@@ -13,7 +13,7 @@ network_id = 'L_646829496481105433'
 
 response = dashboard.cellularGateway.updateNetworkCellularGatewayUplink(
     network_id, 
-    bandwidthLimits={'limitUp': 1000, 'limitDown': 1000}
+    bandwidthLimits={'limitUp': 1000000, 'limitDown': 1000000}
 )
 
 print(response)

@@ -14,7 +14,12 @@ alert_config_id = ''
 
 response = dashboard.organizations.updateOrganizationAlertsProfile(
     organization_id, alert_config_id, 
-    enabled=True
+    enabled=True, 
+    type='wanUtilization', 
+    alertCondition={'duration': 60, 'window': 600, 'bit_rate_bps': 10000, 'loss_ratio': 0.1, 'latency_ms': 100, 'jitter_ms': 100, 'mos': 3.5, 'interface': 'wan1'}, 
+    recipients={'emails': ['admin@example.org'], 'httpServerIds': ['aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vcGF0aA==']}, 
+    networkTags=['tag1', 'tag2'], 
+    description='WAN 1 high utilization'
 )
 
 print(response)

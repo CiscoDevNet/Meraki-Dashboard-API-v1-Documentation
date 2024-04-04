@@ -14,7 +14,7 @@ number = ''
 
 response = dashboard.wireless.updateNetworkWirelessSsidFirewallL7FirewallRules(
     network_id, number, 
-    rules=[{'policy': 'deny', 'type': 'host', 'value': 'google.com'}, {'policy': 'deny', 'type': 'port', 'value': '23'}, {'policy': 'deny', 'type': 'ipRange', 'value': '10.11.12.00/24'}, {'policy': 'deny', 'type': 'ipRange', 'value': '10.11.12.00/24:5555'}]
+    rules=[{'policy': 'deny', 'type': 'host', 'value': 'google.com'}]
 )
 
 print(response)

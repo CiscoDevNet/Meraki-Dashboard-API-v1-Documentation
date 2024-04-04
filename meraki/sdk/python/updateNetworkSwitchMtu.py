@@ -14,7 +14,7 @@ network_id = 'L_646829496481105433'
 response = dashboard.switch.updateNetworkSwitchMtu(
     network_id, 
     defaultMtuSize=9578, 
-    overrides=[{'switches': ['Q234-ABCD-0001', 'Q234-ABCD-0002', 'Q234-ABCD-0003'], 'mtuSize': 1500}, {'switchProfiles': ['1284392014819', '2983092129865'], 'mtuSize': 1600}]
+    overrides=[{'switches': ['Q234-ABCD-0001', 'Q234-ABCD-0002', 'Q234-ABCD-0003'], 'switchProfiles': ['1284392014819', '2983092129865'], 'mtuSize': 1500}]
 )
 
 print(response)

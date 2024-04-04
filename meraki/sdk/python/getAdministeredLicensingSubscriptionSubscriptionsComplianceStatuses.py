@@ -9,7 +9,10 @@ API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+organization_ids = []
 
-response = dashboard.licensing.getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses()
+response = dashboard.licensing.getAdministeredLicensingSubscriptionSubscriptionsComplianceStatuses(
+    organization_ids
+)
 
 print(response)

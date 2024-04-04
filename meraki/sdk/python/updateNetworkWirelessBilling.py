@@ -14,7 +14,7 @@ network_id = 'L_646829496481105433'
 response = dashboard.wireless.updateNetworkWirelessBilling(
     network_id, 
     currency='USD', 
-    plans=[{'id': '1', 'price': 5.0, 'bandwidthLimits': {'limitUp': 1000, 'limitDown': 1000}, 'timeLimit': '1 hour'}]
+    plans=[{'id': '1', 'price': 5.0, 'bandwidthLimits': {'limitUp': 1000000, 'limitDown': 1000000}, 'timeLimit': '1 hour'}]
 )
 
 print(response)
