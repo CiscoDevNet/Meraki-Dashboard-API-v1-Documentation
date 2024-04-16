@@ -62,7 +62,7 @@
                         {
                             "title": "Supported Resources",
                             "content": "docs/ActionBatchesResources.html",
-                            "type":"raw-html"
+                            "type":"html"
                         }
                     ]
                 },
