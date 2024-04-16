@@ -61,7 +61,8 @@
                         },
                         {
                             "title": "Supported Resources",
-                            "content": "docs/ActionBatchesResources.md"
+                            "content": "docs/ActionBatchesResources.html",
+                            "type":"html"
                         }
                     ]
                 },
