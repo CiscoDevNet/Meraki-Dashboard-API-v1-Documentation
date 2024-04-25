@@ -58,9 +58,7 @@ In most parts of the world, every API request will begin with the following **ba
 
 > `https://api.meraki.com/api/v1`
 
-For organizations hosted in the China dashboard, please specify the following base URI instead:
-
-> `https://api.meraki.cn/api/v1`
+For organizations hosted in different country dashboards, please refer to their [respective base URI](https://developer.cisco.com/meraki/api-v1/getting-started/#base-uri)
 
 ### See all the changes
 
