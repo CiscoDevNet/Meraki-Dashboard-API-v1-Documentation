@@ -38,9 +38,15 @@ In most parts of the world, every API request will begin with the following **ba
 
 > `https://api.meraki.com/api/v1`
 
-For organizations hosted in the China dashboard, please specify the following base URI instead:
+For organizations hosted in the following country dashboard, please specify the respective base URI instead:
 
-> `https://api.meraki.cn/api/v1`
+|  Country         |  URI                              |
+|------------------|-----------------------------------|
+| Canada           | `https://api.meraki.ca/api/v1`    |
+| China            | `https://api.meraki.cn/api/v1`    |
+| India            | `https://api.meraki.in/api/v1`    |
+| Cisco Meraki government users | `api.gov-meraki.com` |
+
 
 Read more about the path schema [here](PathSchema.md).
 
