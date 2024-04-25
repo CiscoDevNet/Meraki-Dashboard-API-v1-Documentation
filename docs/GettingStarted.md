@@ -45,7 +45,7 @@ For organizations hosted in the following country dashboard, please specify the 
 | Canada           | `https://api.meraki.ca/api/v1`    |
 | China            | `https://api.meraki.cn/api/v1`    |
 | India            | `https://api.meraki.in/api/v1`    |
-| Cisco Meraki government users | `api.gov-meraki.com` |
+| United States FedRAMP | `https://api.gov-meraki.com/api/v1` |
 
 
 Read more about the path schema [here](PathSchema.md).
