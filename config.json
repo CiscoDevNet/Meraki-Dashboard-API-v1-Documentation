@@ -238,6 +238,10 @@
                 {
                     "title": "Ansible",
                     "content": "docs/ansible.md"
+                },
+                {
+                    "title": "Ansible",
+                    "content": "docs/terraform.md"
                 }
             ]
         },
