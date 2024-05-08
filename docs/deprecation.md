@@ -6,7 +6,7 @@ As necessary, Meraki may deprecate API versions or operations over time, in comp
 
 This means that Meraki may offer newer, more performant alternatives over time to satisfy developer use cases currently met in whole or in part by existing operations and/or versions. When this happens, Meraki will:
 
-1. Mark the operation or version as deprecated in the OAS.
+1. Mark the deprecated operation or version as deprecated in the OAS.
 2. Provide documented alternatives to the operation or version.
 
 We encourage developers to take advantage of the improvements and migrate their applications to the latest offerings. In any case, it is the developer's responsibility to migrate their applications to non-deprecated offerings prior to the sunset date for that offering.
@@ -37,7 +37,7 @@ Sunsetting is the act of removing support for a single API operation or a whole 
 
 ##### Use case: continuous monitoring of device up/down/alerting/dormant status and/or status history
 
-Most of the time, most devices in a network should be in an online status. The operation [getOrganizationDevicesAvailabilitiesChangeHistory](https://developer.cisco.com/meraki/api-v1/get-organization-devices-availabilities-change-history/) provides the most efficient means of gathering status information over time. This is substantially more efficient than polling device statuses, because an empty response in the change history means were no status changes during that time for any device in an entire organization. Thus, by monitoring the change history, you can assert device status by comparing the changes provided by this operation with a one-time snapshot of the statuses provided in [getOrganizationDevicesAvailabilities](https://developer.cisco.com/meraki/api-v1/get-organization-devices-availabilities/).
+Most of the time, most devices in a network should be in an online status. The operation [getOrganizationDevicesAvailabilitiesChangeHistory](https://developer.cisco.com/meraki/api-v1/get-organization-devices-availabilities-change-history/) provides the most efficient means of gathering status information over time. Thus, by monitoring the change history, you can assert device status by comparing the changes provided by this operation with a one-time snapshot of the statuses provided in [getOrganizationDevicesAvailabilities](https://developer.cisco.com/meraki/api-v1/get-organization-devices-availabilities/). This is substantially more efficient than polling device statuses on an interval, because an empty response in the change history means were no status changes during that time for any device in an entire organization.
 
 ##### Use case: one-time poll of device up/down/alerting/dormant status
 
