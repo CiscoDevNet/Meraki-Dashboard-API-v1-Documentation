@@ -77,7 +77,7 @@ The easiest way to provide access to your Meraki infrastracture is by setting yo
 
 1. **Environment Variable**
 
-    In your terminal, set your [Meraki API key]((https://developer.cisco.com/meraki/api-v1/authorization/)) to an environment variable.
+    In your terminal, assign your [Meraki API key](https://developer.cisco.com/meraki/api-v1/authorization/) to an environment variable.
 
     ```bash
     export MERAKI_DASHBOARD_API_KEY=YOUR_API_KEY_HERE
