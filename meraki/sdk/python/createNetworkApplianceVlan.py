@@ -22,7 +22,11 @@ response = dashboard.appliance.createNetworkApplianceVlan(
     cidr='192.168.1.0/24', 
     mask=28, 
     ipv6={'enabled': True, 'prefixAssignments': [{'autonomous': False, 'staticPrefix': '2001:db8:3c4d:15::/64', 'staticApplianceIp6': '2001:db8:3c4d:15::1', 'origin': {'type': 'internet', 'interfaces': ['wan0']}}]}, 
-    mandatoryDhcp={'enabled': True}
+    dhcpHandling='Run a DHCP server', 
+    dhcpLeaseTime='30 minutes', 
+    mandatoryDhcp={'enabled': True}, 
+    dhcpBootOptionsEnabled=True, 
+    dhcpOptions=[{'code': '3', 'type': 'text', 'value': 'five'}]
 )
 
 print(response)

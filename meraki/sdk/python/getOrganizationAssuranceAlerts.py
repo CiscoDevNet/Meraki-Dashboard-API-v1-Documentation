@@ -10,11 +10,9 @@ API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
 dashboard = meraki.DashboardAPI(API_KEY)
 
 organization_id = '549236'
-short_name = 'has_beta_api'
 
-response = dashboard.organizations.createOrganizationEarlyAccessFeaturesOptIn(
-    organization_id, short_name, 
-    limitScopeToNetworks=['N_12345']
+response = dashboard.organizations.getOrganizationAssuranceAlerts(
+    organization_id, total_pages='all'
 )
 
 print(response)

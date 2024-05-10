@@ -13,7 +13,8 @@ network_id = 'L_646829496481105433'
 serials = ['Q234-ABCD-0001', 'Q234-ABCD-0002', 'Q234-ABCD-0003']
 
 response = dashboard.networks.claimNetworkDevices(
-    network_id, serials
+    network_id, serials, 
+    addAtomically=True
 )
 
 print(response)
