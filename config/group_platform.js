@@ -25,22 +25,8 @@ const groupBy = function (operation, meta) {
         path = "Products/";
     }
     
-    // if(releaseStage){
-    // 	// add release stage to end of tags
-    // 	tags.push(releaseStage)
-       
-    //   // add nav tree root
-    //   if(releaseStage === "beta"){
-    //         path = "_Early API Access_/" + path
-    //     }else{
-    //         path = releaseStage.toUpperCase() + "/" + path
-    //     }
-    // }
-    
-    
-   
         
-    // Build Folder Tree
+    // Build Folder Tree, make adjustments
     console.log('tags',tags)
     if(tags.length == 2){tags.push(tags[0])}// add scope as a service folder
     tags.forEach((t,i) => {
@@ -50,30 +36,16 @@ const groupBy = function (operation, meta) {
         }else if(i === 1 && tags[0] === 'administered'){
             path += t + "/administered/";
         
-        // if(i == 0 && scopes.find(s => tags[i] === s && s !== 'administered' )){
-        //     // skip scope
-        // }
         }else if(i == 0 && scopes.find(s => tags[0] === s)){
             // skip scope
         }
-        // else if( i == 1 && t !== "liveTools"){
-        //     // skip category
-        
-        // }
-        // else if(t === releaseStage){
-        //     // skip release
-        // }
-        else{
-            
+        else{    
             // build path
             path += t + "/";
         }
         
-    });
-    
-    path = path.replace(/\/$/, "");
-
- 
+    });    
+    path = path.replace(/\/$/, ""); 
     return path;
 }
 
