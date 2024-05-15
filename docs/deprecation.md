@@ -15,7 +15,7 @@ We encourage developers to take advantage of the improvements and migrate their 
 
 ### Deprecation defined
 
-Deprecating is the act of marking a whole API version, or a specific API operation within a version, as deprecated, and informing the community about the intention to sunset it at some point in the future. During the deprecation period, backwards compatibility can be expected until the operation or version is sunset. However, backwards compatibility does not guarantee the deprecated operation's fitness for any unintended purpose.
+Deprecating is the act of marking a whole API version, or a specific API operation within a version, as deprecated, and informing the community about the intention to sunset it at some point in the future. During the deprecation period, backwards compatibility can be expected until the operation or version is sunset. However, maintaining compatibility does not ensure the deprecated operation's suitability or reliability for any uses beyond its intended purpose.
 
 ### Sunset defined
 
