@@ -2,7 +2,7 @@
 
 ## Overview
 
-As necessary, Meraki may deprecate API versions or operations over time, in compliance with Cisco's backwards compatibility commitment. After an announced deprecation period, the versions or operations marked as deprecated will be sunset.
+As necessary, Meraki may deprecate API versions or operations over time. After an announced deprecation period, the versions or operations marked as deprecated will be sunset.
 
 This means that Meraki may offer newer, more performant alternatives over time to satisfy developer use cases currently met in whole or in part by existing operations and/or versions. When this happens, Meraki will:
 
@@ -15,9 +15,7 @@ We encourage developers to take advantage of the improvements and migrate their 
 
 ### Deprecation defined
 
-Deprecating is the act of marking a whole API version, or a specific API operation within a version, as deprecated, and informing the community about the intention to sunset it at some point in the future. During the deprecation period, backwards compatibility can be expected until the operation or version is sunset.
-
-There may be cases wherein an operation, marked as deprecated, is found to be unfit for a given purpose, especially in operations at massive scale. In such cases, the operation, being deprecated, will not be updated to meet additional use cases. The named alternatives to a deprecated operation should be used to meet such use cases.
+Deprecating is the act of marking a whole API version, or a specific API operation within a version, as deprecated, and informing the community about the intention to sunset it at some point in the future. During the deprecation period, backwards compatibility can be expected until the operation or version is sunset. However, backwards compatibility does not guarantee the deprecated operation's fitness for any unintended purpose.
 
 ### Sunset defined
 
