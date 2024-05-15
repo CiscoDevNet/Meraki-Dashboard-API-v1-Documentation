@@ -13,11 +13,15 @@ We encourage developers to take advantage of the improvements and migrate their 
 
 ## Definitions
 
-### Deprecation defined
+### Version vs. revision
+
+An API version, also known as a _major_ version, identifies a grouped set of API resources and operations. At Meraki, we use simple integers for versions, e.g. "v1". Today, these are released infrequently, and Meraki only has "v1".
+
+An API revision, also known as a _minor_ version, identifies non-breaking improvements to an API, such as the addition of new attributes or capabilities to extend existing operations within a major version. In most if not all cases, changes between revisions within a single version are additive and otherwise transparent to clients built on older revisions of that version. Today, Meraki names a new revision every month, summarizing all the changes that have been released since the last named revision. A Meraki API revision name takes the format of "1.50.0", where "1" is the version, "50" is the ID of the "minor version", and "0" is the patch version. Note that the terms 'major' and 'minor' versions are commonly used in the industry in the context of semantic versioning; for our purposes, this guide will refer to major versions as versions and minor versions as revisions.
+
+### Deprecation vs. sunsetting
 
 Deprecating is the act of marking a whole API version, or a specific API operation within a version, as deprecated, and informing the community about the intention to sunset it at some point in the future. During the deprecation period, backwards compatibility can be expected until the operation or version is sunset. However, maintaining compatibility does not ensure the deprecated operation's suitability or reliability for any uses beyond its intended purpose.
-
-### Sunset defined
 
 Sunsetting is the act of removing support for a single API operation or a whole version, after the deprecation period has elapsed. An operation or version is sunset after the deprecation period has elapsed.
 
