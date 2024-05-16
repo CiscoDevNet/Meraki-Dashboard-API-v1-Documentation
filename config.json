@@ -1,293 +1,301 @@
 {
-    "items": [
+  "items": [
+    {
+      "title": "Meraki Dashboard API",
+      "items": [
         {
-            "title": "Meraki Dashboard API",
-            "items": [
-                {
-                    "title": "Introduction",
-                    "content": "docs/Introduction.md"
-                },
-                {
-                    "title": "Getting Started",
-                    "content": "docs/GettingStarted.md"
-                },
-                {
-                    "title": "Authentication",
-                    "content": "docs/Authorization.md",
-                    "uri": "authorization"
-                },
-                {
-                    "title": "Errors",
-                    "content": "docs/Errors.md"
-                },
-                {
-                    "title": "Rate Limit",
-                    "content": "docs/RateLimit.md"
-                },
-                {
-                    "title": "User Agents",
-                    "items": [
-                        {
-                            "title": "Overview",
-                            "content": "docs/UserAgents.md",
-                            "uri": "user-agents-overview"
-                        }
-                    ]
-                },
-                {
-                    "title": "Versioning",
-                    "content": "docs/Versioning.md"
-                },
-                {
-                    "title": "API Changelog",
-                    "content": "https://developer.cisco.com/meraki/whats-new/",
-                    "type": "url"
-                }
-            ]
+          "title": "Introduction",
+          "content": "docs/Introduction.md"
         },
         {
-            "title": "Guides",
-            "config": {
-                "expand": 0
-            },
-            "items": [
-                {
-                    "title": "Action Batches",
-                    "items": [
-                        {
-                            "title": "Overview",
-                            "content": "docs/ActionBatches.md",
-                            "uri": "action-batches-overview"
-                        },
-                        {
-                            "title": "Supported Resources",
-                            "content": "docs/ActionBatchesResources.html",
-                            "type":"html"
-                        }
-                    ]
-                },
-                {
-                    "title": "Callbacks",
-                    "content": "docs/Callbacks.md"
-                },
-                {
-                    "title": "Path Parameters",
-                    "content": "docs/serviceParamMap.md"
-                },
-                {
-                    "title": "Pagination",
-                    "content": "docs/Pagination.md"
-                },
-                {
-                    "title": "Path Changes",
-                    "content": "docs/v0-v1-path-operation-changes.md"
-                },      
-                {
-                    "title": "Query Parameters",
-                    "content": "docs/QueryParameters.md"
-                },             
-                {
-                    "title": "Schema",
-                    "content": "docs/PathSchema.md"
-                },
-                {
-                    "title": "Webhooks",
-                    "content": "https://meraki.io/webhooks",
-                    "type": "url"
-                }
-            ]
+          "title": "Getting Started",
+          "content": "docs/GettingStarted.md"
         },
         {
-            "title": "API Index",
-            "content": "docs/api-index/meraki-api-index.html",
-            "type": "html",
-            "showPageNavigationBtn": false,
-            "showSubNavigation": false
+          "title": "Authentication",
+          "content": "docs/Authorization.md",
+          "uri": "authorization"
         },
         {
-            "title": "API Reference",
-            "type": "oas3",
-            "content": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec3.json",
-            "config": {
-                "overview": {
-                    "markdownPath": "docs/overview.md"
-                },
-                "theme": "meraki",
-                "serverConfig": true,
-                "meta": {
-                    "useProxy": true
-                        },
-                "httpBearer": {
-                    "bearerToken": "75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6"
-                },
-                "labelConfig": {
-                    "endpoint": {
-                        "field": "operationId",
-                        "format": "startCase"
-                    }
-                },
-                "groupBy": {
-                    "$remoteModule": "config/group_platform.js"
-                },
-                "sortBy": {
-                    "$remoteModule": "config/sort_by.js"
-                },
-                "exampleAsDefault": true,
-                "expand": 3,
-                "sampleCode": {
-                    "python": {
-                        "folder": "meraki/sdk/python",
-                        "name": "Meraki Python Library",
-                        "highlight": "python"
-                    }
-                },
-                "variables": {
-                    "organizationId": "1215707",
-                    "networkId": "N_784752235069315754",
-                    "serial": "QBSB-VQ3J-XZ54"
-                }
+          "title": "Errors",
+          "content": "docs/Errors.md"
+        },
+        {
+          "title": "Rate Limit",
+          "content": "docs/RateLimit.md"
+        },
+        {
+          "title": "User Agents",
+          "items": [
+            {
+              "title": "Overview",
+              "content": "docs/UserAgents.md",
+              "uri": "user-agents-overview"
             }
+          ]
         },
         {
-            "title": "API Reference (Early Access)",
-            "type": "oas3",
-            "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec3.json",
-            "config": {
-                "overview": {
-                    "markdownPath": "docs/overview-early-access.md"
-                },
-                "theme": "meraki",
-                "serverConfig": true,
-                "httpBearer": {
-                    "bearerToken": "75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6"
-                },
-                "labelConfig": {
-                    "endpoint": {
-                        "field": "operationId",
-                        "format": "startCase"
-                    }
-                },
-                "groupBy": {
-                    "$remoteModule": "config/group_platform.js"
-                },
-                "filterBy": {
-                    "$remoteModule": "config/filter_only_beta.js"
-                },
-                "sortBy": {
-                    "$remoteModule": "config/sort_by.js"
-                },
-                "exampleAsDefault": true,
-                "expand": 0,
-                "variables": {
-                    "organizationId": "1215707",
-                    "networkId": "N_784752235069315754",
-                    "serial": "QBSB-VQ3J-XZ54"
-                }
+          "title": "Versioning & Deprecation",
+          "items": [
+            {
+              "title": "Versioning",
+              "content": "docs/Versioning.md"
+            },
+            {
+              "title": "Deprecation",
+              "content": "docs/deprecation.md"
+            },
+            {
+              "title": "API Changelog",
+              "content": "https://developer.cisco.com/meraki/whats-new/",
+              "type": "url"
             }
-        },
-        {
-            "title": "Integrated APIs",
-            "items": [
-                {
-                    "title": "Overview",
-                    "content": "docs/integrated-apis-overview.md"
-                },
-                {
-                    "title": "SecureConnect",
-                    "type": "oas3",
-                    "content": "https://raw.githubusercontent.com/meraki/secure-connect-openapi/main/secure_connect_oas_beta.json",
-                    "config": {
-                        
-                        "theme": "meraki",
-                        "expand": 2,
-                        "exampleAsDefault": true,
-                        "groupBy": {
-                            "$remoteModule": "config/group_api_tag.js"
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "title": "Libraries & SDKs",
-            "config": {
-                "expand": 1
-            },
-            "items": [
-                {
-                    "title": "Overview",
-                    "content": "docs/SDKoverview.md"
-                },
-                {
-                    "title": "Python",
-                    "content": "docs/pythonLibrary.md"
-                },
-                {
-                    "title": "Postman Collection ",
-                    "content": "https://developer.cisco.com/meraki/build/meraki-postman-collection-getting-started/introduction/#dashboard-api-and-postman",
-                    "type":"url"
-                }
-            ]
-        },
-        {
-            "title": "Infrastructure as Code",
-            "config": {
-                "expand": 1
-            },
-            "items": [
-                {
-                    "title": "Ansible",
-                    "content": "docs/ansible.md"
-                },
-                {
-                    "title": "Terraform",
-                    "content": "docs/terraform.md"
-                }
-            ]
-        },
-        {
-            "title": "Developer Resources",
-            "config": {
-                "expand": 1
-            },
-            "items": [
-                {
-                    "title": "Learning Labs",
-                    "content": "https://developer.cisco.com/learning/tracks/Meraki-v0/",
-                    "type": "url"
-                },
-                {
-                    "title": "Sandbox",
-                    "content": "https://devnetsandbox.cisco.com/RM/Diagram/Index/a9487767-deef-4855-b3e3-880e7f39eadc?diagramType=Topology",
-                    "type": "url"
-                },
-                {
-                    "title": "Code Exchange",
-                    "content": "https://developer.cisco.com/codeexchange/platforms/meraki",
-                    "type": "url"
-                }
-            ]
-        },
-        {
-            "title": "Community and Support",
-            "config": {
-                "expand": 0
-            },
-            "items": [
-                {
-                    "title": "Developer Support",
-                    "content": "docs/support.md",
-                    "uri": "support"
-                },
-                {
-                    "title": "Community",
-                    "content": "https://community.meraki.com/t5/Developers-APIs/bd-p/api",
-                    "type": "url"
-                }
-            ]
+          ]
         }
-    ],
-    "config": {
-        "useNPS": "caojnpr4so6v581tptl0"
+      ]
+    },
+    {
+      "title": "Guides",
+      "config": {
+        "expand": 0
+      },
+      "items": [
+        {
+          "title": "Action Batches",
+          "items": [
+            {
+              "title": "Overview",
+              "content": "docs/ActionBatches.md",
+              "uri": "action-batches-overview"
+            },
+            {
+              "title": "Supported Resources",
+              "content": "docs/ActionBatchesResources.html",
+              "type": "html"
+            }
+          ]
+        },
+        {
+          "title": "Callbacks",
+          "content": "docs/Callbacks.md"
+        },
+        {
+          "title": "Path Parameters",
+          "content": "docs/serviceParamMap.md"
+        },
+        {
+          "title": "Pagination",
+          "content": "docs/Pagination.md"
+        },
+        {
+          "title": "Path Changes",
+          "content": "docs/v0-v1-path-operation-changes.md"
+        },
+        {
+          "title": "Query Parameters",
+          "content": "docs/QueryParameters.md"
+        },
+        {
+          "title": "Schema",
+          "content": "docs/PathSchema.md"
+        },
+        {
+          "title": "Webhooks",
+          "content": "https://meraki.io/webhooks",
+          "type": "url"
+        }
+      ]
+    },
+    {
+      "title": "API Index",
+      "content": "docs/api-index/meraki-api-index.html",
+      "type": "html",
+      "showPageNavigationBtn": false,
+      "showSubNavigation": false
+    },
+    {
+      "title": "API Reference",
+      "type": "oas3",
+      "content": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec3.json",
+      "config": {
+        "overview": {
+          "markdownPath": "docs/overview.md"
+        },
+        "theme": "meraki",
+        "serverConfig": true,
+        "meta": {
+          "useProxy": true
+        },
+        "httpBearer": {
+          "bearerToken": "75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6"
+        },
+        "labelConfig": {
+          "endpoint": {
+            "field": "operationId",
+            "format": "startCase"
+          }
+        },
+        "groupBy": {
+          "$remoteModule": "config/group_platform.js"
+        },
+        "sortBy": {
+          "$remoteModule": "config/sort_by.js"
+        },
+        "exampleAsDefault": true,
+        "expand": 3,
+        "sampleCode": {
+          "python": {
+            "folder": "meraki/sdk/python",
+            "name": "Meraki Python Library",
+            "highlight": "python"
+          }
+        },
+        "variables": {
+          "organizationId": "1215707",
+          "networkId": "N_784752235069315754",
+          "serial": "QBSB-VQ3J-XZ54"
+        }
+      }
+    },
+    {
+      "title": "API Reference (Early Access)",
+      "type": "oas3",
+      "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec3.json",
+      "config": {
+        "overview": {
+          "markdownPath": "docs/overview-early-access.md"
+        },
+        "theme": "meraki",
+        "serverConfig": true,
+        "httpBearer": {
+          "bearerToken": "75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6"
+        },
+        "labelConfig": {
+          "endpoint": {
+            "field": "operationId",
+            "format": "startCase"
+          }
+        },
+        "groupBy": {
+          "$remoteModule": "config/group_platform.js"
+        },
+        "filterBy": {
+          "$remoteModule": "config/filter_only_beta.js"
+        },
+        "sortBy": {
+          "$remoteModule": "config/sort_by.js"
+        },
+        "exampleAsDefault": true,
+        "expand": 0,
+        "variables": {
+          "organizationId": "1215707",
+          "networkId": "N_784752235069315754",
+          "serial": "QBSB-VQ3J-XZ54"
+        }
+      }
+    },
+    {
+      "title": "Integrated APIs",
+      "items": [
+        {
+          "title": "Overview",
+          "content": "docs/integrated-apis-overview.md"
+        },
+        {
+          "title": "SecureConnect",
+          "type": "oas3",
+          "content": "https://raw.githubusercontent.com/meraki/secure-connect-openapi/main/secure_connect_oas_beta.json",
+          "config": {
+            "theme": "meraki",
+            "expand": 2,
+            "exampleAsDefault": true,
+            "groupBy": {
+              "$remoteModule": "config/group_api_tag.js"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Libraries & SDKs",
+      "config": {
+        "expand": 1
+      },
+      "items": [
+        {
+          "title": "Overview",
+          "content": "docs/SDKoverview.md"
+        },
+        {
+          "title": "Python",
+          "content": "docs/pythonLibrary.md"
+        },
+        {
+          "title": "Postman Collection ",
+          "content": "https://developer.cisco.com/meraki/build/meraki-postman-collection-getting-started/introduction/#dashboard-api-and-postman",
+          "type": "url"
+        }
+      ]
+    },
+    {
+      "title": "Infrastructure as Code",
+      "config": {
+        "expand": 1
+      },
+      "items": [
+        {
+          "title": "Ansible",
+          "content": "docs/ansible.md"
+        },
+        {
+          "title": "Terraform",
+          "content": "docs/terraform.md"
+        }
+      ]
+    },
+    {
+      "title": "Developer Resources",
+      "config": {
+        "expand": 1
+      },
+      "items": [
+        {
+          "title": "Learning Labs",
+          "content": "https://developer.cisco.com/learning/tracks/Meraki-v0/",
+          "type": "url"
+        },
+        {
+          "title": "Sandbox",
+          "content": "https://devnetsandbox.cisco.com/RM/Diagram/Index/a9487767-deef-4855-b3e3-880e7f39eadc?diagramType=Topology",
+          "type": "url"
+        },
+        {
+          "title": "Code Exchange",
+          "content": "https://developer.cisco.com/codeexchange/platforms/meraki",
+          "type": "url"
+        }
+      ]
+    },
+    {
+      "title": "Community and Support",
+      "config": {
+        "expand": 0
+      },
+      "items": [
+        {
+          "title": "Developer Support",
+          "content": "docs/support.md",
+          "uri": "support"
+        },
+        {
+          "title": "Community",
+          "content": "https://community.meraki.com/t5/Developers-APIs/bd-p/api",
+          "type": "url"
+        }
+      ]
     }
+  ],
+  "config": {
+    "useNPS": "caojnpr4so6v581tptl0"
+  }
 }
