@@ -36,6 +36,9 @@
         },
         {
           "title": "Versioning & Deprecation",
+          "config": {
+            "expand": 1
+          },
           "items": [
             {
               "title": "Versioning",
