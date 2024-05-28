@@ -64,3 +64,11 @@ The following operations are deprecated in favor of the newer [boundaries](https
 * [getDeviceCameraAnalyticsRecent](https://developer.cisco.com/meraki/api-v1/get-device-camera-analytics-recent/)
 * [getDeviceCameraAnalyticsZones](https://developer.cisco.com/meraki/api-v1/get-device-camera-analytics-zones/)
 * [getDeviceCameraAnalyticsZoneHistory](https://developer.cisco.com/meraki/api-v1/get-device-camera-analytics-zone-history/)
+
+### Monitoring operations
+
+#### Alerts
+
+##### getNetworkHealthAlerts
+
+[getNetworkHealthAlerts](https://developer.cisco.com/meraki/api-v1/get-network-health-alerts) is deprecated in favor of [getOrganizationAssuranceAlerts](https://developer.cisco.com/meraki/api-v1/get-organization-assurance-alerts) which offers more extensive filtering capabilities
