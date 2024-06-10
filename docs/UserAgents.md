@@ -1,3 +1,6 @@
+<seotitle>Guide: User Agents</seotitle>
+<seodescription>Developers should send unique user agent strings with every API request. In this guide, we cover the basics of formatting and implementation.</seodescription>
+
 # User agents
 
 When invoking dashboard API, it's best practice to provide a [custom user agent string](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) with each API request. This helps your customers and Meraki admins monitor API interactions with their environments and helps build their trust. In brief, here are some Dos and Don'ts with user agent strings!

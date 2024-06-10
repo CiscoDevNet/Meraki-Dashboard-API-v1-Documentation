@@ -1,3 +1,5 @@
+<seotitle>Infrastructure as Code: Terraform</seotitle>
+<seodescription>Deploy Meraki environments as code using Terraform and the Meraki Dashboard API.</seodescription>
 
 # Terraform
 

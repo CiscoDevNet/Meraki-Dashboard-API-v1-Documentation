@@ -1,3 +1,6 @@
+<seotitle>Developer Support</seotitle>
+<seodescription>Support resources for the Meraki Dashboard API.</seodescription>
+
 # Developer Support
 
 If you need technical support, choose from the following options. 
