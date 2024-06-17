@@ -98,7 +98,7 @@ import java.net.HttpURLConnection;
 String userAgent = "ApplicationName VendorName"
 
 HttpURLConnection connectionExample = null;
-urlExample = new URL(exampleStringUrl); // appropriate endpoint URL here
+urlExample = new URL(exampleStringUrl); // appropriate operation URL here
 connection = (HttpURLConnection) urlExample.openConnection();
 // other setRequestProperties here, e.g. Bearer Auth, etc.
 connection.setRequestProperty("User-Agent", userAgent);

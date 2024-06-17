@@ -89,9 +89,9 @@ Successful HTTP Status: *201*
  }
 ```
 
-## API Endpoints
+## API operations
 
-This group of Dashboard API endpoints are available to submit, monitor and manage your Action Batches. Refer to the respective endpoint links for more details.
+This group of Dashboard API operations are available to submit, monitor and manage your Action Batches. Refer to the respective operation links for more details.
 
 [Create an action batch](##!create-organization-action-batch)
 
@@ -117,7 +117,7 @@ This group of Dashboard API endpoints are available to submit, monitor and manag
 
 #### Unsupported operation
 
-When you have attempted to use an API endpoint that is not a supported resource as listed above.
+When you have attempted to use an API operation that is not a supported resource as listed above.
 
 ```json
 {

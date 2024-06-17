@@ -45,7 +45,7 @@ Then go to your profile by clicking on your account email address (on the upper-
 
 If you get a 401 Unauthorized error (with message _"Missing API key"_) when using dashboard API v1, check the following to troubleshoot:
 
-1. As an example, when using your API key to retrieve the [GET /organizations](##!get-organizations) endpoint, you should see the same data as shown when navigating to [https://api.meraki.com/api/v1/organizations](https://api.meraki.com/api/v1/organizations) in your browser, using an authenticated session with the credentials that generated the API key.
+1. As an example, when using your API key to retrieve the [GET /organizations](##!get-organizations) operation, you should see the same data as shown when navigating to [https://api.meraki.com/api/v1/organizations](https://api.meraki.com/api/v1/organizations) in your browser, using an authenticated session with the credentials that generated the API key.
 
 2. Next, check that your API call has the correct header with the following (and not v0's `X-Cisco-Meraki-API-Key`):
 ```json

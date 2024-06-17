@@ -72,7 +72,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 ## Find your organization ID
 
-To begin navigating the API, you will first need to know your organization ID. This will be required for endpoints needing an `organizationId` parameter.
+To begin navigating the API, you will first need to know your organization ID. This will be required for operations needing an `organizationId` parameter.
 
 > **NB:** some response attributes irrelevant to this guide may be ommitted from the examples for brevity.
 
@@ -152,7 +152,7 @@ Successful HTTP Status: 200
 [{'id': 'L_646829496481105433', 'organizationId': '549236', 'name': 'DevNet Sandbox Always on READ ONLY', 'timeZone': 'America/Los_Angeles', 'tags': None, 'productTypes': ['appliance', 'switch', 'wireless'], 'type': 'combined', 'disableMyMerakiCom': False, 'disableRemoteStatusPage': True}]
 ```
 
-Note the `id` for future endpoints that require a `networkId`.
+Note the `id` for future operations that require a `networkId`.
 
 ## Find your devices and their serials
 
@@ -207,7 +207,7 @@ Note the `serial` for use in requests allowing a serial as path or query paramet
 
 ## Get devices uplinks addresses
 
-Depending on configuration, some Meraki devices support multiple uplink addresses. To find them, you can use this endpoint to return the uplinks addresses for _all_ devices in an organization, but for this example, we'll filter it to one or two specific devices using the `serials[]` query parameter.
+Depending on configuration, some Meraki devices support multiple uplink addresses. To find them, you can use this operation to return the uplinks addresses for _all_ devices in an organization, but for this example, we'll filter it to one or two specific devices using the `serials[]` query parameter.
 
 [List the current uplink addresses for devices in an organization documentation](##!get-organization-devices-uplinks-addresses-by-device)
 

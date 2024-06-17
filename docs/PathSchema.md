@@ -6,7 +6,7 @@ The Meraki API resources are organized by scope, and then by the product and its
 
 ## Base URI
 
-Every API endpoint will begin with the following URL to the Meraki cloud. 
+Every API operation will begin with the following URL to the Meraki cloud. 
 
 > `https://api.meraki.com/api/v1`
 

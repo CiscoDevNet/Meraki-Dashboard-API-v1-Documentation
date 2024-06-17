@@ -1716,7 +1716,7 @@ function updateNetworkClientSplashAuthorizationStatus(input, callback)
 
 ### <a name="get_network_client_traffic_history"></a>![Method: ](https://apidocs.io/img/method.png ".ClientsController.getNetworkClientTrafficHistory") getNetworkClientTrafficHistory
 
-> Return the client's network traffic data over time. Usage data is in kilobytes. This endpoint requires detailed traffic analysis to be enabled on the Network-wide > General page. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.
+> Return the client's network traffic data over time. Usage data is in kilobytes. This operation requires detailed traffic analysis to be enabled on the Network-wide > General page. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.
 
 
 ```javascript
@@ -7650,7 +7650,7 @@ function deleteNetworkPiiRequest(input, callback)
 
 ### <a name="get_network_pii_sm_devices_for_key"></a>![Method: ](https://apidocs.io/img/method.png ".PIIController.getNetworkPiiSmDevicesForKey") getNetworkPiiSmDevicesForKey
 
-> Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier. These device IDs can be used with the Systems Manager API endpoints to retrieve device details. Exactly one identifier will be accepted.
+> Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier. These device IDs can be used with the Systems Manager API operations to retrieve device details. Exactly one identifier will be accepted.
 > 
 > ## ALTERNATE PATH
 > 
@@ -7699,7 +7699,7 @@ function getNetworkPiiSmDevicesForKey(input, callback)
 
 ### <a name="get_network_pii_sm_owners_for_key"></a>![Method: ](https://apidocs.io/img/method.png ".PIIController.getNetworkPiiSmOwnersForKey") getNetworkPiiSmOwnersForKey
 
-> Given a piece of Personally Identifiable Information (PII), return the Systems Manager owner ID(s) associated with that identifier. These owner IDs can be used with the Systems Manager API endpoints to retrieve owner details. Exactly one identifier will be accepted.
+> Given a piece of Personally Identifiable Information (PII), return the Systems Manager owner ID(s) associated with that identifier. These owner IDs can be used with the Systems Manager API operations to retrieve owner details. Exactly one identifier will be accepted.
 > 
 > ## ALTERNATE PATH
 > 

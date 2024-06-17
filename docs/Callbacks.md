@@ -105,7 +105,7 @@ Learn more about customizing the shape and security of your callback webhooks.
 
 This endpoint provides detailed status information about a specific callback, including its current state, any errors encountered, the initiating user, and the related webhook details.
 
-**Endpoint**: `GET /organizations/{organizationId}/webhooks/callbacks/statuses/{callbackId}`
+**Operation**: `GET /organizations/{organizationId}/webhooks/callbacks/statuses/{callbackId}`
 
 [API Docs](https://developer.cisco.com/meraki/api-v1/get-organization-webhooks-callbacks-status/)
 
@@ -149,7 +149,7 @@ An example JSON response from the `/callbacks/statuses` endpoint:
 }
 ```
 
-### Endpoints Supporting Callbacks
+### Operations Supporting Callbacks
 
 #### Live Tools
 
@@ -172,7 +172,7 @@ The following endpoints are examples within the Meraki Dashboard API that suppor
 
 This example demonstrates initiating a ping operation with the result being sent to a specified callback URL:
 
-**Endpoint**: `POST /devices/{serial}/liveTools/ping`
+**Operation**: `POST /devices/{serial}/liveTools/ping`
 
 **Request Body**:
 
@@ -231,7 +231,7 @@ This example illustrates the use of callbacks in conjunction with an Action Batc
 
 Suppose we want to update the settings of multiple networks in an organization. Given the potentially long processing time, we'll use a callback to receive status updates on the batch operation.
 
-**Endpoint**: `POST /organizations/{organizationId}/actionBatches`
+**Operation**: `POST /organizations/{organizationId}/actionBatches`
 
 [API Docs](https://developer.cisco.com/meraki/api-v1/create-organization-action-batch/)
 
@@ -325,7 +325,7 @@ When the action batch is processed, a callback is sent to the specified URL with
 
 To aid in troubleshooting, utilize the following monitoring tools and endpoints:
 
-- **Callback Status Endpoint**: Use the [/callbacks/statuses](https://developer.cisco.com/meraki/api-v1/get-organization-webhooks-callbacks-status/) endpoint to check the delivery status of callbacks.
+- **Callback Status Operation**: Use the [/callbacks/statuses](https://developer.cisco.com/meraki/api-v1/get-organization-webhooks-callbacks-status/) endpoint to check the delivery status of callbacks.
 - **Webhook Logs**: Review the [webhook logs](https://developer.cisco.com/meraki/api-v1/get-organization-webhooks-logs/) for detailed information on the delivery and any errors encountered.
 
 - **Postman**: Setup a [mock server](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/setting-up-mock/) to test your webhooks.
@@ -335,7 +335,7 @@ To aid in troubleshooting, utilize the following monitoring tools and endpoints:
 ### Common Issues and Solutions
 
 #### 1. Callbacks not received
-- **Verify Endpoint Configuration**: Ensure the callback URL is correct and the server is capable of receiving POST requests.
+- **Verify Operation Configuration**: Ensure the callback URL is correct and the server is capable of receiving POST requests.
 - **Check for Typos**: Review the callback URL and payload for any typographical errors.
 - **Inspect Firewall Settings**: Confirm that your network allows inbound connections on the port used by your webhook receiver.
 

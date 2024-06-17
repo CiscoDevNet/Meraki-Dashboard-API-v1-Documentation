@@ -58,21 +58,21 @@ else:
 
 Strategize your data polling. The most common cause of `429` responses is unnecessarily frequent polling of information that changes infrequently after day 1 of a network deployment, such as the list of [networks](https://developer.cisco.com/meraki/api-v1/get-organization-networks/) or [policy objects](https://developer.cisco.com/meraki/api-v1/get-organization-policy-objects/) in an organization.
 
-#### Use the most efficient endpoints for your use case
+#### Use the most efficient operations for your use case
 
 Develop your application using the most efficient API calls available for your use case, especially if your application provides monitoring features.
 
 ##### Retrieving network topology information including LLDP/CDP
 
-Call the network-wide [getNetworkTopologyLinkLayer](https://developer.cisco.com/meraki/api-v1/get-network-topology-link-layer/), which provides the complete topology for the network, instead of the less efficient single-device endpoint [getDeviceLldpCdp](https://developer.cisco.com/meraki/api-v1/get-device-lldp-cdp/).
+Call the network-wide [getNetworkTopologyLinkLayer](https://developer.cisco.com/meraki/api-v1/get-network-topology-link-layer/), which provides the complete topology for the network, instead of the less efficient single-device operation [getDeviceLldpCdp](https://developer.cisco.com/meraki/api-v1/get-device-lldp-cdp/).
 
 ##### Retrieving device uplink information (IP addressing)
 
-Call the organization-wide [getOrganizationDevicesUplinksAddressesByDevice](https://developer.cisco.com/meraki/api-v1/get-organization-devices-uplinks-addresses-by-device/) instead of looking for IP information in per-device endpoints.
+Call the organization-wide [getOrganizationDevicesUplinksAddressesByDevice](https://developer.cisco.com/meraki/api-v1/get-organization-devices-uplinks-addresses-by-device/) instead of looking for IP information in per-device operations.
 
 ##### Retrieving device hardware details
 
-Call the organization-wide [getOrganizationDevices](https://developer.cisco.com/meraki/api-v1/get-organization-devices/), which provides the information for hundreds devices at a time in a paginated list, instead of the less efficient single-device endpoint [getDevice](https://developer.cisco.com/meraki/api-v1/get-device/) or the network-wide endpoint [getNetworkDevices](https://developer.cisco.com/meraki/api-v1/get-network-devices/).
+Call the organization-wide [getOrganizationDevices](https://developer.cisco.com/meraki/api-v1/get-organization-devices/), which provides the information for hundreds devices at a time in a paginated list, instead of the less efficient single-device operation [getDevice](https://developer.cisco.com/meraki/api-v1/get-device/) or the network-wide operation [getNetworkDevices](https://developer.cisco.com/meraki/api-v1/get-network-devices/).
 
 ##### Monitoring device availability (status)
 
@@ -80,7 +80,7 @@ Call the organization-wide [getOrganizationDevicesAvailabilitiesChangeHistory](h
 
 ##### Retrieving network clients
 
-Call the network-wide API call [getNetworkClients](https://developer.cisco.com/meraki/api-v1/get-network-clients/) once for the network, instead of calling the less efficient single-device API endpoint [getDeviceClients](https://developer.cisco.com/meraki/api-v1/get-device-clients/).
+Call the network-wide API call [getNetworkClients](https://developer.cisco.com/meraki/api-v1/get-network-clients/) once for the network, instead of calling the less efficient single-device API operation [getDeviceClients](https://developer.cisco.com/meraki/api-v1/get-device-clients/).
 
 ### Provisioning
 

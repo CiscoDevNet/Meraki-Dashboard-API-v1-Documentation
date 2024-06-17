@@ -3266,7 +3266,7 @@
         },
         "/networks/{networkId}/clients/{clientId}/trafficHistory": {
             "get": {
-                "description": "Return the client's network traffic data over time. Usage data is in kilobytes. This endpoint requires detailed traffic analysis to be enabled on the Network-wide > General page. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.",
+                "description": "Return the client's network traffic data over time. Usage data is in kilobytes. This operation requires detailed traffic analysis to be enabled on the Network-wide > General page. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.",
                 "operationId": "getNetworkClientTrafficHistory",
                 "parameters": [
                     {
@@ -3330,7 +3330,7 @@
                         }
                     }
                 },
-                "summary": "Return the client's network traffic data over time. Usage data is in kilobytes. This endpoint requires detailed traffic analysis to be enabled on the Network-wide > General page. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.",
+                "summary": "Return the client's network traffic data over time. Usage data is in kilobytes. This operation requires detailed traffic analysis to be enabled on the Network-wide > General page. Clients can be identified by a client key or either the MAC or IP depending on whether the network uses Track-by-IP.",
                 "tags": [
                     "networks",
                     "clients",
@@ -4747,7 +4747,7 @@
                                                                 },
                                                                 "value": {
                                                                     "type": "string",
-                                                                    "description": "    If \"type\" is 'host', 'port', 'ipRange' or 'localNet', then \"value\" must be a string, matching either\n    a hostname (e.g. \"somesite.com\"), a port (e.g. 8080), or an IP range (\"192.1.0.0\",\n    \"192.1.0.0/16\", or \"10.1.0.0/16:80\"). 'localNet' also supports CIDR notation, excluding\n    custom ports.\n     If \"type\" is 'application' or 'applicationCategory', then \"value\" must be an object\n    with the structure { \"id\": \"meraki:layer7/...\" }, where \"id\" is the application category or\n    application ID (for a list of IDs for your network, use the trafficShaping/applicationCategories\n    endpoint).\n"
+                                                                    "description": "    If \"type\" is 'host', 'port', 'ipRange' or 'localNet', then \"value\" must be a string, matching either\n    a hostname (e.g. \"somesite.com\"), a port (e.g. 8080), or an IP range (\"192.1.0.0\",\n    \"192.1.0.0/16\", or \"10.1.0.0/16:80\"). 'localNet' also supports CIDR notation, excluding\n    custom ports.\n     If \"type\" is 'application' or 'applicationCategory', then \"value\" must be an object\n    with the structure { \"id\": \"meraki:layer7/...\" }, where \"id\" is the application category or\n    application ID (for a list of IDs for your network, use the trafficShaping/applicationCategories\n    operation).\n"
                                                                 }
                                                             },
                                                             "required": [
@@ -4783,7 +4783,7 @@
                                                     },
                                                     "dscpTagValue": {
                                                         "type": "integer",
-                                                        "description": "    The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.\n    For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.\n"
+                                                        "description": "    The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.\n    For a list of possible tag values, use the trafficShaping/dscpTaggingOptions operation.\n"
                                                     },
                                                     "pcpTagValue": {
                                                         "type": "integer",
@@ -5928,7 +5928,7 @@
                                                                 },
                                                                 "value": {
                                                                     "type": "string",
-                                                                    "description": "    If \"type\" is 'host', 'port', 'ipRange' or 'localNet', then \"value\" must be a string, matching either\n    a hostname (e.g. \"somesite.com\"), a port (e.g. 8080), or an IP range (\"192.1.0.0\",\n    \"192.1.0.0/16\", or \"10.1.0.0/16:80\"). 'localNet' also supports CIDR notation, excluding\n    custom ports.\n     If \"type\" is 'application' or 'applicationCategory', then \"value\" must be an object\n    with the structure { \"id\": \"meraki:layer7/...\" }, where \"id\" is the application category or\n    application ID (for a list of IDs for your network, use the trafficShaping/applicationCategories\n    endpoint).\n"
+                                                                    "description": "    If \"type\" is 'host', 'port', 'ipRange' or 'localNet', then \"value\" must be a string, matching either\n    a hostname (e.g. \"somesite.com\"), a port (e.g. 8080), or an IP range (\"192.1.0.0\",\n    \"192.1.0.0/16\", or \"10.1.0.0/16:80\"). 'localNet' also supports CIDR notation, excluding\n    custom ports.\n     If \"type\" is 'application' or 'applicationCategory', then \"value\" must be an object\n    with the structure { \"id\": \"meraki:layer7/...\" }, where \"id\" is the application category or\n    application ID (for a list of IDs for your network, use the trafficShaping/applicationCategories\n    operation).\n"
                                                                 }
                                                             },
                                                             "required": [
@@ -5964,7 +5964,7 @@
                                                     },
                                                     "dscpTagValue": {
                                                         "type": "integer",
-                                                        "description": "    The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.\n    For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.\n"
+                                                        "description": "    The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.\n    For a list of possible tag values, use the trafficShaping/dscpTaggingOptions operation.\n"
                                                     },
                                                     "pcpTagValue": {
                                                         "type": "integer",
@@ -7067,7 +7067,7 @@
         },
         "/networks/{networkId}/pii/smDevicesForKey": {
             "get": {
-                "description": "Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier. These device IDs can be used with the Systems Manager API endpoints to retrieve device details. Exactly one identifier will be accepted.\n\n## ALTERNATE PATH\n\n```\n/organizations/{organizationId}/pii/smDevicesForKey\n```",
+                "description": "Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier. These device IDs can be used with the Systems Manager API operations to retrieve device details. Exactly one identifier will be accepted.\n\n## ALTERNATE PATH\n\n```\n/organizations/{organizationId}/pii/smDevicesForKey\n```",
                 "operationId": "getNetworkPiiSmDevicesForKey",
                 "parameters": [
                     {
@@ -7130,7 +7130,7 @@
                         }
                     }
                 },
-                "summary": "Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier. These device IDs can be used with the Systems Manager API endpoints to retrieve device details. Exactly one identifier will be accepted.",
+                "summary": "Given a piece of Personally Identifiable Information (PII), return the Systems Manager device ID(s) associated with that identifier. These device IDs can be used with the Systems Manager API operations to retrieve device details. Exactly one identifier will be accepted.",
                 "tags": [
                     "networks",
                     "pii",
@@ -7140,7 +7140,7 @@
         },
         "/networks/{networkId}/pii/smOwnersForKey": {
             "get": {
-                "description": "Given a piece of Personally Identifiable Information (PII), return the Systems Manager owner ID(s) associated with that identifier. These owner IDs can be used with the Systems Manager API endpoints to retrieve owner details. Exactly one identifier will be accepted.\n\n## ALTERNATE PATH\n\n```\n/organizations/{organizationId}/pii/smOwnersForKey\n```",
+                "description": "Given a piece of Personally Identifiable Information (PII), return the Systems Manager owner ID(s) associated with that identifier. These owner IDs can be used with the Systems Manager API operations to retrieve owner details. Exactly one identifier will be accepted.\n\n## ALTERNATE PATH\n\n```\n/organizations/{organizationId}/pii/smOwnersForKey\n```",
                 "operationId": "getNetworkPiiSmOwnersForKey",
                 "parameters": [
                     {
@@ -7202,7 +7202,7 @@
                         }
                     }
                 },
-                "summary": "Given a piece of Personally Identifiable Information (PII), return the Systems Manager owner ID(s) associated with that identifier. These owner IDs can be used with the Systems Manager API endpoints to retrieve owner details. Exactly one identifier will be accepted.",
+                "summary": "Given a piece of Personally Identifiable Information (PII), return the Systems Manager owner ID(s) associated with that identifier. These owner IDs can be used with the Systems Manager API operations to retrieve owner details. Exactly one identifier will be accepted.",
                 "tags": [
                     "networks",
                     "pii",
@@ -17703,7 +17703,7 @@
                                             },
                                             "value": {
                                                 "type": "string",
-                                                "description": "The 'value' of what you want to block. Format of 'value' varies depending on type of the rule. See sample request. The application categories and application ids can be retrieved from the the 'MX L7 application categories' endpoint. The countries follow the two-letter ISO 3166-1 alpha-2 format."
+                                                "description": "The 'value' of what you want to block. Format of 'value' varies depending on type of the rule. See sample request. The application categories and application ids can be retrieved from the the 'MX L7 application categories' operation. The countries follow the two-letter ISO 3166-1 alpha-2 format."
                                             }
                                         }
                                     },
@@ -18389,7 +18389,7 @@
                                                         },
                                                         "value": {
                                                             "type": "string",
-                                                            "description": "    If \"type\" is 'host', 'port', 'ipRange' or 'localNet', then \"value\" must be a string, matching either\n    a hostname (e.g. \"somesite.com\"), a port (e.g. 8080), or an IP range (\"192.1.0.0\",\n    \"192.1.0.0/16\", or \"10.1.0.0/16:80\"). 'localNet' also supports CIDR notation, excluding\n    custom ports.\n     If \"type\" is 'application' or 'applicationCategory', then \"value\" must be an object\n    with the structure { \"id\": \"meraki:layer7/...\" }, where \"id\" is the application category or\n    application ID (for a list of IDs for your network, use the trafficShaping/applicationCategories\n    endpoint).\n"
+                                                            "description": "    If \"type\" is 'host', 'port', 'ipRange' or 'localNet', then \"value\" must be a string, matching either\n    a hostname (e.g. \"somesite.com\"), a port (e.g. 8080), or an IP range (\"192.1.0.0\",\n    \"192.1.0.0/16\", or \"10.1.0.0/16:80\"). 'localNet' also supports CIDR notation, excluding\n    custom ports.\n     If \"type\" is 'application' or 'applicationCategory', then \"value\" must be an object\n    with the structure { \"id\": \"meraki:layer7/...\" }, where \"id\" is the application category or\n    application ID (for a list of IDs for your network, use the trafficShaping/applicationCategories\n    operation).\n"
                                                         }
                                                     },
                                                     "required": [
@@ -18425,7 +18425,7 @@
                                             },
                                             "dscpTagValue": {
                                                 "type": "integer",
-                                                "description": "    The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.\n    For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.\n"
+                                                "description": "    The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.\n    For a list of possible tag values, use the trafficShaping/dscpTaggingOptions operation.\n"
                                             },
                                             "priority": {
                                                 "type": "string",
@@ -20575,7 +20575,7 @@
                                                         },
                                                         "value": {
                                                             "type": "string",
-                                                            "description": "    If \"type\" is 'host', 'port', 'ipRange' or 'localNet', then \"value\" must be a string, matching either\n    a hostname (e.g. \"somesite.com\"), a port (e.g. 8080), or an IP range (\"192.1.0.0\",\n    \"192.1.0.0/16\", or \"10.1.0.0/16:80\"). 'localNet' also supports CIDR notation, excluding\n    custom ports.\n     If \"type\" is 'application' or 'applicationCategory', then \"value\" must be an object\n    with the structure { \"id\": \"meraki:layer7/...\" }, where \"id\" is the application category or\n    application ID (for a list of IDs for your network, use the trafficShaping/applicationCategories\n    endpoint).\n"
+                                                            "description": "    If \"type\" is 'host', 'port', 'ipRange' or 'localNet', then \"value\" must be a string, matching either\n    a hostname (e.g. \"somesite.com\"), a port (e.g. 8080), or an IP range (\"192.1.0.0\",\n    \"192.1.0.0/16\", or \"10.1.0.0/16:80\"). 'localNet' also supports CIDR notation, excluding\n    custom ports.\n     If \"type\" is 'application' or 'applicationCategory', then \"value\" must be an object\n    with the structure { \"id\": \"meraki:layer7/...\" }, where \"id\" is the application category or\n    application ID (for a list of IDs for your network, use the trafficShaping/applicationCategories\n    operation).\n"
                                                         }
                                                     },
                                                     "required": [
@@ -20611,7 +20611,7 @@
                                             },
                                             "dscpTagValue": {
                                                 "type": "integer",
-                                                "description": "    The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.\n    For a list of possible tag values, use the trafficShaping/dscpTaggingOptions endpoint.\n"
+                                                "description": "    The DSCP tag applied by your rule. null means 'Do not change DSCP tag'.\n    For a list of possible tag values, use the trafficShaping/dscpTaggingOptions operation.\n"
                                             },
                                             "pcpTagValue": {
                                                 "type": "integer",

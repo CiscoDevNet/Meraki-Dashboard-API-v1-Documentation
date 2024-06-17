@@ -257,7 +257,7 @@ PATH _`/devices/{serial}/switch/ports/cycle`_
 
 > \- Path added  
 >   
-> \- New endpoint
+> \- New operation
 > 
 > #### Cycle a set of switch ports
 > 
@@ -312,7 +312,7 @@ PATH _`/devices/{serial}/wireless/bluetooth/settings`_
 
 > \- Path added  
 >   
-> \- New endpoint
+> \- New operation
 > 
 > #### Return the bluetooth settings for a wireless device
 > 
@@ -327,7 +327,7 @@ PATH _`/devices/{serial}/wireless/bluetooth/settings`_
 > * * *
 > 
 >   
-> \- New endpoint
+> \- New operation
 > 
 > #### Update the bluetooth settings for a wireless device
 > 
@@ -349,7 +349,7 @@ PATH _`/organizations/{organizationId}/apiRequests/overview`_
 
 > \- Path added  
 >   
-> \- New endpoint
+> \- New operation
 > 
 > #### Return an aggregated overview of API requests data
 > 
@@ -376,7 +376,7 @@ PATH _`/organizations/{organizationId}/configurationChanges`_
 
 > \- Path added  
 >   
-> \- New endpoint
+> \- New operation
 > 
 > #### View the Change Log for your organization
 > 

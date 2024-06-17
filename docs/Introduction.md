@@ -15,7 +15,7 @@ Checkout out the [Explore](https://developer.cisco.com/meraki/explore/) section 
 
 ## What's New in v1 
 
-The Dashboard API has evolved significantly, providing hundreds of endpoints to manage your Meraki networks!
+The Dashboard API has evolved significantly, providing hundreds of operations to manage your Meraki networks!
 
 We want to do so much more. But in order for us to include many of these new features or improvements, we need to break a few things. 
 
@@ -23,28 +23,28 @@ The focus of this **major** version is on **Simplicity** and **Scale**, by provi
 
 The API documentation, Postman collection, and Python library will remain synced and up-to-date with improved navigation and features.
 
-In addition, several improvements and new endpoints have been included with this major release.
+In addition, several improvements and new operations have been included with this major release.
 
 
 ### API Documentation
 
-The API Endpoint documentation and complimenting Postman Collection have a new folder structure for navigating the API. 
+The API operation documentation and complimenting Postman Collection have a new folder structure for navigating the API. 
 
 
 
 #### Categories
 
-The services are grouped into categories, providing a collection of endpoints that behave in a similar way. 
+The services are grouped into categories, providing a collection of operations that behave in a similar way. 
 
-**CONFIGURE** endpoints  are for managing cloud configurations
+**CONFIGURE** operations  are for managing cloud configurations
 
-**MONITOR** endpoints will return status and history information
+**MONITOR** operations will return status and history information
 
-**LIVE TOOL** endpoints will directly interact with the device
+**LIVE TOOL** operations will directly interact with the device
 
 ### Resource Path changes
 
-The endpoint URL paths will always contain the Meraki product if required, reducing ambiguity when working with resources that have similar yet unique functionality. 
+The operation URL paths will always contain the Meraki product if required, reducing ambiguity when working with resources that have similar yet unique functionality. 
 
 > **Examples of a product and service**
 >

@@ -11,7 +11,7 @@ The Meraki Dashboard API [Python library](https://github.com/meraki/dashboard-ap
 
 While you can make direct HTTP requests to dashboard API in any programming language or REST API client, using a client library can make it easier for you to focus on your specific use case, without the overhead of having to write functions to handle the dashboard API calls. The Python library can also take care of error handling, logging, retries, and other convenient processes and options for you automatically.
 
-* Support for all API endpoints, as it uses the [OpenAPI specification](https://api.meraki.com/api/v1/openapiSpec) to generate source code
+* Support for all API operations, as it uses the [OpenAPI specification](https://api.meraki.com/api/v1/openapiSpec) to generate source code
 * Log all API requests made to a local file as well as on-screen console
 * Automatic retries upon 429 rate limit errors, using the [`Retry-After` field](https://developer.cisco.com/docs/meraki-api-v1/#!rate-limit) within response headers
 * Get all (or a specified number of) pages of data with built-in pagination control
@@ -59,7 +59,7 @@ While you can make direct HTTP requests to dashboard API in any programming lang
     dashboard = meraki.DashboardAPI()
     ```
 
-5. Make dashboard API calls in your source code, using the format _client.scope.operation_, where _client_ is the name you defined in the previous step (**dashboard** above), _scope_ is the corresponding scope that represents the first tag from the OpenAPI spec, and _operation_ is the operation of the API endpoint. For example, to make a call to get the list of organizations accessible by the API key defined in step 1, use this function call:
+5. Make dashboard API calls in your source code, using the format _client.scope.operation_, where _client_ is the name you defined in the previous step (**dashboard** above), _scope_ is the corresponding scope that represents the first tag from the OpenAPI spec, and _operation_ is the operation of the API operation. For example, to make a call to get the list of organizations accessible by the API key defined in step 1, use this function call:
 
     ```python
     my_orgs = dashboard.organizations.getOrganizations()
@@ -67,7 +67,7 @@ While you can make direct HTTP requests to dashboard API in any programming lang
 
 6. If you were using this module versions 0.34 and prior, that file's functions are included in the _legacy.py_ file, and you can adapt your existing scripts by replacing their `from meraki import meraki` line to `import meraki`
 
-For a full working script that demos this library, please see and run the **org_wide_clients_v1.py** file included (in **examples** folder). That code collects the clients of all networks, in all orgs to which the key has access. No changes are made, since only GET endpoints are called, and the data is written to local CSV output files.
+For a full working script that demos this library, please see and run the **org_wide_clients_v1.py** file included (in **examples** folder). That code collects the clients of all networks, in all orgs to which the key has access. No changes are made, since only GET operations are called, and the data is written to local CSV output files.
 
 
 ## Documentation

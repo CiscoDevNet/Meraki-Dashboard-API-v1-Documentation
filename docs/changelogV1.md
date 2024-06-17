@@ -455,7 +455,7 @@ POST _`/networks/{networkId}/devices/claim`_
 
 GET _`/networks/{networkId}/firewalledServices/{service}`_
 
-> \- Deleted Endpoint
+> \- Deleted Operation
 
 * * *
 
@@ -463,13 +463,13 @@ GET _`/networks/{networkId}/firewalledServices/{service}`_
 
 PUT _`/networks/{networkId}/sm/devices/checkin`_
 
-> \- Deleted Endpoint
+> \- Deleted Operation
 
 * * *
 
 PUT _`/networks/{networkId}/sm/devices/move`_
 
-> \- Deleted Endpoint
+> \- Deleted Operation
 
 * * *
 
