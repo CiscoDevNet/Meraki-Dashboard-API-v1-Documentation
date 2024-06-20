@@ -53,6 +53,10 @@ Most of the time, most devices in a network should be in an online status. The o
 
 [getOrganizationDevicesUplinksAddressesByDevice](https://developer.cisco.com/meraki/api-v1/get-organization-devices-uplinks-addresses-by-device/) lists the current uplink addresses for devices in an organization.
 
+##### Use case: Polling device provisioning status
+
+[getOrganizationDevicesProvisioningStatuses](https://developer.cisco.com/meraki/api-v1/get-organization-devices-provisioning-statuses/) provides the provisioning status for each device.
+
 ### Camera operations
 
 #### Analytics
