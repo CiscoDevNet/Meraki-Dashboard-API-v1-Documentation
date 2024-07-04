@@ -73,7 +73,10 @@ async function fetchOpenAPISpec(customSpecPath) {
 }
 
 function toKebabCase(str) {
-    return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+    return str
+        .replace(/([a-z])([A-Z])/g, '$1-$2') // Handle camelCase
+        .replace(/([0-9]+)/g, '-$1-') // Handle numbers
+        .toLowerCase();
 }
 
 // Parses the Swagger paths from the specification into reportable formats.
