@@ -16,7 +16,7 @@ response = dashboard.switch.updateNetworkSwitchAccessPolicy(
     network_id, access_policy_number, 
     name='Access policy #1', 
     radiusServers=[{'serverId': '1', 'organizationRadiusServerId': '42', 'host': '1.2.3.4', 'port': 22, 'secret': 'secret'}], 
-    radius={'criticalAuth': {'dataVlanId': 100, 'voiceVlanId': 100, 'suspendPortBounce': True}, 'failedAuthVlanId': 100, 'reAuthenticationInterval': 120}, 
+    radius={'criticalAuth': {'dataVlanId': 100, 'voiceVlanId': 100, 'suspendPortBounce': True}, 'failedAuthVlanId': 100, 'reAuthenticationInterval': 120, 'cache': {'enabled': False, 'timeout': 24}}, 
     guestPortBouncing=False, 
     radiusTestingEnabled=False, 
     radiusCoaSupportEnabled=False, 

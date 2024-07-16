@@ -9,11 +9,12 @@ API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-network_id = 'L_646829496481105433'
+organization_id = '549236'
 serials = ['Q234-ABCD-0001', 'Q234-ABCD-0002', 'Q234-ABCD-0003']
+details = [{'name': 'username', 'value': 'ABC'}, {'name': 'password', 'value': 'ABC123'}, {'name': 'enable password', 'value': 'ABC123'}]
 
-response = dashboard.networks.claimNetworkDevices(
-    network_id, serials
+response = dashboard.organizations.bulkUpdateOrganizationDevicesDetails(
+    organization_id, serials, details
 )
 
 print(response)

@@ -13,7 +13,8 @@ serial = 'Q2QN-9J8L-SLPD'
 
 response = dashboard.devices.updateDeviceCellularSims(
     serial, 
-    sims=[{'slot': 'sim1', 'isPrimary': False, 'apns': [{'name': 'internet', 'allowedIpTypes': ['ipv4', 'ipv6'], 'authentication': {'type': 'pap', 'username': 'milesmeraki', 'password': 'secret'}}]}], 
+    sims=[{'slot': 'sim1', 'isPrimary': False, 'apns': [{'name': 'internet', 'allowedIpTypes': ['ipv4', 'ipv6'], 'authentication': {'type': 'pap', 'username': 'milesmeraki', 'password': 'secret'}}], 'simOrder': 3}], 
+    simOrdering=['sim1', 'sim2', 'sim3'], 
     simFailover={'enabled': True, 'timeout': 300}
 )
 

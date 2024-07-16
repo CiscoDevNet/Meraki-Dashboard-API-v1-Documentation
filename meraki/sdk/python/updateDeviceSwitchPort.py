@@ -30,7 +30,7 @@ response = dashboard.switch.updateDeviceSwitchPort(
     udld='Alert only', 
     accessPolicyType='Sticky MAC allow list', 
     accessPolicyNumber=2, 
-    macAllowList=['34:56:fe:ce:8e:b0', '34:56:fe:ce:8e:b1'], 
+    macAllowList=['34:56:fe:ce:8e:a0', '34:56:fe:ce:8e:a1'], 
     stickyMacAllowList=['34:56:fe:ce:8e:b0', '34:56:fe:ce:8e:b1'], 
     stickyMacAllowListLimit=5, 
     stormControlEnabled=True, 
@@ -38,7 +38,8 @@ response = dashboard.switch.updateDeviceSwitchPort(
     peerSgtCapable=False, 
     flexibleStackingEnabled=True, 
     daiTrusted=False, 
-    profile={'enabled': False, 'id': '1284392014819', 'iname': 'iname'}
+    profile={'enabled': False, 'id': '1284392014819', 'iname': 'iname'}, 
+    dot3az={'enabled': False}
 )
 
 print(response)
