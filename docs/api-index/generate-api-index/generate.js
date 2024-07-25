@@ -72,6 +72,10 @@ async function fetchOpenAPISpec(customSpecPath) {
     }
 }
 
+// function toKebabCase(str) {
+//     return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+// }
+
 function toKebabCase(str) {
     return str
         .replace(/([a-z])([A-Z])/g, '$1-$2') // Handle camelCase
