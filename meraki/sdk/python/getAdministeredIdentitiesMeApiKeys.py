@@ -9,17 +9,7 @@ API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-serial = 'Q2QN-9J8L-SLPD'
-static_route_id = ''
 
-response = dashboard.switch.updateDeviceSwitchRoutingStaticRoute(
-    serial, static_route_id, 
-    name='My route', 
-    subnet='192.168.1.0/24', 
-    nextHopIp='1.2.3.4', 
-    managementNextHop='1.2.3.5', 
-    advertiseViaOspfEnabled=False, 
-    preferOverOspfRoutesEnabled=False
-)
+response = dashboard.administered.getAdministeredIdentitiesMeApiKeys()
 
 print(response)

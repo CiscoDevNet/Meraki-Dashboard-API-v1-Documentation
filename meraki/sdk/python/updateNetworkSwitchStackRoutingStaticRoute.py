@@ -18,6 +18,7 @@ response = dashboard.switch.updateNetworkSwitchStackRoutingStaticRoute(
     name='My route', 
     subnet='192.168.1.0/24', 
     nextHopIp='1.2.3.4', 
+    managementNextHop='1.2.3.5', 
     advertiseViaOspfEnabled=False, 
     preferOverOspfRoutesEnabled=False
 )

@@ -15,6 +15,8 @@ rf_profile_id = ''
 response = dashboard.wireless.updateNetworkWirelessRfProfile(
     network_id, rf_profile_id, 
     name='1234', 
+    isIndoorDefault=True, 
+    isOutdoorDefault=True, 
     clientBalancingEnabled=True, 
     minBitrateType='band', 
     bandSelectionType='ap', 
