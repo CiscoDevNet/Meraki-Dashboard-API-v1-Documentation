@@ -63,7 +63,7 @@ Most of the time, most devices in a network should be in an online status. The o
 
 ##### Use case: gathering device serial numbers, names, notes, models, MACs, and other hardware metadata, including network assignments
 
-[getOrganizationDevices](https://developer.cisco.com/meraki/api-v1/get-organization-devices/) provides all this information, and offers more query parameter options for filtering the result.
+[getOrganizationDevices](https://developer.cisco.com/meraki/api-v1/get-organization-devices/) provides all this information, and offers more query parameter options for filtering the result, including filtering on networkIds.
 
 ##### Use case: Polling device uplink and/or management addresses
 
