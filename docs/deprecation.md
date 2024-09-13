@@ -59,7 +59,7 @@ Most of the time, most devices in a network should be in an online status. The o
 
 #### getNetworkDevices
 
-[getNetworkDevices](https://developer.cisco.com/meraki/api-v1/get-organization-devices-statuses/) is deprecated in favor of the following operations, based on your use case:
+[getNetworkDevices](https://developer.cisco.com/meraki/api-v1/get-network-devices/) is deprecated in favor of the following operations, based on your use case:
 
 ##### Use case: gathering device serial numbers, names, notes, models, MACs, and other hardware metadata, including network assignments
 
