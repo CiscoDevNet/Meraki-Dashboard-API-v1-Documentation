@@ -31,7 +31,7 @@ Each request will have a complete description of all the required parameters and
 
 - A demo API key is added by default so that you can send a request in one click of the "Run" button. 
 
-- You can use [Postman](https://developer.cisco.com/meraki/build/meraki-postman-collection-getting-started/introduction/#dashboard-api-and-postman) to use your own API keys and make calls against yoru own environment.
+- You can use [Postman](https://developer.cisco.com/meraki/build/meraki-postman-collection-getting-started/introduction/#dashboard-api-and-postman) to use your own API keys and make calls against your own environment.
 
 
 
