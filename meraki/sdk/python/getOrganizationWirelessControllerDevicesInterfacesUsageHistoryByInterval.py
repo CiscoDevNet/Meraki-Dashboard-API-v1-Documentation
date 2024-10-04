@@ -9,14 +9,10 @@ API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-network_id = 'L_646829496481105433'
+organization_id = '549236'
 
-response = dashboard.switch.updateNetworkSwitchStormControl(
-    network_id, 
-    broadcastThreshold=30, 
-    multicastThreshold=30, 
-    unknownUnicastThreshold=30, 
-    treatTheseTrafficTypesAsOneThreshold=['broadcast', 'multicast']
+response = dashboard.wirelessController.getOrganizationWirelessControllerDevicesInterfacesUsageHistoryByInterval(
+    organization_id, total_pages='all'
 )
 
 print(response)
