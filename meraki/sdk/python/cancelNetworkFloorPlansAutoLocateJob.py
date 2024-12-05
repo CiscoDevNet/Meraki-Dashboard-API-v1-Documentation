@@ -9,11 +9,11 @@ API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-subscription_id = ''
+network_id = 'L_646829496481105433'
+job_id = ''
 
-response = dashboard.licensing.bindAdministeredLicensingSubscriptionSubscription(
-    subscription_id, 
-    networkIds=['L_1234', 'N_5678']
+response = dashboard.networks.cancelNetworkFloorPlansAutoLocateJob(
+    network_id, job_id
 )
 
 print(response)
