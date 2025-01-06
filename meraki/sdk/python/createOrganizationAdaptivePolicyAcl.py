@@ -11,7 +11,7 @@ dashboard = meraki.DashboardAPI(API_KEY)
 
 organization_id = '549236'
 name = 'Block sensitive web traffic'
-rules = [{'policy': 'deny', 'protocol': 'tcp', 'srcPort': '1,33', 'dstPort': '22-30'}]
+rules = [{'policy': 'deny', 'protocol': 'tcp', 'srcPort': '1,33', 'dstPort': '22-30', 'log': True, 'tcpEstablished': True}]
 ip_version = 'ipv6'
 
 response = dashboard.organizations.createOrganizationAdaptivePolicyAcl(

@@ -37,6 +37,7 @@ response = dashboard.wireless.updateNetworkWirelessSsid(
     radiusServerTimeout=5, 
     radiusServerAttemptsLimit=5, 
     radiusFallbackEnabled=True, 
+    radiusRadsec={'tlsTunnel': {'timeout': 600}}, 
     radiusCoaEnabled=True, 
     radiusFailoverPolicy='Deny access', 
     radiusLoadBalancingPolicy='Round robin', 
