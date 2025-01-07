@@ -46,7 +46,13 @@
             },
             {
               "title": "Deprecation",
-              "content": "docs/deprecation.md"
+              "content": "docs/deprecation.md",
+              "items": [
+                {
+                  "title": "Deprecated operations",
+                  "content": "docs/deprecated-operations.md"
+                }
+              ]
             },
             {
               "title": "API Changelog",

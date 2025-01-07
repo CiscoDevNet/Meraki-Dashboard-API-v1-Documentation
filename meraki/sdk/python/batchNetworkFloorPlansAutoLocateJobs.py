@@ -9,15 +9,11 @@ API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-organization_id = '549236'
-acl_id = ''
+network_id = 'L_646829496481105433'
+jobs = [{'floorPlanId': 'g_2176982374', 'refresh': ['gnss', 'ranging'], 'scheduledAt': '2018-02-11T00:00:00Z'}]
 
-response = dashboard.organizations.updateOrganizationAdaptivePolicyAcl(
-    organization_id, acl_id, 
-    name='Block sensitive web traffic', 
-    description='Blocks sensitive web traffic', 
-    rules=[{'policy': 'deny', 'protocol': 'tcp', 'srcPort': '1,33', 'dstPort': '22-30', 'log': True, 'tcpEstablished': True}], 
-    ipVersion='ipv6'
+response = dashboard.networks.batchNetworkFloorPlansAutoLocateJobs(
+    network_id, jobs
 )
 
 print(response)

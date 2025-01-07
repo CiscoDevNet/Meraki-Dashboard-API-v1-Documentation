@@ -3,7 +3,7 @@ name: Generate API Index
 on:
   push:
     branches:
-      - main  # or your default branch name
+      - main 
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
