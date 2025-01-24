@@ -9,15 +9,12 @@ API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
-organization_id = '549236'
-acl_id = ''
+serial = 'Q2QN-9J8L-SLPD'
+duration = 30
 
-response = dashboard.organizations.updateOrganizationAdaptivePolicyAcl(
-    organization_id, acl_id, 
-    name='Block sensitive web traffic', 
-    description='Blocks sensitive web traffic', 
-    rules=[{'policy': 'deny', 'protocol': 'tcp', 'srcPort': '1,33', 'dstPort': '22-30', 'log': True, 'tcpEstablished': True}], 
-    ipVersion='ipv6'
+response = dashboard.devices.createDeviceLiveToolsLedsBlink(
+    serial, duration, 
+    callback={'url': 'https://webhook.site/28efa24e-f830-4d9f-a12b-fbb9e5035031', 'sharedSecret': 'secret', 'httpServer': {'id': 'aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M='}, 'payloadTemplate': {'id': 'wpt_2100'}}
 )
 
 print(response)
