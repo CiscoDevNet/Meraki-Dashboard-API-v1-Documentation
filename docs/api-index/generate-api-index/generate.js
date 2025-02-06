@@ -111,16 +111,23 @@ function parseSwaggerPaths(spec) {
             const formattedTags = tagsArray.length > 0 ? `, ${tagsArray.join(', ')}` : '';
             const formattedTagsWithBoldFirst = `${boldFirstTag}${formattedTags}`;
 
+            // Extract OAuth scopes
+            const oauthScopes = operation.security
+                ?.find(sec => sec.oauth2)?.oauth2
+                ?.join(', ') || '';
 
             csvReport.push({
-                releaseStage, operationId, summary, apiDocsUrl, method, path, pathParams, requestBodyParams, responseParams, tags, pythonOperation
+                releaseStage, operationId, summary, apiDocsUrl, method, path, 
+                pathParams, requestBodyParams, responseParams, tags, 
+                pythonOperation, oauthScopes  // Added oauthScopes
             });
 
             markdownReport.push({
                 Operation: `${methodPath} <br /> ${summaryLink}<br><label style="font-size:small; padding-left:20px;"><i>${formattedTagsWithBoldFirst}</i></label><div style="padding:5px"> >  \`${operationId}\` </div> `,
                 "Request Parameters": ` \`${requestBodyParams}\` `,
                 "Path Parameters": ` \`${pathParams}\` `,
-                "Response Parameters": ` \`${responseParams}\` `
+                "Response Parameters": ` \`${responseParams}\` `,
+                "OAuth Scopes": ` \`${oauthScopes}\` `  // Added OAuth Scopes column
             });
         });
     });
@@ -213,7 +220,7 @@ async function generateData() {
         const spec = await fetchOpenAPISpec(customSpecPath || DEFAULT_API_SPEC_URL);
         const { markdownReport, csvReport } = parseSwaggerPaths(spec);
         const apiVersion = spec.info.version;
-        const fields = ["Operation", "Path Parameters", "Request Parameters", "Response Parameters"];
+        const fields = ["Operation", "Path Parameters", "Request Parameters", "Response Parameters", "OAuth Scopes"];
 
         // Define filenames with paths
         const csvFilePath = path.join(targetDirectory, CSV_FILENAME);
