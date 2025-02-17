@@ -934,9 +934,9 @@
     
         <tr><td>PUT /networks/{networkId}/switch/stp <br /> <a href="https://developer.cisco.com/meraki/api-v1/update-network-switch-stp/">Updates STP settings</a><br><label style="font-size:small; padding-left:20px;"><i><b>switch</b>, configure, stp</i></label><div style="padding:5px"> >  <code>updateNetworkSwitchStp</code> </div> </td><td> <code>networkId</code> </td><td> <code>rstpEnabled, stacks, stpBridgePriority, stpPriority, switchProfiles, switches</code> </td><td> <code>rstpEnabled, stacks, stpBridgePriority, stpPriority, switchProfiles, switches</code> </td><td> <code>switch:config:write</code> </td></tr>
     
-        <tr><td>GET /networks/{networkId}/syslogServers <br /> <a href="https://developer.cisco.com/meraki/api-v1/get-network-syslog-servers/">List the syslog servers for a network</a><br><label style="font-size:small; padding-left:20px;"><i><b>networks</b>, configure, syslogServers</i></label><div style="padding:5px"> >  <code>getNetworkSyslogServers</code> </div> </td><td> <code>networkId</code> </td><td> `` </td><td> <code>certificate, enabled, encryption, host, id, port, roles, servers</code> </td><td> <code>dashboard:general:telemetry:read</code> </td></tr>
+        <tr><td>GET /networks/{networkId}/syslogServers <br /> <a href="https://developer.cisco.com/meraki/api-v1/get-network-syslog-servers/">List the syslog servers for a network</a><br><label style="font-size:small; padding-left:20px;"><i><b>networks</b>, configure, syslogServers</i></label><div style="padding:5px"> >  <code>getNetworkSyslogServers</code> </div> </td><td> <code>networkId</code> </td><td> `` </td><td> <code>host, port, roles, servers</code> </td><td> <code>dashboard:general:telemetry:read</code> </td></tr>
     
-        <tr><td>PUT /networks/{networkId}/syslogServers <br /> <a href="https://developer.cisco.com/meraki/api-v1/update-network-syslog-servers/">Update the syslog servers for a network</a><br><label style="font-size:small; padding-left:20px;"><i><b>networks</b>, configure, syslogServers</i></label><div style="padding:5px"> >  <code>updateNetworkSyslogServers</code> </div> </td><td> <code>networkId</code> </td><td> <code>certificate, enabled, encryption, host, id, port, roles, servers</code> </td><td> <code>certificate, enabled, encryption, host, id, port, roles, servers</code> </td><td> <code>dashboard:general:telemetry:write</code> </td></tr>
+        <tr><td>PUT /networks/{networkId}/syslogServers <br /> <a href="https://developer.cisco.com/meraki/api-v1/update-network-syslog-servers/">Update the syslog servers for a network</a><br><label style="font-size:small; padding-left:20px;"><i><b>networks</b>, configure, syslogServers</i></label><div style="padding:5px"> >  <code>updateNetworkSyslogServers</code> </div> </td><td> <code>networkId</code> </td><td> <code>host, port, roles, servers</code> </td><td> <code>host, port, roles, servers</code> </td><td> <code>dashboard:general:telemetry:write</code> </td></tr>
     
         <tr><td>GET /networks/{networkId}/topology/linkLayer <br /> <a href="https://developer.cisco.com/meraki/api-v1/get-network-topology-link-layer/">List the LLDP and CDP information for all discovered devices and connections in a network</a><br><label style="font-size:small; padding-left:20px;"><i><b>networks</b>, monitor, topology, linkLayer</i></label><div style="padding:5px"> >  <code>getNetworkTopologyLinkLayer</code> </div> </td><td> <code>networkId</code> </td><td> `` </td><td> `` </td><td> <code>dashboard:general:telemetry:read</code> </td></tr>
     
@@ -1996,7 +1996,7 @@
     </tbody></table></div>
 
                 
-                <p style="padding-left:30px"><i> API v1.55.0-beta.0</i></p>
+                <p style="padding-left:30px"><i> API v1.55.0-beta.1</i></p>
            
             
         </body>
