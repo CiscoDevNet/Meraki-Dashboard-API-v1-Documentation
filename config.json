@@ -89,6 +89,26 @@
           "content": "docs/Callbacks.md"
         },
         {
+          "title": "OAuth 2.0",
+          "items": [
+            {
+              "title": "Overview",
+              "content": "docs/OAuth.md",
+              "uri": "oauth-overview"
+            },
+            {
+              "title": "Access Scopes",
+              "content": "docs/OAuthScope.md",
+              "uri": "oauth-access-scopes"
+            },
+            {
+              "title": "Troubleshooting",
+              "content": "docs/OAuth-Troubleshooting.md",
+              "uri": "oauth-troubleshooting"
+            }
+          ]
+        }
+        {
           "title": "Path Parameters",
           "content": "docs/serviceParamMap.md"
         },
