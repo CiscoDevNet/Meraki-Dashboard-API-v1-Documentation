@@ -107,7 +107,7 @@
               "uri": "oauth-troubleshooting"
             }
           ]
-        }
+        },
         {
           "title": "Path Parameters",
           "content": "docs/serviceParamMap.md"
