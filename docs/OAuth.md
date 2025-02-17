@@ -1,14 +1,13 @@
-# OAuth 2.0
+## OAuth 2.0 
+OAuth 2.0 is a standard authorization framework that offers integrations to access Meraki data securely, eliminating the need for administrators to reveal their credentials or API keys. OAuth 2.0 is commonly used to allow delegated access, particularly in the context of API and web applications. OAuth 2.0 offers a secure, standardized method for the network administrator to authorize third-party access to their resources while maintaining data control.
+[Learn more about the OAuth framework and definitions](https://oauth.net/2/)
+
 ## OAuth 2.0 integration
 An Open Authorization (OAuth) 2.0 integration (integration) is a software application or system that connects to the Meraki platform and interacts with Meraki's services and data. This integration forms a crucial link between external applications and Meraki's infrastructure, facilitating smooth interaction with the platform.
 
 An integration uses API to automate, manage, or enhance functionalities within a Meraki environment. 
 
 With OAuth 2.0, integrations enable developers to access Meraki resources securely. This secure access allows developers to monitor network status, configure settings, and collect data without needing to input credentials directly.
-
-### OAuth 2.0 
-OAuth 2.0 is a standard authorization framework that offers integrations to access Meraki data securely, eliminating the need for administrators to reveal their credentials or API keys. OAuth 2.0 is commonly used to allow delegated access, particularly in the context of API and web applications. OAuth 2.0 offers a secure, standardized method for the network administrator to authorize third-party access to their resources while maintaining data control.
-[Learn more about the OAuth framework and definitions](https://oauth.net/2/)
 
 ### Benefits of OAuth 2.0 integrations
 
@@ -165,86 +164,3 @@ Follow these steps for revoking the token:
 
 #### **RFC 7009** 
 The procedure for revoking an OAuth refresh token follows the guidelines in RFC 7009 for OAuth 2.0 token revocation."
-
-## OAuth scopes
-OAuth scopes in OAuth 2.0 are used to define and limit the access rights granted to an access token. 
-
-When an integration requests authorization from an administrator, it  must include a list of scopes that the integration seeks access to.  The Meraki Dashboard presents these scopes to the admin during the authorization process, which allows them to approve or deny the request.
-
-OAuth 2.0 offers a flexible and granular method for controlling access to resources through the use of scopes. This enables the administrator to make informed decisions regarding the level of access granted to integrations. This mechanism supports the principle of least privilege, enhancing security and privacy.
-
-Meraki provides the following two scopes:
-1. **`config`**: This scope grants access to configuration features that influence the operation of the network and the overall network experience. The config scope dictates the end-user network experience and the functioning of Meraki devices, such as VPNs, VLANs, access controls, policies, SSIDs, and sensor names. Note that the `config` scope excludes admin-facing telemetry configurations, which are managed using telemetry scopes.
-
-2. **`telemetry`**: This scope grants access to telemetry data and configurations that do not impact the end-user network experience. They include features like event logs, syslog, bandwidth utilization, client counts, and camera snapshots.
-
-Note: The Meraki scopes can have either "read-only" or "write" permission levels.
-
-
-| Category              | Read                           | Write                          |
-|-----------------------|--------------------------------|--------------------------------|
-| **Dashboard**         | dashboard:iam:config:read     | dashboard:iam:config:write     |
-|                       | dashboard:iam:telemetry:read  | dashboard:iam:telemetry:write  |
-|                       | dashboard:general:config:read | dashboard:general:config:write |
-|                       | dashboard:general:telemetry:read | dashboard:general:telemetry:write |
-|                       | dashboard:licensing:config:read | dashboard:licensing:config:write |
-|                       | dashboard:licensing:telemetry:read | dashboard:licensing:telemetry:write |
-| **Network**           | sdwan:config:read             | sdwan:config:write             |
-|                       | switch:config:read            | switch:config:write            |
-|                       | wireless:config:read          | wireless:config:write          |
-|                       | sdwan:telemetry:read          | sdwan:telemetry:write          |
-|                       | switch:telemetry:read         | switch:telemetry:write         |
-|                       | wireless:telemetry:read       | wireless:telemetry:write       |
-| **IoT**               | camera:config:read            | camera:config:write            |
-|                       | sensor:config:read            | sensor:config:write            |
-|                       | camera:telemetry:read         | camera:telemetry:write         |
-|                       | sensor:telemetry:read         | sensor:telemetry:write         |
-| **Endpoint Management (SM)** | sm:telemetry:read      | sm:telemetry:write             |
-|                       | sm:config:read                | sm:config:write                |
-
-
-## Troubleshooting initial grant flow
-**Issue 1:** The administrator cannot find the relevant organization in the dropdown menu.
-
-**Solution:**
-For an administrator to find an organization in the dropdown menu, do the following:
-- Ensure that the Meraki administrator has full **Organization admin** rights. Both the "Organization admin" with read-only permissions and the "Network admin" have insufficient permissions to view the organization.
-- Ensure that the application has been integrated.
-- If the application has been integrated, you can revoke its access, and try integrating the application again. From the Meraki dashboard left-navigation pane, choose **Organization**>**Integrations**. From the **My integrations** tab, choose your integration. From the integration window that opens, from the top-right corner, click **Remove**. Now try integrating the application again. 
-
-**Issue 2**: "An error has occurred: The requested redirect URI is malformed or doesn't match the client redirect URI."
-
-**Solution**: Check whether the redirect URI in the request differs from the redirect URIs that were registered in the application registry.
-
-**Issue 3**: Client authentication failed error. "An error has occurred: Client authentication failed due to an unknown client, no client authentication included, or unsupported authentication method.."
-
-**Solution**: Check whether the client ID in the request is correct.
-
-
-### Troubleshooting errors returned to the redirect URI
-**Issue**: An invalid scope error is returned to the redirect URI. Here is an example of this error: 
-```
-https://localhost?error=invalid_scope&error_description=The+requested+scope+is+invalid%2C+unknown%2C+or+malformed.
-```
-In the above example, the redirect URI is `https://localhost/`.
-
-**Solution**: 
-- Check whether there is a mistake in the scopes included in the request. 
-- Check whether the request includes scopes that were not included during the application's registration.
-
-**Issue**: An access denied error is returned to the redirect URI. For example, 
-```
-https://localhost?error=access_denied&error_description=The+resource+owner+or+authorization+server+denied+the+request.
-```
-**Solution**: 
-- Check whether the administrator has the required permissions. 
-
-**Issue**: The provided authorization grant may be invalid, expired, or revoked. The authorization may not match the redirection URI used in the authorization request, or may have been issued to another client.
-
-**Solution**:
-- Ensure that the access grant has not been used already.
-- Confirm that no more than 10 minutes have passed since the access grant was generated.
-- Check whether the access grant matches the expected parameters, including the redirection URI and client details.
-
-
-
