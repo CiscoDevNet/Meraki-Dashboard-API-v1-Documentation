@@ -12,6 +12,8 @@ Each Meraki organization has a call budget of **10 requests per second**, regard
 * The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
 
 This budget is shared across all API applications in the organization that leverage [API authentication](https://developer.cisco.com/meraki/api-v1/authorization/). You can [check the recent API activity](https://developer.cisco.com/meraki/api-v1/get-organization-api-requests-overview-response-codes-by-interval/) for the given organization to understand if you are sharing the budget with other applications.
+On the Meraki dashboard, as an organization admin you can view this information on the API Analytics page by accessing Organization > Configure > API & Webhooks.
+
 
 ## Per source IP address
 
