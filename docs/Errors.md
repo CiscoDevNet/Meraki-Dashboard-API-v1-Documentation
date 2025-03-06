@@ -1,4 +1,4 @@
-Error responses from the API generally use standard HTTP status codes. Some examples:
+The error responses from the API generally use standard HTTP status codes. Some examples:
 
 **Response Code**|**Description**
  :-------------: |:-------------:
