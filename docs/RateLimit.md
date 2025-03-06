@@ -12,6 +12,8 @@ Each Meraki organization has a call budget of **10 requests per second**, regard
 * The rate limiting technique is based off of the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket).
 
 This budget is shared across all API applications in the organization that leverage [API authentication](https://developer.cisco.com/meraki/api-v1/authorization/). You can [check the recent API activity](https://developer.cisco.com/meraki/api-v1/get-organization-api-requests-overview-response-codes-by-interval/) for the given organization to understand if you are sharing the budget with other applications.
+On the Meraki dashboard, as an organization admin you can view this information on the API Analytics page by accessing Organization > Configure > API & Webhooks.
+
 
 ## Per source IP address
 
@@ -36,8 +38,7 @@ Each source IP address making API requests has a call budget of **100 requests p
 
 If the defined budget is exceeded, the dashboard API will reply with the `429` (rate limit exceeded) error code. This response also returns a `Retry-After` header indicating how long the client should wait before making a follow-up request. Ensure that appropriate action is being taken to handle `429` responses if you incur them. Utilize the `Retry-After` header and backoff to minimize compounded rate limit issues.
 
-* The `Retry-After` header contains the number of seconds the client should wait.
-* Expect to backoff for 1 - 2 seconds if the limit has been exceeded. You may have to wait potentially longer if a large number of requests were made within this timeframe.
+> The Retry-After header contains the number of seconds the client should wait. The number will vary based on the organization's API consumption. The number may often be 1 or 2 (indicating a suggested backoff of 1 or 2 seconds), but the number may be higher if a large number of requests were made within this timeframe.
 
 If you are using Python, [the official Meraki Python library](https://github.com/meraki/dashboard-api-python) handles retries and automatic backoff for you so you can focus elsewhere in your application.​
 

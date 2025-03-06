@@ -23,23 +23,5 @@ These changes include:
 
 Any API changes will be described in detail via the [Changelog](https://developer.cisco.com/meraki/whats-new/)
 
-## V0 Deprecation & Sunset
-
-Now that v1 is the new default version, we will be retiring v0 over time. 
-
-There are two phases to this process:
-
-- A "Deprecation" response header informing you that this is no longer the preferred version. It will remain operational and supported, yet we encourage you to migrate to the newest version.
-
-
-- A "Sunset" response header informing you when this version is no longer supported and may become unresponsive.
-
-
-### Key Dates
-
-> Deprecation:  **August 5th, 2020**
-
-> Sunset:       **February 5th, 2022**
-
 
 
