@@ -1,39 +1,42 @@
-<seotitle>Guide: User Agents</seotitle>
-<seodescription>Developers should send unique user agent strings with every API request. In this guide, we cover the basics of formatting and implementation.</seodescription>
+<seotitle>Guide: User agents</seotitle>
+<seodescription>developers must send unique user agent strings with every API request. In this guide, the basics of formatting and implementation are described.
+</seodescription>
 
 # User agents
 
-When invoking dashboard API, it's best practice to provide a [custom user agent string](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) with each API request. This helps your customers and Meraki admins monitor API interactions with their environments and helps build their trust. In brief, here are some Dos and Don'ts with user agent strings!
+When you invoke dashboard API, it's best practice to provide a [custom user agent string](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) with each API request. This helps your customers and Meraki administrators monitor API interactions with their environments and helps build their trust. In brief, here are some Dos and Don'ts with user agent strings.
 
 ## Dos
 
-1. Provide the user agent string in the "User-Agent" header of _every_ API request.
-2. Follow the prescribed format below, which differs minimally from standard practices.
-3. Include only the requested information in your user agent string.
-4. Only use slashes ("/") when optionally providing application version information.
+1.	Provide the user agent string in the user agent header of every API request.
+2.	Follow the prescribed format below, which differs minimally from standard practices.
+3.	Include only the requested information in your user agent string.
+4.	Use only slashes ("/") when you optionally provide application version information.
+
+
 
 ## Don'ts
 
-1. Provide inconsistent or incorrect user agent strings across your application.
-2. Leave out the user agent string from any of your requests.
-3. Add unnecessary information or special characters to your user agent string.
-4. Mix up slashes (e.g. "/") and backslashes (e.g. "\\").
+1.	Do not provide inconsistent or incorrect user agent strings across your application.
+2.	Do not omit the user agent string from any of your requests.
+3.	Do not add unnecessary information or special characters to your user agent string.
+4.	Do not mix the forward slash (/) with the backward slash (\).
 
 ## Formatting
 
-Please format your user agent strings accordingly:
+Format your user agent strings as follows:
 
 ``` Template
 ApplicationName VendorName
 ```
 
-If you want to include version information, do so as follows:
+Include version information as follows:
 
 ``` Template with version string
 ApplicationName/1.0 VendorName
 ```
 
-Regardless of your branding guidelines, your application name and vendor name *must* omit all spaces, hypens, and special characters. When providing a custom user agent string in API calls, keep in mind that the information is typically exclusively valuable to Meraki dashboard admins, so it's not necessary to include sometimes arcane information, as is common practice amongst web browsers.
+Regardless of your branding guidelines, your application name and vendor name must omit all spaces, hyphens, and special characters. When you provide a custom user agent string in API calls, ensure that the information is typically exclusively useful to Meraki dashboard admins, so it's not necessary to include sometimes arcane information, as is common practice amongst web browsers.
 
 ### Examples
 
@@ -67,22 +70,21 @@ BurrowFinder/2.5 HappyRabbitProductions
 
 ## In practice
 
-It's usually trivial to add user agent headers to your API requests. All HTTP requests libraries offer some means of appending the User-Agent header to your requests.
-
+It's usually trivial to add user agent headers to your API requests. All HTTP request libraries offer some means of appending the user agent header to your requests.
 ### Python library
 
-If using the Meraki [Python library](pythonLibrary.md), then simply pass the kwarg `caller` in your session definition.
+If you use the Meraki [Python library](pythonLibrary.md), then simply pass the kwarg `caller` in your session definition.
 
 ``` Python
 import meraki
 dashboard = meraki.DashboardAPI(caller='PlanetCraftLite/0.8b LunarCommander')
 ```
 
-Alternatively, you can modify the library's config.py file to set this globally. [Consult the docs](https://github.com/meraki/dashboard-api-python) for more information.
+Alternatively, you can modify the library's config.py file to set this globally. For more information, see [Official Dashboard API library (SDK) for Python](https://github.com/meraki/dashboard-api-python)
 
 ### PowerShell
 
-If using the `Invoke-WebRequest` method, then provide the `-UserAgent` flag in each of your requests:
+If you use the `Invoke-WebRequest` method, then provide the `-UserAgent` flag in each of your requests:
 
 ``` PowerShell
 $userAgent = 'ApplicationName VendorName'
@@ -91,7 +93,7 @@ $apiCallExample = Invoke-WebRequest -URI $uri -Headers $headers -UserAgent $user
 
 ### Java
 
-If using the `HttpURLConnection` module, then use `setRequestProperty` to send the user agent:
+If you use the `HttpURLConnection` module, then use `setRequestProperty` to send the user agent:
 
 ``` Java
 import java.net.HttpURLConnection;
