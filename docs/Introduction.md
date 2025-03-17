@@ -62,7 +62,7 @@ For organizations hosted in different country dashboards, please refer to their 
 
 ### See all the changes
 
-Visit the [Changelog](https://developer.cisco.com/meraki/whats-new/#!v1-0-0-beta-0) for all the details.
+Visit the [Changelog](https://developer.cisco.com/meraki/whats-new/) for all the details.
 
 ### SDKs
 
