@@ -57,7 +57,6 @@ A base URI is the root address or endpoint that serves as the starting point for
 
 For most regions, the base URI for API requests is `https://api.meraki.com/api/v1`.
 
-
 Different countries may have different base URIs, see the [respective base URI section](https://developer.cisco.com/meraki/api-v1/getting-started/#base-uri).
 
 
