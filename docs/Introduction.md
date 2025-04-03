@@ -1,73 +1,65 @@
-# Meraki Dashboard API
+# Meraki Dashboard APIs
 
-A RESTful API to programmatically manage and monitor Meraki networks at scale.
+The Meraki Dashboard API (referred to as Meraki API) is a RESTful API interface that allows you to programmatically manage and monitor Meraki networks at scale.
 
 <img src="../images/cloud-code.png" width="200px">
 
-## What can you do with it?
 
-- Add new organizations, admins, networks, devices, VLANs, and more
+Meraki APIs provide a range of operations to
+
+- Add new organizations, administrators, networks, devices, VLANs, and more
 - Configure thousands of networks in minutes
-- On-board and off-board new employees’ teleworker setup automatically
-- Build your own dashboard for store managers, field techs, or unique use cases
+- On-board and Off-board new employees’ teleworker setup automatically, and
+- Build custom dashboards for store managers, field technicians, or other unique use cases. 
+
 
 Checkout out the [Explore](https://developer.cisco.com/meraki/explore/) section for open source projects, or browse the [Marketplace](https://apps.meraki.io/) for partner solutions.
 
-## What's New in v1 
+## Resources
 
-The Dashboard API has evolved significantly, providing hundreds of operations to manage your Meraki networks!
+A resource is an entity or component within the Meraki ecosystem.  Resources represent the various elements of a network.  Here are some examples of Meraki resources:
 
-We want to do so much more. But in order for us to include many of these new features or improvements, we need to break a few things. 
+- **Organizations**: A collection of networks, representing the top-level structure in the Meraki hierarchy.
+- **Networks**: Specific networks within an organization, which contain devices and configurations.
+- **Devices**: Individual hardware units such as routers, switches, or access points within a network.
+- **VLANs**: Virtual local area networks configured within a network for segmenting traffic.
+- **SSIDs**: Wireless network identifiers that can be configured and managed.
 
-The focus of this **major** version is on **Simplicity** and **Scale**, by providing an enjoyable developer experience. 
+Each resource is typically represented by a unique URL. You can use APIs to configure or retrieve information about these resources.
 
-The API documentation, Postman collection, and Python library will remain synced and up-to-date with improved navigation and features.
+## Services
 
-In addition, several improvements and new operations have been included with this major release.
+A service is a functionality or a set of API operations that interact with the resources of a Meraki product. (These operations are specific actions performed on a resource, such as GET, POST, PUT, or DELETE.) Services perform specific actions on resources such as:
 
+- CONFIGURE service: Manage cloud configurations.
+- MONITOR service: Return status and history information.
+- LIVE TOOL service: Directly interact with devices.
 
-### API Documentation
+## Meraki Products
 
-The API operation documentation and complimenting Postman Collection have a new folder structure for navigating the API. 
+A Meraki product refers to the hardware and software solutions offered by Cisco Meraki that are used to build and manage network infrastructure. These products include wireless access points, switches, or security appliances.
 
+## Resource URLs
 
+The resource URL or path contains the name of the Meraki product to reduce ambiguity when working with similar yet unique functionality. 
 
-#### Categories
+The format of the path is 'product/service'.
 
-The services are grouped into categories, providing a collection of operations that behave in a similar way. 
-
-**CONFIGURE** operations  are for managing cloud configurations
-
-**MONITOR** operations will return status and history information
-
-**LIVE TOOL** operations will directly interact with the device
-
-### Resource Path changes
-
-The operation URL paths will always contain the Meraki product if required, reducing ambiguity when working with resources that have similar yet unique functionality. 
-
-> **Examples of a product and service**
+> **Examples of a Path:**
 >
 > `/appliance/ports`
 >
 > `/switch/ports`
 
-### Base URI
+## Base URI 
 
-In most parts of the world, every API request will begin with the following **base URI**: 
+A base URI is the root address or endpoint that serves as the starting point for accessing the API's resources. The base URI includes the protocol, domain, and base path. All API requests append specific resource paths to this base URI.
 
-> `https://api.meraki.com/api/v1`
+For most regions, the base URI for API requests is `https://api.meraki.com/api/v1`.
 
-For organizations hosted in different country dashboards, please refer to their [respective base URI](https://developer.cisco.com/meraki/api-v1/getting-started/#base-uri)
+Different countries may have different base URIs, see the [respective base URI section](https://developer.cisco.com/meraki/api-v1/getting-started/#base-uri).
 
-### See all the changes
 
-Visit the [Changelog](https://developer.cisco.com/meraki/whats-new/) for all the details.
+## Reference to Open Source Projects and Solutions
 
-### SDKs
-
-Going forward, the custom Meraki [Python library](pythonLibrary.md) will be the recommended SDK for simplified API scripting. The previously auto-generated Python, Node.js, and Ruby SDKs for **v0** will remain in the Meraki GitHub but will no longer be maintained. 
-
-#### Python
-
-The Meraki [Python Library](pythonLibrary.md) has been updated to take advantage of all the new API enhancements plus many custom features to help both beginners and experienced programmers.
+Visit the [Explore](https://developer.cisco.com/meraki/explore/) section for open-source projects, or browse the [Marketplace](https://apps.meraki.io/) for partner solutions.
