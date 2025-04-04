@@ -11,7 +11,7 @@ When you invoke dashboard API, it's best practice to provide a [custom user agen
 1.	Provide the user agent string in the user agent header of every API request.
 2.	Follow the prescribed format below, which differs minimally from standard practices.
 3.	Include only the requested information in your user agent string.
-4.	Use only slashes ("/") when you optionally provide application version information.
+4.	Use only slashes (`/`) when you optionally provide application version information.
 
 
 
@@ -20,7 +20,7 @@ When you invoke dashboard API, it's best practice to provide a [custom user agen
 1.	Do not provide inconsistent or incorrect user agent strings across your application.
 2.	Do not omit the user agent string from any of your requests.
 3.	Do not add unnecessary information or special characters to your user agent string.
-4.	Do not mix the forward slash (/) with the backward slash (\).
+4.	Do not mix the forward slash (`/`) with the backward slash (`\`).
 
 ## Formatting
 
