@@ -5,7 +5,7 @@ import meraki
 # In your own code, use an environment variable as shown under the Usage section
 # @ https://github.com/meraki/dashboard-api-python/
 
-API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
+API_KEY = 'your-key-here'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
@@ -17,7 +17,9 @@ response = dashboard.sensor.createNetworkSensorAlertsProfile(
     network_id, name, conditions, 
     schedule={'id': '5'}, 
     recipients={'emails': ['miles@meraki.com'], 'smsNumbers': ['+15555555555'], 'httpServerIds': ['aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vd2ViaG9va3M=']}, 
-    serials=['Q234-ABCD-0001', 'Q234-ABCD-0002', 'Q234-ABCD-0003']
+    serials=['Q234-ABCD-0001', 'Q234-ABCD-0002', 'Q234-ABCD-0003'], 
+    includeSensorUrl=True, 
+    message='Check with Miles on what to do.'
 )
 
 print(response)

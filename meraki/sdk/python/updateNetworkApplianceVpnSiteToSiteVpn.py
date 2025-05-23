@@ -5,7 +5,7 @@ import meraki
 # In your own code, use an environment variable as shown under the Usage section
 # @ https://github.com/meraki/dashboard-api-python/
 
-API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
+API_KEY = 'your-key-here'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
@@ -15,7 +15,8 @@ mode = 'spoke'
 response = dashboard.appliance.updateNetworkApplianceVpnSiteToSiteVpn(
     network_id, mode, 
     hubs=[{'hubId': 'N_4901849', 'useDefaultRoute': True}], 
-    subnets=[{'localSubnet': '192.168.1.0/24', 'useVpn': True}]
+    subnets=[{'localSubnet': '192.168.1.0/24', 'useVpn': True, 'nat': {'enabled': True, 'remoteSubnet': '192.168.2.0/24'}}], 
+    subnet={'nat': {'isAllowed': True}}
 )
 
 print(response)

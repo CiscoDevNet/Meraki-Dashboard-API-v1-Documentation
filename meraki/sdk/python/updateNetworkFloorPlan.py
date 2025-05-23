@@ -5,7 +5,7 @@ import meraki
 # In your own code, use an environment variable as shown under the Usage section
 # @ https://github.com/meraki/dashboard-api-python/
 
-API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
+API_KEY = 'your-key-here'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
@@ -20,6 +20,7 @@ response = dashboard.networks.updateNetworkFloorPlan(
     bottomRightCorner={'lat': 37.770040510499996, 'lng': -122.38714009525}, 
     topLeftCorner={'lat': 37.770040510499996, 'lng': -122.38714009525}, 
     topRightCorner={'lat': 37.770040510499996, 'lng': -122.38714009525}, 
+    floorNumber=5.0, 
     imageContents='2a9edd3f4ffd80130c647d13eacb59f3'
 )
 

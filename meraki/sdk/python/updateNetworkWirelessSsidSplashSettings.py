@@ -5,7 +5,7 @@ import meraki
 # In your own code, use an environment variable as shown under the Usage section
 # @ https://github.com/meraki/dashboard-api-python/
 
-API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
+API_KEY = 'your-key-here'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
@@ -29,7 +29,8 @@ response = dashboard.wireless.updateNetworkWirelessSsidSplashSettings(
     allowSimultaneousLogins=False, 
     guestSponsorship={'durationInMinutes': 30, 'guestCanRequestTimeframe': False}, 
     billing={'freeAccess': {'enabled': True, 'durationInMinutes': 120}, 'prepaidAccessFastLoginEnabled': True, 'replyToEmailAddress': 'user@email.com'}, 
-    sentryEnrollment={'systemsManagerNetwork': {'id': 'N_1234'}, 'strength': 'focused', 'enforcedSystems': ['iOS']}
+    sentryEnrollment={'systemsManagerNetwork': {'id': 'N_1234'}, 'strength': 'focused', 'enforcedSystems': ['iOS']}, 
+    selfRegistration={'enabled': True, 'authorizationType': 'admin'}
 )
 
 print(response)

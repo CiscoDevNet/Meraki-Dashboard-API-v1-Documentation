@@ -5,11 +5,14 @@ import meraki
 # In your own code, use an environment variable as shown under the Usage section
 # @ https://github.com/meraki/dashboard-api-python/
 
-API_KEY = '75dd5334bef4d2bc96f26138c163c0a3fa0b5ca6'
+API_KEY = 'your-key-here'
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+organization_ids = []
 
-response = dashboard.licensing.getAdministeredLicensingSubscriptionSubscriptions()
+response = dashboard.licensing.getAdministeredLicensingSubscriptionSubscriptions(
+    organization_ids, total_pages='all'
+)
 
 print(response)
