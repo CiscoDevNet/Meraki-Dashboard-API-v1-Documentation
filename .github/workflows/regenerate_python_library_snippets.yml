@@ -24,6 +24,7 @@ jobs:
       - name: Download newest generator
         run: |
           wget https://github.com/meraki/dashboard-api-python/raw/main/generator/generate_snippets.py
+          wget https://github.com/meraki/dashboard-api-python/raw/main/generator/common.py
       - name: Regenerate Python Library snippets
         run: |
           python generate_snippets.py
