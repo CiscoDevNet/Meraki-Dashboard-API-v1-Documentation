@@ -22,12 +22,10 @@ Log in and post your question in the [Meraki forum](https://community.meraki.com
 
 ## Technical Assistance Center
 
-For other reproducible API issues, you can open a support ticket through the Cisco Technical Assistance Center (TAC). 
-
-To contact TAC, use the following options:
-
-* Internet: [https://mycase.cloudapps.cisco.com/](https://mycase.cloudapps.cisco.com/)
-* Hotline Service: 800 553-2447
-* International Access: +1 408 526-7209
-* Teams: tac.connect@webex.bot
-* First Time? [Start here](http://cs.co/first-time)
+For other reproducible API issues, you can open a support ticket through the Cisco Meraki Dashboard. 
+To submit a case in dashboard:
+* Log-in to Meraki dashboard.
+* Navigate to "?" (top-right on green ribbon) > Support Center.
+* Select a Product or Platform tile related to the issue you need help with.
+  
+Other options to open a support case can be found at https://meraki.cisco.com/meraki-support/overview/
