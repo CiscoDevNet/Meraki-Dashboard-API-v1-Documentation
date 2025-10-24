@@ -65,7 +65,6 @@ Follow these steps to request permission:
   - `redirect_uri`: Must match one of the URIs provided when you registered your integration
   - `scope`: Your integration requests this space-separated list of scopes (see the "Understanding OAuth Scopes" section below)
   - `state`: A unique string passed back to your integration upon completion
-  - `nonce` (optional)
   
 	Here is an example link format:
 	   ```
