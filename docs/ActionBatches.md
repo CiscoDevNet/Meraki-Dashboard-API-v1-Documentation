@@ -1,48 +1,79 @@
-# Action Batches
+## Action batches
+An action batch is a configuration mechanism that
+* groups multiple write actions (create, update, destroy) into a single batch
+* executes all actions atomically (all or nothing, no partial success), and
+* supports synchronous or asynchronous processing.
 
-Action Batches are a special type of Dashboard API mechanism for submitting batched configuration requests in a single synchronous or asynchronous transaction. Action Batches are ideal for bulk configuration, either in the initial provisioning process, or for rolling out wide-scale configuration changes. For example, add a switch to a network, configure all 48 ports, and set the switch’s management interface in a single POST.
+Action batches are ideal for applying changes across multiple devices or networks. They ensure consistent configuration by processing the entire batch as a single unit—either all changes apply or none do. This mechanism helps you avoid exceeding the API rate limit. For example, with a single POST operation, you can add a switch to a network, configure all 48 ports, and set the switch’s management interface at the same time.
 
-## Use Cases
+## Synchronous and asynchronous execution modes
+Action batches can run in either **synchronous** or **asynchronous** mode, depending on the number of actions and the desired execution behavior.
+| Mode            | Description                                                                                  |
+|-----------------|----------------------------------------------------------------------------------------------|
+| **Synchronous** | Executes the batch immediately and waits for completion. Limited to **20 actions**.          |
+| **Asynchronous**| Submits the batch and returns immediately. The system processes the batch in the background. Supports up to **100 actions**. |
 
-* Deploy multiple changes across networks and devices
-* Run Batches synchronously or asynchronously
-* Avoid hitting the API rate limit for high-scale configuration changes
-* Ensure all updates will succeed before changes are committed
+### Key differences
+- **Synchronous** batches are suitable for smaller updates that need immediate feedback.
+- **Asynchronous** batches allow larger operations to be queued and processed by the system.
+- Only **five concurrent** batches (regardless of mode) may run at any given time.
 
-## Details
+Synchronous batches provide a faster feedback loop, while asynchronous batches allow for greater scale and deferred processing.
 
-* Action batches allow an API client to define a batch of write actions (**create**, **update**, **destroy**, etc.).
-* Batches are run **atomically** (all or nothing, no partial success).
-* Batches are run **asynchronously** by default. Smaller batches can be run **synchronously**.
-* You can run up to **20 resources** synchronously in a single batch.
-* A batch can consists of up to **100** resources.
-* Limit of **5** concurrent running batches at a time.
-* A batch should be completed within **10 minutes** from confirmation.
-* Different types of resources and operations can be combined in a batch.
-* The actions in a batch will be executed in the same order they are defined.
-* Batches will not be executed until the confirmed property is set. Once a batch is confirmed it cannot be deleted. If a batch is defined but not confirmed it will be **automatically deleted after one week**.
+### Other key points
+- Different types of resources and operations can be combined in a batch.
+- The actions in a batch are executed in the order that they are defined.
 
-## Create an Action Batch
+### Restrictions
+- An action batch must be explicitly confirmed before execution by setting the confirmed property. Once confirmed, it cannot be deleted. If a batch is defined but not confirmed, it is automatically deleted after one week. This mechanism helps prevent accidental or stale configuration updates.
 
-To create an Action Batch, you will need to send a POST request containing an array or resources to be updated and whether or not it should run immediately. You can also select if the batch should run synchronously or asynchronously depending on the size of the batch.
+## How action batches work 
+The key components involved in the process are:
+* **Action batch**: is the container of multiple API actions.
+* **API client**: is the external system or user submitting the batch.
+* **Execution mode**: defines whether a batch runs synchronously or asynchronously.
 
-```Dashboard API
-POST /organizations/{organizationId}/actionBatches
-```
+The process involves these stages:
+* **Batch creation**: The client defines a list of actions to be executed and sets configuration flags such as `confirmed` and `synchronous`.
+* **Batch submission**: The batch is submitted through a POST request to the API.
+* **Confirmation**: The batch must be marked as `confirmed` to execute. If not, it is stored temporarily and deleted after one week.
+* **Execution**: The system executes the batch in the order defined. All actions must succeed, or the batch fails.
+* **Result handling**: A status object returns completion, failure, or error details. For synchronous batches, this occurs immediately. For asynchronous, the client must poll for completion.
 
-### PARAMETERS
+**Result**:
+This mechanism ensures that batches of configuration requests are executed together. They either fully succeed or fail.
 
-**Parameter**|**Description**
-:-------------: |:-------------:
-confirmed| Set to true for immediate execution. Set to false if the action should be previewed before executing.
-synchronous| Force the batch to run synchronous. There can be at most 20 actions in synchronous batch.
-actions| A set of changes to make as part of this action
-resource| Unique identifier for the resource to be acted on
-operation| The operation to be run on the resource, such as "**create**", "**update**", "**destroy**", etc
-body| The body of the action. Example: `{"tags": tags, "type": "access", "vlan": vlan}`
+## Create an action batch
+**Purpose**: Submit multiple configuration changes in a single transaction.  
 
-#### SAMPLE REQUEST
+1. Send a `POST` request to `/organizations/{organizationId}/actionBatches`.  
+2. Use the following parameters:  
+   * `confirmed`: Set to `true` for immediate execution, or `false` to preview before executing.  
+   * `synchronous`: Run the batch synchronously if it includes no more than 20 actions.  
+   * `actions`: A set of changes to be made as a part of this action. Each action includes:  
+     - `resource`: the unique identifier for the resource to be acted on,  
+     - `operation`: the action to perform on resource such as (`create`, `update`, `destroy`, etc.),  
+     - `body`: the JSON object with attributes to apply. Example: `{"tags": tags, "type": "access", "vlan": vlan}`
+3. Include the required headers in your request, such as the API key and content type.  
+4. Submit the request.  
 
+**Result**:  
+If successful, the response returns a batch ID, confirmation setting, and a status object with details such as whether the batch completed, failed, and any errors.  
+**Monitoring**:  
+Use the Dashboard API operations (GET, PUT, and DELETE) to return a list of action batches, retrieve a specific batch, update it, or delete it.  
+
+## API operations for action batches
+These API operations are available to manage action batches:
+
+| Operation                                  | Method | Endpoint                                             |
+| ------------------------------------------ | ------ | ---------------------------------------------------- |
+| Create an action batch                     | POST   | `/organizations/{organizationId}/actionBatches`      |
+| List all action batches in an organization | GET    | `/organizations/{organizationId}/actionBatches`      |
+| Return a specific action batch             | GET    | `/organizations/{organizationId}/actionBatches/{id}` |
+| Delete an unconfirmed action batch         | DELETE | `/organizations/{organizationId}/actionBatches/{id}` |
+| Update an unconfirmed action batch         | PUT    | `/organizations/{organizationId}/actionBatches/{id}` |
+
+## Sample request for an action batch
 ```bash
 curl -X POST https://api.meraki.com/api/v0/organizations/1234567890/actionBatches \
 -L \
@@ -62,9 +93,8 @@ curl -X POST https://api.meraki.com/api/v0/organizations/1234567890/actionBatche
 ]
 }'
 ```
-
-#### SAMPLE RESPONSE
-
+## Sample response for an action batch
+The response to a successful batch submission includes batch status and details:
 Successful HTTP Status: *201*
 
 ```json
@@ -88,35 +118,8 @@ Successful HTTP Status: *201*
    ]
  }
 ```
-
-## API operations
-
-This group of Dashboard API operations are available to submit, monitor and manage your Action Batches. Refer to the respective operation links for more details.
-
-[Create an action batch](##!create-organization-action-batch)
-
-`POST /organizations/{organizationId}/actionBatches`
-
-[Return the list of action batches in the organization](##!get-organization-action-batches)
-
-`GET /organizations/{organizationId}/actionBatches`
-
-[Return an action batch](##!get-organization-action-batch)
-
-`GET /organizations/{organizationId}/actionBatches/{id}`
-
-[Delete an action batch](##!delete-organization-action-batch)
-
-`DELETE /organizations/{organizationId}/actionBatches/{id}`
-
-[Update an action batch](##!update-organization-action-batch)
-
-`PUT /organizations/{organizationId}/actionBatches/{id}`
-
-### Response Errors
-
-#### Unsupported operation
-
+## Response errors
+### Unsupported operation
 When you have attempted to use an API operation that is not a supported resource as listed above.
 
 ```json
@@ -126,9 +129,7 @@ When you have attempted to use an API operation that is not a supported resource
     ]
 }
 ```
-
-#### Execution error
-
+### Execution error
 If the batch fails because one of the resources had an error, the `status` parameter will contain additional information.
 
 ```json
@@ -142,8 +143,7 @@ If the batch fails because one of the resources had an error, the `status` param
     }
 ```
 
-## Example Script
-
+## Example script
 This example Python script will create a new VLAN on a Meraki MX Security Appliance. It will then update multiple switches with new tags. Finally, several ports will be updated to leverage the new VLAN settings.
 
 ```python
