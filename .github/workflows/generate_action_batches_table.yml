@@ -1,0 +1,33 @@
+name: Generate Action Batches Table
+
+on:
+  push:
+    branches:
+      - main 
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  generate-action-batches-table:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Adjust this version if needed
+
+    - name: Generate Action Batches Table
+      run: |
+        cd docs/action-batches/generate-action-batches
+        node generate-action-batches-table.js
+
+    - name: Commit and push if changes
+      run: |
+        git config --local user.email "support@meraki.com"
+        git config --local user.name "GitHub Action"
+        git add docs/ActionBatchesResources.md
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update Action Batches Resources table" && git push)
+
