@@ -5,22 +5,23 @@
  * from the OpenAPI spec.
  * 
  * Usage:
- *   node generate-batchable-actions-table.js [spec-url-or-path] [output-file]
+ *   node generate-action-batches-table.js [spec-url-or-path] [output-file]
  * 
  * Examples:
- *   node generate-batchable-actions-table.js
- *   node generate-batchable-actions-table.js https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec3.json
- *   node generate-batchable-actions-table.js ./spec3.json
- *   node generate-batchable-actions-table.js ./spec3.json custom-output.md
+ *   node generate-action-batches-table.js
+ *   node generate-action-batches-table.js https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec3.json
+ *   node generate-action-batches-table.js ./spec3.json
+ *   node generate-action-batches-table.js ./spec3.json custom-output.md
  */
 
 const fs = require('fs');
 const https = require('https');
 const http = require('http');
 const { URL } = require('url');
+const path = require('path');
 
 const DEFAULT_SPEC_URL = 'https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec3.json';
-const DEFAULT_OUTPUT_FILE = 'ActionBatchesResources.md';
+const DEFAULT_OUTPUT_FILE = path.join(__dirname, '../../ActionBatchesResources.md');
 
 /**
  * Fetch JSON from URL
