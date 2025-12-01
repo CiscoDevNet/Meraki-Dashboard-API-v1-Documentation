@@ -81,17 +81,19 @@ function generateMarkdownTable(actions) {
   }
 
   // Table header
-  let table = '| Group | Summary | Resource | Operation |\n';
+  let table = '| Resource | Operation | Group | Summary |\n';
   table += '|-------|---------|----------|-----------|\n';
 
   // Table rows
   for (const action of actions) {
-    const group = escapeMarkdown(action.group || '');
-    const summary = escapeMarkdown(action.summary || '');
+    
+    
     const resource = escapeMarkdown(action.resource || '');
     const operation = escapeMarkdown(action.operation || '');
+    const summary = escapeMarkdown(action.summary || '');
+    const group = escapeMarkdown(action.group || '');
     
-    table += `| ${group} | ${summary} | ${resource} | ${operation} |\n`;
+    table += `| ${resource} | ${operation} | ${group} | ${summary}|\n`;
   }
 
   return table;
