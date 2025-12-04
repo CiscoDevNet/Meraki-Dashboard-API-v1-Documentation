@@ -1,6 +1,6 @@
 | Resource | Operation | Group | Summary |
 |-------|---------|----------|-----------|
-| /organizations/{organizationId}/devices/controller/migrations | mr/actions/migrate |  | Migrate devices to another controller or management mode|
+| /organizations/{organizationId}/devices/controller/migrations | migrate |  | Migrate devices to another controller or management mode|
 | /organizations/{organizationId}/adaptivePolicy/groups | create | Adaptive policy group | Creates a new adaptive policy group|
 | /organizations/{organizationId}/adaptivePolicy/groups/{id} | update | Adaptive policy group | Updates an adaptive policy group. If updating "Infrastructure", only the SGT is allowed. Cannot update "Unknown".|
 | /organizations/{organizationId}/adaptivePolicy/settings | update | Adaptive policy settings | Update global adaptive policy settings|
@@ -57,12 +57,11 @@
 | /organizations/{organizationId}/licenses | renewSeats | License | Renew SM seats of a license. This will extend the license expiration date of managed SM devices covered by this license|
 | /organizations/{organizationId}/licenses/{licenseId} | update | License | Update a license|
 | /networks/{networkId}/switch/mtu | update | MTU configuration | Update the MTU configuration|
-| /networks/{networkId}/appliance/vlans/settings | update | MX VLAN settings | Enable/Disable VLANs for the given network|
 | /networks/{networkId}/appliance/connectivityMonitoringDestinations | update | MX connectivity monitoring destination | Update the connectivity testing destinations for an MX network|
 | /networks/{networkId}/appliance/firewall/l7FirewallRules | update | MX l7 firewall | Update the MX L7 firewall rules for an MX network|
 | /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth | update | MX uplink setting | Updates the uplink bandwidth settings for your MX network.|
 | /devices/{serial}/managementInterface | update | Management interface settings | Update the management interface settings for a device|
-| /organizations/{organizationId}/devices/details/bulkUpdate | details/update | Mars/actions/device | Updating device details (currently only used for Catalyst devices)|
+| /organizations/{organizationId}/devices/details/bulkUpdate | update | Mars/actions/device | Updating device details (currently only used for Catalyst devices)|
 | /networks/{networkId}/campusGateway/clusters | create | Mcg/actions/cluster | Create a cluster and add campus gateways to it|
 | /networks/{networkId}/campusGateway/clusters/{clusterId} | update | Mcg/actions/cluster | Update a cluster and add/remove campus gateways to/from it|
 | /organizations/{organizationId}/insight/monitoredMediaServers | create | Monitored media server | Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.|
@@ -131,7 +130,7 @@
 | /devices/{serial}/liveTools/leds/blink | blink | Ms/live tools/actions/perform leds | Enqueue a job to blink LEDs on a device. This endpoint has a rate limit of one request every 10 seconds.|
 | /devices/{serial}/liveTools/throughputTest | test | Ms/live tools/actions/perform throughput | Enqueue a job to test a device throughput, the test will run for 10 secs to test throughput. This endpoint has a rate limit of one request every five seconds per device.|
 | /networks/{networkId}/switch/routing/ospf | update | Ms/routing/actions/ospf routing | Update layer 3 OSPF routing configuration|
-| /networks/{networkId}/switch/settings | settings/actions/update | Ms/switch | Update switch network settings|
+| /networks/{networkId}/switch/settings | update | Ms/switch | Update switch network settings|
 | /networks/{networkId}/sensor/alerts/profiles | create | Mt/api/actions/alert profiles | Creates a sensor alert profile for a network.|
 | /networks/{networkId}/sensor/alerts/profiles/{id} | destroy | Mt/api/actions/alert profiles | Deletes a sensor alert profile from a network.|
 | /networks/{networkId}/sensor/alerts/profiles/{id} | update | Mt/api/actions/alert profiles | Updates a sensor alert profile for a network.|
@@ -211,10 +210,11 @@
 | /devices/{serial}/appliance/vmx/authenticationToken | create | Vmx token | Generate a new vMX authentication token|
 | /networks/{networkId}/appliance/warmSpare | swap | Warm spare | Swap MX primary and warm spare appliances|
 | /networks/{networkId}/appliance/warmSpare | update | Warm spare | Update MX warm spare settings|
-| /networks/{networkId}/appliance/vpn/bgp | settings/update | Wired/actions/bgp | Update a Hub BGP Configuration|
+| /networks/{networkId}/appliance/vpn/bgp | update | Wired/actions/bgp | Update a Hub BGP Configuration|
 | /networks/{networkId}/appliance/settings | update | Wired/actions/network appliance settings | Update the appliance settings for a network|
 | /networks/{networkId}/appliance/singleLan | update | Wired/actions/single lan/single lan | Update single LAN configuration|
 | /networks/{networkId}/appliance/trafficShaping/uplinkSelection | update | Wired/actions/uplink selection settings | Update uplink selection settings for an MX network|
+| /networks/{networkId}/appliance/vlans/settings | update | Wired/actions/vlan settings | Enable/Disable VLANs for the given network|
 | /networks/{networkId}/appliance/vlans | create | Wired/actions/vlan/vlan | Add a VLAN|
 | /networks/{networkId}/appliance/vlans/{vlanId} | destroy | Wired/actions/vlan/vlan | Delete a VLAN from a network|
 | /networks/{networkId}/appliance/vlans/{vlanId} | update | Wired/actions/vlan/vlan | Update a VLAN|
