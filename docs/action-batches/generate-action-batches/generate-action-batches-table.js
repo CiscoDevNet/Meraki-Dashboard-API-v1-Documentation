@@ -73,6 +73,17 @@ function escapeMarkdown(text) {
 }
 
 /**
+ * Extract the operation name from a potentially full path
+ * e.g., "mr/actions/migrate" -> "migrate"
+ *       "create" -> "create"
+ */
+function normalizeOperation(operation) {
+  if (!operation) return '';
+  const parts = String(operation).split('/');
+  return parts[parts.length - 1];
+}
+
+/**
  * Generate markdown table from batchable actions
  */
 function generateMarkdownTable(actions) {
@@ -86,10 +97,8 @@ function generateMarkdownTable(actions) {
 
   // Table rows
   for (const action of actions) {
-    
-    
     const resource = escapeMarkdown(action.resource || '');
-    const operation = escapeMarkdown(action.operation || '');
+    const operation = escapeMarkdown(normalizeOperation(action.operation));
     const summary = escapeMarkdown(action.summary || '');
     const group = escapeMarkdown(action.group || '');
     
