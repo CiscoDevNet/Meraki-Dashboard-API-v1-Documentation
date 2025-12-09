@@ -12,7 +12,7 @@
     display: block;
     max-height: calc(100vh - 150px); /* Full height minus header/footer */
     overflow-y: auto; /* Vertical scroll for overflow */
-    font-size: 85% !important; /* Slightly smaller to fit more on screen */
+    font-size: 95% !important;
 }
 
 table {
@@ -39,26 +39,9 @@ table {
 
 th, td {
     border: 1px solid #ddd; /* Cell borders */
-    padding: 4px 6px; /* Slightly tighter padding */
+    padding: 5px; /* Cell padding */ 
     text-align: left; /* Text align left */
     vertical-align: top; /* Align text to top */
-    word-break: break-word; /* Prevent long content from blowing out width */
-}
-
-.scrollable-table td code,
-.scrollable-table th code {
-    font-size: 90%; /* Keep code legible while saving space */
-}
-
-.table-container {
-    width: calc(100% - 16px); /* Leave a little breathing room */
-    margin: 0 auto;
-}
-
-.table-container input,
-.table-container textarea {
-    font-size: 90%;
-    padding: 4px 6px;
 }
 
 
