@@ -57,11 +57,11 @@ const isUrl = (input) => {
 
 // Dynamically fetch or read the OpenAPI specification
 async function fetchOpenAPISpec(customSpecPath) {
-    if (isUrl(customSpecPath)) {
+    if (customSpecPath && isUrl(customSpecPath)) {
         // Fetch the spec from a URL
         const response = await fetch(customSpecPath);
         return response.json();
-    } else if (fs.existsSync(customSpecPath)) {
+    } else if (customSpecPath && fs.existsSync(customSpecPath)) {
         // Read the spec from a local file
         const spec = fs.readFileSync(customSpecPath, 'utf8');
         return JSON.parse(spec);
@@ -83,14 +83,47 @@ function toKebabCase(str) {
         .toLowerCase();
 }
 
+// Parse CLI args for operationId filtering
+function parseOperationIdArgs(args) {
+    const result = new Set();
+    let filePath;
+
+    for (let i = 0; i < args.length; i++) {
+        const arg = args[i];
+        if (arg === '--ops' && args[i + 1]) {
+            args[i + 1].split(/[\s,]+/).filter(Boolean).forEach(op => result.add(op.trim().toLowerCase()));
+            i++;
+        } else if (arg === '--ops-file' && args[i + 1]) {
+            filePath = args[i + 1];
+            i++;
+        }
+    }
+
+    if (filePath && fs.existsSync(filePath)) {
+        const fileOps = fs.readFileSync(filePath, 'utf8').split(/[\s,]+/).filter(Boolean);
+        fileOps.forEach(op => result.add(op.trim().toLowerCase()));
+    }
+
+    return {
+        operationIdsFilter: result.size > 0 ? result : null,
+        remainingArgs: args
+    };
+}
+
 // Parses the Swagger paths from the specification into reportable formats.
-function parseSwaggerPaths(spec) {
+function parseSwaggerPaths(spec, operationIdsFilter) {
     let csvReport = [];
     let markdownReport = [];
     Object.keys(spec.paths).forEach(path => {
         Object.keys(spec.paths[path]).forEach(method => {
             const operation = spec.paths[path][method];
             const operationId = operation.operationId;
+            if (!operationId) {
+                return;
+            }
+            if (operationIdsFilter && !operationIdsFilter.has(operationId.toLowerCase())) {
+                return;
+            }
             let releaseStage = operation[`x-release-stage`] || "GA";
             if (operation.deprecated) {
                 releaseStage = "deprecated"
@@ -103,11 +136,12 @@ function parseSwaggerPaths(spec) {
             const responseParams = extractResponseSchemas(operation.responses);
             const pathParams = operation.parameters ? operation.parameters.map(p => p.name).join(", ") : '';
             const requestBodyParams = extractRequestBodyProperties(operation.requestBody);
-            const tags = operation.tags.join(", ");
-            const pythonOperation = `${operation.tags[0]}.${operationId}`;
+            const tagsArrayRaw = operation.tags || [];
+            const tags = tagsArrayRaw.join(", ");
+            const pythonOperation = tagsArrayRaw.length > 0 ? `${tagsArrayRaw[0]}.${operationId}` : operationId;
 
-            const tagsArray = tags.split(', ');
-            const boldFirstTag = `<b>${tagsArray.shift()}</b>`; // Make the first tag bold
+            const tagsArray = tags.split(', ').filter(Boolean);
+            const boldFirstTag = tagsArray.length > 0 ? `<b>${tagsArray.shift()}</b>` : '';
             const formattedTags = tagsArray.length > 0 ? `, ${tagsArray.join(', ')}` : '';
             const formattedTagsWithBoldFirst = `${boldFirstTag}${formattedTags}`;
 
@@ -123,6 +157,15 @@ function parseSwaggerPaths(spec) {
             });
 
             markdownReport.push({
+                releaseStage,
+                summary,
+                apiDocsUrl,
+                method,
+                path,
+                tags,
+                pythonOperation,
+                oauthScopes,
+                operationId,
                 Operation: `${methodPath} <br /> ${summaryLink}<br><label style="font-size:small; padding-left:20px;"><i>${formattedTagsWithBoldFirst}</i></label><div style="padding:5px"> >  \`${operationId}\` </div> `,
                 "Request Parameters": ` \`${requestBodyParams}\` `,
                 "Path Parameters": ` \`${pathParams}\` `,
@@ -184,24 +227,63 @@ function toMarkdownTable(data, fields) {
     return `| ${header} |\n| ${separator} |\n| ${body} |`;
 }
 
-function markdownToHtmlTable(data, fields) {
+function markdownToHtmlTable(data, fields, apiVersion, totalCount) {
     // Header with combined titles and filter inputs
-    let headerHtml = `<thead><tr>${fields.map(field => `
+    let headerHtml = `<thead><tr><th style="width:32px; text-align:left;">
+            <button class="icon-btn" title="Clear filters" onclick="clearAllFilters()">✕</button>
+        </th>${fields.map(field => {
+        const idx = fields.indexOf(field);
+        if (field === "Operation") {
+            return `
+        <th>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:6px;">
+                <p style="margin:0;">${field}</p>
+            </div>
+            <div style="display:flex; gap:6px; align-items:center; margin-top:4px;">
+                <input type="text" onkeyup="filterTable(this, ${idx})" placeholder="Filter...">
+                <button class="icon-btn" id="opFilterToggle" title="Advanced operation filter" onclick="toggleOpFilterPanel()">▼</button>
+            </div>
+            <div id="opFilterPanel" style="display:none; margin-top:6px;">
+                <label for="opFilterInput"><b>Filter multiple operations</b> (comma/space/newline)</label><br/>
+                <textarea id="opFilterInput" rows="3" style="width:100%; max-width:480px;" placeholder="getOrganizations, getOrganizationNetworks, getOrganizationDevices, ..."></textarea>
+                <div style="margin-top:6px; display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+                    <button class="apply-op-filter" onclick="applyOpFilter()">Apply</button>
+                    <button class="icon-btn" title="Clear operation filter" onclick="clearOpFilter()">✕</button>
+                </div>
+            </div>
+        </th>`;
+        }
+        return `
         <th>
             <p style="margin:5px 0px">${field}</p>
-            <input type="text" onkeyup="filterTable(this, ${fields.indexOf(field)})" placeholder="Filter...">
-        </th>
-    `).join('')}</tr></thead>`;
+            <input type="text" onkeyup="filterTable(this, ${idx})" placeholder="Filter...">
+        </th>`;
+    }).join('')}</tr></thead>`;
 
     // Body rows
-    let bodyHtml = `<tbody>${data.map(row => `
-        <tr>${fields.map(field => {
+    let bodyHtml = `<tbody>${data.map(row => {
+        const attrs = [
+            ['operation-id', row.operationId || ''],
+            ['release-stage', row.releaseStage || ''],
+            ['summary', row.summary || ''],
+            ['api-docs-url', row.apiDocsUrl || ''],
+            ['method', row.method || ''],
+            ['path', row.path || ''],
+            ['path-params', row["Path Parameters"] ? row["Path Parameters"].replace(/`/g, '') : ''],
+            ['request-body-params', row["Request Parameters"] ? row["Request Parameters"].replace(/`/g, '') : ''],
+            ['response-params', row["Response Parameters"] ? row["Response Parameters"].replace(/`/g, '') : ''],
+            ['tags', row.tags || ''],
+            ['python-operation', row.pythonOperation || ''],
+            ['oauth-scopes', row.oauthScopes || '']
+        ].map(([k, v]) => `data-${k}="${(v || '').replace(/"/g, '&quot;')}"`).join(' ');
+        return `
+        <tr ${attrs}><td></td>${fields.map(field => {
         let cellData = row[field] || '';
         cellData = cellData.replace(/`([^`]+)`/g, '<code>$1</code>')
             .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
         return `<td>${cellData}</td>`;
-    }).join('')}</tr>
-    `).join('')}</tbody>`;
+    }).join('')}</tr>`;
+    }).join('')}</tbody>`;
 
     // Full table
     return `<div class="table-container"><table class="scrollable-table">${headerHtml}${bodyHtml}</table></div>`;
@@ -211,14 +293,22 @@ function markdownToHtmlTable(data, fields) {
 
 async function generateData() {
     // Capture custom spec path or URL from CLI arguments
-    const customSpecPath = process.argv[2];
+    const rawArgs = process.argv.slice(2);
+    const customSpecPath = rawArgs[0] && !rawArgs[0].startsWith('--') ? rawArgs.shift() : undefined;
+    const { operationIdsFilter } = parseOperationIdArgs(rawArgs);
 
     const targetDirectory = setupTargetDirectoryAndCopyFiles(); // Set up directory and copy supporting files
 
     try {
         // Pass the custom or default spec URL/path to fetchOpenAPISpec
         const spec = await fetchOpenAPISpec(customSpecPath || DEFAULT_API_SPEC_URL);
-        const { markdownReport, csvReport } = parseSwaggerPaths(spec);
+        const { markdownReport, csvReport } = parseSwaggerPaths(spec, operationIdsFilter);
+        const totalCount = csvReport.length;
+        const methodCounts = csvReport.reduce((acc, row) => {
+            const m = (row.method || '').toUpperCase();
+            if (m) acc[m] = (acc[m] || 0) + 1;
+            return acc;
+        }, {});
         const apiVersion = spec.info.version;
         const fields = ["Operation", "Path Parameters", "Request Parameters", "Response Parameters", "OAuth Scopes"];
 
@@ -228,7 +318,10 @@ async function generateData() {
         const htmlFilePath = path.join(targetDirectory, HTML_FILENAME);
 
         // Write CSV File
-        const csvContent = parse(csvReport, { fields: Object.keys(csvReport[0]) });
+        const csvFields = csvReport.length > 0
+            ? Object.keys(csvReport[0])
+            : ["releaseStage", "operationId", "summary", "apiDocsUrl", "method", "path", "pathParams", "requestBodyParams", "responseParams", "tags", "pythonOperation", "oauthScopes"];
+        const csvContent = parse(csvReport, { fields: csvFields });
         fs.writeFileSync(csvFilePath, csvContent);
         console.log(`CSV file has been generated successfully: ${csvFilePath}`);
 
@@ -253,18 +346,20 @@ async function generateData() {
             
         
                <!-- <h1>API Index</h1> -->
-               <div style="padding-left:10px">
-                <p>
-                    <button class="clear-filters" onclick="clearFilters()">Clear Filters</button> <a style="padding-left:30px" href="${CSV_FILENAME}" class="export" >Download CSV </a> <a style="padding-left:30px" href="https://github.com/meraki/openapi" class="export" >OpenAPI Specification</a></div>
-                </p>
+               <div style="padding:10px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; border-bottom:1px solid #ccc;">
+                    <div style="display:flex; gap:12px; align-items:center; flex:1 1 auto; flex-wrap:wrap;">
+                        <span><b>API v${apiVersion}</b></span>
+                        <span id="totalCount">Total operations: ${totalCount}</span>
+                        <span id="methodCounts" style="opacity:0.75; font-size: 0.9em;">GET: ${methodCounts.GET || 0} | POST: ${methodCounts.POST || 0} | PUT: ${methodCounts.PUT || 0} | DELETE: ${methodCounts.DELETE || 0}</span>
+                    </div>
+                    <div style="display:flex; gap:8px; align-items:center; justify-content:flex-end; flex:1 1 auto;">
+                        <button class="toolbar-btn" onclick="exportFilteredCsv()">Download filtered CSV</button>
+                        <button class="toolbar-btn" onclick="window.location.href='${CSV_FILENAME}'">Download full CSV</button>
+                        <button class="toolbar-btn" onclick="window.location.href='https://github.com/meraki/openapi'">OpenAPI Specification</button>
+                    </div>
                </div>
-           
-                ${markdownToHtmlTable(markdownReport, fields)}
+               ${markdownToHtmlTable(markdownReport, fields, apiVersion, totalCount)}
 
-                
-                <p style="padding-left:30px"><i> API v${apiVersion}</i></p>
-           
-            
         </body>
         </html>
     `;
@@ -274,8 +369,6 @@ async function generateData() {
         console.error('An error occurred:', error);
     }
 }
-
-
 function setupTargetDirectoryAndCopyFiles() {
     const currentDirectory = process.cwd();
     const scriptDirectory = __dirname;

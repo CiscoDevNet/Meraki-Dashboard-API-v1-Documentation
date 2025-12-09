@@ -22,7 +22,7 @@ This tool automates the creation of Cisco Meraki [API Index](https://developer.c
 ## Usage
 
 1. Run `generate.js` with Node.js to create the files.
-2. Open `meraki-api-index.html` in a browser to view the API table.
+2. Open `meraki-api-index.html` in a browser to view the API table (column filters, opId filter, filtered CSV export).
 3. Utilize `meraki-api-index.csv` for offline analysis in Excel or similar.
 4. Employ `meraki-api-index.md` for online viewing on platforms like GitHub.
 
@@ -45,6 +45,14 @@ To use a local or custom spec:
 node generate.js /path/to/local/spec.json
 node generate.js https://customspec.com/spec.json
 ```
+
+Filter to specific operationIds via CLI:
+
+```
+node generate.js --ops "getOrganizations, getNetworks"
+node generate.js --ops-file ./ops.txt
+```
+(`--ops` accepts comma/space/newline-separated ids; combine with a spec path if desired.)
 
 ### Output Directory:
 Running in its directory, outputs go to `output`.
