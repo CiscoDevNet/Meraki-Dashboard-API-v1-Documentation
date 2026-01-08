@@ -3,8 +3,6 @@
 | /organizations/{organizationId}/devices/controller/migrations | migrate |  | Migrate devices to another controller or management mode|
 | /organizations/{organizationId}/adaptivePolicy/groups | create | Adaptive policy group | Creates a new adaptive policy group|
 | /organizations/{organizationId}/adaptivePolicy/groups/{id} | update | Adaptive policy group | Updates an adaptive policy group. If updating "Infrastructure", only the SGT is allowed. Cannot update "Unknown".|
-| /organizations/{organizationId}/adaptivePolicy/settings | update | Adaptive policy settings | Update global adaptive policy settings|
-| /networks/{networkId}/switch/alternateManagementInterface | update | Alternate management interface | Update the switch alternate management interface for the network|
 | /organizations/{organizationId}/configTemplates | create | Api features/actions/config template | Create a new configuration template|
 | /networks/{networkId}/settings | update | Api features/actions/network settings | Update the settings for a network|
 | /networks/{networkId}/webhooks/payloadTemplates | create | Api platform/actions/webhook payload | Create a webhook payload template for a network|
@@ -50,6 +48,7 @@
 | /organizations/{organizationId}/alerts/profiles | create | Insight/actions/org wide alerts/alert config | Create an organization-wide alert configuration|
 | /organizations/{organizationId}/alerts/profiles/{alertConfigId} | destroy | Insight/actions/org wide alerts/alert config | Removes an organization-wide alert config|
 | /organizations/{organizationId}/alerts/profiles/{alertConfigId} | update | Insight/actions/org wide alerts/alert config | Update an organization-wide alert config|
+| /organizations/{organizationId}/inventory/orders | claim | Inventory/actions/unified orders/unified order | Claim an order by the secure unique order claim number, the order claim id|
 | /networks/{networkId}/wireless/ssids/{number}/firewall/l3FirewallRules | update | L3 firewall | Update the L3 firewall rules of an SSID on an MR network|
 | /organizations/{organizationId}/licenses | assignSeats | License | Assign SM seats to a network. This will increase the managed SM device limit of the network|
 | /organizations/{organizationId}/licenses | move | License | Move licenses to another organization. This will also move any devices that the licenses are assigned to|
@@ -60,7 +59,6 @@
 | /networks/{networkId}/appliance/connectivityMonitoringDestinations | update | MX connectivity monitoring destination | Update the connectivity testing destinations for an MX network|
 | /networks/{networkId}/appliance/firewall/l7FirewallRules | update | MX l7 firewall | Update the MX L7 firewall rules for an MX network|
 | /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth | update | MX uplink setting | Updates the uplink bandwidth settings for your MX network.|
-| /devices/{serial}/managementInterface | update | Management interface settings | Update the management interface settings for a device|
 | /organizations/{organizationId}/devices/details/bulkUpdate | update | Mars/actions/device | Updating device details (currently only used for Catalyst devices)|
 | /networks/{networkId}/campusGateway/clusters | create | Mcg/actions/cluster | Create a cluster and add campus gateways to it|
 | /networks/{networkId}/campusGateway/clusters/{clusterId} | update | Mcg/actions/cluster | Update a cluster and add/remove campus gateways to/from it|
@@ -108,6 +106,7 @@
 | /organizations/{organizationId}/adaptivePolicy/policies/{id} | destroy | Ms/actions/adaptive | Delete an Adaptive Policy|
 | /organizations/{organizationId}/adaptivePolicy/policies/{id} | update | Ms/actions/adaptive | Update an Adaptive Policy|
 | /organizations/{organizationId}/adaptivePolicy/groups/{id} | destroy | Ms/actions/adaptive policy groups/adaptive policy group | Deletes the specified adaptive policy group and any associated policies and references|
+| /organizations/{organizationId}/adaptivePolicy/settings | update | Ms/actions/adaptive policy settings | Update global adaptive policy settings|
 | /devices/{serial}/switch/routing/interfaces | create | Ms/actions/l3 interface | Create a layer 3 interface for a switch|
 | /devices/{serial}/switch/routing/interfaces/{interfaceId} | destroy | Ms/actions/l3 interface | Delete a layer 3 interface from the switch|
 | /devices/{serial}/switch/routing/interfaces/{interfaceId} | update | Ms/actions/l3 interface | Update a layer 3 interface for a switch|
@@ -118,6 +117,9 @@
 | /networks/{networkId}/switch/linkAggregations | create | Ms/actions/link aggregation | Create a link aggregation group|
 | /networks/{networkId}/switch/linkAggregations/{linkAggregationId} | destroy | Ms/actions/link aggregation | Split a link aggregation group into separate ports|
 | /networks/{networkId}/switch/linkAggregations/{linkAggregationId} | update | Ms/actions/link aggregation | Update a link aggregation group|
+| /devices/{serial}/managementInterface | update | Ms/actions/management interface settings | Update the management interface settings for a device|
+| /networks/{networkId}/switch/alternateManagementInterface | update | Ms/actions/switch alternate management interface | Update the switch alternate management interface for the network|
+| /devices/{serial}/switch/ports | cycle | Ms/actions/switch port | Cycle a set of switch ports|
 | /devices/{serial}/switch/ports/{portId} | update | Ms/actions/switch port | Update a switch port|
 | /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports/{portId} | update | Ms/actions/switch profile port | Update a switch template port|
 | /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces | create | Ms/actions/switch stacks l3 interface | Create a layer 3 interface for a switch stack|
@@ -131,6 +133,7 @@
 | /devices/{serial}/liveTools/throughputTest | test | Ms/live tools/actions/perform throughput | Enqueue a job to test a device throughput, the test will run for 10 secs to test throughput. This endpoint has a rate limit of one request every five seconds per device.|
 | /networks/{networkId}/switch/routing/ospf | update | Ms/routing/actions/ospf routing | Update layer 3 OSPF routing configuration|
 | /networks/{networkId}/switch/settings | update | Ms/switch | Update switch network settings|
+| /organizations/{organizationId}/switch/devices | clone | Ms/switch | Clone port-level and some switch-level configuration settings from a source switch to one or more target switches. Cloned settings include: Aggregation Groups, Power Settings, Multicast Settings, MTU Configuration, STP Bridge priority, Port Mirroring|
 | /networks/{networkId}/sensor/alerts/profiles | create | Mt/api/actions/alert profiles | Creates a sensor alert profile for a network.|
 | /networks/{networkId}/sensor/alerts/profiles/{id} | destroy | Mt/api/actions/alert profiles | Deletes a sensor alert profile from a network.|
 | /networks/{networkId}/sensor/alerts/profiles/{id} | update | Mt/api/actions/alert profiles | Updates a sensor alert profile for a network.|
@@ -138,6 +141,7 @@
 | /devices/{serial}/sensor/relationships | update | Mt/api/actions/sensor gateway role | Assign one or more sensor roles to a given sensor or camera device.|
 | /networks/{networkId}/sensor/mqttBrokers/{mqttBrokerId} | update | Mt/api/actions/sensor mqtt broker | Update the sensor settings of an MQTT broker. To update the broker itself, use /networks/{networkId}/mqttBrokers/{mqttBrokerId}.|
 | /networks/{networkId}/switch/routing/multicast | update | Multicast | Update multicast settings for a network|
+| /organizations/{organizationId}/nac/certificates/authorities/crls | create | Nac certificate revocation list | Create a new CRL (either base or delta) for an existing CA|
 | /networks/{networkId} | bind | Network | Bind a network to a template.|
 | /networks/{networkId} | destroy | Network | Delete a network|
 | /networks/{networkId} | split | Network | Split a combined network into individual networks for each type of device|
@@ -194,8 +198,6 @@
 | /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId} | destroy | Static delegated prefix | Delete a static delegated prefix from a network|
 | /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId} | update | Static delegated prefix | Update a static delegated prefix from a network|
 | /networks/{networkId}/switch/stormControl | update | Storm control | Update the storm control configuration for a switch network|
-| /organizations/{organizationId}/switch/devices | clone | Switch | Clone port-level and some switch-level configuration settings from a source switch to one or more target switches. Cloned settings include: Aggregation Groups, Power Settings, Multicast Settings, MTU Configuration, STP Bridge priority, Port Mirroring|
-| /devices/{serial}/switch/ports | cycle | Switch port | Cycle a set of switch ports|
 | /networks/{networkId}/switch/portSchedules/{portScheduleId} | update | Switch port schedule | Update a switch port schedule|
 | /devices/{serial}/switch/warmSpare | update | Switch warm spare settings | Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note that this will irreversibly destroy any existing L3 configuration on the spare.|
 | /networks/{networkId}/appliance/trafficShaping/rules | update | Traffic shaping settings | Update the traffic shaping settings rules for an MX network|
