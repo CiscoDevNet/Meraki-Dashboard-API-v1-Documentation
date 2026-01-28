@@ -17,6 +17,7 @@ Using OAuth 2.0 for authentication offers several advantages compared to traditi
 - **Avoid copy-pasting API keys**: OAuth 2.0 offers a secure, seamless process for exchanging credentials.
 - **Avoid API key rotations**: OAuth 2.0 uses short-lived access tokens. These tokens rotate automatically every 60 minutes.
 - **Simplified auditing**: Each integration has its identity, which makes it easy to trace API calls back to the integration invoking the API call.
+- **Bypass IP restrictions**: When an OAuth 2.0 integration is explicitly authorized, it operates independently of the login IP range restrictions. This means that applications using OAuth 2.0 tokens can access permitted resources from any IP address, regardless of the IP range controls you have configured for standard logins or API key usage.
 
 ### Guidelines for building an OAuth 2.0 integration
 - Store the `refresh_token` and the `access_token` securely.
