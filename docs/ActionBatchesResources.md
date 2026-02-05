@@ -4,6 +4,8 @@
 | /organizations/{organizationId}/adaptivePolicy/groups | create | Adaptive policy group | Creates a new adaptive policy group|
 | /organizations/{organizationId}/adaptivePolicy/groups/{id} | update | Adaptive policy group | Updates an adaptive policy group. If updating "Infrastructure", only the SGT is allowed. Cannot update "Unknown".|
 | /organizations/{organizationId}/configTemplates | create | Api features/actions/config template | Create a new configuration template|
+| /devices/{serial} | update | Api features/actions/device | Update the attributes of a device|
+| /networks/{networkId}/devices | remove | Api features/actions/device | Remove a single device|
 | /networks/{networkId}/settings | update | Api features/actions/network settings | Update the settings for a network|
 | /networks/{networkId}/webhooks/payloadTemplates | create | Api platform/actions/webhook payload | Create a webhook payload template for a network|
 | /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId} | destroy | Api platform/actions/webhook payload | Destroy a webhook payload template for a network. Does not work for included templates ('wpt_00001', 'wpt_00002', 'wpt_00003', 'wpt_00004', 'wpt_00005', 'wpt_00006', 'wpt_00007' or 'wpt_00008')|
@@ -28,8 +30,6 @@
 | /organizations/{organizationId}/brandingPolicies/priorities | update | Dash xl/dashboard branding policy priorities | Update the priority ordering of an organization's branding policies.|
 | /networks/{networkId}/clients | provision | Dashboard features/actions/client | Provisions a client with a name and policy. Clients can be provisioned before they associate to the network.|
 | /organizations/{organizationId}/earlyAccess/features/optIns/{optInId} | update | Dashboard features/actions/early access/feature opt in | Update an early access feature opt-in for an organization|
-| /devices/{serial} | update | Device | Update the attributes of a device|
-| /networks/{networkId}/devices | remove | Device | Remove a single device|
 | /networks/{networkId}/devices/claim | claim | Device | Claim devices into a network. (Note: for recently claimed devices, it may take a few minutes for API requests against that device to succeed). This operation can be used up to ten times within a single five minute window.|
 | /networks/{networkId}/switch/dhcpServerPolicy | update | Dhcp server policy | Update the DHCP server settings. Blocked/allowed servers are only applied when default policy is allow/block, respectively|
 | /networks/{networkId}/switch/dscpToCosMappings | update | Dscp cos mapping | Update the DSCP to CoS mappings|
@@ -99,6 +99,7 @@
 | /organizations/{organizationId}/wireless/ssids/firewall/isolation/allowlist/entries | create | Mr/firewall/actions/l2 isolation allowlist | Create isolation allow list MAC entry for this organization|
 | /organizations/{organizationId}/wireless/ssids/firewall/isolation/allowlist/entries/{entryId} | destroy | Mr/firewall/actions/l2 isolation allowlist | Destroy isolation allow list MAC entry for this organization|
 | /organizations/{organizationId}/wireless/ssids/firewall/isolation/allowlist/entries/{entryId} | update | Mr/firewall/actions/l2 isolation allowlist | Update isolation allow list MAC entry info|
+| /networks/{networkId}/wireless/radio/rrm | update | Mr/speedy/actions/auto RF | Update the AutoRF settings for a wireless network|
 | /networks/{networkId}/switch/accessPolicies | create | Ms/access | Create an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.|
 | /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber} | destroy | Ms/access | Delete an access policy for a switch network|
 | /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber} | update | Ms/access | Update an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.|
@@ -141,7 +142,6 @@
 | /devices/{serial}/sensor/relationships | update | Mt/api/actions/sensor gateway role | Assign one or more sensor roles to a given sensor or camera device.|
 | /networks/{networkId}/sensor/mqttBrokers/{mqttBrokerId} | update | Mt/api/actions/sensor mqtt broker | Update the sensor settings of an MQTT broker. To update the broker itself, use /networks/{networkId}/mqttBrokers/{mqttBrokerId}.|
 | /networks/{networkId}/switch/routing/multicast | update | Multicast | Update multicast settings for a network|
-| /organizations/{organizationId}/nac/certificates/authorities/crls | create | Nac certificate revocation list | Create a new CRL (either base or delta) for an existing CA|
 | /networks/{networkId} | bind | Network | Bind a network to a template.|
 | /networks/{networkId} | destroy | Network | Delete a network|
 | /networks/{networkId} | split | Network | Split a combined network into individual networks for each type of device|
@@ -149,6 +149,7 @@
 | /networks/{networkId} | update | Network | Update a network|
 | /organizations/{organizationId}/networks | combine | Network | Combine multiple networks into a single network|
 | /organizations/{organizationId}/networks | create | Network | Create a network|
+| /networks/{networkId}/wireless/ssids/{number}/splash/settings | update | Network access/ssids/actions/ssid splash settings | Modify the splash page settings for the given SSID|
 | /organizations/{organizationId}/saml/idps | create | Organization SAML IdP | Create a SAML IdP for your organization.|
 | /organizations/{organizationId}/saml/idps/{idpId} | destroy | Organization SAML IdP | Remove a SAML IdP in your organization.|
 | /organizations/{organizationId}/saml/idps/{idpId} | update | Organization SAML IdP | Update a SAML IdP in your organization|
@@ -190,7 +191,6 @@
 | /organizations/{organizationId}/splash/themes/{themeIdentifier}/assets | create | Splash theme asset | Create a Splash Theme Asset|
 | /organizations/{organizationId}/splash/themes/{id} | destroy | Splash2 theme | Delete a Splash Theme|
 | /networks/{networkId}/wireless/ssids/{number}/deviceTypeGroupPolicies | update | Ssid device type group policies | Update the device type group policies for the SSID|
-| /networks/{networkId}/wireless/ssids/{number}/splash/settings | update | Ssid splash settings | Modify the splash page settings for the given SSID|
 | /networks/{networkId}/wireless/ssids/{number}/vpn | update | Ssid vpn | Update the VPN settings for the SSID|
 | /networks/{networkId}/firmwareUpgrades/staged/groups | create | Staged upgrade/group | Create a Staged Upgrade Group for a network|
 | /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId} | destroy | Staged upgrade/group | Delete a Staged Upgrade Group|
@@ -223,7 +223,7 @@
 | /networks/{networkId}/appliance/trafficShaping/vpnExclusions | update | Wired/actions/vpn exclusions | Update VPN exclusion rules for an MX network.|
 | /organizations/{organizationId}/appliance/vpn/siteToSite/ipsec/peers/slas | update | Wired/actions/vpn/ipsec sla policies | Update the IPsec SLA policies for an organization|
 | /networks/{networkId}/appliance/vpn/siteToSiteVpn | update | Wired/actions/vpn/site to site vpn | Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.|
-| /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers | update | Wired/actions/vpn/third party vpn peers | Update the third party VPN peers for an organization|
+| /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers | update | Wired/actions/vpn/third party vpn peers | Update the third party VPN peers for an organization.  Subnet overlap warning: Unlike the Dashboard UI, updateOrganizationApplianceVpnThirdPartyVPNPeers does not run the org-wide subnet-overlap validation before saving changes. Requests with overlapping VPN subnets will succeed through the API, but the resulting configuration may be blocked from further edits in Dashboard until the overlaps are resolved manually. Use this endpoint only when you've already confirmed the advertised subnets are unique across the organization. |
 | /networks/{networkId}/appliance/sdwan/internetPolicies | update | Wired/actions/wan traffic uplink | Update SDWAN internet traffic preferences for an MX network|
 | /networks/{networkId}/appliance/rfProfiles | create | Wired/appliance RF profile | Creates new RF profile for this network|
 | /networks/{networkId}/appliance/rfProfiles/{rfProfileId} | destroy | Wired/appliance RF profile | Delete a RF Profile|
