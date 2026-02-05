@@ -9,6 +9,8 @@ on:
 jobs:
   generate-api-index:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # required for git push
 
     steps:
     - name: Checkout repository
