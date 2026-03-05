@@ -40,4 +40,4 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add docs/api-index/*
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update API Index" && git push)
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update API Index [skip ci]" && git pull --rebase && git push)

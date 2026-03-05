@@ -29,5 +29,5 @@ jobs:
         git config --local user.email "support@meraki.com"
         git config --local user.name "GitHub Action"
         git add docs/ActionBatchesResources.md
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update Action Batches Resources table" && git push)
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update Action Batches Resources table [skip ci]" && git pull --rebase && git push)
 
