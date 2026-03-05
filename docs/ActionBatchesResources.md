@@ -2,6 +2,7 @@
 |-------|---------|----------|-----------|
 | /organizations/{organizationId}/devices/controller/migrations | migrate |  | Migrate devices to another controller or management mode|
 | /organizations/{organizationId}/adaptivePolicy/groups | create | Adaptive policy group | Creates a new adaptive policy group|
+| /organizations/{organizationId}/adaptivePolicy/groups/{id} | destroy | Adaptive policy group | Deletes the specified adaptive policy group and any associated policies and references|
 | /organizations/{organizationId}/adaptivePolicy/groups/{id} | update | Adaptive policy group | Updates an adaptive policy group. If updating "Infrastructure", only the SGT is allowed. Cannot update "Unknown".|
 | /organizations/{organizationId}/configTemplates | create | Api features/actions/config template | Create a new configuration template|
 | /devices/{serial} | update | Api features/actions/device | Update the attributes of a device|
@@ -57,7 +58,6 @@
 | /organizations/{organizationId}/licenses/{licenseId} | update | License | Update a license|
 | /networks/{networkId}/switch/mtu | update | MTU configuration | Update the MTU configuration|
 | /networks/{networkId}/appliance/connectivityMonitoringDestinations | update | MX connectivity monitoring destination | Update the connectivity testing destinations for an MX network|
-| /networks/{networkId}/appliance/firewall/l7FirewallRules | update | MX l7 firewall | Update the MX L7 firewall rules for an MX network|
 | /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth | update | MX uplink setting | Updates the uplink bandwidth settings for your MX network.|
 | /organizations/{organizationId}/devices/details/bulkUpdate | update | Mars/actions/device | Updating device details (currently only used for Catalyst devices)|
 | /networks/{networkId}/campusGateway/clusters | create | Mcg/actions/cluster | Create a cluster and add campus gateways to it|
@@ -106,7 +106,6 @@
 | /organizations/{organizationId}/adaptivePolicy/policies | create | Ms/actions/adaptive | Add an Adaptive Policy|
 | /organizations/{organizationId}/adaptivePolicy/policies/{id} | destroy | Ms/actions/adaptive | Delete an Adaptive Policy|
 | /organizations/{organizationId}/adaptivePolicy/policies/{id} | update | Ms/actions/adaptive | Update an Adaptive Policy|
-| /organizations/{organizationId}/adaptivePolicy/groups/{id} | destroy | Ms/actions/adaptive policy groups/adaptive policy group | Deletes the specified adaptive policy group and any associated policies and references|
 | /organizations/{organizationId}/adaptivePolicy/settings | update | Ms/actions/adaptive policy settings | Update global adaptive policy settings|
 | /devices/{serial}/switch/routing/interfaces | create | Ms/actions/l3 interface | Create a layer 3 interface for a switch|
 | /devices/{serial}/switch/routing/interfaces/{interfaceId} | destroy | Ms/actions/l3 interface | Delete a layer 3 interface from the switch|
@@ -119,6 +118,7 @@
 | /networks/{networkId}/switch/linkAggregations/{linkAggregationId} | destroy | Ms/actions/link aggregation | Split a link aggregation group into separate ports|
 | /networks/{networkId}/switch/linkAggregations/{linkAggregationId} | update | Ms/actions/link aggregation | Update a link aggregation group|
 | /devices/{serial}/managementInterface | update | Ms/actions/management interface settings | Update the management interface settings for a device|
+| /networks/{networkId}/switch/stormControl | update | Ms/actions/storm control | Update the storm control configuration for a switch network|
 | /networks/{networkId}/switch/alternateManagementInterface | update | Ms/actions/switch alternate management interface | Update the switch alternate management interface for the network|
 | /devices/{serial}/switch/ports | cycle | Ms/actions/switch port | Cycle a set of switch ports|
 | /devices/{serial}/switch/ports/{portId} | update | Ms/actions/switch port | Update a switch port|
@@ -142,6 +142,7 @@
 | /devices/{serial}/sensor/relationships | update | Mt/api/actions/sensor gateway role | Assign one or more sensor roles to a given sensor or camera device.|
 | /networks/{networkId}/sensor/mqttBrokers/{mqttBrokerId} | update | Mt/api/actions/sensor mqtt broker | Update the sensor settings of an MQTT broker. To update the broker itself, use /networks/{networkId}/mqttBrokers/{mqttBrokerId}.|
 | /networks/{networkId}/switch/routing/multicast | update | Multicast | Update multicast settings for a network|
+| /devices/{serial}/camera/sense | update | Mv/actions/sense setting | Update sense settings for the given camera|
 | /networks/{networkId} | bind | Network | Bind a network to a template.|
 | /networks/{networkId} | destroy | Network | Delete a network|
 | /networks/{networkId} | split | Network | Split a combined network into individual networks for each type of device|
@@ -180,7 +181,6 @@
 | /networks/{networkId}/switch/routing/multicast/rendezvousPoints/{rendezvousPointId} | destroy | Rendezvous point | Delete a multicast rendezvous point|
 | /networks/{networkId}/switch/routing/multicast/rendezvousPoints/{rendezvousPointId} | update | Rendezvous point | Update a multicast rendezvous point|
 | /networks/{networkId}/switch/stp | update | STP configuration | Updates STP settings|
-| /devices/{serial}/camera/sense | update | Sense setting | Update sense settings for the given camera|
 | /organizations/{organizationId}/sm/admins/roles | create | Sm/actions/admins/role | Create a Limited Access Role|
 | /organizations/{organizationId}/sm/admins/roles/{roleId} | destroy | Sm/actions/admins/role | Delete a Limited Access Role|
 | /organizations/{organizationId}/sm/admins/roles/{roleId} | update | Sm/actions/admins/role | Update a Limited Access Role|
@@ -197,7 +197,6 @@
 | /networks/{networkId}/appliance/prefixes/delegated/statics | create | Static delegated prefix | Add a static delegated prefix from a network|
 | /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId} | destroy | Static delegated prefix | Delete a static delegated prefix from a network|
 | /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId} | update | Static delegated prefix | Update a static delegated prefix from a network|
-| /networks/{networkId}/switch/stormControl | update | Storm control | Update the storm control configuration for a switch network|
 | /networks/{networkId}/switch/portSchedules/{portScheduleId} | update | Switch port schedule | Update a switch port schedule|
 | /devices/{serial}/switch/warmSpare | update | Switch warm spare settings | Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note that this will irreversibly destroy any existing L3 configuration on the spare.|
 | /networks/{networkId}/appliance/trafficShaping/rules | update | Traffic shaping settings | Update the traffic shaping settings rules for an MX network|
@@ -215,6 +214,8 @@
 | /networks/{networkId}/appliance/vpn/bgp | update | Wired/actions/bgp | Update a Hub BGP Configuration|
 | /networks/{networkId}/appliance/settings | update | Wired/actions/network appliance settings | Update the appliance settings for a network|
 | /networks/{networkId}/appliance/singleLan | update | Wired/actions/single lan/single lan | Update single LAN configuration|
+| /networks/{networkId}/appliance/umbrella/account | action | Wired/actions/umbrella integration/account | Connect a Cisco Umbrella account to this network|
+| /networks/{networkId}/appliance/umbrella/account | disconnect | Wired/actions/umbrella integration/account | Disconnect Umbrella account from this network|
 | /networks/{networkId}/appliance/trafficShaping/uplinkSelection | update | Wired/actions/uplink selection settings | Update uplink selection settings for an MX network|
 | /networks/{networkId}/appliance/vlans/settings | update | Wired/actions/vlan settings | Enable/Disable VLANs for the given network|
 | /networks/{networkId}/appliance/vlans | create | Wired/actions/vlan/vlan | Add a VLAN|
@@ -225,6 +226,7 @@
 | /networks/{networkId}/appliance/vpn/siteToSiteVpn | update | Wired/actions/vpn/site to site vpn | Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.|
 | /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers | update | Wired/actions/vpn/third party vpn peers | Update the third party VPN peers for an organization.  Subnet overlap warning: Unlike the Dashboard UI, updateOrganizationApplianceVpnThirdPartyVPNPeers does not run the org-wide subnet-overlap validation before saving changes. Requests with overlapping VPN subnets will succeed through the API, but the resulting configuration may be blocked from further edits in Dashboard until the overlaps are resolved manually. Use this endpoint only when you've already confirmed the advertised subnets are unique across the organization. |
 | /networks/{networkId}/appliance/sdwan/internetPolicies | update | Wired/actions/wan traffic uplink | Update SDWAN internet traffic preferences for an MX network|
+| /networks/{networkId}/appliance/firewall/l7FirewallRules | update | Wired/actions/wired l7 firewall | Update the MX L7 firewall rules for an MX network|
 | /networks/{networkId}/appliance/rfProfiles | create | Wired/appliance RF profile | Creates new RF profile for this network|
 | /networks/{networkId}/appliance/rfProfiles/{rfProfileId} | destroy | Wired/appliance RF profile | Delete a RF Profile|
 | /networks/{networkId}/appliance/rfProfiles/{rfProfileId} | update | Wired/appliance RF profile | Updates specified RF profile for this network|
@@ -249,7 +251,7 @@
 | /organizations/{organizationId}/appliance/dns/local/records | create | Wired/local dns/records/api/actions/local dns record | Create a new local DNS record|
 | /organizations/{organizationId}/appliance/dns/local/records/{recordId} | destroy | Wired/local dns/records/api/actions/local dns record | Deletes a local DNS record|
 | /organizations/{organizationId}/appliance/dns/local/records/{recordId} | update | Wired/local dns/records/api/actions/local dns record | Updates a local DNS record|
-| /networks/{networkId}/appliance/ports/{portId} | update | Wired/port/api/actions/wired port | Update the per-port VLAN settings for a single MX port.|
+| /networks/{networkId}/appliance/ports/{portId} | update | Wired/port/api/actions/wired port | Update the per-port VLAN settings for a single secure router or security appliance port.|
 | /organizations/{organizationId}/appliance/dns/split/profiles/assignments/bulkCreate | bulk_create | Wired/split dns/api/actions/bulk create | Assign the split DNS profile to networks in the organization|
 | /organizations/{organizationId}/appliance/dns/split/profiles/assignments/bulkDelete | bulk_delete | Wired/split dns/api/actions/bulk delete | Unassign the split DNS profile to networks in the organization|
 | /organizations/{organizationId}/appliance/dns/split/profiles | create | Wired/split dns/api/actions/split dns profile | Create a new split DNS profile|
@@ -265,3 +267,6 @@
 | /organizations/{organizationId}/wireless/location/scanning/receivers/{receiverId} | update | Wireless/location/scanning http servers/actions/location scanning http servers | Change scanning API receiver settings|
 | /networks/{networkId}/wireless/location/scanning | update | Wireless/location/scanning/actions/location scanning | Change scanning API settings|
 | /organizations/{organizationId}/wireless/mqtt/settings | update | Wireless/mqtt/settings/actions/mqtt settings | Add new broker config for wireless MQTT|
+| /organizations/{organizationId}/wireless/devices/provisioning/deployments | create | Zero touch/actions/deployment | Create a zero touch deployment for a wireless access point|
+| /organizations/{organizationId}/wireless/devices/provisioning/deployments | update | Zero touch/actions/deployment | Update a zero touch deployment|
+| /organizations/{organizationId}/wireless/devices/provisioning/deployments/{deploymentId} | destroy | Zero touch/actions/deployment | Delete a zero touch deployment|
