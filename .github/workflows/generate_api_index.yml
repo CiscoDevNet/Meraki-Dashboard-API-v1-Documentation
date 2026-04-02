@@ -6,6 +6,11 @@ on:
       - main 
   workflow_dispatch:  # Allow manual triggering
 
+# One run at a time on main so two index jobs don't race on push.
+concurrency:
+  group: generate-api-index-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   generate-api-index:
     runs-on: ubuntu-latest
@@ -14,7 +19,17 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    # Checkout often leaves a detached HEAD at the triggering SHA; move local main to latest remote
+    # so generation runs on current main (avoids push rejection when remote moved after queue).
+    - name: Sync to latest origin/main
+      run: |
+        set -euo pipefail
+        git fetch origin main
+        git checkout -B main origin/main
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
@@ -37,7 +52,15 @@ jobs:
 
     - name: Commit and push if changes
       run: |
+        set -euo pipefail
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add docs/api-index/*
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update API Index [skip ci]" && git pull --rebase && git push)
+        if git diff --cached --quiet; then
+          echo "No API index changes to commit."
+          exit 0
+        fi
+        git commit -m "Update API Index [skip ci]"
+        # Another push may have landed while this job ran; replay our commit on top then push.
+        git pull --rebase origin main
+        git push origin main
