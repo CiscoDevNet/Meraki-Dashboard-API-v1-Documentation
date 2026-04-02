@@ -1,6 +1,8 @@
 | Resource | Operation | Group | Summary |
 |-------|---------|----------|-----------|
 | /organizations/{organizationId}/devices/controller/migrations | migrate |  | Migrate devices to another controller or management mode|
+| /organizations/{organizationId}/policies/global/group/policies/adaptivePolicyGroups | assign | Adaptive policy assignment | Assign adaptive policy groups to a policy|
+| /organizations/{organizationId}/policies/global/group/policies/adaptivePolicyGroups | remove | Adaptive policy assignment | Remove adaptive policy groups from a policy|
 | /organizations/{organizationId}/adaptivePolicy/groups | create | Adaptive policy group | Creates a new adaptive policy group|
 | /organizations/{organizationId}/adaptivePolicy/groups/{id} | destroy | Adaptive policy group | Deletes the specified adaptive policy group and any associated policies and references|
 | /organizations/{organizationId}/adaptivePolicy/groups/{id} | update | Adaptive policy group | Updates an adaptive policy group. If updating "Infrastructure", only the SGT is allowed. Cannot update "Unknown".|
@@ -11,6 +13,8 @@
 | /networks/{networkId}/webhooks/payloadTemplates | create | Api platform/actions/webhook payload | Create a webhook payload template for a network|
 | /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId} | destroy | Api platform/actions/webhook payload | Destroy a webhook payload template for a network. Does not work for included templates ('wpt_00001', 'wpt_00002', 'wpt_00003', 'wpt_00004', 'wpt_00005', 'wpt_00006', 'wpt_00007' or 'wpt_00008')|
 | /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId} | update | Api platform/actions/webhook payload | Update a webhook payload template for a network|
+| /organizations/{organizationId}/policies/global/group/policies/appliance/vlans | assign | Appliance VLAN assignment | Assign VLANs to a policy|
+| /organizations/{organizationId}/policies/global/group/policies/appliance/vlans | remove | Appliance VLAN assignment | Remove VLANs from a policy|
 | /devices/{serial}/appliance/radio/settings | update | Appliance radio settings | Update the radio settings of an appliance|
 | /networks/{networkId}/appliance/ssids/{number} | update | Appliance ssid | Update the attributes of an MX SSID|
 | /networks/{networkId}/wireless/billing | update | Billing | Update the billing settings|
@@ -37,11 +41,28 @@
 | /networks/{networkId}/merakiAuthUsers | create | End users/actions/meraki auth user | Authorize a user configured with Meraki Authentication for a network (currently supports 802.1X, splash guest, and client VPN users, and currently, organizations have a 50,000 user cap)|
 | /networks/{networkId}/merakiAuthUsers/{merakiAuthUserId} | destroy | End users/actions/meraki auth user | Delete an 802.1X RADIUS user, or deauthorize and optionally delete a splash guest or client VPN user.|
 | /networks/{networkId}/merakiAuthUsers/{merakiAuthUserId} | update | End users/actions/meraki auth user | Update a user configured with Meraki Authentication (currently, 802.1X RADIUS, splash guest, and client VPN users can be updated)|
-| /networks/{networkId}/wireless/electronicShelfLabel | update | Esl network settings | Update the ESL settings of a wireless network|
-| /devices/{serial}/wireless/electronicShelfLabel | update | Esl node settings | Update the ESL settings of a device|
 | /networks/{networkId}/firmwareUpgrades | update | Firmware upgrades update | Update firmware upgrade information for a network|
 | /networks/{networkId}/floorPlans/{floorPlanId} | destroy | Floor plan | Destroy a floor plan|
 | /networks/{networkId}/floorPlans/{floorPlanId} | update | Floor plan | Update a floor plan's geolocation and other meta data|
+| /organizations/{organizationId}/policies/global/firewall/rulesets/rules | create | Frontizo/actions/owp release/firewall rule | Create an Organization-Wide Policy Firewall Rule|
+| /organizations/{organizationId}/policies/global/firewall/rulesets/rules/{ruleId} | destroy | Frontizo/actions/owp release/firewall rule | Delete an Organization-Wide Policy Firewall Rule|
+| /organizations/{organizationId}/policies/global/firewall/rulesets/rules/{ruleId} | update | Frontizo/actions/owp release/firewall rule | Update an Organization-Wide Policy Firewall Rule|
+| /organizations/{organizationId}/policies/global/group/policies | create | Frontizo/actions/owp release/policy | Create an Organization-Wide Policy|
+| /organizations/{organizationId}/policies/global/group/policies/{policyId} | destroy | Frontizo/actions/owp release/policy | Delete an Organization-Wide Policy|
+| /organizations/{organizationId}/policies/global/group/policies/{policyId} | update | Frontizo/actions/owp release/policy | Update an Organization-Wide Policy|
+| /organizations/{organizationId}/policies/global/firewall/rulesets | create | Frontizo/actions/owp release/ruleset | Create an Organization-Wide Policy Firewall Ruleset|
+| /organizations/{organizationId}/policies/global/firewall/rulesets/{rulesetId} | destroy | Frontizo/actions/owp release/ruleset | Delete an Organization-Wide Policy Firewall Ruleset|
+| /organizations/{organizationId}/policies/global/firewall/rulesets/{rulesetId} | update | Frontizo/actions/owp release/ruleset | Update an Organization-Wide Policy Firewall Ruleset|
+| /organizations/{organizationId}/policies/global/group/policies/firewall/rulesets/assignments | create | Frontizo/actions/owp release/ruleset assignment | Create an Organization-Wide Policy Ruleset Assignment|
+| /organizations/{organizationId}/policies/global/group/policies/firewall/rulesets/assignments/{assignmentId} | destroy | Frontizo/actions/owp release/ruleset assignment | Delete an Organization-Wide Policy Ruleset Assignment|
+| /organizations/{organizationId}/policies/global/group/policies/firewall/rulesets/assignments/{assignmentId} | update | Frontizo/actions/owp release/ruleset assignment | Update an Organization-Wide Policy Ruleset Assignment|
+| /organizations/{organizationId}/sase/sites | create | Frontizo/actions/site | Attach sites in this organization to Secure Access. For an organization, a maximum of 2500 sites can be attached if they are in spoke mode or a maximum of 10 sites can be attached in hub mode.|
+| /networks/{networkId}/appliance/umbrella/account | action | Frontizo/actions/umbrella integration/account | Connect a Cisco Umbrella account to this network|
+| /networks/{networkId}/appliance/umbrella/account | disconnect | Frontizo/actions/umbrella integration/account | Disconnect Umbrella account from this network|
+| /organizations/{organizationId}/sase/connectors | deploy | Frontizo/sse sites/actions/connectors batch | Deploy SSE Connectors for specified regions|
+| /organizations/{organizationId}/sase/connectors | teardown | Frontizo/sse sites/actions/connectors batch | Delete SSE Connectors by ID|
+| /organizations/{organizationId}/sase/sites | detach | Frontizo/sse sites/actions/sites | Detach sites in this organization from Secure Access. This will remove the sites from Secure Access.|
+| /organizations/{organizationId}/sase/sites/{siteId} | update | Frontizo/sse sites/actions/sites | Update the configuration for a site. Currently, only supports updating default route enablement.|
 | /networks/{networkId}/groupPolicies | create | Group policy | Create a group policy|
 | /networks/{networkId}/groupPolicies/{groupPolicyId} | destroy | Group policy | Delete a group policy|
 | /networks/{networkId}/groupPolicies/{groupPolicyId} | update | Group policy | Update a group policy|
@@ -81,9 +102,11 @@
 | /networks/{networkId}/floorPlans/autoLocate/jobs/{jobId} | publish | Mr/actions/autolocation job | Update the status of a finished auto locate job to be published, and update device locations|
 | /networks/{networkId}/floorPlans/autoLocate/jobs/{jobId} | recalculate | Mr/actions/autolocation job | Trigger auto locate recalculation for a job, and optionally set anchors|
 | /networks/{networkId}/floorPlans/autoLocate/jobs | batch_create | Mr/actions/autolocation jobs bulk | Schedule auto locate jobs for one or more floor plans in a network|
-| /devices/{serial}/wireless/bluetooth/settings | update | Mr/actions/bluetooth device setting | Update the bluetooth settings for a wireless device|
 | /networks/{networkId}/floorPlans/devices | batch_update | Mr/actions/device floorplan assignments batch | Update floorplan assignments for a batch of devices|
 | /networks/{networkId}/wireless/ssids/{number}/eapOverride | update | Mr/actions/eap override | Update the EAP overridden parameters for an SSID.|
+| /devices/{serial}/wireless/bluetooth/settings | update | Mr/actions/iot/bluetooth device setting | Update the bluetooth settings for a wireless device|
+| /networks/{networkId}/wireless/electronicShelfLabel | update | Mr/actions/iot/esl network settings | Update the ESL settings of a wireless network|
+| /devices/{serial}/wireless/electronicShelfLabel | update | Mr/actions/iot/esl node settings | Update the ESL settings of a device|
 | /organizations/{organizationId}/wireless/radio/autoRf/channels | update | Mr/actions/rf auto channel | Recalculates automatically assigned channels for every AP within specified the specified network(s). Note: This could cause a brief loss in connectivity for wireless clients.|
 | /networks/{networkId}/wireless/rfProfiles | create | Mr/actions/rf profile | Creates new RF profile for this network|
 | /networks/{networkId}/wireless/rfProfiles/{rfProfileId} | update | Mr/actions/rf profile | Updates specified RF profile for this network. Note: built-in RF profiles can only be assigned as a default, and its attributes are immutable|
@@ -166,7 +189,6 @@
 | /organizations/{organizationId}/policyObjects/{policyObjectId} | update | Policy object | Updates a Policy Object.|
 | /organizations/{organizationId}/policyObjects/groups | create | Policy object group | Creates a new Policy Object Group.|
 | /organizations/{organizationId}/policyObjects/groups/{policyObjectGroupId} | destroy | Policy object group | Deletes a Policy Object Group.|
-| /organizations/{organizationId}/policyObjects/groups/{policyObjectGroupId} | update | Policy object group | Updates a Policy Object Group.|
 | /networks/{networkId}/wireless/ssids/{number}/identityPsks | create | Psk group | Create an Identity PSK|
 | /networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId} | destroy | Psk group | Delete an Identity PSK|
 | /networks/{networkId}/wireless/ssids/{number}/identityPsks/{identityPskId} | update | Psk group | Update an Identity PSK|
@@ -176,7 +198,7 @@
 | /networks/{networkId}/switch/qosRules/{qosRuleId} | update | Qos rule | Update a quality of service rule|
 | /devices/{serial}/camera/qualityAndRetention | update | Quality and retention setting | Update quality and retention settings for the given camera|
 | /networks/{networkId}/wireless/rfProfiles/{rfProfileId} | destroy | RF profile | Delete a RF Profile|
-| /devices/{serial}/wireless/radio/settings | update | Radio settings | Update the radio settings overrides of a device, which take precedence over RF profiles.|
+| /devices/{serial}/wireless/radio/settings | update | Radio settings | Update 2.4 GHz and 5 GHz radio settings (channel, channel width, power) that override RF profiles. For 6 GHz support or radio enable/disable, use updateDeviceWirelessRadioOverrides instead.|
 | /networks/{networkId}/switch/routing/multicast/rendezvousPoints | create | Rendezvous point | Create a multicast rendezvous point|
 | /networks/{networkId}/switch/routing/multicast/rendezvousPoints/{rendezvousPointId} | destroy | Rendezvous point | Delete a multicast rendezvous point|
 | /networks/{networkId}/switch/routing/multicast/rendezvousPoints/{rendezvousPointId} | update | Rendezvous point | Update a multicast rendezvous point|
@@ -213,9 +235,8 @@
 | /networks/{networkId}/appliance/warmSpare | update | Warm spare | Update MX warm spare settings|
 | /networks/{networkId}/appliance/vpn/bgp | update | Wired/actions/bgp | Update a Hub BGP Configuration|
 | /networks/{networkId}/appliance/settings | update | Wired/actions/network appliance settings | Update the appliance settings for a network|
+| /organizations/{organizationId}/policyObjects/groups/{policyObjectGroupId} | update | Wired/actions/org wide firewall/policy object group | Updates a Policy Object Group.|
 | /networks/{networkId}/appliance/singleLan | update | Wired/actions/single lan/single lan | Update single LAN configuration|
-| /networks/{networkId}/appliance/umbrella/account | action | Wired/actions/umbrella integration/account | Connect a Cisco Umbrella account to this network|
-| /networks/{networkId}/appliance/umbrella/account | disconnect | Wired/actions/umbrella integration/account | Disconnect Umbrella account from this network|
 | /networks/{networkId}/appliance/trafficShaping/uplinkSelection | update | Wired/actions/uplink selection settings | Update uplink selection settings for an MX network|
 | /networks/{networkId}/appliance/vlans/settings | update | Wired/actions/vlan settings | Enable/Disable VLANs for the given network|
 | /networks/{networkId}/appliance/vlans | create | Wired/actions/vlan/vlan | Add a VLAN|
@@ -257,6 +278,7 @@
 | /organizations/{organizationId}/appliance/dns/split/profiles | create | Wired/split dns/api/actions/split dns profile | Create a new split DNS profile|
 | /organizations/{organizationId}/appliance/dns/split/profiles/{profileId} | destroy | Wired/split dns/api/actions/split dns profile | Deletes a split DNS profile|
 | /organizations/{organizationId}/appliance/dns/split/profiles/{profileId} | update | Wired/split dns/api/actions/split dns profile | Update a split DNS profile|
+| /networks/{networkId}/appliance/uplinks/nat | settings | Wired/uplink nat settings/api/actions/update uplink nat | Update uplink NAT settings of the specified network|
 | /devices/{serial}/appliance/uplinks/settings | update | Wired/uplinks/actions/settings | Update the uplink settings for an MX appliance|
 | /organizations/{organizationId}/integrations/xdr/networks | disable | Wired/xdr/api/actions/xdr | Disable XDR on networks|
 | /organizations/{organizationId}/integrations/xdr/networks | enable | Wired/xdr/api/actions/xdr | Enable XDR on networks|
