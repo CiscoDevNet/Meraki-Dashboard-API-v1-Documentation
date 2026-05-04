@@ -2,6 +2,13 @@
 
 Listed by deprecation date (newest first).
 
+## 2026 May
+
+### createOrganizationPolicyObject (Request body parameter deprecation)
+[createOrganizationPolicyObject](https://developer.cisco.com/meraki/api-v1/create-organization-policy-object/)
+`ipAndMask` which is part of the API request body parameter `type` is deprecated and will be removed in a future release. Use `cidr` instead."
+
+
 ## 2024 October
 
 ### getNetworkDevices
