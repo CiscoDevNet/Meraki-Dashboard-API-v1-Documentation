@@ -1,36 +1,28 @@
 name: pubhub-notification
 
-# Run this workflow every time a new commit pushed to your repository
-on: push
+on:
+  push:
+    branches:
+      - main   # 👈 only run on main
 
 jobs:
   notification:
     name: notification
     runs-on: ubuntu-latest
-    outputs:
-      response: ${{steps.CloudSSO.response}}
+
     steps:
       - name: echo
         run: echo "Starting https request"
-      - name: cloudsso
-        uses: fjogeleit/http-request-action@v1.5.0
-        id: ciscosso
-        with:
-          url: 'https://cloudsso.cisco.com/as/token.oauth2?grant_type=client_credentials&client_id=${{secrets.client_id}}&client_secret=${{secrets.client_secret}}'
-          method: POST
       - name : PubHub API
+        id: pubhub_request
         uses: fjogeleit/http-request-action@v1.5.0
         with:
-          url: 'https://api.cisco.com/api/v1.0/projects/sync/${{secrets.project_id}}/'
+          url: 'https://devnet.cisco.com/v1/pubhub/projects/sync/${{secrets.project_id}}/'
           timeout: 60000
-          customHeaders: '{"X-Authorization":"Token ${{secrets.pubhub_token}}", "Authorization" : "Bearer ${{fromJson(steps.ciscosso.outputs.response).access_token}}"}'
+          customHeaders: |
+            {
+              "Authorization": "Token ${{ secrets.pubhub_token }}"
+            }
           method: GET
-
-
-
-
-
-
-           
-  
-     
+      - name: Debug response
+        run: echo "${{ steps.pubhub_request.outputs.response }}"
