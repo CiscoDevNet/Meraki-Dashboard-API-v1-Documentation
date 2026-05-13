@@ -56,10 +56,11 @@
 | /organizations/{organizationId}/policies/global/group/policies/firewall/rulesets/assignments | create | Frontizo/actions/owp release/ruleset assignment | Create an Organization-Wide Policy Ruleset Assignment|
 | /organizations/{organizationId}/policies/global/group/policies/firewall/rulesets/assignments/{assignmentId} | destroy | Frontizo/actions/owp release/ruleset assignment | Delete an Organization-Wide Policy Ruleset Assignment|
 | /organizations/{organizationId}/policies/global/group/policies/firewall/rulesets/assignments/{assignmentId} | update | Frontizo/actions/owp release/ruleset assignment | Update an Organization-Wide Policy Ruleset Assignment|
+| /organizations/{organizationId}/sase/integrations | create | Frontizo/actions/sase/integration | Create a new Secure Access integration|
+| /organizations/{organizationId}/sase/integrations/{integrationId} | destroy | Frontizo/actions/sase/integration | Remove a Secure Access integration|
 | /organizations/{organizationId}/sase/sites | create | Frontizo/actions/site | Attach sites in this organization to Secure Access. For an organization, a maximum of 2500 sites can be attached if they are in spoke mode or a maximum of 10 sites can be attached in hub mode.|
 | /networks/{networkId}/appliance/umbrella/account | action | Frontizo/actions/umbrella integration/account | Connect a Cisco Umbrella account to this network|
 | /networks/{networkId}/appliance/umbrella/account | disconnect | Frontizo/actions/umbrella integration/account | Disconnect Umbrella account from this network|
-| /organizations/{organizationId}/sase/connectors | deploy | Frontizo/sse sites/actions/connectors batch | Deploy SSE Connectors for specified regions|
 | /organizations/{organizationId}/sase/connectors | teardown | Frontizo/sse sites/actions/connectors batch | Delete SSE Connectors by ID|
 | /organizations/{organizationId}/sase/sites | detach | Frontizo/sse sites/actions/sites | Detach sites in this organization from Secure Access. This will remove the sites from Secure Access.|
 | /organizations/{organizationId}/sase/sites/{siteId} | update | Frontizo/sse sites/actions/sites | Update the configuration for a site. Currently, only supports updating default route enablement.|
@@ -86,10 +87,9 @@
 | /organizations/{organizationId}/insight/monitoredMediaServers | create | Monitored media server | Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.|
 | /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId} | destroy | Monitored media server | Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.|
 | /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId} | update | Monitored media server | Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.|
-| /networks/{networkId}/mqttBrokers | create | Mqtt broker | Add an MQTT broker|
 | /networks/{networkId}/mqttBrokers/{mqttBrokerId} | destroy | Mqtt broker | Delete an MQTT broker|
 | /networks/{networkId}/mqttBrokers/{mqttBrokerId} | update | Mqtt broker | Update an MQTT broker|
-| /networks/{networkId}/wireless/airMarshal/rules | update | Mr/actions/air marshal rule | Creates a new rule|
+| /networks/{networkId}/wireless/airMarshal/rules | create | Mr/actions/air marshal rule | Creates a new rule|
 | /networks/{networkId}/wireless/airMarshal/rules/{ruleId} | destroy | Mr/actions/air marshal rule | Delete an Air Marshal rule.|
 | /networks/{networkId}/wireless/airMarshal/rules/{ruleId} | update | Mr/actions/air marshal rule | Update a rule|
 | /networks/{networkId}/wireless/airMarshal/settings | update | Mr/actions/air marshal setting | Updates Air Marshal settings.|
@@ -143,7 +143,7 @@
 | /devices/{serial}/managementInterface | update | Ms/actions/management interface settings | Update the management interface settings for a device|
 | /networks/{networkId}/switch/stormControl | update | Ms/actions/storm control | Update the storm control configuration for a switch network|
 | /networks/{networkId}/switch/alternateManagementInterface | update | Ms/actions/switch alternate management interface | Update the switch alternate management interface for the network|
-| /devices/{serial}/switch/ports | cycle | Ms/actions/switch port | Cycle a set of switch ports|
+| /devices/{serial}/switch/ports | cycle | Ms/actions/switch port | Cycle a set of switch ports on non-Catalyst MS devices. For Catalyst support, use /devices/{serial}/liveTools/ports/cycle, which supports all switch product families.|
 | /devices/{serial}/switch/ports/{portId} | update | Ms/actions/switch port | Update a switch port|
 | /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports/{portId} | update | Ms/actions/switch profile port | Update a switch template port|
 | /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces | create | Ms/actions/switch stacks l3 interface | Create a layer 3 interface for a switch stack|
@@ -165,6 +165,7 @@
 | /devices/{serial}/sensor/relationships | update | Mt/api/actions/sensor gateway role | Assign one or more sensor roles to a given sensor or camera device.|
 | /networks/{networkId}/sensor/mqttBrokers/{mqttBrokerId} | update | Mt/api/actions/sensor mqtt broker | Update the sensor settings of an MQTT broker. To update the broker itself, use /networks/{networkId}/mqttBrokers/{mqttBrokerId}.|
 | /networks/{networkId}/switch/routing/multicast | update | Multicast | Update multicast settings for a network|
+| /networks/{networkId}/mqttBrokers | create | Mv/actions/mqtt broker | Add an MQTT broker|
 | /devices/{serial}/camera/sense | update | Mv/actions/sense setting | Update sense settings for the given camera|
 | /networks/{networkId} | bind | Network | Bind a network to a template.|
 | /networks/{networkId} | destroy | Network | Delete a network|
@@ -216,9 +217,6 @@
 | /networks/{networkId}/wireless/ssids/{number}/vpn | update | Ssid vpn | Update the VPN settings for the SSID|
 | /networks/{networkId}/firmwareUpgrades/staged/groups | create | Staged upgrade/group | Create a Staged Upgrade Group for a network|
 | /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId} | destroy | Staged upgrade/group | Delete a Staged Upgrade Group|
-| /networks/{networkId}/appliance/prefixes/delegated/statics | create | Static delegated prefix | Add a static delegated prefix from a network|
-| /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId} | destroy | Static delegated prefix | Delete a static delegated prefix from a network|
-| /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId} | update | Static delegated prefix | Update a static delegated prefix from a network|
 | /networks/{networkId}/switch/portSchedules/{portScheduleId} | update | Switch port schedule | Update a switch port schedule|
 | /devices/{serial}/switch/warmSpare | update | Switch warm spare settings | Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note that this will irreversibly destroy any existing L3 configuration on the spare.|
 | /networks/{networkId}/appliance/trafficShaping/rules | update | Traffic shaping settings | Update the traffic shaping settings rules for an MX network|
@@ -231,12 +229,16 @@
 | /networks/{networkId}/vlanProfiles/{iname} | destroy | VLAN profile | Delete a VLAN profile of a network|
 | /networks/{networkId}/devices/claim/vmx | claim | Vmx | Claim a vMX into a network|
 | /devices/{serial}/appliance/vmx/authenticationToken | create | Vmx token | Generate a new vMX authentication token|
+| /networks/{networkId}/appliance/devices/redundancy | update | Warm spare | Update MX warm spare settings|
 | /networks/{networkId}/appliance/warmSpare | swap | Warm spare | Swap MX primary and warm spare appliances|
 | /networks/{networkId}/appliance/warmSpare | update | Warm spare | Update MX warm spare settings|
 | /networks/{networkId}/appliance/vpn/bgp | update | Wired/actions/bgp | Update a Hub BGP Configuration|
 | /networks/{networkId}/appliance/settings | update | Wired/actions/network appliance settings | Update the appliance settings for a network|
 | /organizations/{organizationId}/policyObjects/groups/{policyObjectGroupId} | update | Wired/actions/org wide firewall/policy object group | Updates a Policy Object Group.|
 | /networks/{networkId}/appliance/singleLan | update | Wired/actions/single lan/single lan | Update single LAN configuration|
+| /networks/{networkId}/appliance/prefixes/delegated/statics | create | Wired/actions/static delegated prefix | Add a static delegated prefix from a network|
+| /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId} | destroy | Wired/actions/static delegated prefix | Delete a static delegated prefix from a network|
+| /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId} | update | Wired/actions/static delegated prefix | Update a static delegated prefix from a network|
 | /networks/{networkId}/appliance/trafficShaping/uplinkSelection | update | Wired/actions/uplink selection settings | Update uplink selection settings for an MX network|
 | /networks/{networkId}/appliance/vlans/settings | update | Wired/actions/vlan settings | Enable/Disable VLANs for the given network|
 | /networks/{networkId}/appliance/vlans | create | Wired/actions/vlan/vlan | Add a VLAN|
@@ -258,12 +260,20 @@
 | /devices/{serial}/cellularGateway/portForwardingRules | update | Wired/cellular/api/actions/cellular gateway port forwarding rules | Updates the port forwarding rules for a single MG.|
 | /networks/{networkId}/cellularGateway/subnetPool | update | Wired/cellular/api/actions/cellular gateway subnet pool | Update the subnet pool and mask configuration for MGs in the network.|
 | /networks/{networkId}/cellularGateway/uplink | update | Wired/cellular/api/actions/cellular gateway uplink setting | Updates the uplink settings for your MG network.|
+| /devices/{serial}/cellular/uplinks/bands/masks/update | update | Wired/cellular/cellular band config/api/actions/cellular signal settings | Update the cellular band masks for a device|
+| /devices/{serial}/cellular/geolocations | update | Wired/cellular/cellular gps/api/actions/cellular location settings | Update the enablement of the geolocation feature for a device|
+| /organizations/{organizationId}/devices/cellular/data/profiles | create | Wired/cellular/data management/api/actions/profile | Add a cellular data management profile to this organization. Creates a cellular data management profile in this organization and returns the created profile, including its rules and actions.|
+| /organizations/{organizationId}/devices/cellular/data/profiles/{profileId} | destroy | Wired/cellular/data management/api/actions/profile | Delete a cellular data management profile from this organization. Removes the profile, including its associated rules and node assignments, and notifies affected devices of the resulting configuration change.|
+| /organizations/{organizationId}/devices/cellular/data/profiles/{profileId} | update | Wired/cellular/data management/api/actions/profile | Update a Cellular Data Management Profile. Note that changes made to this endpoint will overwrite existing settings for the profile so the entire profile, rules and actions should be sent when making an update.|
+| /organizations/{organizationId}/devices/cellular/data/profiles/assignments | create | Wired/cellular/data management/api/actions/profile node association batch | Assign devices to a Cellular Data Management Profile in batch. Creates up to 100 device-to-profile assignments and returns the created assignment IDs.|
+| /organizations/{organizationId}/devices/cellular/data/profiles/assignments | destroy | Wired/cellular/data management/api/actions/profile node association bulk | Unassign devices from a Cellular Data Management Profile in batch. Removes up to 100 device-to-profile assignments and returns no response body on success.|
 | /organizations/{organizationId}/cellularGateway/esims/inventory/{id} | update | Wired/cellular/esim/api/actions/cellular esim | Toggle the status of an eSIM|
 | /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts | create | Wired/cellular/esim/api/actions/cellular service provider account | Add a service provider account.|
 | /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts/{accountId} | destroy | Wired/cellular/esim/api/actions/cellular service provider account | Remove a service provider account's integration with the Dashboard.|
 | /organizations/{organizationId}/cellularGateway/esims/serviceProviders/accounts/{accountId} | update | Wired/cellular/esim/api/actions/cellular service provider account | Edit service provider account info stored in Meraki's database.|
 | /organizations/{organizationId}/cellularGateway/esims/swap | swap | Wired/cellular/esim/api/actions/initiate | Swap which profile an eSIM uses.|
 | /organizations/{organizationId}/cellularGateway/esims/swap/{id} | status | Wired/cellular/esim/api/actions/sync swap | Get the status of a profile swap.|
+| /networks/{networkId}/appliance/devices/redundancy/swap | swap | Wired/controller/high availability/swap/request | Swap MX primary and warm spare appliances|
 | /organizations/{organizationId}/appliance/dns/local/profiles/assignments | bulk_create | Wired/local dns/api/actions/bulk create | Assign the local DNS profile to networks in the organization|
 | /organizations/{organizationId}/appliance/dns/local/profiles/assignments/bulkDelete | bulk_delete | Wired/local dns/api/actions/bulk delete | Unassign the local DNS profile to networks in the organization|
 | /organizations/{organizationId}/appliance/dns/local/profiles | create | Wired/local dns/profiles/api/actions/local dns profile | Create a new local DNS profile|
@@ -272,6 +282,7 @@
 | /organizations/{organizationId}/appliance/dns/local/records | create | Wired/local dns/records/api/actions/local dns record | Create a new local DNS record|
 | /organizations/{organizationId}/appliance/dns/local/records/{recordId} | destroy | Wired/local dns/records/api/actions/local dns record | Deletes a local DNS record|
 | /organizations/{organizationId}/appliance/dns/local/records/{recordId} | update | Wired/local dns/records/api/actions/local dns record | Updates a local DNS record|
+| /organizations/{organizationId}/appliance/routing/vrfs/settings | update | Wired/organizations/actions/vrf settings | Update the VRF setting for an organization.|
 | /networks/{networkId}/appliance/ports/{portId} | update | Wired/port/api/actions/wired port | Update the per-port VLAN settings for a single secure router or security appliance port.|
 | /organizations/{organizationId}/appliance/dns/split/profiles/assignments/bulkCreate | bulk_create | Wired/split dns/api/actions/bulk create | Assign the split DNS profile to networks in the organization|
 | /organizations/{organizationId}/appliance/dns/split/profiles/assignments/bulkDelete | bulk_delete | Wired/split dns/api/actions/bulk delete | Unassign the split DNS profile to networks in the organization|
@@ -279,7 +290,7 @@
 | /organizations/{organizationId}/appliance/dns/split/profiles/{profileId} | destroy | Wired/split dns/api/actions/split dns profile | Deletes a split DNS profile|
 | /organizations/{organizationId}/appliance/dns/split/profiles/{profileId} | update | Wired/split dns/api/actions/split dns profile | Update a split DNS profile|
 | /networks/{networkId}/appliance/uplinks/nat | settings | Wired/uplink nat settings/api/actions/update uplink nat | Update uplink NAT settings of the specified network|
-| /devices/{serial}/appliance/uplinks/settings | update | Wired/uplinks/actions/settings | Update the uplink settings for an MX appliance|
+| /devices/{serial}/appliance/uplinks/settings | update | Wired/uplinks/actions/settings | Update the uplink settings for a secure router or security appliance|
 | /organizations/{organizationId}/integrations/xdr/networks | disable | Wired/xdr/api/actions/xdr | Disable XDR on networks|
 | /organizations/{organizationId}/integrations/xdr/networks | enable | Wired/xdr/api/actions/xdr | Enable XDR on networks|
 | /networks/{networkId}/wireless/alternateManagementInterface | update | Wireless alternate management interface | Update alternate management interface and device static IP|
