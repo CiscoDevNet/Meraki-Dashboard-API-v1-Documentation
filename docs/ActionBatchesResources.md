@@ -35,7 +35,6 @@
 | /organizations/{organizationId}/brandingPolicies/priorities | update | Dash xl/dashboard branding policy priorities | Update the priority ordering of an organization's branding policies.|
 | /networks/{networkId}/clients | provision | Dashboard features/actions/client | Provisions a client with a name and policy. Clients can be provisioned before they associate to the network.|
 | /organizations/{organizationId}/earlyAccess/features/optIns/{optInId} | update | Dashboard features/actions/early access/feature opt in | Update an early access feature opt-in for an organization|
-| /networks/{networkId}/devices/claim | claim | Device | Claim devices into a network. (Note: for recently claimed devices, it may take a few minutes for API requests against that device to succeed). This operation can be used up to ten times within a single five minute window.|
 | /networks/{networkId}/switch/dhcpServerPolicy | update | Dhcp server policy | Update the DHCP server settings. Blocked/allowed servers are only applied when default policy is allow/block, respectively|
 | /networks/{networkId}/switch/dscpToCosMappings | update | Dscp cos mapping | Update the DSCP to CoS mappings|
 | /networks/{networkId}/merakiAuthUsers | create | End users/actions/meraki auth user | Authorize a user configured with Meraki Authentication for a network (currently supports 802.1X, splash guest, and client VPN users, and currently, organizations have a 50,000 user cap)|
@@ -61,6 +60,10 @@
 | /organizations/{organizationId}/sase/sites | create | Frontizo/actions/site | Attach sites in this organization to Secure Access. For an organization, a maximum of 2500 sites can be attached if they are in spoke mode or a maximum of 10 sites can be attached in hub mode.|
 | /networks/{networkId}/appliance/umbrella/account | action | Frontizo/actions/umbrella integration/account | Connect a Cisco Umbrella account to this network|
 | /networks/{networkId}/appliance/umbrella/account | disconnect | Frontizo/actions/umbrella integration/account | Disconnect Umbrella account from this network|
+| /networks/{networkId}/appliance/umbrella/domains | action | Frontizo/actions/umbrella integration/domains | Specify one or more domain names to be excluded from being routed to Cisco Umbrella.|
+| /networks/{networkId}/appliance/umbrella/policies | policies_add | Frontizo/actions/umbrella integration/policies | Add one Cisco Umbrella DNS security policy to an MX network by policy ID. Idempotent — if the policy is already applied, the request succeeds and returns the current policy set unchanged.|
+| /networks/{networkId}/appliance/umbrella/policies | policies_remove | Frontizo/actions/umbrella integration/policies | Remove one Cisco Umbrella DNS security policy from an MX network by policy ID. Returns 204 No Content on success. Behavior when the policy is not currently applied depends on the Cisco Umbrella API response.|
+| /networks/{networkId}/appliance/umbrella | action | Frontizo/actions/umbrella integration/protection | Enable or disable umbrella protection for an appliance network. When 'enabled' is false, 'umbrella.organization.id' and 'umbrella.origin.id' are null in the response.|
 | /organizations/{organizationId}/sase/connectors | teardown | Frontizo/sse sites/actions/connectors batch | Delete SSE Connectors by ID|
 | /organizations/{organizationId}/sase/sites | detach | Frontizo/sse sites/actions/sites | Detach sites in this organization from Secure Access. This will remove the sites from Secure Access.|
 | /organizations/{organizationId}/sase/sites/{siteId} | update | Frontizo/sse sites/actions/sites | Update the configuration for a site. Currently, only supports updating default route enablement.|
@@ -71,6 +74,7 @@
 | /organizations/{organizationId}/alerts/profiles | create | Insight/actions/org wide alerts/alert config | Create an organization-wide alert configuration|
 | /organizations/{organizationId}/alerts/profiles/{alertConfigId} | destroy | Insight/actions/org wide alerts/alert config | Removes an organization-wide alert config|
 | /organizations/{organizationId}/alerts/profiles/{alertConfigId} | update | Insight/actions/org wide alerts/alert config | Update an organization-wide alert config|
+| /networks/{networkId}/devices/claim | claim | Inventory/actions/device | Claim devices into a network. (Note: for recently claimed devices, it may take a few minutes for API requests against that device to succeed). This operation can be used up to ten times within a single five minute window.|
 | /organizations/{organizationId}/inventory/orders | claim | Inventory/actions/unified orders/unified order | Claim an order by the secure unique order claim number, the order claim id|
 | /networks/{networkId}/wireless/ssids/{number}/firewall/l3FirewallRules | update | L3 firewall | Update the L3 firewall rules of an SSID on an MR network|
 | /organizations/{organizationId}/licenses | assignSeats | License | Assign SM seats to a network. This will increase the managed SM device limit of the network|
@@ -80,6 +84,9 @@
 | /organizations/{organizationId}/licenses/{licenseId} | update | License | Update a license|
 | /networks/{networkId}/switch/mtu | update | MTU configuration | Update the MTU configuration|
 | /networks/{networkId}/appliance/connectivityMonitoringDestinations | update | MX connectivity monitoring destination | Update the connectivity testing destinations for an MX network|
+| /networks/{networkId}/appliance/interfaces/l3 | create | MX l3 configuration | Create wired L3 interface|
+| /networks/{networkId}/appliance/interfaces/l3/{interfaceId} | destroy | MX l3 configuration | Delete wired L3 interface|
+| /networks/{networkId}/appliance/interfaces/l3/{interfaceId} | update | MX l3 configuration | Update wired L3 interface|
 | /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth | update | MX uplink setting | Updates the uplink bandwidth settings for your MX network.|
 | /organizations/{organizationId}/devices/details/bulkUpdate | update | Mars/actions/device | Updating device details (currently only used for Catalyst devices)|
 | /networks/{networkId}/campusGateway/clusters | create | Mcg/actions/cluster | Create a cluster and add campus gateways to it|
@@ -87,8 +94,6 @@
 | /organizations/{organizationId}/insight/monitoredMediaServers | create | Monitored media server | Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.|
 | /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId} | destroy | Monitored media server | Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.|
 | /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId} | update | Monitored media server | Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.|
-| /networks/{networkId}/mqttBrokers/{mqttBrokerId} | destroy | Mqtt broker | Delete an MQTT broker|
-| /networks/{networkId}/mqttBrokers/{mqttBrokerId} | update | Mqtt broker | Update an MQTT broker|
 | /networks/{networkId}/wireless/airMarshal/rules | create | Mr/actions/air marshal rule | Creates a new rule|
 | /networks/{networkId}/wireless/airMarshal/rules/{ruleId} | destroy | Mr/actions/air marshal rule | Delete an Air Marshal rule.|
 | /networks/{networkId}/wireless/airMarshal/rules/{ruleId} | update | Mr/actions/air marshal rule | Update a rule|
@@ -166,7 +171,11 @@
 | /networks/{networkId}/sensor/mqttBrokers/{mqttBrokerId} | update | Mt/api/actions/sensor mqtt broker | Update the sensor settings of an MQTT broker. To update the broker itself, use /networks/{networkId}/mqttBrokers/{mqttBrokerId}.|
 | /networks/{networkId}/switch/routing/multicast | update | Multicast | Update multicast settings for a network|
 | /networks/{networkId}/mqttBrokers | create | Mv/actions/mqtt broker | Add an MQTT broker|
+| /networks/{networkId}/mqttBrokers/{mqttBrokerId} | destroy | Mv/actions/mqtt broker | Delete an MQTT broker|
+| /networks/{networkId}/mqttBrokers/{mqttBrokerId} | update | Mv/actions/mqtt broker | Update an MQTT broker|
+| /devices/{serial}/camera/qualityAndRetention | update | Mv/actions/quality and retention setting | Update quality and retention settings for the given camera|
 | /devices/{serial}/camera/sense | update | Mv/actions/sense setting | Update sense settings for the given camera|
+| /devices/{serial}/appliance/interfaces/ports/update | update | Mx port | Update configurations for an appliance's specified port|
 | /networks/{networkId} | bind | Network | Bind a network to a template.|
 | /networks/{networkId} | destroy | Network | Delete a network|
 | /networks/{networkId} | split | Network | Split a combined network into individual networks for each type of device|
@@ -197,7 +206,6 @@
 | /networks/{networkId}/switch/qosRules/order | update_order | Qos rule | Update the order in which the rules should be processed by the switch|
 | /networks/{networkId}/switch/qosRules/{qosRuleId} | destroy | Qos rule | Delete a quality of service rule|
 | /networks/{networkId}/switch/qosRules/{qosRuleId} | update | Qos rule | Update a quality of service rule|
-| /devices/{serial}/camera/qualityAndRetention | update | Quality and retention setting | Update quality and retention settings for the given camera|
 | /networks/{networkId}/wireless/rfProfiles/{rfProfileId} | destroy | RF profile | Delete a RF Profile|
 | /devices/{serial}/wireless/radio/settings | update | Radio settings | Update 2.4 GHz and 5 GHz radio settings (channel, channel width, power) that override RF profiles. For 6 GHz support or radio enable/disable, use updateDeviceWirelessRadioOverrides instead.|
 | /networks/{networkId}/switch/routing/multicast/rendezvousPoints | create | Rendezvous point | Create a multicast rendezvous point|
@@ -233,6 +241,7 @@
 | /networks/{networkId}/appliance/warmSpare | swap | Warm spare | Swap MX primary and warm spare appliances|
 | /networks/{networkId}/appliance/warmSpare | update | Warm spare | Update MX warm spare settings|
 | /networks/{networkId}/appliance/vpn/bgp | update | Wired/actions/bgp | Update a Hub BGP Configuration|
+| /devices/{serial}/liveTools/routingTable/summaries | summary | Wired/actions/enqueue route table | Enqueue a routing table summary job for a device. The job fetches summary data such as route counts by VRF and protocol. Only Cisco Secure Routers are supported.|
 | /networks/{networkId}/appliance/settings | update | Wired/actions/network appliance settings | Update the appliance settings for a network|
 | /organizations/{organizationId}/policyObjects/groups/{policyObjectGroupId} | update | Wired/actions/org wide firewall/policy object group | Updates a Policy Object Group.|
 | /networks/{networkId}/appliance/singleLan | update | Wired/actions/single lan/single lan | Update single LAN configuration|
@@ -274,6 +283,9 @@
 | /organizations/{organizationId}/cellularGateway/esims/swap | swap | Wired/cellular/esim/api/actions/initiate | Swap which profile an eSIM uses.|
 | /organizations/{organizationId}/cellularGateway/esims/swap/{id} | status | Wired/cellular/esim/api/actions/sync swap | Get the status of a profile swap.|
 | /networks/{networkId}/appliance/devices/redundancy/swap | swap | Wired/controller/high availability/swap/request | Swap MX primary and warm spare appliances|
+| /devices/{serial}/liveTools/ports/status | status | Wired/live tools/actions/enqueue port | Enqueue a job to retrieve port status for a device. This endpoint has a sustained rate limit of one request every five seconds per device, with an allowed burst of five requests.|
+| /devices/{serial}/liveTools/power/usage | job | Wired/live tools/actions/enqueue power usage | Enqueues a live tool job that retrieves details about a device's overall power usage. This endpoint has a sustained rate limit of one request every five seconds per device, with an allowed burst of five requests.|
+| /devices/{serial}/liveTools/routingTable/lookups | lookup | Wired/live tools/actions/enqueue route table | Enqueue a job to perform a routing table lookup request for a device. The routing table lookup request fetches a specific set of routes based on filters. Any combination of search filters can be applied. Only Cisco Secure Routers are supported.|
 | /organizations/{organizationId}/appliance/dns/local/profiles/assignments | bulk_create | Wired/local dns/api/actions/bulk create | Assign the local DNS profile to networks in the organization|
 | /organizations/{organizationId}/appliance/dns/local/profiles/assignments/bulkDelete | bulk_delete | Wired/local dns/api/actions/bulk delete | Unassign the local DNS profile to networks in the organization|
 | /organizations/{organizationId}/appliance/dns/local/profiles | create | Wired/local dns/profiles/api/actions/local dns profile | Create a new local DNS profile|
