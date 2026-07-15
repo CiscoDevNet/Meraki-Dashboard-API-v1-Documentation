@@ -1,5 +1,6 @@
 | Resource | Operation | Group | Summary |
 |-------|---------|----------|-----------|
+| /networks/{networkId}/switch/routing/multicast | update |  | Update multicast settings for a network|
 | /organizations/{organizationId}/devices/controller/migrations | migrate |  | Migrate devices to another controller or management mode|
 | /organizations/{organizationId}/policies/global/group/policies/adaptivePolicyGroups | assign | Adaptive policy assignment | Assign adaptive policy groups to a policy|
 | /organizations/{organizationId}/policies/global/group/policies/adaptivePolicyGroups | remove | Adaptive policy assignment | Remove adaptive policy groups from a policy|
@@ -13,6 +14,7 @@
 | /networks/{networkId}/webhooks/payloadTemplates | create | Api platform/actions/webhook payload | Create a webhook payload template for a network|
 | /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId} | destroy | Api platform/actions/webhook payload | Destroy a webhook payload template for a network. Does not work for included templates ('wpt_00001', 'wpt_00002', 'wpt_00003', 'wpt_00004', 'wpt_00005', 'wpt_00006', 'wpt_00007' or 'wpt_00008')|
 | /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId} | update | Api platform/actions/webhook payload | Update a webhook payload template for a network|
+| /organizations/{organizationId} | update | Api/actions/organization | Update an organization|
 | /organizations/{organizationId}/policies/global/group/policies/appliance/vlans | assign | Appliance VLAN assignment | Assign VLANs to a policy|
 | /organizations/{organizationId}/policies/global/group/policies/appliance/vlans | remove | Appliance VLAN assignment | Remove VLANs from a policy|
 | /devices/{serial}/appliance/radio/settings | update | Appliance radio settings | Update the radio settings of an appliance|
@@ -22,6 +24,7 @@
 | /devices/{serial}/camera/video/settings | update | Camera video settings | Update video settings for the given camera|
 | /devices/{serial}/camera/wirelessProfiles | update | Camera wireless profile settings | Assign wireless profiles to the given camera. Incremental updates are not supported, all profile assignment need to be supplied at once.|
 | /organizations/{organizationId}/configTemplates/{configTemplateId} | update | Config template | Update a configuration template|
+| /networks/{networkId}/devices/syslog/servers | servers | Core product/syslog/update network | Updates the syslog servers configuration for a network.|
 | /networks/{networkId}/appliance/trafficShaping/customPerformanceClasses | create | Custom performance class | Add a custom performance class for an MX network|
 | /networks/{networkId}/appliance/trafficShaping/customPerformanceClasses/{customPerformanceClassId} | destroy | Custom performance class | Delete a custom performance class from an MX network|
 | /networks/{networkId}/appliance/trafficShaping/customPerformanceClasses/{customPerformanceClassId} | update | Custom performance class | Update a custom performance class for an MX network|
@@ -128,6 +131,9 @@
 | /organizations/{organizationId}/wireless/ssids/firewall/isolation/allowlist/entries/{entryId} | destroy | Mr/firewall/actions/l2 isolation allowlist | Destroy isolation allow list MAC entry for this organization|
 | /organizations/{organizationId}/wireless/ssids/firewall/isolation/allowlist/entries/{entryId} | update | Mr/firewall/actions/l2 isolation allowlist | Update isolation allow list MAC entry info|
 | /networks/{networkId}/wireless/radio/rrm | update | Mr/speedy/actions/auto RF | Update the AutoRF settings for a wireless network|
+| /organizations/{organizationId}/wireless/devices/provisioning/deployments | create | Mr/zero touch/actions/deployment | Create a zero touch deployment for a wireless access point|
+| /organizations/{organizationId}/wireless/devices/provisioning/deployments | update | Mr/zero touch/actions/deployment | Update a zero touch deployment|
+| /organizations/{organizationId}/wireless/devices/provisioning/deployments/{deploymentId} | destroy | Mr/zero touch/actions/deployment | Delete a zero touch deployment|
 | /networks/{networkId}/switch/accessPolicies | create | Ms/access | Create an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.|
 | /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber} | destroy | Ms/access | Delete an access policy for a switch network|
 | /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber} | update | Ms/access | Update an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.|
@@ -162,6 +168,7 @@
 | /devices/{serial}/liveTools/throughputTest | test | Ms/live tools/actions/perform throughput | Enqueue a job to test a device throughput, the test will run for 10 secs to test throughput. This endpoint has a rate limit of one request every five seconds per device.|
 | /networks/{networkId}/switch/routing/ospf | update | Ms/routing/actions/ospf routing | Update layer 3 OSPF routing configuration|
 | /networks/{networkId}/switch/settings | update | Ms/switch | Update switch network settings|
+| /networks/{networkId}/switch/stacks/{switchStackId} | update | Ms/switch | Update a switch stack. At least one of 'name' or 'members' must be provided. If 'members' is provided, it replaces the entire stack membership.|
 | /organizations/{organizationId}/switch/devices | clone | Ms/switch | Clone port-level and some switch-level configuration settings from a source switch to one or more target switches. Cloned settings include: Aggregation Groups, Power Settings, Multicast Settings, MTU Configuration, STP Bridge priority, Port Mirroring|
 | /networks/{networkId}/sensor/alerts/profiles | create | Mt/api/actions/alert profiles | Creates a sensor alert profile for a network.|
 | /networks/{networkId}/sensor/alerts/profiles/{id} | destroy | Mt/api/actions/alert profiles | Deletes a sensor alert profile from a network.|
@@ -169,7 +176,6 @@
 | /devices/{serial}/sensor/commands | create | Mt/api/actions/commands | Sends a command to a sensor|
 | /devices/{serial}/sensor/relationships | update | Mt/api/actions/sensor gateway role | Assign one or more sensor roles to a given sensor or camera device.|
 | /networks/{networkId}/sensor/mqttBrokers/{mqttBrokerId} | update | Mt/api/actions/sensor mqtt broker | Update the sensor settings of an MQTT broker. To update the broker itself, use /networks/{networkId}/mqttBrokers/{mqttBrokerId}.|
-| /networks/{networkId}/switch/routing/multicast | update | Multicast | Update multicast settings for a network|
 | /networks/{networkId}/mqttBrokers | create | Mv/actions/mqtt broker | Add an MQTT broker|
 | /networks/{networkId}/mqttBrokers/{mqttBrokerId} | destroy | Mv/actions/mqtt broker | Delete an MQTT broker|
 | /networks/{networkId}/mqttBrokers/{mqttBrokerId} | update | Mv/actions/mqtt broker | Update an MQTT broker|
@@ -188,15 +194,16 @@
 | /organizations/{organizationId}/saml/idps/{idpId} | destroy | Organization SAML IdP | Remove a SAML IdP in your organization.|
 | /organizations/{organizationId}/saml/idps/{idpId} | update | Organization SAML IdP | Update a SAML IdP in your organization|
 | /organizations/{organizationId}/loginSecurity | update | Organization login security settings | Update the login security settings for an organization|
+| /organizations/{organizationId}/snmp | update | Organization snmp | Update the SNMP settings for an organization|
 | /organizations/{organizationId}/devices/packetCapture/captures | destroy | Pcap logs | BulkDelete packet captures from cloud|
 | /organizations/{organizationId}/devices/packetCapture/captures/{captureId} | destroy | Pcap logs | Delete a single packet capture from cloud using captureId|
 | /organizations/{organizationId}/devices/packetCapture/schedules | create | Pcap schedule configurations | Create a schedule for packet capture|
 | /organizations/{organizationId}/devices/packetCapture/schedules | reorder | Pcap schedule configurations | Bulk update priorities of pcap schedules|
 | /organizations/{organizationId}/devices/packetCapture/schedules/{scheduleId} | destroy | Pcap schedule configurations | Delete schedule from cloud|
 | /organizations/{organizationId}/devices/packetCapture/schedules/{scheduleId} | update | Pcap schedule configurations | Update a schedule for packet capture|
-| /organizations/{organizationId}/policyObjects | create | Policy object | Creates a new Policy Object.|
+| /organizations/{organizationId}/policyObjects | create | Policy object | Creates a new Policy Object. Note: type `ipAndMask` is deprecated; use `cidr`.|
 | /organizations/{organizationId}/policyObjects/{policyObjectId} | destroy | Policy object | Deletes a Policy Object.|
-| /organizations/{organizationId}/policyObjects/{policyObjectId} | update | Policy object | Updates a Policy Object.|
+| /organizations/{organizationId}/policyObjects/{policyObjectId} | update | Policy object | Updates a Policy Object. Note: type `ipAndMask` is deprecated; use `cidr`.|
 | /organizations/{organizationId}/policyObjects/groups | create | Policy object group | Creates a new Policy Object Group.|
 | /organizations/{organizationId}/policyObjects/groups/{policyObjectGroupId} | destroy | Policy object group | Deletes a Policy Object Group.|
 | /networks/{networkId}/wireless/ssids/{number}/identityPsks | create | Psk group | Create an Identity PSK|
@@ -312,6 +319,3 @@
 | /organizations/{organizationId}/wireless/location/scanning/receivers/{receiverId} | update | Wireless/location/scanning http servers/actions/location scanning http servers | Change scanning API receiver settings|
 | /networks/{networkId}/wireless/location/scanning | update | Wireless/location/scanning/actions/location scanning | Change scanning API settings|
 | /organizations/{organizationId}/wireless/mqtt/settings | update | Wireless/mqtt/settings/actions/mqtt settings | Add new broker config for wireless MQTT|
-| /organizations/{organizationId}/wireless/devices/provisioning/deployments | create | Zero touch/actions/deployment | Create a zero touch deployment for a wireless access point|
-| /organizations/{organizationId}/wireless/devices/provisioning/deployments | update | Zero touch/actions/deployment | Update a zero touch deployment|
-| /organizations/{organizationId}/wireless/devices/provisioning/deployments/{deploymentId} | destroy | Zero touch/actions/deployment | Delete a zero touch deployment|
