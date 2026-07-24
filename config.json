@@ -220,18 +220,6 @@
       }
     },
     {
-      "title": "AI",
-      "config": {
-        "expand": 1
-      },
-      "items": [
-        {
-          "title": "Meraki MCP Server",
-          "content": "docs/MerakiMCP.md"
-        }
-      ]
-    },
-    {
       "title": "Integrated APIs",
       "items": [
         {
