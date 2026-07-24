@@ -220,6 +220,18 @@
       }
     },
     {
+      "title": "AI",
+      "config": {
+        "expand": 1
+      },
+      "items": [
+        {
+          "title": "Meraki MCP Server",
+          "content": "docs/MerakiMCP.md"
+        }
+      ]
+    },
+    {
       "title": "Integrated APIs",
       "items": [
         {
@@ -242,7 +254,7 @@
       ]
     },
     {
-      "title": "Libraries & SDKs",
+      "title": "AI Toolkit & SDKs",
       "config": {
         "expand": 1
       },
@@ -252,8 +264,17 @@
           "content": "docs/SDKoverview.md"
         },
         {
+          "title": "MCP Server",
+          "content": "docs/MerakiMCP.md"
+        },
+        {
           "title": "Python",
           "content": "docs/pythonLibrary.md"
+        },
+        {
+          "title": "Go",
+          "content": "https://github.com/meraki/dashboard-api-go",
+          "type": "url"
         },
         {
           "title": "Postman Collection ",
