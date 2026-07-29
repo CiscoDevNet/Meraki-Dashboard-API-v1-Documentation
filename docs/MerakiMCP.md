@@ -28,7 +28,7 @@ Meraki MCP is available as a Cisco-hosted remote service or as a self-hosted, op
 | **Core functionality** | Provides the Meraki MCP capabilities described in this guide. | Provides the same core Meraki MCP functionality. |
 | **Meraki environments** | Supports Meraki.com only. Federal, GovCloud, and localized Meraki environments are not supported. | Can work with any Meraki environment. |
 | **Code and customization** | Cisco manages the service and its implementation. | Review and customize the source code to meet your requirements. |
-| **Setup and compatibility** | Follow the client configuration guidance below. | See [CiscoDevNet/cisco-network-platform-cloud-mcp](https://github.com/CiscoDevNet/cisco-network-platform-cloud-mcp/) for availability, setup, and compatibility details. |
+| **Setup and compatibility** | Follow the client configuration guidance below. | See [CiscoDevNet/cisco-meraki-mcp](https://github.com/CiscoDevNet/cisco-meraki-mcp-official/) for availability, setup, and compatibility details. |
 
 > **Important:** You are responsible for any changes you make to the local, open-source MCP. Meraki does not support modified local MCP code.
 
