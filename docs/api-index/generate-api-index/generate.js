@@ -365,7 +365,7 @@ async function generateData(args = process.argv.slice(2)) {
                     <div style="display:flex; gap:8px; align-items:center; justify-content:flex-end; flex:1 1 auto;">
                         <button class="toolbar-btn" onclick="exportFilteredCsv()">Download filtered CSV</button>
                         <button class="toolbar-btn" onclick="downloadFullCsv()">Download full CSV</button>
-                        <button class="toolbar-btn" onclick="window.location.href='https://github.com/meraki/openapi'">OpenAPI Specification</button>
+                        <button class="toolbar-btn" onclick="downloadOpenApiSpec()">OpenAPI Specification</button>
                     </div>
                </div>
                ${markdownToHtmlTable(markdownReport, fields, apiVersion, totalCount)}

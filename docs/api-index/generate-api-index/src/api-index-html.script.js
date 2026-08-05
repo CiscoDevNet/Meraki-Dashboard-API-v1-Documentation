@@ -46,6 +46,25 @@ function downloadFullCsv() {
     window.location.assign(new URL('meraki-api-index.csv', apiIndexScriptUrl).href);
 }
 
+async function downloadOpenApiSpec() {
+    if (!apiIndexScriptUrl) {
+        throw new Error('Unable to determine the API Index asset URL');
+    }
+    var specUrl = new URL('../../specs/beta/spec3.json', apiIndexScriptUrl).href;
+    var response = await fetch(specUrl);
+    if (!response.ok) {
+        throw new Error(`Unable to download the OpenAPI specification: ${response.status}`);
+    }
+    var blobUrl = URL.createObjectURL(await response.blob());
+    var link = document.createElement('a');
+    link.href = blobUrl;
+    link.download = 'meraki-openapi-spec3.json';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(blobUrl);
+}
+
 let currentOpFilter = null;
 let opFilterPanelVisible = false;
 

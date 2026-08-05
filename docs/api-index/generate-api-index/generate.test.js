@@ -104,3 +104,80 @@ test('full CSV download resolves beside the PubHub-hosted script asset', async (
     'https://pubhub.devnetcloud.com/media/Meraki-Dashboard-API-v1-Documentation/docs/docs/api-index/meraki-api-index.csv',
   );
 });
+
+test('OpenAPI specification button downloads the hosted beta snapshot', async () => {
+  const directory = mkdtempSync(path.join(tmpdir(), 'api-index-spec-download-'));
+  const specPath = path.join(directory, 'spec.json');
+  writeFileSync(specPath, JSON.stringify({
+    openapi: '3.0.1',
+    info: { version: 'test' },
+    paths: {},
+  }));
+
+  const originalDirectory = process.cwd();
+  try {
+    process.chdir(directory);
+    await generateData([specPath]);
+  } finally {
+    process.chdir(originalDirectory);
+  }
+
+  const html = readFileSync(path.join(directory, 'meraki-api-index.html'), 'utf8');
+  const script = readFileSync(path.join(directory, 'api-index-html.script.js'), 'utf8');
+  const handler = html.match(/<button[^>]+onclick="([^"]+)"[^>]*>OpenAPI Specification<\/button>/)?.[1];
+  assert.ok(handler, 'generated HTML must include an OpenAPI specification handler');
+
+  const scriptUrl = 'https://pubhub.devnetcloud.com/media/Meraki-Dashboard-API-v1-Documentation/docs/docs/api-index/api-index-html.script.js';
+  const specBlob = { kind: 'beta-spec' };
+  let fetchedUrl;
+  let clicked = false;
+  let revokedUrl;
+  const link = {
+    click() {
+      clicked = true;
+    },
+  };
+  class BrowserUrl extends URL {}
+  BrowserUrl.createObjectURL = blob => {
+    assert.equal(blob, specBlob);
+    return 'blob:openapi-spec';
+  };
+  BrowserUrl.revokeObjectURL = url => {
+    revokedUrl = url;
+  };
+  const context = {
+    document: {
+      addEventListener() {},
+      body: {
+        appendChild() {},
+        removeChild() {},
+      },
+      createElement(tagName) {
+        assert.equal(tagName, 'a');
+        return link;
+      },
+      currentScript: { src: scriptUrl },
+    },
+    fetch: async url => {
+      fetchedUrl = url;
+      return {
+        ok: true,
+        blob: async () => specBlob,
+      };
+    },
+    URL: BrowserUrl,
+    window: { location: { href: 'https://developer.cisco.com/meraki/api-v1/api-index/' } },
+  };
+
+  vm.runInNewContext(script, context);
+  await vm.runInNewContext(handler, context);
+
+  assert.equal(
+    fetchedUrl,
+    'https://pubhub.devnetcloud.com/media/Meraki-Dashboard-API-v1-Documentation/docs/specs/beta/spec3.json',
+  );
+  assert.equal(link.download, 'meraki-openapi-spec3.json');
+  assert.equal(link.href, 'blob:openapi-spec');
+  assert.equal(clicked, true);
+  assert.equal(revokedUrl, 'blob:openapi-spec');
+});
