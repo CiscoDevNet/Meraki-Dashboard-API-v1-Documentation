@@ -1,28 +1,35 @@
-name: pubhub-notification
+name: Sync documentation with PubHub
 
 on:
   push:
     branches:
-      - main   # 👈 only run on main
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pubhub-main
+  cancel-in-progress: false
 
 jobs:
-  notification:
-    name: notification
+  sync:
+    name: Validate and sync
     runs-on: ubuntu-latest
-
     steps:
-      - name: echo
-        run: echo "Starting https request"
-      - name : PubHub API
-        id: pubhub_request
-        uses: fjogeleit/http-request-action@v1.5.0
+      - name: Checkout pushed commit
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
         with:
-          url: 'https://devnet.cisco.com/v1/pubhub/projects/sync/${{secrets.project_id}}/'
-          timeout: 60000
-          customHeaders: |
-            {
-              "Authorization": "Token ${{ secrets.pubhub_token }}"
-            }
-          method: GET
-      - name: Debug response
-        run: echo "${{ steps.pubhub_request.outputs.response }}"
+          node-version: '24'
+
+      - name: Validate local documentation references
+        run: node scripts/release/release-tools.mjs validate-config config.json "$GITHUB_WORKSPACE"
+
+      - name: Synchronize PubHub preview
+        env:
+          PUBHUB_PROJECT_ID: ${{ secrets.project_id }}
+          PUBHUB_TOKEN: ${{ secrets.pubhub_token }}
+        run: scripts/release/sync-pubhub.sh "$PUBHUB_PROJECT_ID" "$PUBHUB_TOKEN" "$GITHUB_SHA"

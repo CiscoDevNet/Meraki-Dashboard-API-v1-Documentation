@@ -1,0 +1,82 @@
+name: Release API documentation
+
+on:
+  schedule:
+    - cron: '0 20 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pubhub-main
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Snapshot, generate, and sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: docs/api-index/generate-api-index/package-lock.json
+
+      - name: Install locked generator dependencies
+        working-directory: docs/api-index/generate-api-index
+        run: npm ci
+
+      - name: Download and validate immutable specifications
+        run: scripts/release/download-specs.sh "$GITHUB_WORKSPACE"
+
+      - name: Generate all specification-derived documentation
+        run: scripts/release/generate-release.sh "$GITHUB_WORKSPACE"
+
+      - name: Verify deterministic release package
+        run: scripts/release/verify-release.sh "$GITHUB_WORKSPACE" --deterministic
+
+      - name: Commit, rebase, and push one release
+        id: release
+        run: |
+          set -euo pipefail
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add \
+            config.json \
+            specs/ga/spec3.json \
+            specs/beta/spec3.json \
+            specs/manifest.json \
+            docs/ActionBatchesResources.md \
+            docs/api-index/api-index-html.script.js \
+            docs/api-index/api-index-html.styles.css \
+            docs/api-index/meraki-api-index.csv \
+            docs/api-index/meraki-api-index.md \
+            docs/api-index/meraki-api-index.html
+          if git diff --cached --quiet; then
+            echo "No API release changes detected."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "Update API documentation from OpenAPI"
+          git pull --rebase origin main
+          scripts/release/verify-release.sh "$GITHUB_WORKSPACE" --deterministic
+          git diff --exit-code
+          git push origin HEAD:main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Synchronize PubHub preview
+        if: steps.release.outputs.changed == 'true'
+        env:
+          PUBHUB_PROJECT_ID: ${{ secrets.project_id }}
+          PUBHUB_TOKEN: ${{ secrets.pubhub_token }}
+          RELEASE_COMMIT: ${{ steps.release.outputs.commit }}
+        run: scripts/release/sync-pubhub.sh "$PUBHUB_PROJECT_ID" "$PUBHUB_TOKEN" "$RELEASE_COMMIT"
