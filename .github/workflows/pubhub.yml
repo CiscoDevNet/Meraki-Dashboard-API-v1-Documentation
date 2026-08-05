@@ -25,10 +25,24 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Check whether this is still the latest main commit
+        id: latest
+        run: |
+          set -euo pipefail
+          git fetch origin main:refs/remotes/origin/main
+          if [[ "$(git rev-parse origin/main)" == "$GITHUB_SHA" ]]; then
+            echo "current=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "A newer main commit exists; skipping this queued PubHub sync."
+            echo "current=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Validate local documentation references
+        if: steps.latest.outputs.current == 'true'
         run: node scripts/release/release-tools.mjs validate-config config.json "$GITHUB_WORKSPACE"
 
       - name: Synchronize PubHub preview
+        if: steps.latest.outputs.current == 'true'
         env:
           PUBHUB_PROJECT_ID: ${{ secrets.project_id }}
           PUBHUB_TOKEN: ${{ secrets.pubhub_token }}

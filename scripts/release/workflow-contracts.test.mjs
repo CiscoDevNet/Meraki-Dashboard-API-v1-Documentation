@@ -67,3 +67,15 @@ test('ordinary main pushes only validate local references and synchronize PubHub
   assert.doesNotMatch(contents, /fjogeleit/);
   assert.doesNotMatch(contents, /outputs\.response/);
 });
+
+test('a queued ordinary push skips PubHub when a newer main commit exists', () => {
+  const contents = workflow('pubhub.yml');
+  ordered(contents, [
+    'git fetch origin main',
+    'git rev-parse origin/main',
+    'validate-config',
+    'sync-pubhub.sh',
+  ]);
+  assert.match(contents, /id: latest/);
+  assert.match(contents, /if: steps\.latest\.outputs\.current == 'true'/g);
+});
