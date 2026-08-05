@@ -4,7 +4,7 @@ const { tmpdir } = require('node:os');
 const path = require('node:path');
 const test = require('node:test');
 
-const { fetchOpenAPISpec, generateData } = require('./generate.js');
+const { fetchOpenAPISpec, generateData, toMarkdownTable } = require('./generate.js');
 
 test('exports an import-safe generator API', () => {
   assert.equal(typeof fetchOpenAPISpec, 'function');
@@ -33,4 +33,19 @@ test('rejects unsuccessful HTTP responses before parsing JSON', async () => {
     fetchOpenAPISpec('https://example.com/spec.json', fakeFetch),
     /503 Unavailable/,
   );
+});
+
+test('wraps every Markdown data row without trailing whitespace', () => {
+  const table = toMarkdownTable([
+    { Operation: 'GET /one', Scope: '' },
+    { Operation: 'POST /two', Scope: 'write' },
+  ], ['Operation', 'Scope']);
+
+  assert.equal(table, [
+    '| Operation | Scope |',
+    '| --- | --- |',
+    '| GET /one |  |',
+    '| POST /two | write |',
+  ].join('\n'));
+  for (const line of table.split('\n')) assert.doesNotMatch(line, /\s+$/);
 });

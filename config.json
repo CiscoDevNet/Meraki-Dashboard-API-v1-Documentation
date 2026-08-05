@@ -141,7 +141,7 @@
     {
       "title": "API Reference",
       "type": "oas3",
-      "content": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec3.json",
+      "content": "specs/ga/spec3.json",
       "config": {
         "overview": {
           "markdownPath": "docs/overview.md"
@@ -185,7 +185,7 @@
     {
       "title": "API Reference (Early Access)",
       "type": "oas3",
-      "content": "https://raw.githubusercontent.com/meraki/openapi/v1-beta/openapi/spec3.json",
+      "content": "specs/beta/spec3.json",
       "config": {
         "overview": {
           "markdownPath": "docs/overview-early-access.md"

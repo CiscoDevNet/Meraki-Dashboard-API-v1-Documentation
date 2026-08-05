@@ -231,8 +231,10 @@ function extractRequestBodyProperties(requestBody) {
 function toMarkdownTable(data, fields) {
     const header = fields.join(' | ');
     const separator = fields.map(() => '---').join(' | ');
-    const body = data.map(row => fields.map(field => row[field] || '').join(' | ')).join('\n');
-    return `| ${header} |\n| ${separator} |\n| ${body} |`;
+    const body = data
+        .map(row => `| ${fields.map(field => row[field] || '').join(' | ')} |`)
+        .join('\n');
+    return `| ${header} |\n| ${separator} |\n${body}`;
 }
 
 function markdownToHtmlTable(data, fields, apiVersion, totalCount) {
@@ -420,4 +422,5 @@ if (require.main === module) {
 module.exports = {
     fetchOpenAPISpec,
     generateData,
+    toMarkdownTable,
 };
