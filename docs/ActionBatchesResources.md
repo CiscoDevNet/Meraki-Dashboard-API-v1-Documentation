@@ -19,6 +19,9 @@
 | /organizations/{organizationId}/policies/global/group/policies/appliance/vlans | remove | Appliance VLAN assignment | Remove VLANs from a policy|
 | /devices/{serial}/appliance/radio/settings | update | Appliance radio settings | Update the radio settings of an appliance|
 | /networks/{networkId}/appliance/ssids/{number} | update | Appliance ssid | Update the attributes of an MX SSID|
+| /organizations/{organizationId}/assurance/alerts/profiles | create | Assurance/actions/alerts/profile | Create an alert profile|
+| /organizations/{organizationId}/assurance/alerts/profiles/{profileId} | destroy | Assurance/actions/alerts/profile | Delete an alert profile for this organization|
+| /organizations/{organizationId}/assurance/alerts/profiles/{profileId} | update | Assurance/actions/alerts/profile | Update an alert profile|
 | /networks/{networkId}/wireless/billing | update | Billing | Update the billing settings|
 | /devices/{serial}/camera/customAnalytics | update | Camera custom analytics settings | Update custom analytics settings for a camera|
 | /devices/{serial}/camera/video/settings | update | Camera video settings | Update video settings for the given camera|
@@ -93,7 +96,9 @@
 | /networks/{networkId}/appliance/trafficShaping/uplinkBandwidth | update | MX uplink setting | Updates the uplink bandwidth settings for your MX network.|
 | /organizations/{organizationId}/devices/details/bulkUpdate | update | Mars/actions/device | Updating device details (currently only used for Catalyst devices)|
 | /networks/{networkId}/campusGateway/clusters | create | Mcg/actions/cluster | Create a cluster and add campus gateways to it|
+| /networks/{networkId}/campusGateway/clusters/{clusterId} | destroy | Mcg/actions/cluster | Delete a cluster|
 | /networks/{networkId}/campusGateway/clusters/{clusterId} | update | Mcg/actions/cluster | Update a cluster and add/remove campus gateways to/from it|
+| /organizations/{organizationId}/campusGateway/clusters | provision | Mcg/actions/cluster | Provisions a cluster,adds campus gateways to it and associate/dissociate failover targets.|
 | /organizations/{organizationId}/insight/monitoredMediaServers | create | Monitored media server | Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.|
 | /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId} | destroy | Monitored media server | Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.|
 | /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId} | update | Monitored media server | Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.|
@@ -122,6 +127,9 @@
 | /networks/{networkId}/wireless/ssids/{number}/bonjourForwarding | update | Mr/actions/ssid bonjour forwarding | Update the bonjour forwarding setting and rules for the SSID|
 | /networks/{networkId}/wireless/ssids/{number}/openRoaming | update | Mr/actions/ssid openroaming | Update the OpenRoaming setting for the SSID|
 | /networks/{networkId}/wireless/ssids/{number}/schedules | update | Mr/actions/ssid outage schedule | Update the outage schedule for the SSID|
+| /organizations/{organizationId}/wireless/ssids/profiles | create | Mr/actions/ssid profile | Create a new SSID profile in an organization|
+| /organizations/{organizationId}/wireless/ssids/profiles/{id} | destroy | Mr/actions/ssid profile | Delete an SSID profile|
+| /organizations/{organizationId}/wireless/ssids/profiles/{id} | update | Mr/actions/ssid profile | Update this SSID profile|
 | /devices/{serial}/wireless/alternateManagementInterface/ipv6 | update | Mr/actions/wireless alternate management interface v6 | Update alternate management interface IPv6 address|
 | /networks/{networkId}/wireless/settings | update | Mr/actions/wireless settings | Update the wireless settings for a network|
 | /networks/{networkId}/wireless/zigbee | update | Mr/actions/zigbee config | Update Zigbee Configs for specified network|
@@ -190,6 +198,11 @@
 | /organizations/{organizationId}/networks | combine | Network | Combine multiple networks into a single network|
 | /organizations/{organizationId}/networks | create | Network | Create a network|
 | /networks/{networkId}/wireless/ssids/{number}/splash/settings | update | Network access/ssids/actions/ssid splash settings | Modify the splash page settings for the given SSID|
+| /organizations/{organizationId}/networks/groups | create | Network groups | Create a network group|
+| /organizations/{organizationId}/networks/groups/{groupId} | bulk_assign | Network groups | Add networks to a network group|
+| /organizations/{organizationId}/networks/groups/{groupId} | bulk_unassign | Network groups | Remove networks from a network group|
+| /organizations/{organizationId}/networks/groups/{groupId} | destroy | Network groups | Delete a network group|
+| /organizations/{organizationId}/networks/groups/{groupId} | update | Network groups | Update a network group|
 | /organizations/{organizationId}/saml/idps | create | Organization SAML IdP | Create a SAML IdP for your organization.|
 | /organizations/{organizationId}/saml/idps/{idpId} | destroy | Organization SAML IdP | Remove a SAML IdP in your organization.|
 | /organizations/{organizationId}/saml/idps/{idpId} | update | Organization SAML IdP | Update a SAML IdP in your organization|
@@ -229,6 +242,8 @@
 | /organizations/{organizationId}/splash/themes/{themeIdentifier}/assets | create | Splash theme asset | Create a Splash Theme Asset|
 | /organizations/{organizationId}/splash/themes/{id} | destroy | Splash2 theme | Delete a Splash Theme|
 | /networks/{networkId}/wireless/ssids/{number}/deviceTypeGroupPolicies | update | Ssid device type group policies | Update the device type group policies for the SSID|
+| /organizations/{organizationId}/wireless/ssids/profiles/assignments | create | Ssid profile assignment | Assigns an SSID profile to an SSID in the organization|
+| /organizations/{organizationId}/wireless/ssids/profiles/assignments | destroy | Ssid profile assignment | Unassigns the SSID profile assigned to an SSID|
 | /networks/{networkId}/wireless/ssids/{number}/vpn | update | Ssid vpn | Update the VPN settings for the SSID|
 | /networks/{networkId}/firmwareUpgrades/staged/groups | create | Staged upgrade/group | Create a Staged Upgrade Group for a network|
 | /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId} | destroy | Staged upgrade/group | Delete a Staged Upgrade Group|

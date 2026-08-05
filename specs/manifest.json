@@ -3,25 +3,25 @@
   "ga": {
     "repository": "meraki/openapi",
     "branch": "master",
-    "commitSha": "3bd6d247c96ee35c8ed6e45b20ffae5fe90b6379",
+    "commitSha": "d0a02ad1ec8d9e01d8f11fda828a02eda9653d60",
     "openapi": "3.0.1",
-    "apiVersion": "1.72.0",
-    "sha256": "1f1b7a13d5292d4294c4cb5b0e611a460e9350c55097546e3ceb99000ae4f491",
-    "bytes": 7826428,
-    "paths": 670,
-    "operations": 957,
+    "apiVersion": "1.73.0",
+    "sha256": "2e70b70242d491006cccfd0ab29bff3c7129f248381994053ae33d400e246be0",
+    "bytes": 8382273,
+    "paths": 696,
+    "operations": 992,
     "betaOperations": 0
   },
   "beta": {
     "repository": "meraki/openapi",
     "branch": "v1-beta",
-    "commitSha": "56aa888306c018e7d3041960e95f92010b35044b",
+    "commitSha": "cf2310874a39f0d65ac202cd67f3d57e37de328a",
     "openapi": "3.0.1",
-    "apiVersion": "1.72.0-beta.4",
-    "sha256": "a6f039dfd6225179d27c2c121990cb19fa59ed945a55be9de5bff55570489c2b",
-    "bytes": 13033559,
-    "paths": 1100,
-    "operations": 1479,
-    "betaOperations": 501
+    "apiVersion": "1.73.0-beta.0",
+    "sha256": "16346dcfa2db4034fed490f8fc885cef0f8087904335cc23c5d096492c5f6040",
+    "bytes": 13105845,
+    "paths": 1102,
+    "operations": 1481,
+    "betaOperations": 488
   }
 }
