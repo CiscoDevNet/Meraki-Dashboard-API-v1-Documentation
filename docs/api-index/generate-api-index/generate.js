@@ -56,20 +56,28 @@ const isUrl = (input) => {
 };
 
 // Dynamically fetch or read the OpenAPI specification
-async function fetchOpenAPISpec(customSpecPath) {
-    if (customSpecPath && isUrl(customSpecPath)) {
-        // Fetch the spec from a URL
-        const response = await fetch(customSpecPath);
-        return response.json();
-    } else if (customSpecPath && fs.existsSync(customSpecPath)) {
-        // Read the spec from a local file
-        const spec = fs.readFileSync(customSpecPath, 'utf8');
-        return JSON.parse(spec);
-    } else {
-        // Use the default URL
-        const response = await fetch(DEFAULT_API_SPEC_URL);
-        return response.json();
+async function fetchOpenAPISpec(customSpecPath, fetchImpl = fetch) {
+    const specPath = customSpecPath || DEFAULT_API_SPEC_URL;
+    if (isUrl(specPath)) {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 120000);
+        try {
+            const response = await fetchImpl(specPath, { signal: controller.signal });
+            if (!response.ok) {
+                throw new Error(`Failed to fetch specification: ${response.status} ${response.statusText}`);
+            }
+            return response.json();
+        } finally {
+            clearTimeout(timeout);
+        }
     }
+
+    if (!fs.existsSync(specPath)) {
+        throw new Error(`Specification not found: ${specPath}`);
+    }
+
+    const spec = fs.readFileSync(specPath, 'utf8');
+    return JSON.parse(spec);
 }
 
 // function toKebabCase(str) {
@@ -291,9 +299,9 @@ function markdownToHtmlTable(data, fields, apiVersion, totalCount) {
 
 
 
-async function generateData() {
+async function generateData(args = process.argv.slice(2)) {
     // Capture custom spec path or URL from CLI arguments
-    const rawArgs = process.argv.slice(2);
+    const rawArgs = [...args];
     const customSpecPath = rawArgs[0] && !rawArgs[0].startsWith('--') ? rawArgs.shift() : undefined;
     const { operationIdsFilter } = parseOperationIdArgs(rawArgs);
 
@@ -366,7 +374,7 @@ async function generateData() {
         fs.writeFileSync(htmlFilePath, htmlContent);
         console.log(`HTML file has been generated successfully: ${htmlFilePath}`);
     } catch (error) {
-        console.error('An error occurred:', error);
+        throw error;
     }
 }
 function setupTargetDirectoryAndCopyFiles() {
@@ -402,4 +410,14 @@ function setupTargetDirectoryAndCopyFiles() {
     return targetDirectory;
 }
 
-generateData();
+if (require.main === module) {
+    generateData().catch(error => {
+        console.error('An error occurred:', error.message);
+        process.exitCode = 1;
+    });
+}
+
+module.exports = {
+    fetchOpenAPISpec,
+    generateData,
+};
