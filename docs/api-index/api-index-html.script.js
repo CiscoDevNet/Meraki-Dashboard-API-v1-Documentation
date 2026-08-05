@@ -37,6 +37,15 @@
 //     filterTable(document.querySelector('.scrollable-table thead input[type="text"]'), 0);
 // });
 
+var apiIndexScriptUrl = document.currentScript && document.currentScript.src;
+
+function downloadFullCsv() {
+    if (!apiIndexScriptUrl) {
+        throw new Error('Unable to determine the API Index asset URL');
+    }
+    window.location.assign(new URL('meraki-api-index.csv', apiIndexScriptUrl).href);
+}
+
 let currentOpFilter = null;
 let opFilterPanelVisible = false;
 
@@ -177,4 +186,3 @@ document.addEventListener('DOMContentLoaded', () => {
     filterTable();
     updateCounts();
 });
-

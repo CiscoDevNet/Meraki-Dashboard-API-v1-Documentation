@@ -1,8 +1,9 @@
 const assert = require('node:assert/strict');
-const { mkdtempSync, writeFileSync } = require('node:fs');
+const { mkdtempSync, readFileSync, writeFileSync } = require('node:fs');
 const { tmpdir } = require('node:os');
 const path = require('node:path');
 const test = require('node:test');
+const vm = require('node:vm');
 
 const { fetchOpenAPISpec, generateData, toMarkdownTable } = require('./generate.js');
 
@@ -48,4 +49,58 @@ test('wraps every Markdown data row without trailing whitespace', () => {
     '| POST /two | write |',
   ].join('\n'));
   for (const line of table.split('\n')) assert.doesNotMatch(line, /\s+$/);
+});
+
+test('full CSV download resolves beside the PubHub-hosted script asset', async () => {
+  const directory = mkdtempSync(path.join(tmpdir(), 'api-index-download-'));
+  const specPath = path.join(directory, 'spec.json');
+  writeFileSync(specPath, JSON.stringify({
+    openapi: '3.0.1',
+    info: { version: 'test' },
+    paths: {},
+  }));
+
+  const originalDirectory = process.cwd();
+  try {
+    process.chdir(directory);
+    await generateData([specPath]);
+  } finally {
+    process.chdir(originalDirectory);
+  }
+
+  const html = readFileSync(path.join(directory, 'meraki-api-index.html'), 'utf8');
+  const script = readFileSync(path.join(directory, 'api-index-html.script.js'), 'utf8');
+  const handler = html.match(/<button[^>]+onclick="([^"]+)"[^>]*>Download full CSV<\/button>/)?.[1];
+  assert.ok(handler, 'generated HTML must include a full CSV download handler');
+
+  const pageUrl = 'https://developer.cisco.com/meraki/api-v1/api-index/';
+  const scriptUrl = 'https://pubhub.devnetcloud.com/media/Meraki-Dashboard-API-v1-Documentation/docs/docs/api-index/api-index-html.script.js';
+  let navigatedTo;
+  const location = {
+    assign(value) {
+      navigatedTo = new URL(value, pageUrl).href;
+    },
+    get href() {
+      return pageUrl;
+    },
+    set href(value) {
+      navigatedTo = new URL(value, pageUrl).href;
+    },
+  };
+  const context = {
+    document: {
+      addEventListener() {},
+      currentScript: { src: scriptUrl },
+    },
+    URL,
+    window: { location },
+  };
+
+  vm.runInNewContext(script, context);
+  vm.runInNewContext(handler, context);
+
+  assert.equal(
+    navigatedTo,
+    'https://pubhub.devnetcloud.com/media/Meraki-Dashboard-API-v1-Documentation/docs/docs/api-index/meraki-api-index.csv',
+  );
 });
