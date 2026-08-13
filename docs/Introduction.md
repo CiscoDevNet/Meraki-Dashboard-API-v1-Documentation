@@ -15,6 +15,9 @@ Meraki APIs provide a range of operations to
 
 Checkout out the [Explore](https://developer.cisco.com/meraki/explore/) section for open source projects, or browse the [Marketplace](https://apps.meraki.io/) for partner solutions.
 
+## Dashboard API Terms and Policy
+Use of and access to Cisco Meraki APIs and associated documentation is governed by the [Cisco Baseline API License Terms](https://www.cisco.com/c/dam/en_us/about/doing_business/legal/supplemental-terms/Baseline-API-Terms.pdf), [Cisco Acceptable Use Policy](https://www.cisco.com/c/dam/en_us/about/legal/cisco-acceptable-use-policy.pdf), [Cisco Meraki Cloud Service Offer Description](https://www.cisco.com/c/dam/en_us/about/doing_business/legal/OfferDescriptions/meraki.pdf), and [Cisco General Terms](https://www.cisco.com/c/dam/en_us/about/doing_business/legal/Cisco_General_Terms.pdf). 
+
 ## Resources
 
 A resource is an entity or component within the Meraki ecosystem.  Resources represent the various elements of a network.  Here are some examples of Meraki resources:
