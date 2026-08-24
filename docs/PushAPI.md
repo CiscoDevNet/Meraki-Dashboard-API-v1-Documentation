@@ -50,7 +50,7 @@ The core model is simple: your organization subscribes to a **topic** (a stream 
 
 **Heartbeat** - A message sent every 5 minutes to every active push profile. It confirms the delivery pipeline is healthy. Your receiver should check for `"topic": "heartbeat"` and use them for liveness monitoring.
 
-![Push API subscription model: a topic and receiver profile form a push profile that delivers to an HTTPS webhook endpoint.](images/push-api-subscription-model.svg)
+![Push API subscription model: a topic and receiver profile form a push profile that delivers to an HTTPS webhook endpoint.](../images/push-api-subscription-model.svg)
 
 ## Prerequisites
 
@@ -67,7 +67,7 @@ Before you configure Push API, ensure you have:
 
 > **Beta notice:** Meraki Push API is currently in beta. Features, schemas, and supported capabilities may change, including in ways that are not backward compatible. We reserve the right to make breaking changes during the beta period.
 
-![Five steps to create a first Push API subscription: create an HTTP server, create a receiver profile, list topics, create a push profile, then verify the Heartbeat.](images/push-api-first-subscription.svg)
+![Five steps to create a first Push API subscription: create an HTTP server, create a receiver profile, list topics, create a push profile, then verify the Heartbeat.](../images/push-api-first-subscription.svg)
 
 ### Step 1: Create a webhook receiver
 
@@ -118,7 +118,7 @@ Use the Dashboard API operation reference to manage your configuration:
 
 All Push API messages follow this structure:
 
-![Push API message handling: process topic messages as data events and record Heartbeats for liveness before returning 200 OK.](images/push-api-message-handling.svg)
+![Push API message handling: process topic messages as data events and record Heartbeats for liveness before returning 200 OK.](../images/push-api-message-handling.svg)
 
 ```json
 {
