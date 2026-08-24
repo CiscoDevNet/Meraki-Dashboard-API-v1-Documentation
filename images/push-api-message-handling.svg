@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 370" role="img" aria-labelledby="title desc">
+  <title id="title">Push API message and Heartbeat handling</title>
+  <desc id="desc">Topic messages and five-minute Heartbeats arrive at the same webhook receiver. Topic messages are processed, while Heartbeats are recorded for liveness and receive a 200 OK response.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+  <rect width="1040" height="370" rx="16" fill="#f8fafc"/>
+  <g font-family="Arial, sans-serif">
+    <text x="48" y="52" fill="#111827" font-size="27" font-weight="700">Handle Push API deliveries</text>
+    <text x="48" y="81" fill="#475569" font-size="16">Topic messages and Heartbeats reach the same endpoint but follow different handling paths.</text>
+
+    <path d="M270 170 H400" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M270 275 H400" stroke="#16a34a" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M620 170 H760" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M620 275 H760" stroke="#16a34a" stroke-width="4" marker-end="url(#arrow)"/>
+
+    <rect x="50" y="125" width="220" height="90" rx="12" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+    <text x="73" y="160" fill="#1e3a8a" font-size="21" font-weight="700">Topic message</text>
+    <text x="73" y="189" fill="#334155" font-size="15">Topic-specific data event</text>
+
+    <rect x="50" y="230" width="220" height="90" rx="12" fill="#ecfdf5" stroke="#4ade80" stroke-width="2"/>
+    <text x="73" y="265" fill="#166534" font-size="21" font-weight="700">Heartbeat</text>
+    <text x="73" y="294" fill="#334155" font-size="16">Every 5 minutes</text>
+
+    <rect x="400" y="125" width="220" height="195" rx="12" fill="white" stroke="#64748b" stroke-width="2"/>
+    <text x="425" y="197" fill="#111827" font-size="21" font-weight="700">Your webhook</text>
+    <text x="425" y="224" fill="#111827" font-size="21" font-weight="700">receiver</text>
+    <text x="425" y="252" fill="#475569" font-size="16">HTTPS endpoint</text>
+
+    <rect x="760" y="125" width="230" height="90" rx="12" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+    <text x="783" y="160" fill="#1e3a8a" font-size="21" font-weight="700">Process event</text>
+    <text x="783" y="189" fill="#334155" font-size="16">Run your workflow</text>
+
+    <rect x="760" y="230" width="230" height="90" rx="12" fill="#ecfdf5" stroke="#4ade80" stroke-width="2"/>
+    <text x="783" y="265" fill="#166534" font-size="20" font-weight="700">Record liveness</text>
+    <text x="783" y="294" fill="#334155" font-size="16">Return <tspan font-family="monospace">200 OK</tspan></text>
+  </g>
+</svg>

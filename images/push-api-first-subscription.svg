@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 330" role="img" aria-labelledby="title desc">
+  <title id="title">Create a first Push API subscription</title>
+  <desc id="desc">Five steps: create an HTTP server, create a receiver profile, list topics, create a push profile, then verify delivery with a Heartbeat within five minutes.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+  <rect width="1040" height="330" rx="16" fill="#f8fafc"/>
+  <g font-family="Arial, sans-serif">
+    <text x="48" y="52" fill="#111827" font-size="27" font-weight="700">Create your first Push API subscription</text>
+    <text x="48" y="81" fill="#475569" font-size="16">Each step provides the value required by the next one.</text>
+
+    <path d="M200 190 H240" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M400 190 H440" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M600 190 H640" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M800 190 H840" stroke="#16a34a" stroke-width="4" marker-end="url(#arrow)"/>
+
+    <g transform="translate(40 125)"><rect width="160" height="130" rx="12" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/><circle cx="25" cy="27" r="15" fill="#2563eb"/><text x="20" y="33" fill="white" font-size="16" font-weight="700">1</text><text x="18" y="68" fill="#1e3a8a" font-size="17" font-weight="700">Create HTTP</text><text x="18" y="90" fill="#1e3a8a" font-size="17" font-weight="700">server</text><text x="18" y="114" fill="#475569" font-size="14">Save its <tspan font-family="monospace">id</tspan></text></g>
+    <g transform="translate(240 125)"><rect width="160" height="130" rx="12" fill="#fffbeb" stroke="#fbbf24" stroke-width="2"/><circle cx="25" cy="27" r="15" fill="#ca8a04"/><text x="20" y="33" fill="white" font-size="16" font-weight="700">2</text><text x="18" y="68" fill="#92400e" font-size="16" font-weight="700">Create receiver</text><text x="18" y="90" fill="#92400e" font-size="16" font-weight="700">profile</text><text x="18" y="114" fill="#475569" font-size="14">Keep its <tspan font-family="monospace">iname</tspan></text></g>
+    <g transform="translate(440 125)"><rect width="160" height="130" rx="12" fill="#f3e8ff" stroke="#c084fc" stroke-width="2"/><circle cx="25" cy="27" r="15" fill="#9333ea"/><text x="20" y="33" fill="white" font-size="16" font-weight="700">3</text><text x="18" y="68" fill="#6b21a8" font-size="17" font-weight="700">List available</text><text x="18" y="90" fill="#6b21a8" font-size="17" font-weight="700">topics</text><text x="18" y="114" fill="#475569" font-size="14">Choose <tspan font-family="monospace">topicId</tspan></text></g>
+    <g transform="translate(640 125)"><rect width="160" height="130" rx="12" fill="#ecfdf5" stroke="#4ade80" stroke-width="2"/><circle cx="25" cy="27" r="15" fill="#16a34a"/><text x="20" y="33" fill="white" font-size="16" font-weight="700">4</text><text x="18" y="68" fill="#166534" font-size="17" font-weight="700">Create push</text><text x="18" y="90" fill="#166534" font-size="17" font-weight="700">profile</text><text x="18" y="114" fill="#475569" font-size="14">Subscribe</text></g>
+    <g transform="translate(840 125)"><rect width="160" height="130" rx="12" fill="#ecfdf5" stroke="#22c55e" stroke-width="2"/><circle cx="25" cy="27" r="15" fill="#15803d"/><text x="20" y="33" fill="white" font-size="16" font-weight="700">5</text><text x="18" y="68" fill="#166534" font-size="17" font-weight="700">Verify</text><text x="18" y="90" fill="#166534" font-size="17" font-weight="700">Heartbeat</text><text x="18" y="114" fill="#475569" font-size="14">Within 5 minutes</text></g>
+  </g>
+</svg>

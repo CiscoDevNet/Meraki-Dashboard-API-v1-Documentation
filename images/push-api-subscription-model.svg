@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 360" role="img" aria-labelledby="title desc">
+  <title id="title">Push API subscription model</title>
+  <desc id="desc">A topic and receiver profile form a push profile. The receiver profile references a webhook HTTP server, and the push profile delivers messages to a customer's HTTPS endpoint.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+  <rect width="1040" height="360" rx="16" fill="#f8fafc"/>
+  <g font-family="Arial, sans-serif">
+    <text x="48" y="52" fill="#111827" font-size="27" font-weight="700">How a Push API subscription works</text>
+    <text x="48" y="81" fill="#475569" font-size="16">A topic and a receiver profile form a push profile that delivers messages to your endpoint.</text>
+
+    <path d="M260 175 H400" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M620 175 H760" stroke="#16a34a" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M280 295 H400" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M510 250 V222" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="50" y="130" width="210" height="90" rx="12" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+    <text x="72" y="164" fill="#1e3a8a" font-size="21" font-weight="700">Topic</text>
+    <text x="72" y="194" fill="#334155" font-size="16">Select by <tspan font-family="monospace">topicId</tspan></text>
+
+    <rect x="400" y="130" width="220" height="90" rx="12" fill="#f0fdf4" stroke="#4ade80" stroke-width="2"/>
+    <text x="423" y="164" fill="#166534" font-size="21" font-weight="700">Push Profile</text>
+    <text x="423" y="194" fill="#334155" font-size="16">Subscription <tspan font-family="monospace">iname</tspan></text>
+
+    <rect x="760" y="130" width="230" height="90" rx="12" fill="#ecfdf5" stroke="#22c55e" stroke-width="2"/>
+    <text x="783" y="164" fill="#166534" font-size="18" font-weight="700">Your HTTPS endpoint</text>
+    <text x="783" y="194" fill="#334155" font-size="16">Receives webhook POSTs</text>
+
+    <rect x="50" y="250" width="230" height="80" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+    <text x="72" y="281" fill="#334155" font-size="18" font-weight="700">Webhook HTTP Server</text>
+    <text x="72" y="307" fill="#475569" font-size="15">Referenced by <tspan font-family="monospace">id</tspan></text>
+
+    <rect x="400" y="250" width="220" height="80" rx="12" fill="#fffbeb" stroke="#fbbf24" stroke-width="2"/>
+    <text x="423" y="281" fill="#92400e" font-size="19" font-weight="700">Receiver Profile</text>
+    <text x="423" y="307" fill="#475569" font-size="15"><tspan font-family="monospace">iname</tspan> identifies it</text>
+  </g>
+</svg>
