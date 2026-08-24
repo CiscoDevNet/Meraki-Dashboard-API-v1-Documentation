@@ -117,6 +117,10 @@
           "content": "docs/Pagination.md"
         },
         {
+          "title": "Push API",
+          "content": "docs/PushAPI.md"
+        },
+        {
           "title": "Query Parameters",
           "content": "docs/QueryParameters.md"
         },
