@@ -123,6 +123,10 @@ Follow these best practices during provisioning and monitoring to ensure that yo
 - **Replace an inefficient API operation with an efficient one**
    - Use the most efficient API calls available for your needs, especially if your application includes monitoring features.
 
+- **Use Push API to reduce polling**
+   - For supported topics, use [Push API](https://developer.cisco.com/meraki/api-v1/push-api/) to receive near-real-time updates through webhooks instead of repeatedly polling REST API endpoints.
+   - Reducing polling can lower API call volume and preserve the shared organization API budget for operations that still require REST API calls. Push API does not replace REST API calls for unsupported topics or use cases.
+
 | **Use Case**                                  | **Less Efficient Operation**                                                                 | **More Efficient Operation**                                                                                             |
 |--------------------------------------------|----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | Retrieving Network Topology Information    | Single-device operation [getDeviceLldpCdp](https://developer.cisco.com/meraki/api-v1/get-device-lldp-cdp/)  | Network-wide [getNetworkTopologyLinkLayer](https://developer.cisco.com/meraki/api-v1/get-network-topology-link-layer/) provides the complete topology for the network   |
@@ -148,10 +152,10 @@ Follow these steps to troubleshoot rate limit issues:
 1. **Verify adherence to best practices** by reviewing the “Best practices for optimizing API usage” section. If you use a [partner application](https://marketplace.cisco.com/en-US/home), contact the developer to discuss the application behavior or budget consumption. 
 2. **Check recent API activity** on the Meraki dashboard using this [guide](https://developer.cisco.com/meraki/api-v1/get-organization-api-requests-overview-response-codes-by-interval/)
 3. **Audit your scripts** that run without regular maintenance. Such scripts can degrade performance and consume your call budget. To monitor usage, [audit your organization's API consumption](https://developer.cisco.com/meraki/api-v1/get-organization-api-requests/).
+4. **If polling is the cause, consider Push API** for supported topics. Subscribing to webhook updates can reduce repeated REST API requests and help prevent future rate-limit responses.
 
 **Result**: You can identify the cause of the exceeded rate limits.
 
 # References
 - For more information about call budgets and rate limits, visit the [Meraki developer community](https://community.meraki.com/t5/Developers-APIs/bd-p/api).
 - Meraki uses the [token bucket model](https://en.wikipedia.org/wiki/Token_bucket) to implement this rate-limiting mechanism.
-
