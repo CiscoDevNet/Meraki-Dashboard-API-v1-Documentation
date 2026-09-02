@@ -12,13 +12,12 @@
 | /networks/{networkId}/devices | remove | Api features/actions/device | Remove a single device|
 | /networks/{networkId}/settings | update | Api features/actions/network settings | Update the settings for a network|
 | /networks/{networkId}/webhooks/payloadTemplates | create | Api platform/actions/webhook payload | Create a webhook payload template for a network|
-| /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId} | destroy | Api platform/actions/webhook payload | Destroy a webhook payload template for a network. Does not work for included templates ('wpt_00001', 'wpt_00002', 'wpt_00003', 'wpt_00004', 'wpt_00005', 'wpt_00006', 'wpt_00007' or 'wpt_00008')|
+| /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId} | destroy | Api platform/actions/webhook payload | Destroy a webhook payload template for a network. Does not work for included templates ('wpt_00001', 'wpt_00002', 'wpt_00003', 'wpt_00004', 'wpt_00005', 'wpt_00006', 'wpt_00007', 'wpt_00008' or 'wpt_00009')|
 | /networks/{networkId}/webhooks/payloadTemplates/{payloadTemplateId} | update | Api platform/actions/webhook payload | Update a webhook payload template for a network|
 | /organizations/{organizationId} | update | Api/actions/organization | Update an organization|
 | /organizations/{organizationId}/policies/global/group/policies/appliance/vlans | assign | Appliance VLAN assignment | Assign VLANs to a policy|
 | /organizations/{organizationId}/policies/global/group/policies/appliance/vlans | remove | Appliance VLAN assignment | Remove VLANs from a policy|
 | /devices/{serial}/appliance/radio/settings | update | Appliance radio settings | Update the radio settings of an appliance|
-| /networks/{networkId}/appliance/ssids/{number} | update | Appliance ssid | Update the attributes of an MX SSID|
 | /organizations/{organizationId}/assurance/alerts/profiles | create | Assurance/actions/alerts/profile | Create an alert profile|
 | /organizations/{organizationId}/assurance/alerts/profiles/{profileId} | destroy | Assurance/actions/alerts/profile | Delete an alert profile for this organization|
 | /organizations/{organizationId}/assurance/alerts/profiles/{profileId} | update | Assurance/actions/alerts/profile | Update an alert profile|
@@ -63,15 +62,12 @@
 | /organizations/{organizationId}/policies/global/group/policies/firewall/rulesets/assignments/{assignmentId} | update | Frontizo/actions/owp release/ruleset assignment | Update an Organization-Wide Policy Ruleset Assignment|
 | /organizations/{organizationId}/sase/integrations | create | Frontizo/actions/sase/integration | Create a new Secure Access integration|
 | /organizations/{organizationId}/sase/integrations/{integrationId} | destroy | Frontizo/actions/sase/integration | Remove a Secure Access integration|
-| /organizations/{organizationId}/sase/sites | create | Frontizo/actions/site | Attach sites in this organization to Secure Access. For an organization, a maximum of 2500 sites can be attached if they are in spoke mode or a maximum of 10 sites can be attached in hub mode.|
 | /networks/{networkId}/appliance/umbrella/account | action | Frontizo/actions/umbrella integration/account | Connect a Cisco Umbrella account to this network|
 | /networks/{networkId}/appliance/umbrella/account | disconnect | Frontizo/actions/umbrella integration/account | Disconnect Umbrella account from this network|
 | /networks/{networkId}/appliance/umbrella/domains | action | Frontizo/actions/umbrella integration/domains | Specify one or more domain names to be excluded from being routed to Cisco Umbrella.|
 | /networks/{networkId}/appliance/umbrella/policies | policies_add | Frontizo/actions/umbrella integration/policies | Add one Cisco Umbrella DNS security policy to an MX network by policy ID. Idempotent — if the policy is already applied, the request succeeds and returns the current policy set unchanged.|
 | /networks/{networkId}/appliance/umbrella/policies | policies_remove | Frontizo/actions/umbrella integration/policies | Remove one Cisco Umbrella DNS security policy from an MX network by policy ID. Returns 204 No Content on success. Behavior when the policy is not currently applied depends on the Cisco Umbrella API response.|
 | /networks/{networkId}/appliance/umbrella | action | Frontizo/actions/umbrella integration/protection | Enable or disable umbrella protection for an appliance network. When 'enabled' is false, 'umbrella.organization.id' and 'umbrella.origin.id' are null in the response.|
-| /organizations/{organizationId}/sase/connectors | teardown | Frontizo/sse sites/actions/connectors batch | Delete SSE Connectors by ID|
-| /organizations/{organizationId}/sase/sites | detach | Frontizo/sse sites/actions/sites | Detach sites in this organization from Secure Access. This will remove the sites from Secure Access.|
 | /organizations/{organizationId}/sase/sites/{siteId} | update | Frontizo/sse sites/actions/sites | Update the configuration for a site. Currently, only supports updating default route enablement.|
 | /networks/{networkId}/groupPolicies | create | Group policy | Create a group policy|
 | /networks/{networkId}/groupPolicies/{groupPolicyId} | destroy | Group policy | Delete a group policy|
@@ -80,7 +76,7 @@
 | /organizations/{organizationId}/alerts/profiles | create | Insight/actions/org wide alerts/alert config | Create an organization-wide alert configuration|
 | /organizations/{organizationId}/alerts/profiles/{alertConfigId} | destroy | Insight/actions/org wide alerts/alert config | Removes an organization-wide alert config|
 | /organizations/{organizationId}/alerts/profiles/{alertConfigId} | update | Insight/actions/org wide alerts/alert config | Update an organization-wide alert config|
-| /networks/{networkId}/devices/claim | claim | Inventory/actions/device | Claim devices into a network. (Note: for recently claimed devices, it may take a few minutes for API requests against that device to succeed). This operation can be used up to ten times within a single five minute window.|
+| /networks/{networkId}/devices/claim | claim | Inventory/actions/action batch device | Claim devices into a network. (Note: for recently claimed devices, it may take a few minutes for API requests against that device to succeed). This operation can be used up to ten times within a single five minute window.|
 | /organizations/{organizationId}/inventory/orders | claim | Inventory/actions/unified orders/unified order | Claim an order by the secure unique order claim number, the order claim id|
 | /networks/{networkId}/wireless/ssids/{number}/firewall/l3FirewallRules | update | L3 firewall | Update the L3 firewall rules of an SSID on an MR network|
 | /organizations/{organizationId}/licenses | assignSeats | License | Assign SM seats to a network. This will increase the managed SM device limit of the network|
@@ -99,6 +95,8 @@
 | /networks/{networkId}/campusGateway/clusters/{clusterId} | destroy | Mcg/actions/cluster | Delete a cluster|
 | /networks/{networkId}/campusGateway/clusters/{clusterId} | update | Mcg/actions/cluster | Update a cluster and add/remove campus gateways to/from it|
 | /organizations/{organizationId}/campusGateway/clusters | provision | Mcg/actions/cluster | Provisions a cluster,adds campus gateways to it and associate/dissociate failover targets.|
+| /networks/{networkId}/campusGateway/ssids/{number}/mdns | update | Mcg/actions/mdns | Update the mDNS gateway settings and rules for a SSID and cluster|
+| /organizations/{organizationId}/campusGateway/clusters/tunneling | batch_update | Mcg/actions/tunnel settings batch | Update MCG cluster-network tunnel settings for multiple networks|
 | /organizations/{organizationId}/insight/monitoredMediaServers | create | Monitored media server | Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.|
 | /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId} | destroy | Monitored media server | Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.|
 | /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId} | update | Monitored media server | Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.|
@@ -120,6 +118,7 @@
 | /devices/{serial}/wireless/bluetooth/settings | update | Mr/actions/iot/bluetooth device setting | Update the bluetooth settings for a wireless device|
 | /networks/{networkId}/wireless/electronicShelfLabel | update | Mr/actions/iot/esl network settings | Update the ESL settings of a wireless network|
 | /devices/{serial}/wireless/electronicShelfLabel | update | Mr/actions/iot/esl node settings | Update the ESL settings of a device|
+| /devices/{serial}/wireless/radio/overrides | update | Mr/actions/radio overrides | Update 2.4 GHz, 5 GHz, and 6 GHz radio settings (channel, channel width, power, and enable/disable) that override RF profiles. Read-only fields returned by this endpoint, such as 'serial', 'network', and 'radios[].band', may be included when sending a previously returned object back to this PUT endpoint and will be ignored.|
 | /organizations/{organizationId}/wireless/radio/autoRf/channels | update | Mr/actions/rf auto channel | Recalculates automatically assigned channels for every AP within specified the specified network(s). Note: This could cause a brief loss in connectivity for wireless clients.|
 | /networks/{networkId}/wireless/rfProfiles | create | Mr/actions/rf profile | Creates new RF profile for this network|
 | /networks/{networkId}/wireless/rfProfiles/{rfProfileId} | update | Mr/actions/rf profile | Updates specified RF profile for this network. Note: built-in RF profiles can only be assigned as a default, and its attributes are immutable|
@@ -164,6 +163,7 @@
 | /networks/{networkId}/switch/alternateManagementInterface | update | Ms/actions/switch alternate management interface | Update the switch alternate management interface for the network|
 | /devices/{serial}/switch/ports | cycle | Ms/actions/switch port | Cycle a set of switch ports on non-Catalyst MS devices. For Catalyst support, use /devices/{serial}/liveTools/ports/cycle, which supports all switch product families.|
 | /devices/{serial}/switch/ports/{portId} | update | Ms/actions/switch port | Update a switch port|
+| /networks/{networkId}/switch/portSchedules | create | Ms/actions/switch port schedule | Add a switch port schedule|
 | /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports/{portId} | update | Ms/actions/switch profile port | Update a switch template port|
 | /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces | create | Ms/actions/switch stacks l3 interface | Create a layer 3 interface for a switch stack|
 | /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces/{interfaceId} | destroy | Ms/actions/switch stacks l3 interface | Delete a layer 3 interface from a switch stack|
@@ -175,7 +175,6 @@
 | /devices/{serial}/liveTools/leds/blink | blink | Ms/live tools/actions/perform leds | Enqueue a job to blink LEDs on a device. This endpoint has a rate limit of one request every 10 seconds.|
 | /devices/{serial}/liveTools/throughputTest | test | Ms/live tools/actions/perform throughput | Enqueue a job to test a device throughput, the test will run for 10 secs to test throughput. This endpoint has a rate limit of one request every five seconds per device.|
 | /networks/{networkId}/switch/routing/ospf | update | Ms/routing/actions/ospf routing | Update layer 3 OSPF routing configuration|
-| /networks/{networkId}/switch/settings | update | Ms/switch | Update switch network settings|
 | /networks/{networkId}/switch/stacks/{switchStackId} | update | Ms/switch | Update a switch stack. At least one of 'name' or 'members' must be provided. If 'members' is provided, it replaces the entire stack membership.|
 | /organizations/{organizationId}/switch/devices | clone | Ms/switch | Clone port-level and some switch-level configuration settings from a source switch to one or more target switches. Cloned settings include: Aggregation Groups, Power Settings, Multicast Settings, MTU Configuration, STP Bridge priority, Port Mirroring|
 | /networks/{networkId}/sensor/alerts/profiles | create | Mt/api/actions/alert profiles | Creates a sensor alert profile for a network.|
@@ -248,6 +247,7 @@
 | /networks/{networkId}/firmwareUpgrades/staged/groups | create | Staged upgrade/group | Create a Staged Upgrade Group for a network|
 | /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId} | destroy | Staged upgrade/group | Delete a Staged Upgrade Group|
 | /networks/{networkId}/switch/portSchedules/{portScheduleId} | update | Switch port schedule | Update a switch port schedule|
+| /networks/{networkId}/switch/settings | update | Switch settings | Update switch network settings|
 | /devices/{serial}/switch/warmSpare | update | Switch warm spare settings | Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note that this will irreversibly destroy any existing L3 configuration on the spare.|
 | /networks/{networkId}/appliance/trafficShaping/rules | update | Traffic shaping settings | Update the traffic shaping settings rules for an MX network|
 | /networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules | update | Traffic shaping settings | Update the traffic shaping rules for an SSID on an MR network.|
@@ -284,6 +284,7 @@
 | /networks/{networkId}/appliance/rfProfiles | create | Wired/appliance RF profile | Creates new RF profile for this network|
 | /networks/{networkId}/appliance/rfProfiles/{rfProfileId} | destroy | Wired/appliance RF profile | Delete a RF Profile|
 | /networks/{networkId}/appliance/rfProfiles/{rfProfileId} | update | Wired/appliance RF profile | Updates specified RF profile for this network|
+| /networks/{networkId}/appliance/ssids/{number} | update | Wired/appliance/actions/appliance ssid | Update the attributes of an MX SSID|
 | /networks/{networkId}/appliance/firewall/multicastForwarding | update | Wired/appliance/actions/firewall/multicast forwarding | Update static multicast forward rules for a network|
 | /networks/{networkId}/cellularGateway/connectivityMonitoringDestinations | update | Wired/cellular/api/actions/cellular gateway connectivity monitoring destination | Update the connectivity testing destinations for an MG network|
 | /devices/{serial}/cellularGateway/lan | update | Wired/cellular/api/actions/cellular gateway device lan | Update the LAN Settings for a single MG.|
