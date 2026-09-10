@@ -250,15 +250,15 @@ Explore more example [plans](https://github.com/cisco-open/terraform-provider-me
 
 - [Documentation](https://registry.terraform.io/providers/cisco-open/meraki/latest/docs)
 
-- [GitHub](https://github.com/cisco-open/terraform-provider-meraki)
+- [GitHub](https://github.com/CiscoDevNet/terraform-provider-meraki)
 
 - [Learning Lab](https://developer.cisco.com/learning/labs/meraki-dashboard-terraform/introduction/)
 
 
 ## Contributions and Feedback
 
-For issues, or enhancements, please [open an issue ](https://github.com/cisco-open/terraform-provider-meraki/issues).
-For contributions, kindly read our [contribution doc](https://github.com/cisco-open/terraform-provider-meraki/blob/main/CONTRIBUTING.md)
+For issues, or enhancements, please [open an issue ](https://github.com/CiscoDevNet/terraform-provider-meraki/issues).
+For contributions, kindly read our [contribution doc](https://github.com/CiscoDevNet/terraform-provider-meraki/blob/main/CONTRIBUTING.md)
 
 ## Release Management
 
