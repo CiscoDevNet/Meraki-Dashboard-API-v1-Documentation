@@ -1,14 +1,14 @@
 # API Call Budgets
 
 Your API call budget:
-- limits how many API calls you can make within a specific time.
-- safeguards your network against runaway applications and malicious behavior.
-- helps you manage huge API call volumes.
+- Limits how many API calls you can make within a specific time.
+- Safeguards your network against runaway applications and malicious behavior.
+- Helps you manage huge API call volumes.
 
 Key attributes of an API call budget include:
-- defined number of requests per second,
-- shared budgets among applications, and
-- mechanisms to handle excess calls.
+- Defined number of requests per second,
+- Shared budgets among applications, and
+- Mechanisms to handle excess calls.
 
 In this article, you will:
 - Learn **key concepts**, such as action batches and configuration templates. 
@@ -22,9 +22,9 @@ In this article, you will:
 ## Action batches 
 
 An action batch is a tool that:
-- bundles multiple configuration requests into a single transaction,  
-- supports bulk POST, PUT, and DELETE operations synchronously or asynchronously, and  
-- reduces individual API calls to optimize budgets.
+- Bundles multiple configuration requests into a single transaction,  
+- Supports bulk POST, PUT, and DELETE operations synchronously or asynchronously, and  
+- Reduces individual API calls to optimize budgets.
 
 For more information, visit these resources:
 - [Action Batches](https://developer.cisco.com/meraki/api-v1/action-batches-overview/#action-batches)
@@ -125,7 +125,7 @@ Follow these best practices during provisioning and monitoring to ensure that yo
 
 - **Use Push API to reduce polling**
    - For supported topics, use [Push API](https://developer.cisco.com/meraki/api-v1/push-api/) to receive near-real-time updates through webhooks instead of repeatedly polling REST API endpoints.
-   - Reducing polling can lower API call volume and preserve the shared organization API budget for operations that still require REST API calls. Push API does not replace REST API calls for unsupported topics or use cases.
+   - Reducing polling can lower API call volume and preserving the shared organization API budget for operations that still require REST API calls. Push API does not replace REST API calls for unsupported topics or use cases.
 
 | **Use Case**                                  | **Less Efficient Operation**                                                                 | **More Efficient Operation**                                                                                             |
 |--------------------------------------------|----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|

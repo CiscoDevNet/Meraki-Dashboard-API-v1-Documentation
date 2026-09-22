@@ -6,18 +6,18 @@
 
 ### What is a Callback?
 
-A "Callback" is a programming feature that provides notifications upon the completion of a long-running operation. Unlike standard API calls that return immediately, callbacks issue results via a webhook when they become available. This aligns with the OpenAPI v3 specification, promoting standardized asynchronous operations.
+A "Callback" is a programming feature that provides notifications upon the completion of a long-running operation. Unlike standard API calls that return immediately, callbacks issue results via a webhook when they become available. Aligned with the OpenAPI v3 specification, promoting standardized asynchronous operations.
 
 ### What is a Webhook?
 
-A webhook is an outbound API request that Meraki will send to a 3rd party service. Callbacks leverage the Meraki webhook system, supporting both pre-configured receivers and dynamic URLs. In addition, webhook templates can format the HTTP message body and headers for customized integrations.
+A webhook is an outbound API request that Meraki will send to a third party service. Callbacks use the Meraki webhook system, supporting both pre-configured receivers and dynamic URLs. In addition, webhook templates can format the HTTP message body and headers for customized integrations.
 
 [Meraki Webhooks Guide](https://meraki.io/webhooks)
 
 
 ### When and Why to Use Callbacks
 
-Callbacks are a feature designed to handle operations that require time to process. They are particularly useful in scenarios where immediate feedback is not essential, but timely notification upon completion is critical. By using callbacks, you optimize resource usage, reduce the need for continuous polling, and streamline workflows. 
+Callbacks are a feature that is designed to handle operations that require time to process. They are useful in scenarios where immediate feedback is not essential, but timely notification upon completion is critical. By using callbacks, you optimize resource usage, reduce the need for continuous polling, and streamline workflows. 
 
 - **Bulk Configuration**: When pushing configuration changes to hundreds or thousands of devices, waiting for each action batch to respond synchronously can be time-consuming or rate-limit challenging. With callbacks, you initiate the asynchronous requests and receive updates as each job completes its configurations.
 
@@ -27,7 +27,7 @@ Callbacks are a feature designed to handle operations that require time to proce
 
 ## Callbacks vs. Alerts
 
-"Alerts" and "Callbacks" are distinct features within the Meraki API, each serving a different purpose and following different data schemas.
+"Alerts" and "Callbacks" are distinct features within the Meraki API, each serving a different purpose, and following different data schemas.
 
 ### Alerts
 
@@ -323,7 +323,7 @@ When the action batch is processed, a callback is sent to the specified URL with
 
 ### Monitoring Tools
 
-To aid in troubleshooting, utilize the following monitoring tools and endpoints:
+To aid in troubleshooting, use the following monitoring tools and endpoints:
 
 - **Callback Status Operation**: Use the [/callbacks/statuses](https://developer.cisco.com/meraki/api-v1/get-organization-webhooks-callbacks-status/) endpoint to check the delivery status of callbacks.
 - **Webhook Logs**: Review the [webhook logs](https://developer.cisco.com/meraki/api-v1/get-organization-webhooks-logs/) for detailed information on the delivery and any errors encountered.
@@ -335,13 +335,13 @@ To aid in troubleshooting, utilize the following monitoring tools and endpoints:
 ### Common Issues and Solutions
 
 #### 1. Callbacks not received
-- **Verify Operation Configuration**: Ensure the callback URL is correct and the server is capable of receiving POST requests.
+- **Verify Operation Configuration**: Ensure that the callback URL is correct and the server can receive POST requests.
 - **Check for Typos**: Review the callback URL and payload for any typographical errors.
-- **Inspect Firewall Settings**: Confirm that your network allows inbound connections on the port used by your webhook receiver.
+- **Inspect Firewall Settings**: Confirm that your network allows inbound connections on the port that is used by your webhook receiver.
 
 #### 2. Callbacks received but with unexpected data
 - **Validate Payload**: Check if the payload structure matches the expected schema.
-- **Check for Payload Changes**: Ensure there haven't been changes in the payload template structure.
+- **Check for Payload Changes**: Ensure that there haven't been changes in the payload template structure.
 
 #### 3. Callbacks received with errors
 - **Interpret Error Messages**: Use the error messages received in the callbacks to understand what went wrong.

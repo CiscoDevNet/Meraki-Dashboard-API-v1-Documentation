@@ -6,11 +6,11 @@ The Meraki API resources are organized by scope, and then by the product and its
 
 ## Base URI
 
-In most parts of the world, every API operation will begin with the following URL to the Meraki cloud. 
+In most parts of the world, every API operation begins with the following URL to the Meraki cloud. 
 
 > `https://api.meraki.com/api/v1`
 
-For organizations hosted in Canada, China, India and United Stated FedRAMP please refer to their respective API base URI [mentioned here](https://developer.cisco.com/meraki/api-v1/getting-started/#base-uri).
+For organizations hosted in Canada, China, India, and United Stated FedRAMP refer to their respective API base URI [mentioned here](https://developer.cisco.com/meraki/api-v1/getting-started/#base-uri).
 
 ## Scopes
 
@@ -22,7 +22,7 @@ The API mirrors the structure of the Meraki Dashboard.
 
 ## Service Groups
 
-Each Meraki product and scope will then have relative services which will be grouped together
+Each Meraki product and scope will then have relative services which will be grouped
 
 `/appliance/firewall/`
 

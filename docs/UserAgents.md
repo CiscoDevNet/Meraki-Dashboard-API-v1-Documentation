@@ -9,7 +9,7 @@ When you invoke dashboard API, it's best practice to provide a [custom user agen
 ## Dos
 
 1.	Provide the user agent string in the user agent header of every API request.
-2.	Follow the prescribed format below, which differs minimally from standard practices.
+2.	Follow the prescribed format after this, which differs minimally from standard practices.
 3.	Include only the requested information in your user agent string.
 4.	Use only slashes (`/`) when you optionally provide application version information.
 
@@ -48,7 +48,7 @@ If your vendor name is _Lunar Commander_, and your application name is _Planet C
 PlanetCraftLite LunarCommander
 ```
 
-or, if you want to include a version string:
+Or, if you want to include a version string:
 
 ``` Example 1 with version string
 PlanetCraftLite/0.8b LunarCommander
@@ -62,7 +62,7 @@ If your vendor name is _Happy-Rabbit Productions_, and your application name is 
 BurrowFinder HappyRabbitProductions
 ```
 
-or, if you want to include a version string:
+Or, if you want to include a version string:
 
 ``` Example 2 with version string
 BurrowFinder/2.5 HappyRabbitProductions
@@ -70,7 +70,7 @@ BurrowFinder/2.5 HappyRabbitProductions
 
 ## In practice
 
-It's usually trivial to add user agent headers to your API requests. All HTTP request libraries offer some means of appending the user agent header to your requests.
+It's trivial to add user agent headers to your API requests. All HTTP request libraries offer some means of appending the user agent header to your requests.
 ### Python library
 
 If you use the Meraki [Python library](pythonLibrary.md), then simply pass the kwarg `caller` in your session definition.
@@ -80,7 +80,7 @@ import meraki
 dashboard = meraki.DashboardAPI(caller='PlanetCraftLite/0.8b LunarCommander')
 ```
 
-Alternatively, you can modify the library's config.py file to set this globally. For more information, see [Official Dashboard API library (SDK) for Python](https://github.com/meraki/dashboard-api-python)
+Alternatively, you can modify the library's config.py file to set this globally. For more information, see [Official Dashboard API library (SDK) for Python](https://github.com/meraki/dashboard-api-python).
 
 ### PowerShell
 

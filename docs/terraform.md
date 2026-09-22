@@ -76,11 +76,11 @@ You can save, share, or reuse Terraform configuration files, ensuring consistent
 
 ## How to Use
 
-Once you have everything installed, obtain your Meraki API key, set up your authentication and start building your first Terraform configuration file.
+Once you have installed the packages, obtain your Meraki API key, set up your authentication and start building your first Terraform configuration file.
 
 ### API Authentication
 
-The easiest way to provide access to your Meraki infrastracture is by setting your API key to an environment variable. 
+The easiest way to provide access to your Meraki infrastructure is by setting your API key to an environment variable. 
 
 1. **Environment Variable**
 
@@ -95,9 +95,9 @@ The easiest way to provide access to your Meraki infrastracture is by setting yo
 
 ### Your First Terraform Execution Plan
 
-The best way to get started using Terraform is to run execution plans. All Terraform plans are written in HCL (Hashicorp Configuration Language). HCL is  similar to the JSON format.
+The best way to get started using Terraform is to run execution plans. All Terraform plans are written in HCL (Hashicorp Configuration Language). HCL is similar to the JSON format.
 
-In this example, we are gathering the identity of the administrator associated with this Meraki API key and then print the name and email. We will then return a list of the Meraki organization names this administrator can manage.
+In this example, we are gathering the identity of the administrator who is associated with this Meraki API key and then print the name and email. We will then return a list of the Meraki organization names this administrator can manage.
 
 1. **Develop the Plan**
 
@@ -126,7 +126,7 @@ In this example, we are gathering the identity of the administrator associated w
 
 2. **Execute the Plan**
 
-    The following command run the Terraform Plan. Note that `terraform init` is required only for the first time we initialize the plan.
+    The following commands run the Terraform Plan. `terraform init` is required only for the first time we initialize the plan.
 
     ```bash
     terraform init
@@ -258,7 +258,7 @@ Explore more example [plans](https://github.com/cisco-open/terraform-provider-me
 ## Contributions and Feedback
 
 For issues, or enhancements, [open an issue ](https://github.com/CiscoDevNet/terraform-provider-meraki/issues).
-For contributions, kindly read our [contribution doc](https://github.com/CiscoDevNet/terraform-provider-meraki/blob/main/CONTRIBUTING.md)
+For contributions, kindly read our [contribution doc](https://github.com/CiscoDevNet/terraform-provider-meraki/blob/main/CONTRIBUTING.md).
 
 ## Release Management
 

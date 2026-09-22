@@ -1,12 +1,12 @@
 ## OAuth scopes
-OAuth scopes in OAuth 2.0 are used to define and limit the access rights granted to an access token. 
+OAuth scopes in OAuth 2.0 are used to define and limit the access rights that are granted to an access token. 
 
-When an integration requests authorization from an administrator, it  must include a list of scopes that the integration seeks access to.  The Meraki Dashboard presents these scopes to the admin during the authorization process, allowing them to approve or deny the request.
+When an integration requests authorization from an administrator, it must include a list of scopes that the integration seeks access to. The Meraki Dashboard presents these scopes to the admin during the authorization process, allowing them to approve or deny the request.
 
-Using scopes, OAuth 2.0 offers a flexible and granular method for controlling access to resources. This enables the administrator to make informed decisions regarding the level of access granted to integrations. This mechanism supports the principle of least privilege, enhancing security and privacy.
+Using scopes, OAuth 2.0 offers a flexible and granular method for controlling access to resources. This enables the administrator to make informed decisions regarding the level of access that is granted to integrations. This mechanism supports the principle of least privilege, enhancing security and privacy.
 
 Meraki provides the following two scopes:
-1. **`config`**: This scope grants access to configuration features that influence the operation of the network and the overall network experience. The config scope dictates the end-user network experience and the functioning of Meraki devices, such as VPNs, VLANs, access controls, policies, SSIDs, and sensor names. Note that the `config` scope excludes admin-facing telemetry configurations, which are managed using telemetry scopes.
+1. **`config`**: This scope grants access to configuration features that influence the operation of the network and the overall network experience. The config scope dictates the end-user network experience and the functioning of Meraki devices, such as VPNs, VLANs, access controls, policies, SSIDs, and sensor names. The `config` scope excludes admin-facing telemetry configurations, which are managed using telemetry scopes.
 
 2. **`telemetry`**: This scope grants access to telemetry data and configurations that do not impact the end-user network experience. They include features like event logs, syslog, bandwidth utilization, client counts, and camera snapshots.
 
