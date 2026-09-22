@@ -59,7 +59,7 @@ To get permission to manage a Meraki organization, use the OAuth Grant Flow. Thi
 
 Follow these steps to request permission:
 - Step 1: Trigger the OAuth process in your application, such as with a "Connect to Meraki" button or a link.
-- Step 2: Redirect the administrator to [https://as.meraki.com/oauth/authorize](https://as.meraki.com/oauth/authorize) with the required query parameters:
+- Step 2: Redirect the administrator to `https://as.meraki.com/oauth/authorize` with the required query parameters:
   
   - `response_type`: Must be set as `code`
   - `client_id`: Issued when creating your application
@@ -79,7 +79,7 @@ Follow these steps to request permission:
 To authenticate API calls, acquire and use tokens obtained through the authorization process. Tokens are required to make authenticated API requests to Meraki resources.
 
 Follow these steps to acquire and use tokens:
-- Step 1: Use the received access grant to request an access token and a refresh token by sending a POST request to [https://as.meraki.com/oauth/token](https://as.meraki.com/oauth/token).
+- Step 1: Use the received access grant to request an access token and a refresh token by sending a POST request to `https://as.meraki.com/oauth/token`.
 - Step 2: Include these parameters:
 	- 	Headers: `Content-Type: application/x-www-form-urlencoded`.
 	- 	Authentication: Basic authentication using the `client_id` and `client_secret`.

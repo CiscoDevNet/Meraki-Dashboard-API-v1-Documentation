@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Terraform is an Infrastructure-as-Code provisioning tool created by Hashicorp, widely used across IT roles from system administrators to developers. The Meraki Terraform Provider is tailored to work with the Cisco Meraki Dashboard API, providing a powerful and simple **Infrastructure-as-Code** solution.  
+Terraform is an Infrastructure-as-Code provisioning tool that is created by Hashicorp, widely used across IT roles from system administrators to developers. The Meraki Terraform Provider is tailored to work with the Cisco Meraki Dashboard API, providing a powerful and simple **Infrastructure-as-Code** solution.  
 
 More info: [Meraki Terraform Provider - Documentation](https://registry.terraform.io/providers/cisco-open/meraki/latest/docs)
 
@@ -13,8 +13,8 @@ More info: [Meraki Terraform Provider - Documentation](https://registry.terrafor
 
 A Terraform provider is a plugin that enables Terraform to interact with specific types of cloud, infrastructure, or service providers to provision and manage resources.
 
-A Terraform configuration file is a text file written in HashiCorp Configuration Language (HCL) that defines the infrastructure resources and their desired state for provisioning and management using Terraform.
-Terraform configuration files can be saved, shared, or reused, which ensures consistent execution of tasks and codifies operational knowledge.
+A Terraform configuration file is a text file that is written in HashiCorp Configuration Language (HCL) that defines the infrastructure resources and their desired state for provisioning and management using Terraform.
+You can save, share, or reuse Terraform configuration files, ensuring consistent execution of tasks and codifies operational knowledge.
 
 ## Prerequisites
 
@@ -76,7 +76,7 @@ Terraform configuration files can be saved, shared, or reused, which ensures con
 
 ## How to Use
 
-Once you have everything installed, obtain your Meraki API key, set your authentication up and start building your first Terraform configuration file.
+Once you have everything installed, obtain your Meraki API key, set up your authentication and start building your first Terraform configuration file.
 
 ### API Authentication
 
@@ -84,7 +84,7 @@ The easiest way to provide access to your Meraki infrastracture is by setting yo
 
 1. **Environment Variable**
 
-    In your terminal, set your [Meraki API key]((https://developer.cisco.com/meraki/api-v1/authorization/)) to an environment variable.
+    In your terminal, set your [Meraki API key](https://developer.cisco.com/meraki/api-v1/authorization/) to an environment variable.
 
     ```bash
     export MERAKI_DASHBOARD_API_KEY=YOUR_API_KEY_HERE
@@ -95,9 +95,9 @@ The easiest way to provide access to your Meraki infrastracture is by setting yo
 
 ### Your First Terraform Execution Plan
 
-The best way to get started using Terraform is to run execution plans. All Terraform plans are written in HCL (Hashicorp Configuration Language). HCL is very similar to the JSON format.
+The best way to get started using Terraform is to run execution plans. All Terraform plans are written in HCL (Hashicorp Configuration Language). HCL is  similar to the JSON format.
 
-In this example, we will be gathering the identity of the administrator associated with this Meraki API key and then print the name and email. We will then return a list of the Meraki organization names this administrator can manage.
+In this example, we are gathering the identity of the administrator associated with this Meraki API key and then print the name and email. We will then return a list of the Meraki organization names this administrator can manage.
 
 1. **Develop the Plan**
 
@@ -126,7 +126,7 @@ In this example, we will be gathering the identity of the administrator associat
 
 2. **Execute the Plan**
 
-    These command run the Terraform Plan. Note that `terraform init` is required only for the first time we initialize the plan.
+    The following command run the Terraform Plan. Note that `terraform init` is required only for the first time we initialize the plan.
 
     ```bash
     terraform init
@@ -257,10 +257,10 @@ Explore more example [plans](https://github.com/cisco-open/terraform-provider-me
 
 ## Contributions and Feedback
 
-For issues, or enhancements, please [open an issue ](https://github.com/CiscoDevNet/terraform-provider-meraki/issues).
+For issues, or enhancements, [open an issue ](https://github.com/CiscoDevNet/terraform-provider-meraki/issues).
 For contributions, kindly read our [contribution doc](https://github.com/CiscoDevNet/terraform-provider-meraki/blob/main/CONTRIBUTING.md)
 
 ## Release Management
 
-We adhere to [Semantic Versioning](https://semver.org/). Version updates will align with Cisco Meraki product updates, REST API changes, and Terraform releases.
+We adhere to [Semantic Versioning](https://semver.org/). Version updates align with Cisco Meraki product updates, REST API changes, and Terraform releases.
 

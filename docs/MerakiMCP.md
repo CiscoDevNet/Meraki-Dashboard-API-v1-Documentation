@@ -6,7 +6,7 @@ The Meraki MCP server connects AI agents and coding assistants directly to the M
 
 Use it to build agents that answer questions about your network, generate reports, troubleshoot connectivity issues, and audit configurations - without writing custom API integration code.
 
-> **Beta notice:** Meraki MCP is currently in beta. Features, tool schemas, supported API capabilities, and client configuration may change, including in ways that are not backward compatible. We reserve the right to make breaking changes during the beta period in order to incorporate feedback and improvements.
+> **Beta notice:** Meraki MCP is currently in beta. Features, tool schemas, supported API capabilities, and client configuration may change, including in ways that are not backward compatible. We reserve the right to make breaking changes during the beta period to incorporate feedback and improvements.
 
 ---
 
@@ -24,11 +24,11 @@ Meraki MCP is available as a Cisco-hosted remote service or as a self-hosted, op
 
 | | Cisco-hosted remote MCP | Local, open-source MCP |
 | --- | --- | --- |
-| **Deployment** | Cisco hosts and manages the MCP server. Connect your client to [`https://mcp.meraki.com/mcp`](https://mcp.meraki.com/mcp). | Run the MCP server in your own environment. |
-| **Core functionality** | Provides the Meraki MCP capabilities described in this guide. | Provides the same core Meraki MCP functionality. |
+| **Deployment** | Cisco hosts and manages the MCP server. Connect your client to `https://mcp.meraki.com/mcp`. | Run the MCP server in your own environment. |
+| **Core functionality** | Provides the Meraki MCP capabilities that are described in this guide. | Provides the same core Meraki MCP functionality. |
 | **Meraki environments** | Supports Meraki.com only. Federal, GovCloud, and localized Meraki environments are not supported. | Can work with any Meraki environment. |
 | **Code and customization** | Cisco manages the service and its implementation. | Review and customize the source code to meet your requirements. |
-| **Setup and compatibility** | Follow the client configuration guidance below. | See [CiscoDevNet/cisco-meraki-mcp](https://github.com/CiscoDevNet/cisco-meraki-mcp-official/) for availability, setup, and compatibility details. |
+| **Setup and compatibility** | Follow the client configuration guidance. | See [CiscoDevNet/cisco-meraki-mcp](https://github.com/CiscoDevNet/cisco-meraki-mcp-official/) for availability, setup, and compatibility details. |
 
 > **Important:** You are responsible for any changes you make to the local, open-source MCP. Meraki does not support modified local MCP code.
 
@@ -161,7 +161,7 @@ The MCP server exposes curated workflow tools rather than one tool per API endpo
 | `semantic_search` | Search Meraki Dashboard API capabilities with a natural-language query and return ranked `capability_id` results. |
 | `execute_api` | Execute a read-only Meraki Dashboard API capability selected from `semantic_search`. |
 
-> **Tip:** Be specific in your prompts. The more context you give the agent about what you're looking for, the more precisely it can select and sequence the right tools.
+> **Tip:** Be specific at your prompts. The more context you give the agent about what you're looking for, the more precisely it can select and sequence the right tools.
 
 ---
 
@@ -201,7 +201,7 @@ The agent calls `semantic_search` to find security-event, appliance, client, and
 
 ## Rate Limits
 
-The Meraki MCP server respects the [Meraki Dashboard API rate limits](https://developer.cisco.com/meraki/api-v1/rate-limit-overview/):
+The Meraki MCP server respects the [Meraki Dashboard API rate limits](https://developer.cisco.com/meraki/api-v1/rate-limit):
 
 - **Default limit:** 10 requests per second per organization
 - **Backoff behavior:** The server automatically retries with exponential backoff on `429 Too Many Requests` responses
@@ -222,7 +222,7 @@ This section applies to the Cisco-hosted remote MCP server. If your organization
 
 The local, open-source MCP server makes Dashboard API calls from the IP address of the environment where it is running. Allowlist that address according to your organization's requirements.
 
-> **Important:** The hosted Meraki MCP server does not currently enforce your organization's Dashboard API IP restrictions. Requests made through the hosted MCP server appear to originate from the MCP server's IP address, so a user with a valid API key can make API calls through MCP even when their own IP address is not on the allowlist.
+> **Important:** The hosted Meraki MCP server does not currently enforce your organization's Dashboard API IP restrictions. requests that are made through the hosted MCP server appear to originate from the MCP server's IP address, so a user with a valid API key can make API calls through MCP even when their own IP address is not on the allowlist.
 >
 > Support for enforcing the same IP restrictions used for direct Dashboard API calls is planned, but is not currently available.
 

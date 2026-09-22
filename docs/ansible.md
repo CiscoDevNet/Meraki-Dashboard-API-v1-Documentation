@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Ansible is an open-source automation tool sponsored by Red Hat, widely used across IT roles from system administrators to developers. This Ansible Collection is tailored to work with the Cisco Meraki Dashboard API, providing a powerful and simple **Infrastructure as Code** solution.  
+Ansible is an open-source automation tool that is sponsored by Red Hat, widely used across IT roles from system administrators to developers. This Ansible Collection is tailored to work with the Cisco Meraki Dashboard API, providing a powerful and simple **Infrastructure as Code** solution.  
 
 More info: [Meraki Ansible Collection - Reference Guide](https://docs.ansible.com/ansible/latest/collections/cisco/meraki/index.html)
 
@@ -13,7 +13,7 @@ More info: [Meraki Ansible Collection - Reference Guide](https://docs.ansible.co
 
 An Ansible Collection is a package format that bundles various Ansible content types, such as playbooks, roles, modules, and plugins. 
 
-A playbook serves as a blueprint for automation tasks. It outlines the steps that Ansible will execute on specified inventories or groups of `hosts`. A playbook comprises `plays`, which are ordered groupings of `tasks`. Each task is executed by an Ansible module that encapsulates the logic and parameters for that task. 
+A playbook serves as a blueprint for automation tasks. It outlines the steps that Ansible execute on specified inventories or groups of `hosts`. A playbook comprises `plays`, which are ordered groupings of `tasks`. Each task is executed by an Ansible module that encapsulates the logic and parameters for that task. 
 
 Playbooks can be saved, shared, or reused, which ensures consistent execution of tasks and codifies operational knowledge.
 
@@ -31,7 +31,7 @@ Playbooks can be saved, shared, or reused, which ensures consistent execution of
     ```bash
     pip install ansible
     ```
-    *or on a Mac*
+    *MacOS:*
     ```bash
     brew install ansible
     ```
@@ -43,7 +43,7 @@ Playbooks can be saved, shared, or reused, which ensures consistent execution of
     ```bash
     pip install meraki
     ```
-    *or on a Mac*
+    *MacOS:*
     ```bash
     pip3 install meraki
     ```
@@ -56,7 +56,7 @@ Playbooks can be saved, shared, or reused, which ensures consistent execution of
     ansible-galaxy collection install cisco.meraki -f
     ```
 
-**(Alternative install with Virtual Environment)**
+**(Alternative installation with Virtual Environment)**
     
 Create a virtual environment for Ansible and the Meraki API to run in.
 
@@ -71,11 +71,11 @@ ansible-galaxy collection install cisco.meraki -f
 More info: [Python Virtual Environments](https://docs.python.org/3/tutorial/venv.html) 
 ## How to Use
 
-Once you have everything installed, obtain your Meraki API key, set your authentication up and start building your first Playbook.
+Once you have everything that is installed, obtain your Meraki API key, set up your authentication and start building your first Playbook.
 
 ### API Authentication
 
-The easiest way to provide access to your Meraki infrastracture is by setting your API key to an environment variable. Ansible will use the Meraki python library to make the API requests with the provided key details.
+The easiest way to provide access to your Meraki infrastructure is by setting your API key to an environment variable. Ansible will use the Meraki python library to make the API requests with the provided key details.
 
 1. **Environment Variable**
 
@@ -92,7 +92,7 @@ The easiest way to provide access to your Meraki infrastracture is by setting yo
 
 Let's build our first playbook.
 
-In this example, we will be gathering the identity of the administrator associated with this Meraki API key and then print the name and email. We will then return a list of the Meraki organization names this administrator can manage.
+In this example, we are gathering the identity of the administrator associated with this Meraki API key and then print the name and email. We will then return a list of the Meraki organization names this administrator can manage.
 
 1. **Hosts File**
 
@@ -134,7 +134,7 @@ In this example, we will be gathering the identity of the administrator associat
 
 3. **Execute the Playbook**
 
-    This command runs the playbook, targeting the hosts defined in the `hosts` file and performs the tasks specified in `myplaybook.yml`.
+    This command runs the playbook, targeting the hosts that are defined in the `hosts` file and performs the tasks that are specified in `myplaybook.yml`.
 
     ```bash
     ansible-playbook -i hosts myplaybook.yml
@@ -188,7 +188,7 @@ There are alternatives to providing your Meraki API key for use with the Ansible
 
 1. **Credentials File**
 - Create a `credentials.yml` file.
-    - Refer to this [example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/credentials.yml).
+    - Refer to this [example](https://github.com/meraki/dashboard-api-ansible/blob/main/playbooks/credentials.template).
 - Encrypt it, with Anisble Vault! 
 
     ```bash
@@ -199,7 +199,7 @@ There are alternatives to providing your Meraki API key for use with the Ansible
 
 
 2. **Configuration File**
-    - Create or use an exsiting `ansible.cfg` file defined in the next section.
+    - Create or use an exsiting `ansible.cfg` file that is defined in the next section.
     - Set `meraki_api_key: "Your-API-Key"` to your API key
     
     More info: [Ansible Configurations](https://docs.ansible.com/ansible/latest/reference_appendices/config.html)
@@ -215,7 +215,7 @@ Ansible supports multiple sources for configuring its behavior, including config
 3. `~/.ansible.cfg` in the home directory
 4. `/etc/ansible/ansible.cfg`
 
-Ansible will use the first configuration file it finds from this list, ignoring the others.
+Ansible will use the first configuration file that it finds from this list, ignoring the others.
 
 Below is an example `ansible.cfg` file with configuration options specific to the Cisco Meraki Ansible collection:
 
@@ -269,9 +269,9 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 ## Contributions and Feedback
 
-For contributions, issues, or enhancements, please [open an issue or create a PR](https://github.com/meraki/dashboard-api-ansible/issues).
+For contributions, issues, or enhancements, [open an issue or create a PR](https://github.com/meraki/dashboard-api-ansible/issues).
 
 ## Release Management
 
-We adhere to [Semantic Versioning](https://semver.org/). Version updates will align with Cisco Meraki product updates, REST API changes, and Python SDK releases.
+We adhere to [Semantic Versioning](https://semver.org/). Version updates align with Cisco Meraki product updates, REST API changes, and Python SDK releases.
 
