@@ -2,6 +2,8 @@
 OAuth 2.0 is a standard authorization framework that offers integrations to access Meraki data securely, eliminating the need for administrators to reveal their credentials or API keys. OAuth 2.0 is commonly used to allow delegated access, particularly in the context of API and web applications. OAuth 2.0 offers a secure, standardized method for the network administrator to authorize third-party access to their resources while maintaining data control.
 [Learn more about the OAuth framework and definitions](https://oauth.net/2/)
 
+**Availability:** OAuth is currently supported in the `meraki.com` cluster. Support for `meraki.ca`, `meraki.cn`, `meraki.in`, FedRAMP, and other regions will be added in the future.
+
 ## OAuth 2.0 integration
 An Open Authorization (OAuth) 2.0 integration (integration) is a software application or system that connects to the Meraki platform and interacts with Meraki's services and data. This integration forms a crucial link between external applications and Meraki's infrastructure, facilitating smooth interaction with the platform.
 
