@@ -1,6 +1,5 @@
 | Resource | Operation | Group | Summary |
 |-------|---------|----------|-----------|
-| /networks/{networkId}/switch/routing/multicast | update |  | Update multicast settings for a network|
 | /organizations/{organizationId}/devices/controller/migrations | migrate |  | Migrate devices to another controller or management mode|
 | /organizations/{organizationId}/policies/global/group/policies/adaptivePolicyGroups | assign | Adaptive policy assignment | Assign adaptive policy groups to a policy|
 | /organizations/{organizationId}/policies/global/group/policies/adaptivePolicyGroups | remove | Adaptive policy assignment | Remove adaptive policy groups from a policy|
@@ -57,17 +56,16 @@
 | /organizations/{organizationId}/policies/global/firewall/rulesets | create | Frontizo/actions/owp release/ruleset | Create an Organization-Wide Policy Firewall Ruleset|
 | /organizations/{organizationId}/policies/global/firewall/rulesets/{rulesetId} | destroy | Frontizo/actions/owp release/ruleset | Delete an Organization-Wide Policy Firewall Ruleset|
 | /organizations/{organizationId}/policies/global/firewall/rulesets/{rulesetId} | update | Frontizo/actions/owp release/ruleset | Update an Organization-Wide Policy Firewall Ruleset|
+| /organizations/{organizationId}/policies/global/group/policies/firewall/rulesets/assignments | commit | Frontizo/actions/owp release/ruleset assignment | Commit staged Organization-Wide Policy Ruleset Assignments|
 | /organizations/{organizationId}/policies/global/group/policies/firewall/rulesets/assignments | create | Frontizo/actions/owp release/ruleset assignment | Create an Organization-Wide Policy Ruleset Assignment|
 | /organizations/{organizationId}/policies/global/group/policies/firewall/rulesets/assignments/{assignmentId} | destroy | Frontizo/actions/owp release/ruleset assignment | Delete an Organization-Wide Policy Ruleset Assignment|
 | /organizations/{organizationId}/policies/global/group/policies/firewall/rulesets/assignments/{assignmentId} | update | Frontizo/actions/owp release/ruleset assignment | Update an Organization-Wide Policy Ruleset Assignment|
-| /organizations/{organizationId}/sase/integrations | create | Frontizo/actions/sase/integration | Create a new Secure Access integration|
 | /organizations/{organizationId}/sase/integrations/{integrationId} | destroy | Frontizo/actions/sase/integration | Remove a Secure Access integration|
-| /networks/{networkId}/appliance/umbrella/account | action | Frontizo/actions/umbrella integration/account | Connect a Cisco Umbrella account to this network|
 | /networks/{networkId}/appliance/umbrella/account | disconnect | Frontizo/actions/umbrella integration/account | Disconnect Umbrella account from this network|
-| /networks/{networkId}/appliance/umbrella/domains | action | Frontizo/actions/umbrella integration/domains | Specify one or more domain names to be excluded from being routed to Cisco Umbrella.|
+| /networks/{networkId}/appliance/umbrella/domains/exclusions | action | Frontizo/actions/umbrella integration/domains | Specify one or more domain names to be excluded from being routed to Cisco Umbrella.|
 | /networks/{networkId}/appliance/umbrella/policies | policies_add | Frontizo/actions/umbrella integration/policies | Add one Cisco Umbrella DNS security policy to an MX network by policy ID. Idempotent — if the policy is already applied, the request succeeds and returns the current policy set unchanged.|
 | /networks/{networkId}/appliance/umbrella/policies | policies_remove | Frontizo/actions/umbrella integration/policies | Remove one Cisco Umbrella DNS security policy from an MX network by policy ID. Returns 204 No Content on success. Behavior when the policy is not currently applied depends on the Cisco Umbrella API response.|
-| /networks/{networkId}/appliance/umbrella | action | Frontizo/actions/umbrella integration/protection | Enable or disable umbrella protection for an appliance network. When 'enabled' is false, 'umbrella.organization.id' and 'umbrella.origin.id' are null in the response.|
+| /networks/{networkId}/appliance/umbrella/protection | update | Frontizo/actions/umbrella integration/protection | Enable or disable umbrella protection for an appliance network. When 'enabled' is false, 'umbrella.organization.id' and 'umbrella.origin.id' are null in the response.|
 | /organizations/{organizationId}/sase/sites/{siteId} | update | Frontizo/sse sites/actions/sites | Update the configuration for a site. Currently, only supports updating default route enablement.|
 | /networks/{networkId}/groupPolicies | create | Group policy | Create a group policy|
 | /networks/{networkId}/groupPolicies/{groupPolicyId} | destroy | Group policy | Delete a group policy|
@@ -164,6 +162,8 @@
 | /devices/{serial}/switch/ports | cycle | Ms/actions/switch port | Cycle a set of switch ports on non-Catalyst MS devices. For Catalyst support, use /devices/{serial}/liveTools/ports/cycle, which supports all switch product families.|
 | /devices/{serial}/switch/ports/{portId} | update | Ms/actions/switch port | Update a switch port|
 | /networks/{networkId}/switch/portSchedules | create | Ms/actions/switch port schedule | Add a switch port schedule|
+| /networks/{networkId}/switch/portSchedules/{portScheduleId} | destroy | Ms/actions/switch port schedule | Delete a switch port schedule|
+| /networks/{networkId}/switch/portSchedules/{portScheduleId} | update | Ms/actions/switch port schedule | Update a switch port schedule|
 | /organizations/{organizationId}/configTemplates/{configTemplateId}/switch/profiles/{profileId}/ports/{portId} | update | Ms/actions/switch profile port | Update a switch template port|
 | /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces | create | Ms/actions/switch stacks l3 interface | Create a layer 3 interface for a switch stack|
 | /networks/{networkId}/switch/stacks/{switchStackId}/routing/interfaces/{interfaceId} | destroy | Ms/actions/switch stacks l3 interface | Delete a layer 3 interface from a switch stack|
@@ -177,18 +177,22 @@
 | /networks/{networkId}/switch/routing/ospf | update | Ms/routing/actions/ospf routing | Update layer 3 OSPF routing configuration|
 | /networks/{networkId}/switch/stacks/{switchStackId} | update | Ms/switch | Update a switch stack. At least one of 'name' or 'members' must be provided. If 'members' is provided, it replaces the entire stack membership.|
 | /organizations/{organizationId}/switch/devices | clone | Ms/switch | Clone port-level and some switch-level configuration settings from a source switch to one or more target switches. Cloned settings include: Aggregation Groups, Power Settings, Multicast Settings, MTU Configuration, STP Bridge priority, Port Mirroring|
+| /networks/{networkId}/vlanProfiles | create | Ms/vlan profile/actions/vlan profile | Create a VLAN profile for a network|
+| /networks/{networkId}/vlanProfiles/{iname} | destroy | Ms/vlan profile/actions/vlan profile | Delete a VLAN profile of a network|
 | /networks/{networkId}/sensor/alerts/profiles | create | Mt/api/actions/alert profiles | Creates a sensor alert profile for a network.|
 | /networks/{networkId}/sensor/alerts/profiles/{id} | destroy | Mt/api/actions/alert profiles | Deletes a sensor alert profile from a network.|
 | /networks/{networkId}/sensor/alerts/profiles/{id} | update | Mt/api/actions/alert profiles | Updates a sensor alert profile for a network.|
 | /devices/{serial}/sensor/commands | create | Mt/api/actions/commands | Sends a command to a sensor|
 | /devices/{serial}/sensor/relationships | update | Mt/api/actions/sensor gateway role | Assign one or more sensor roles to a given sensor or camera device.|
 | /networks/{networkId}/sensor/mqttBrokers/{mqttBrokerId} | update | Mt/api/actions/sensor mqtt broker | Update the sensor settings of an MQTT broker. To update the broker itself, use /networks/{networkId}/mqttBrokers/{mqttBrokerId}.|
+| /networks/{networkId}/switch/routing/multicast | update | Multicast | Update multicast settings for a network|
 | /networks/{networkId}/mqttBrokers | create | Mv/actions/mqtt broker | Add an MQTT broker|
 | /networks/{networkId}/mqttBrokers/{mqttBrokerId} | destroy | Mv/actions/mqtt broker | Delete an MQTT broker|
 | /networks/{networkId}/mqttBrokers/{mqttBrokerId} | update | Mv/actions/mqtt broker | Update an MQTT broker|
 | /devices/{serial}/camera/qualityAndRetention | update | Mv/actions/quality and retention setting | Update quality and retention settings for the given camera|
 | /devices/{serial}/camera/sense | update | Mv/actions/sense setting | Update sense settings for the given camera|
 | /devices/{serial}/appliance/interfaces/ports/update | update | Mx port | Update configurations for an appliance's specified port|
+| /devices/{serial}/appliance/interfaces/ports/{number} | update | Mx port | Update configurations for an appliance's specified port|
 | /networks/{networkId} | bind | Network | Bind a network to a template.|
 | /networks/{networkId} | destroy | Network | Delete a network|
 | /networks/{networkId} | split | Network | Split a combined network into individual networks for each type of device|
@@ -197,6 +201,8 @@
 | /organizations/{organizationId}/networks | combine | Network | Combine multiple networks into a single network|
 | /organizations/{organizationId}/networks | create | Network | Create a network|
 | /networks/{networkId}/wireless/ssids/{number}/splash/settings | update | Network access/ssids/actions/ssid splash settings | Modify the splash page settings for the given SSID|
+| /organizations/{organizationId}/policies/global/group/policies/networks/assignments | bulk_create | Network assignments | Assign Network Enforcement Targets to an Organization-Wide Policy|
+| /organizations/{organizationId}/policies/global/group/policies/networks/assignments | bulk_delete | Network assignments | Remove Network Enforcement Targets from an Organization-Wide Policy|
 | /organizations/{organizationId}/networks/groups | create | Network groups | Create a network group|
 | /organizations/{organizationId}/networks/groups/{groupId} | bulk_assign | Network groups | Add networks to a network group|
 | /organizations/{organizationId}/networks/groups/{groupId} | bulk_unassign | Network groups | Remove networks from a network group|
@@ -241,22 +247,20 @@
 | /organizations/{organizationId}/splash/themes/{themeIdentifier}/assets | create | Splash theme asset | Create a Splash Theme Asset|
 | /organizations/{organizationId}/splash/themes/{id} | destroy | Splash2 theme | Delete a Splash Theme|
 | /networks/{networkId}/wireless/ssids/{number}/deviceTypeGroupPolicies | update | Ssid device type group policies | Update the device type group policies for the SSID|
+| /networks/{networkId}/wireless/ssids/{number}/overrides | update | Ssid override | Update the overrides for this SSID|
 | /organizations/{organizationId}/wireless/ssids/profiles/assignments | create | Ssid profile assignment | Assigns an SSID profile to an SSID in the organization|
 | /organizations/{organizationId}/wireless/ssids/profiles/assignments | destroy | Ssid profile assignment | Unassigns the SSID profile assigned to an SSID|
 | /networks/{networkId}/wireless/ssids/{number}/vpn | update | Ssid vpn | Update the VPN settings for the SSID|
 | /networks/{networkId}/firmwareUpgrades/staged/groups | create | Staged upgrade/group | Create a Staged Upgrade Group for a network|
 | /networks/{networkId}/firmwareUpgrades/staged/groups/{groupId} | destroy | Staged upgrade/group | Delete a Staged Upgrade Group|
-| /networks/{networkId}/switch/portSchedules/{portScheduleId} | update | Switch port schedule | Update a switch port schedule|
 | /networks/{networkId}/switch/settings | update | Switch settings | Update switch network settings|
 | /devices/{serial}/switch/warmSpare | update | Switch warm spare settings | Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note that this will irreversibly destroy any existing L3 configuration on the spare.|
-| /networks/{networkId}/appliance/trafficShaping/rules | update | Traffic shaping settings | Update the traffic shaping settings rules for an MX network|
+| /networks/{networkId}/appliance/trafficShaping/rules | update | Traffic shaping settings | Update the traffic shaping settings rules for a Security Appliance or Secure Router network|
 | /networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules | update | Traffic shaping settings | Update the traffic shaping rules for an SSID on an MR network.|
 | /networks/{networkId}/sm/userAccessDevices/{userAccessDeviceId} | destroy | User access device | Delete a User Access Device|
 | /organizations/{organizationId}/adaptivePolicy/acls | create | V1/adaptive policy acl | Creates new adaptive policy ACL|
 | /organizations/{organizationId}/adaptivePolicy/acls/{aclId} | destroy | V1/adaptive policy acl | Deletes the specified adaptive policy ACL. Note this adaptive policy ACL will also be removed from policies using it.|
 | /organizations/{organizationId}/adaptivePolicy/acls/{aclId} | update | V1/adaptive policy acl | Updates an adaptive policy ACL|
-| /networks/{networkId}/vlanProfiles | create | VLAN profile | Create a VLAN profile for a network|
-| /networks/{networkId}/vlanProfiles/{iname} | destroy | VLAN profile | Delete a VLAN profile of a network|
 | /networks/{networkId}/devices/claim/vmx | claim | Vmx | Claim a vMX into a network|
 | /devices/{serial}/appliance/vmx/authenticationToken | create | Vmx token | Generate a new vMX authentication token|
 | /networks/{networkId}/appliance/devices/redundancy | update | Warm spare | Update MX warm spare settings|
@@ -266,6 +270,17 @@
 | /devices/{serial}/liveTools/routingTable/summaries | summary | Wired/actions/enqueue route table | Enqueue a routing table summary job for a device. The job fetches summary data such as route counts by VRF and protocol. Only Cisco Secure Routers are supported.|
 | /networks/{networkId}/appliance/settings | update | Wired/actions/network appliance settings | Update the appliance settings for a network|
 | /organizations/{organizationId}/policyObjects/groups/{policyObjectGroupId} | update | Wired/actions/org wide firewall/policy object group | Updates a Policy Object Group.|
+| /organizations/{organizationId}/appliance/security/intrusion/policies/{policyId} | destroy | Wired/actions/security/policies | Delete a single intrusion policy for the organization.|
+| /organizations/{organizationId}/appliance/security/intrusion/policies/{policyId} | update | Wired/actions/security/policies | Update a single intrusion policy for the organization.|
+| /organizations/{organizationId}/appliance/security/intrusion/policies | create | Wired/actions/security/policy | Create a new intrusion policy for the organization.|
+| /organizations/{organizationId}/appliance/security/intrusion/policies/{policyId}/ruleGroups/{ruleGroupId}/override | create | Wired/actions/security/rule group override | Create a rule group override for an intrusion policy.|
+| /organizations/{organizationId}/appliance/security/intrusion/policies/{policyId}/ruleGroups/{ruleGroupId}/override | update | Wired/actions/security/rule group override | Update a rule group override for an intrusion policy.|
+| /organizations/{organizationId}/appliance/security/intrusion/ruleGroups/overrides/{overrideId} | destroy | Wired/actions/security/rule group override | Delete a rule group override for an intrusion policy.|
+| /organizations/{organizationId}/appliance/security/intrusion/policies/{policyId}/ruleGroups/overrides | declare | Wired/actions/security/rule group overrides | Declare the desired rule group overrides for an intrusion policy.|
+| /organizations/{organizationId}/appliance/security/intrusion/policies/{policyId}/rules/{ruleId}/override | create | Wired/actions/security/rule override | Create a rule override for an intrusion policy.|
+| /organizations/{organizationId}/appliance/security/intrusion/policies/{policyId}/rules/{ruleId}/override | update | Wired/actions/security/rule override | Update a rule override for an intrusion policy.|
+| /organizations/{organizationId}/appliance/security/intrusion/rules/overrides/{overrideId} | destroy | Wired/actions/security/rule override | Delete a rule override for an intrusion policy.|
+| /organizations/{organizationId}/appliance/security/intrusion/policies/{policyId}/rules/overrides | declare | Wired/actions/security/rule overrides | Declare the desired rule overrides for an intrusion policy.|
 | /networks/{networkId}/appliance/singleLan | update | Wired/actions/single lan/single lan | Update single LAN configuration|
 | /networks/{networkId}/appliance/prefixes/delegated/statics | create | Wired/actions/static delegated prefix | Add a static delegated prefix from a network|
 | /networks/{networkId}/appliance/prefixes/delegated/statics/{staticDelegatedPrefixId} | destroy | Wired/actions/static delegated prefix | Delete a static delegated prefix from a network|
@@ -330,6 +345,7 @@
 | /organizations/{organizationId}/integrations/xdr/networks | enable | Wired/xdr/api/actions/xdr | Enable XDR on networks|
 | /networks/{networkId}/wireless/alternateManagementInterface | update | Wireless alternate management interface | Update alternate management interface and device static IP|
 | /networks/{networkId}/wireless/ssids/{number}/firewall/l7FirewallRules | update | Wireless l7 firewall | Update the L7 firewall rules of an SSID on an MR network|
+| /networks/{networkId}/wireless/ssids/owe | update | Wireless ssid owe transition | Update the OWE transition pairs for a network|
 | /organizations/{organizationId}/wireless/location/scanning/receivers | create | Wireless/location/scanning http servers/actions/location scanning http servers | Add new receiver for scanning API|
 | /organizations/{organizationId}/wireless/location/scanning/receivers/{receiverId} | delete | Wireless/location/scanning http servers/actions/location scanning http servers | Delete a scanning API receiver|
 | /organizations/{organizationId}/wireless/location/scanning/receivers/{receiverId} | update | Wireless/location/scanning http servers/actions/location scanning http servers | Change scanning API receiver settings|
