@@ -5167,8 +5167,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "1800",
-              "maximum": "1209600"
+              "minimum": 1800,
+              "maximum": 1209600
             }
           }
         ],
@@ -9022,7 +9022,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -9328,7 +9328,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "50400"
+              "maximum": 50400
             }
           },
           {
@@ -12262,7 +12262,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -24238,7 +24238,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -24996,7 +24996,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2592000"
+              "maximum": 2592000
             }
           }
         ],
@@ -26496,7 +26496,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -32428,7 +32428,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -32833,7 +32833,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -36331,7 +36331,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "68342400"
+              "maximum": 68342400
             }
           },
           {
@@ -44039,7 +44039,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "31536000"
+              "maximum": 31536000
             }
           },
           {
@@ -50986,7 +50986,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -55389,7 +55389,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -61402,7 +61402,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -61834,7 +61834,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -61963,7 +61963,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -62097,7 +62097,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -62853,7 +62853,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -79687,7 +79687,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -81911,7 +81911,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -82903,7 +82903,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -96722,7 +96722,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -110523,7 +110523,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2592000"
+              "maximum": 2592000
             }
           },
           {
@@ -113662,7 +113662,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -115366,7 +115366,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -115625,7 +115625,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -116114,7 +116114,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -116679,7 +116679,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "68342400"
+              "maximum": 68342400
             }
           },
           {
@@ -117084,7 +117084,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -117341,7 +117341,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2592000"
+              "maximum": 2592000
             }
           }
         ],
@@ -117538,7 +117538,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -117846,7 +117846,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -118227,7 +118227,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -119911,7 +119911,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -120518,7 +120518,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -147566,7 +147566,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -147836,7 +147836,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -148333,7 +148333,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -148466,7 +148466,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -148594,7 +148594,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -148717,7 +148717,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -150491,7 +150491,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "7776000"
+              "maximum": 7776000
             }
           },
           {
@@ -152901,7 +152901,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "1209600"
+              "maximum": 1209600
             }
           },
           {
@@ -153990,7 +153990,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "31536000"
+              "maximum": 31536000
             }
           },
           {
@@ -158645,7 +158645,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "1209600"
+              "maximum": 1209600
             }
           }
         ],
@@ -159448,8 +159448,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           }
         ],
@@ -159589,7 +159589,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           }
         ],
@@ -159742,7 +159742,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           }
         ],
@@ -160809,7 +160809,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -169724,7 +169724,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "1209600"
+              "maximum": 1209600
             }
           }
         ],
@@ -172132,8 +172132,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           }
         ],
@@ -172406,8 +172406,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "7200",
-              "maximum": "1209600"
+              "minimum": 7200,
+              "maximum": 1209600
             }
           },
           {
@@ -172603,8 +172603,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           }
         ],
@@ -173170,8 +173170,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           }
         ],
@@ -174323,8 +174323,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "7200",
-              "maximum": "1209600"
+              "minimum": 7200,
+              "maximum": 1209600
             }
           }
         ],
@@ -174584,8 +174584,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           }
         ],
@@ -174812,8 +174812,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           }
         ],
@@ -175079,8 +175079,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -175483,8 +175483,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           }
         ],
@@ -175911,8 +175911,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           }
         ],
@@ -176311,8 +176311,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -176743,8 +176743,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -177425,8 +177425,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           }
         ],
@@ -177830,8 +177830,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           }
         ],
@@ -178253,8 +178253,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           }
         ],
@@ -178564,8 +178564,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -179053,8 +179053,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -179601,8 +179601,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -180233,8 +180233,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -180782,8 +180782,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -181311,8 +181311,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -182300,8 +182300,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -182899,8 +182899,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -183185,7 +183185,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "1209600"
+              "maximum": 1209600
             }
           },
           {
@@ -183385,8 +183385,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -183658,8 +183658,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -184096,8 +184096,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -184540,8 +184540,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -185061,8 +185061,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -185533,8 +185533,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -185985,8 +185985,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -186878,8 +186878,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -187401,8 +187401,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -187698,8 +187698,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -188002,8 +188002,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -188259,8 +188259,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -188516,8 +188516,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -188829,8 +188829,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -189309,8 +189309,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -189808,8 +189808,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -190237,8 +190237,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -190764,8 +190764,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -191271,8 +191271,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -192156,8 +192156,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -192668,8 +192668,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -193215,8 +193215,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -193557,8 +193557,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -193898,8 +193898,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -194258,8 +194258,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -194655,8 +194655,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -195043,8 +195043,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -195411,8 +195411,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -196163,8 +196163,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -196536,8 +196536,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -196944,8 +196944,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "900",
-              "maximum": "1209600"
+              "minimum": 900,
+              "maximum": 1209600
             }
           },
           {
@@ -203047,8 +203047,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "3600",
-              "maximum": "604800"
+              "minimum": 3600,
+              "maximum": 604800
             }
           },
           {
@@ -212228,7 +212228,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "16070400"
+              "maximum": 16070400
             }
           }
         ],
@@ -212327,7 +212327,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           }
         ],
@@ -217040,7 +217040,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "31536000"
+              "maximum": 31536000
             }
           },
           {
@@ -217863,7 +217863,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -218224,7 +218224,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "63072000"
+              "maximum": 63072000
             }
           },
           {
@@ -218456,8 +218456,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           }
         ],
@@ -222297,8 +222297,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "3600",
-              "maximum": "604800"
+              "minimum": 3600,
+              "maximum": 604800
             }
           }
         ],
@@ -222678,7 +222678,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "31536000"
+              "maximum": 31536000
             }
           },
           {
@@ -230454,7 +230454,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "300"
+              "maximum": 300
             }
           },
           {
@@ -233643,7 +233643,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "7776000"
+              "maximum": 7776000
             }
           },
           {
@@ -260361,7 +260361,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -263695,7 +263695,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -280344,7 +280344,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -280632,7 +280632,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -282088,7 +282088,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "31536000"
+              "maximum": 31536000
             }
           },
           {
@@ -283264,7 +283264,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -288988,7 +288988,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2764800"
+              "maximum": 2764800
             }
           }
         ],
@@ -289207,7 +289207,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2764800"
+              "maximum": 2764800
             }
           }
         ],
@@ -289358,7 +289358,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2764800"
+              "maximum": 2764800
             }
           }
         ],
@@ -289543,7 +289543,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2764800"
+              "maximum": 2764800
             }
           }
         ],
@@ -289708,7 +289708,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2764800"
+              "maximum": 2764800
             }
           }
         ],
@@ -289805,7 +289805,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "16070400"
+              "maximum": 16070400
             }
           }
         ],
@@ -289946,7 +289946,7 @@
               "type": "number",
               "format": "float",
               "minimum": 1500,
-              "maximum": "16070400"
+              "maximum": 16070400
             }
           }
         ],
@@ -290135,7 +290135,7 @@
               "type": "number",
               "format": "float",
               "minimum": 1500,
-              "maximum": "16070400"
+              "maximum": 16070400
             }
           }
         ],
@@ -290293,7 +290293,7 @@
               "type": "number",
               "format": "float",
               "minimum": 1500,
-              "maximum": "16070400"
+              "maximum": 16070400
             }
           }
         ],
@@ -290453,7 +290453,7 @@
               "type": "number",
               "format": "float",
               "minimum": 28800,
-              "maximum": "16070400"
+              "maximum": 16070400
             }
           }
         ],
@@ -290647,7 +290647,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "16070400"
+              "maximum": 16070400
             }
           }
         ],
@@ -290830,7 +290830,7 @@
               "type": "number",
               "format": "float",
               "minimum": 28800,
-              "maximum": "16070400"
+              "maximum": 16070400
             }
           }
         ],
@@ -291044,7 +291044,7 @@
               "type": "number",
               "format": "float",
               "minimum": 28800,
-              "maximum": "16070400"
+              "maximum": 16070400
             }
           }
         ],
@@ -291541,7 +291541,7 @@
               "type": "number",
               "format": "float",
               "minimum": 28800,
-              "maximum": "16070400"
+              "maximum": 16070400
             }
           }
         ],
@@ -291729,7 +291729,7 @@
               "type": "number",
               "format": "float",
               "minimum": 1500,
-              "maximum": "16070400"
+              "maximum": 16070400
             }
           }
         ],
@@ -291928,8 +291928,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           }
         ],
@@ -292142,8 +292142,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           }
         ],
@@ -292308,7 +292308,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           }
         ],
@@ -292455,8 +292455,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           }
         ],
@@ -292749,8 +292749,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           }
         ],
@@ -292898,8 +292898,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           }
         ],
@@ -293047,8 +293047,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           }
         ],
@@ -295728,7 +295728,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -296349,8 +296349,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "43200",
-              "maximum": "16070400"
+              "minimum": 43200,
+              "maximum": 16070400
             }
           }
         ],
@@ -302083,7 +302083,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -315723,7 +315723,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2592000"
+              "maximum": 2592000
             }
           },
           {
@@ -317181,8 +317181,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           }
         ],
@@ -317382,8 +317382,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           }
         ],
@@ -317622,8 +317622,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           }
         ],
@@ -317862,7 +317862,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           }
         ],
@@ -318386,8 +318386,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "604800"
+              "minimum": 300,
+              "maximum": 604800
             }
           },
           {
@@ -319116,7 +319116,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2592000"
+              "maximum": 2592000
             }
           }
         ],
@@ -319396,8 +319396,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "3600",
-              "maximum": "604800"
+              "minimum": 3600,
+              "maximum": 604800
             }
           },
           {
@@ -319725,8 +319725,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "3600",
-              "maximum": "604800"
+              "minimum": 3600,
+              "maximum": 604800
             }
           },
           {
@@ -320163,8 +320163,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "3600",
-              "maximum": "604800"
+              "minimum": 3600,
+              "maximum": 604800
             }
           },
           {
@@ -320662,7 +320662,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "7776000"
+              "maximum": 7776000
             }
           },
           {
@@ -320886,7 +320886,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "7776000"
+              "maximum": 7776000
             }
           },
           {
@@ -321100,7 +321100,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -321338,7 +321338,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2678400"
+              "maximum": 2678400
             }
           },
           {
@@ -321599,7 +321599,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2592000"
+              "maximum": 2592000
             }
           }
         ],
@@ -322231,7 +322231,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "7776000"
+              "maximum": 7776000
             }
           },
           {
@@ -322440,7 +322440,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "7776000"
+              "maximum": 7776000
             }
           },
           {
@@ -322649,7 +322649,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "7776000"
+              "maximum": 7776000
             }
           },
           {
@@ -323138,8 +323138,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "7776000"
+              "minimum": 300,
+              "maximum": 7776000
             }
           }
         ],
@@ -323371,8 +323371,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "7776000"
+              "minimum": 300,
+              "maximum": 7776000
             }
           }
         ],
@@ -323616,8 +323616,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "7776000"
+              "minimum": 300,
+              "maximum": 7776000
             }
           }
         ],
@@ -323770,7 +323770,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "86400"
+              "maximum": 86400
             }
           },
           {
@@ -326577,7 +326577,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2592000"
+              "maximum": 2592000
             }
           }
         ],
@@ -326772,7 +326772,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2592000"
+              "maximum": 2592000
             }
           }
         ],
@@ -326949,7 +326949,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "2592000"
+              "maximum": 2592000
             }
           }
         ],
@@ -327058,7 +327058,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "86400"
+              "maximum": 86400
             }
           },
           {
@@ -327314,8 +327314,8 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "minimum": "300",
-              "maximum": "1800"
+              "minimum": 300,
+              "maximum": 1800
             }
           },
           {
@@ -334100,7 +334100,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "604800"
+              "maximum": 604800
             }
           },
           {
@@ -345935,7 +345935,7 @@
             "schema": {
               "type": "number",
               "format": "float",
-              "maximum": "86400"
+              "maximum": 86400
             }
           },
           {
