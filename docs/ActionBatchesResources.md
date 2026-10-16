@@ -268,6 +268,7 @@
 | /networks/{networkId}/appliance/warmSpare | update | Warm spare | Update MX warm spare settings|
 | /networks/{networkId}/appliance/vpn/bgp | update | Wired/actions/bgp | Update a Hub BGP Configuration|
 | /devices/{serial}/liveTools/routingTable/summaries | summary | Wired/actions/enqueue route table | Enqueue a routing table summary job for a device. The job fetches summary data such as route counts by VRF and protocol. Only Cisco Secure Routers are supported.|
+| /networks/{networkId}/appliance/security/httpsInspection | update | Wired/actions/https inspection | Update HTTPS inspection configuration for a network.|
 | /networks/{networkId}/appliance/settings | update | Wired/actions/network appliance settings | Update the appliance settings for a network|
 | /organizations/{organizationId}/policyObjects/groups/{policyObjectGroupId} | update | Wired/actions/org wide firewall/policy object group | Updates a Policy Object Group.|
 | /organizations/{organizationId}/appliance/security/intrusion/policies/{policyId} | destroy | Wired/actions/security/policies | Delete a single intrusion policy for the organization.|
