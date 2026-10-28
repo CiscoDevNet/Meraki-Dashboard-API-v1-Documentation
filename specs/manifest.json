@@ -15,13 +15,13 @@
   "beta": {
     "repository": "meraki/openapi",
     "branch": "v1-beta",
-    "commitSha": "4b7ecb22bb3261dbb1e9c0fd10480a33b8859ffe",
+    "commitSha": "d5d007ed0cddc0e79b29c7f6b13a35eeb6721bf4",
     "openapi": "3.0.1",
-    "apiVersion": "1.75.1-beta.1",
-    "sha256": "750000679e3142e63bf12e514236d667aa782aa9bc4ea9139a928afb7ed5e896",
-    "bytes": 14573280,
-    "paths": 1204,
-    "operations": 1592,
-    "betaOperations": 552
+    "apiVersion": "1.75.1-beta.2",
+    "sha256": "fa47d5e8e595c8d90e4f6c2be30882d360f03af536256894f1d59c2557e5c6db",
+    "bytes": 14848319,
+    "paths": 1212,
+    "operations": 1603,
+    "betaOperations": 561
   }
 }
