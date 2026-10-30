@@ -205,24 +205,8 @@ The Meraki MCP server respects the [Meraki Dashboard API rate limits](https://de
 - **Backoff behavior:** The server automatically retries with exponential backoff on `429 Too Many Requests` responses
 - **Per-org isolation:** Rate limits are applied per organization; multi-org sessions do not share a single bucket
 
-## IP Address Restrictions
-
-This section applies to the Cisco-hosted remote MCP server. If your organization restricts the IP addresses from which Meraki Dashboard API calls can be made, add the following hosted MCP server egress IP addresses to your allowlist:
-
-```
-158.115.141.245
-158.115.141.238
-158.115.141.209
-158.115.133.170
-158.115.133.139
-158.115.133.156
-```
 
 The local, open-source MCP server makes Dashboard API calls from the IP address of the environment where it is running. Allowlist that address according to your organization's requirements.
-
-> **Important:** The hosted Meraki MCP server does not currently enforce your organization's Dashboard API IP restrictions. requests that are made through the hosted MCP server appear to originate from the MCP server's IP address, so a user with a valid API key can make API calls through MCP even when their own IP address is not on the allowlist.
->
-> Support for enforcing the same IP restrictions used for direct Dashboard API calls is planned, but is not currently available.
 
 ## Limitations (Current Release)
 
