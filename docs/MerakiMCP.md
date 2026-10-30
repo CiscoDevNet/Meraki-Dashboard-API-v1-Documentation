@@ -213,4 +213,3 @@ The local, open-source MCP server makes Dashboard API calls from the IP address 
 - **Read-only:** Write operations are not supported in the current release.
 - **API key auth only:** OAuth is not yet supported; bearer token required.
 - **Hosted MCP: Meraki.com only:** Federal, GovCloud, and localized Meraki environments are not supported by the Cisco-hosted MCP service. The local, open-source MCP can work with any Meraki environment.
-- **IP restrictions:** Dashboard API IP restrictions are not enforced for requests made through the hosted MCP server. See [IP Address Restrictions](#ip-address-restrictions) for the required allowlist and local-MCP details.
