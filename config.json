@@ -145,7 +145,7 @@
     {
       "title": "API Reference",
       "type": "oas3",
-      "content": "https://raw.githubusercontent.com/meraki/openapi/refs/tags/v1.75.1/openapi/spec3.json",
+      "content": "https://pubhub.devnetcloud.com/media/Meraki-Dashboard-API-v1-Documentation/docs/docs/meraki_dashboard_api_v_1_75_1.json",
       "config": {
         "overview": {
           "markdownPath": "docs/overview.md"
