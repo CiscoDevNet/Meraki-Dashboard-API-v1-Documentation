@@ -145,7 +145,7 @@
     {
       "title": "API Reference",
       "type": "oas3",
-      "content": "specs/ga/spec3.json",
+      "content": "https://raw.githubusercontent.com/meraki/openapi/refs/tags/v1.75.1/openapi/spec3.json",
       "config": {
         "overview": {
           "markdownPath": "docs/overview.md"
