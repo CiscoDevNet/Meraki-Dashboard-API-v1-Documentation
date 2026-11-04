@@ -98,10 +98,10 @@
 | /organizations/{organizationId}/insight/monitoredMediaServers | create | Monitored media server | Add a media server to be monitored for this organization. Only valid for organizations with Meraki Insight.|
 | /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId} | destroy | Monitored media server | Delete a monitored media server from this organization. Only valid for organizations with Meraki Insight.|
 | /organizations/{organizationId}/insight/monitoredMediaServers/{monitoredMediaServerId} | update | Monitored media server | Update a monitored media server for this organization. Only valid for organizations with Meraki Insight.|
-| /networks/{networkId}/wireless/airMarshal/rules | create | Mr/actions/air marshal rule | Creates a new rule|
-| /networks/{networkId}/wireless/airMarshal/rules/{ruleId} | destroy | Mr/actions/air marshal rule | Delete an Air Marshal rule.|
-| /networks/{networkId}/wireless/airMarshal/rules/{ruleId} | update | Mr/actions/air marshal rule | Update a rule|
-| /networks/{networkId}/wireless/airMarshal/settings | update | Mr/actions/air marshal setting | Updates Air Marshal settings.|
+| /networks/{networkId}/wireless/airMarshal/rules | create | Mr/actions/air marshal rule | Creates a new rule. In an action batch, mutations execute in the submitted order and commit atomically; a failure rolls back every mutation and configuration update in that batch. Completed or failed batches cannot be executed again. Air Marshal settings updates may be included in the same batch. The created rule ID is returned in the action batch createdResources list. A later action in the same batch cannot reference that generated ID.|
+| /networks/{networkId}/wireless/airMarshal/rules/{ruleId} | destroy | Mr/actions/air marshal rule | Delete an Air Marshal rule. In an action batch, mutations execute in the submitted order and commit atomically; a failure rolls back every mutation and configuration update in that batch. Completed or failed batches cannot be executed again. Air Marshal settings updates may be included in the same batch.|
+| /networks/{networkId}/wireless/airMarshal/rules/{ruleId} | update | Mr/actions/air marshal rule | Update a rule. In an action batch, mutations execute in the submitted order and commit atomically; a failure rolls back every mutation and configuration update in that batch. Completed or failed batches cannot be executed again. Air Marshal settings updates may be included in the same batch.|
+| /networks/{networkId}/wireless/airMarshal/settings | update | Mr/actions/air marshal setting | Updates Air Marshal settings. Omitting an optional setting leaves its saved value unchanged.|
 | /networks/{networkId}/wireless/ethernet/ports/profiles | create | Mr/actions/ap port profile | Create an AP port profile|
 | /networks/{networkId}/wireless/ethernet/ports/profiles/{profileId} | destroy | Mr/actions/ap port profile | Delete an AP port profile|
 | /networks/{networkId}/wireless/ethernet/ports/profiles/{profileId} | update | Mr/actions/ap port profile | Update the AP port profile by ID for this network|
@@ -116,6 +116,11 @@
 | /devices/{serial}/wireless/bluetooth/settings | update | Mr/actions/iot/bluetooth device setting | Update the bluetooth settings for a wireless device|
 | /networks/{networkId}/wireless/electronicShelfLabel | update | Mr/actions/iot/esl network settings | Update the ESL settings of a wireless network|
 | /devices/{serial}/wireless/electronicShelfLabel | update | Mr/actions/iot/esl node settings | Update the ESL settings of a device|
+| /devices/{serial}/certificates/{certificateSerial} | revoke | Mr/actions/pureca certificate | Revoke a device certificate. The device and certificate are identified by the path parameters. You may supply a revocation reason in the request body; if omitted, a default reason is applied.|
+| /organizations/{organizationId}/certificates/authorities | create | Mr/actions/pureca certificate authority | Create a certificate authority for an organization. The response includes job information for tracking progress.|
+| /organizations/{organizationId}/certificates/authorities | delete | Mr/actions/pureca certificate authority | Delete a certificate authority. The feature CA must be untrusted or revoked. Deletion takes effect immediately and the response confirms the deleted authority.|
+| /organizations/{organizationId}/certificates/authorities | revoke | Mr/actions/pureca certificate authority | Revoke a trusted feature certificate authority.|
+| /organizations/{organizationId}/certificates/authorities | update | Mr/actions/pureca certificate authority | Trust a newly created certificate authority (transition from untrusted to trusted).|
 | /devices/{serial}/wireless/radio/overrides | update | Mr/actions/radio overrides | Update 2.4 GHz, 5 GHz, and 6 GHz radio settings (channel, channel width, power, and enable/disable) that override RF profiles. Read-only fields returned by this endpoint, such as 'serial', 'network', and 'radios[].band', may be included when sending a previously returned object back to this PUT endpoint and will be ignored.|
 | /organizations/{organizationId}/wireless/radio/autoRf/channels | update | Mr/actions/rf auto channel | Recalculates automatically assigned channels for every AP within specified the specified network(s). Note: This could cause a brief loss in connectivity for wireless clients.|
 | /networks/{networkId}/wireless/rfProfiles | create | Mr/actions/rf profile | Creates new RF profile for this network|
@@ -158,6 +163,7 @@
 | /networks/{networkId}/switch/linkAggregations/{linkAggregationId} | update | Ms/actions/link aggregation | Update a link aggregation group|
 | /devices/{serial}/managementInterface | update | Ms/actions/management interface settings | Update the management interface settings for a device|
 | /networks/{networkId}/switch/stormControl | update | Ms/actions/storm control | Update the storm control configuration for a switch network|
+| /networks/{networkId}/switch/stp | update | Ms/actions/stp configuration | Updates STP settings|
 | /networks/{networkId}/switch/alternateManagementInterface | update | Ms/actions/switch alternate management interface | Update the switch alternate management interface for the network|
 | /devices/{serial}/switch/ports | cycle | Ms/actions/switch port | Cycle a set of switch ports on non-Catalyst MS devices. For Catalyst support, use /devices/{serial}/liveTools/ports/cycle, which supports all switch product families.|
 | /devices/{serial}/switch/ports/{portId} | update | Ms/actions/switch port | Update a switch port|
@@ -236,7 +242,6 @@
 | /networks/{networkId}/switch/routing/multicast/rendezvousPoints | create | Rendezvous point | Create a multicast rendezvous point|
 | /networks/{networkId}/switch/routing/multicast/rendezvousPoints/{rendezvousPointId} | destroy | Rendezvous point | Delete a multicast rendezvous point|
 | /networks/{networkId}/switch/routing/multicast/rendezvousPoints/{rendezvousPointId} | update | Rendezvous point | Update a multicast rendezvous point|
-| /networks/{networkId}/switch/stp | update | STP configuration | Updates STP settings|
 | /organizations/{organizationId}/sm/admins/roles | create | Sm/actions/admins/role | Create a Limited Access Role|
 | /organizations/{organizationId}/sm/admins/roles/{roleId} | destroy | Sm/actions/admins/role | Delete a Limited Access Role|
 | /organizations/{organizationId}/sm/admins/roles/{roleId} | update | Sm/actions/admins/role | Update a Limited Access Role|
@@ -257,6 +262,7 @@
 | /devices/{serial}/switch/warmSpare | update | Switch warm spare settings | Update warm spare configuration for a switch. The spare will use the same L3 configuration as the primary. Note that this will irreversibly destroy any existing L3 configuration on the spare.|
 | /networks/{networkId}/appliance/trafficShaping/rules | update | Traffic shaping settings | Update the traffic shaping settings rules for a Security Appliance or Secure Router network|
 | /networks/{networkId}/wireless/ssids/{number}/trafficShaping/rules | update | Traffic shaping settings | Update the traffic shaping rules for an SSID on an MR network.|
+| /networks/{networkId}/appliance/uplinks/nat | update | Uplink nat settings | Update uplink NAT settings of the specified network|
 | /networks/{networkId}/sm/userAccessDevices/{userAccessDeviceId} | destroy | User access device | Delete a User Access Device|
 | /organizations/{organizationId}/adaptivePolicy/acls | create | V1/adaptive policy acl | Creates new adaptive policy ACL|
 | /organizations/{organizationId}/adaptivePolicy/acls/{aclId} | destroy | V1/adaptive policy acl | Deletes the specified adaptive policy ACL. Note this adaptive policy ACL will also be removed from policies using it.|
@@ -268,6 +274,7 @@
 | /networks/{networkId}/appliance/warmSpare | update | Warm spare | Update MX warm spare settings|
 | /networks/{networkId}/appliance/vpn/bgp | update | Wired/actions/bgp | Update a Hub BGP Configuration|
 | /devices/{serial}/liveTools/routingTable/summaries | summary | Wired/actions/enqueue route table | Enqueue a routing table summary job for a device. The job fetches summary data such as route counts by VRF and protocol. Only Cisco Secure Routers are supported.|
+| /networks/{networkId}/appliance/firewall/settings | update | Wired/actions/firewall/settings | Update the firewall settings for this network|
 | /networks/{networkId}/appliance/security/httpsInspection | update | Wired/actions/https inspection | Update HTTPS inspection configuration for a network.|
 | /networks/{networkId}/appliance/settings | update | Wired/actions/network appliance settings | Update the appliance settings for a network|
 | /organizations/{organizationId}/policyObjects/groups/{policyObjectGroupId} | update | Wired/actions/org wide firewall/policy object group | Updates a Policy Object Group.|
@@ -293,7 +300,7 @@
 | /networks/{networkId}/appliance/vlans/{vlanId} | update | Wired/actions/vlan/vlan | Update a VLAN|
 | /networks/{networkId}/appliance/trafficShaping/vpnExclusions | update | Wired/actions/vpn exclusions | Update VPN exclusion rules for an MX network.|
 | /organizations/{organizationId}/appliance/vpn/siteToSite/ipsec/peers/slas | update | Wired/actions/vpn/ipsec sla policies | Update the IPsec SLA policies for an organization|
-| /networks/{networkId}/appliance/vpn/siteToSiteVpn | update | Wired/actions/vpn/site to site vpn | Update the site-to-site VPN settings of a network. Only valid for MX networks in NAT mode.|
+| /networks/{networkId}/appliance/vpn/siteToSiteVpn | update | Wired/actions/vpn/site to site vpn | Update the site-to-site VPN settings of an MX network or configuration template in NAT mode. Unacknowledged warnings return 400 Bad Request with retry guidance in errors and the warnings in confirmations. Review the warnings returned in confirmations, then retry with confirmed: true to accept them. Fatal errors must be corrected before retrying.|
 | /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers | update | Wired/actions/vpn/third party vpn peers | Update the third party VPN peers for an organization.  Subnet overlap warning: Unlike the Dashboard UI, updateOrganizationApplianceVpnThirdPartyVPNPeers does not run the org-wide subnet-overlap validation before saving changes. Requests with overlapping VPN subnets will succeed through the API, but the resulting configuration may be blocked from further edits in Dashboard until the overlaps are resolved manually. Use this endpoint only when you've already confirmed the advertised subnets are unique across the organization. |
 | /networks/{networkId}/appliance/sdwan/internetPolicies | update | Wired/actions/wan traffic uplink | Update SDWAN internet traffic preferences for an MX network|
 | /networks/{networkId}/appliance/firewall/l7FirewallRules | update | Wired/actions/wired l7 firewall | Update the MX L7 firewall rules for an MX network|
@@ -324,6 +331,7 @@
 | /networks/{networkId}/appliance/devices/redundancy/swap | swap | Wired/controller/high availability/swap/request | Swap MX primary and warm spare appliances|
 | /devices/{serial}/liveTools/ports/status | status | Wired/live tools/actions/enqueue port | Enqueue a job to retrieve port status for a device. This endpoint has a sustained rate limit of one request every five seconds per device, with an allowed burst of five requests.|
 | /devices/{serial}/liveTools/power/usage | job | Wired/live tools/actions/enqueue power usage | Enqueues a live tool job that retrieves details about a device's overall power usage. This endpoint has a sustained rate limit of one request every five seconds per device, with an allowed burst of five requests.|
+| /devices/{serial}/liveTools/route/details | details | Wired/live tools/actions/enqueue route | Enqueue a live tool job to fetch route details from a device.|
 | /devices/{serial}/liveTools/routingTable/lookups | lookup | Wired/live tools/actions/enqueue route table | Enqueue a job to perform a routing table lookup request for a device. The routing table lookup request fetches a specific set of routes based on filters. Any combination of search filters can be applied. Only Cisco Secure Routers are supported.|
 | /organizations/{organizationId}/appliance/dns/local/profiles/assignments | bulk_create | Wired/local dns/api/actions/bulk create | Assign the local DNS profile to networks in the organization|
 | /organizations/{organizationId}/appliance/dns/local/profiles/assignments/bulkDelete | bulk_delete | Wired/local dns/api/actions/bulk delete | Unassign the local DNS profile to networks in the organization|
@@ -340,7 +348,6 @@
 | /organizations/{organizationId}/appliance/dns/split/profiles | create | Wired/split dns/api/actions/split dns profile | Create a new split DNS profile|
 | /organizations/{organizationId}/appliance/dns/split/profiles/{profileId} | destroy | Wired/split dns/api/actions/split dns profile | Deletes a split DNS profile|
 | /organizations/{organizationId}/appliance/dns/split/profiles/{profileId} | update | Wired/split dns/api/actions/split dns profile | Update a split DNS profile|
-| /networks/{networkId}/appliance/uplinks/nat | settings | Wired/uplink nat settings/api/actions/update uplink nat | Update uplink NAT settings of the specified network|
 | /devices/{serial}/appliance/uplinks/settings | update | Wired/uplinks/actions/settings | Update the uplink settings for a secure router or security appliance|
 | /organizations/{organizationId}/integrations/xdr/networks | disable | Wired/xdr/api/actions/xdr | Disable XDR on networks|
 | /organizations/{organizationId}/integrations/xdr/networks | enable | Wired/xdr/api/actions/xdr | Enable XDR on networks|
